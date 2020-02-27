@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>谢舟的博客</title>
+  
+  <subtitle>学习教程、操作经验</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://blog.hsiehchou.com/"/>
+  <updated>2020-02-26T16:00:38.926Z</updated>
+  <id>https://blog.hsiehchou.com/</id>
+  
+  <author>
+    <name>谢舟</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>npm换成淘宝的源</title>
+    <link href="https://blog.hsiehchou.com/2020/02/26/npm-huan-cheng-tao-bao-de-yuan/"/>
+    <id>https://blog.hsiehchou.com/2020/02/26/npm-huan-cheng-tao-bao-de-yuan/</id>
+    <published>2020-02-26T10:39:35.000Z</published>
+    <updated>2020-02-26T16:00:38.926Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;安装npm install时，长时间停留在fetchMetadata: sill fetchPackageMetaData error for …&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;方法如下&lt;/strong&gt;&lt;/p&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="npm" scheme="https://blog.hsiehchou.com/categories/npm/"/>
+    
+    
+      <category term="npm" scheme="https://blog.hsiehchou.com/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github Hexo 建站</title>
+    <link href="https://blog.hsiehchou.com/2020/02/24/github-hexo-jian-zhan/"/>
+    <id>https://blog.hsiehchou.com/2020/02/24/github-hexo-jian-zhan/</id>
+    <published>2020-02-24T04:11:54.000Z</published>
+    <updated>2020-02-27T11:40:34.647Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Github-Hexo-建站&quot;&gt;&lt;a href=&quot;#Github-Hexo-建站&quot; class=&quot;headerlink&quot; title=&quot;Github Hexo 建站&quot;&gt;&lt;/a&gt;Github Hexo 建站&lt;/h2&gt;&lt;h3 id=&quot;初始化&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://blog.hsiehchou.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="工具" scheme="https://blog.hsiehchou.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>github ssh 连接失败解决方法</title>
+    <link href="https://blog.hsiehchou.com/2020/02/21/github-ssh-lian-jie-shi-bai-jie-jue-fang-fa/"/>
+    <id>https://blog.hsiehchou.com/2020/02/21/github-ssh-lian-jie-shi-bai-jie-jue-fang-fa/</id>
+    <published>2020-02-21T03:16:24.000Z</published>
+    <updated>2020-02-27T08:00:49.877Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;github-ssh-连接失败&quot;&gt;&lt;a href=&quot;#github-ssh-连接失败&quot; class=&quot;headerlink&quot; title=&quot;github ssh 连接失败&quot;&gt;&lt;/a&gt;github ssh 连接失败&lt;/h3&gt;&lt;p&gt;$ ssh -T &lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://blog.hsiehchou.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="工具" scheme="https://blog.hsiehchou.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中华人民共和国70周年生日快乐，我爱你中国！！！！！！！</title>
+    <link href="https://blog.hsiehchou.com/2019/10/01/zhong-hua-ren-min-gong-he-guo-70-zhou-nian-qing/"/>
+    <id>https://blog.hsiehchou.com/2019/10/01/zhong-hua-ren-min-gong-he-guo-70-zhou-nian-qing/</id>
+    <published>2019-10-01T02:00:00.000Z</published>
+    <updated>2019-10-01T14:42:12.067Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;热烈祝贺中华人民共和国70周年生日快乐，我爱你中国！！！！！！！&quot;&gt;&lt;a href=&quot;#热烈祝贺中华人民共和国70周年生日快乐，我爱你中国！！！！！！！&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="中华人民共和国70周年" scheme="https://blog.hsiehchou.com/categories/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD70%E5%91%A8%E5%B9%B4/"/>
+    
+    
+      <category term="中华人民共和国70周年" scheme="https://blog.hsiehchou.com/tags/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD70%E5%91%A8%E5%B9%B4/"/>
+    
+      <category term="祖国生日" scheme="https://blog.hsiehchou.com/tags/%E7%A5%96%E5%9B%BD%E7%94%9F%E6%97%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决IDEA创建Maven项目速度慢问题</title>
+    <link href="https://blog.hsiehchou.com/2019/08/02/jie-jue-idea-chuang-jian-maven-xiang-mu-su-du-man-wen-ti/"/>
+    <id>https://blog.hsiehchou.com/2019/08/02/jie-jue-idea-chuang-jian-maven-xiang-mu-su-du-man-wen-ti/</id>
+    <published>2019-08-02T08:21:58.000Z</published>
+    <updated>2019-08-04T07:34:59.325Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;add Maven
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://blog.hsiehchou.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="IDEA" scheme="https://blog.hsiehchou.com/tags/IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>spark-submit提交集群执行</title>
+    <link href="https://blog.hsiehchou.com/2019/07/29/spark-submit-ti-jiao-ji-qun-zhi-xing/"/>
+    <id>https://blog.hsiehchou.com/2019/07/29/spark-submit-ti-jiao-ji-qun-zhi-xing/</id>
+    <published>2019-07-29T06:35:38.000Z</published>
+    <updated>2019-08-04T07:35:09.316Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;spark-submit&lt;br&gt;&lt;code&gt;--&lt;/code&gt;master yarn-cluster    //集群启动&lt;br&gt;&lt;code&gt;--&lt;/code&gt;num-executors 1       
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="SparkStreaming" scheme="https://blog.hsiehchou.com/tags/SparkStreaming/"/>
+    
+      <category term="spark-sumbit" scheme="https://blog.hsiehchou.com/tags/spark-sumbit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA中jar冲突查找快捷键快速定位</title>
+    <link href="https://blog.hsiehchou.com/2019/07/27/idea-zhong-jar-chong-tu-cha-zhao-kuai-jie-jian-kuai-su-ding-wei/"/>
+    <id>https://blog.hsiehchou.com/2019/07/27/idea-zhong-jar-chong-tu-cha-zhao-kuai-jie-jian-kuai-su-ding-wei/</id>
+    <published>2019-07-27T13:11:38.000Z</published>
+    <updated>2019-08-04T07:31:55.271Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;Ctrl+Alt+Shift+N&lt;/strong&gt;&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://blog.hsiehchou.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="IDEA" scheme="https://blog.hsiehchou.com/tags/IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>企业网络日志分析</title>
+    <link href="https://blog.hsiehchou.com/2019/07/27/qi-ye-wang-luo-ri-zhi-fen-xi/"/>
+    <id>https://blog.hsiehchou.com/2019/07/27/qi-ye-wang-luo-ri-zhi-fen-xi/</id>
+    <published>2019-07-27T11:11:20.000Z</published>
+    <updated>2020-02-09T16:08:16.347Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一、背景数据介绍&quot;&gt;&lt;a href=&quot;#一、背景数据介绍&quot; class=&quot;headerlink&quot; title=&quot;一、背景数据介绍&quot;&gt;&lt;/a&gt;一、背景数据介绍&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;1.   
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据项目" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+      <category term="大数据项目" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="网络日志分析" scheme="https://blog.hsiehchou.com/tags/%E7%BD%91%E7%BB%9C%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Eureka服务注册中心启动</title>
+    <link href="https://blog.hsiehchou.com/2019/07/25/eureka-fu-wu-zhu-ce-zhong-xin-qi-dong/"/>
+    <id>https://blog.hsiehchou.com/2019/07/25/eureka-fu-wu-zhu-ce-zhong-xin-qi-dong/</id>
+    <published>2019-07-25T02:19:38.000Z</published>
+    <updated>2019-08-04T07:42:31.080Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;nohup启动（nohup不间断运行）&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nohup java -cp
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringCloud" scheme="https://blog.hsiehchou.com/categories/SpringCloud/"/>
+    
+    
+      <category term="SpringCloud" scheme="https://blog.hsiehchou.com/tags/SpringCloud/"/>
+    
+      <category term="Eureka" scheme="https://blog.hsiehchou.com/tags/Eureka/"/>
+    
+      <category term="nohup" scheme="https://blog.hsiehchou.com/tags/nohup/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ZooKeeper清除已有的消费的offsets</title>
+    <link href="https://blog.hsiehchou.com/2019/07/23/zookeeper-qing-chu-yi-you-de-xiao-fei-de-offsets/"/>
+    <id>https://blog.hsiehchou.com/2019/07/23/zookeeper-qing-chu-yi-you-de-xiao-fei-de-offsets/</id>
+    <published>2019-07-23T02:19:38.000Z</published>
+    <updated>2019-08-04T07:45:23.589Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;CDH集群中的ZooKeeper&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;启动ZooKeeper客户端&lt;/strong&gt;&lt;br&gt;zookeeper-client&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;清除消费者&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="ZooKeeper" scheme="https://blog.hsiehchou.com/tags/ZooKeeper/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SparkStreaming+Kafka的两种模式Receiver模式和Direct模式</title>
+    <link href="https://blog.hsiehchou.com/2019/07/19/sparkstreaming-kafka-de-liang-chong-mo-shi-receiver-mo-shi-he-direct-mo-shi/"/>
+    <id>https://blog.hsiehchou.com/2019/07/19/sparkstreaming-kafka-de-liang-chong-mo-shi-receiver-mo-shi-he-direct-mo-shi/</id>
+    <published>2019-07-19T10:11:38.000Z</published>
+    <updated>2019-08-04T07:35:30.836Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;SparkStreming-Kafka-Receiver模式理解&quot;&gt;&lt;a href=&quot;#SparkStreming-Kafka-Receiver模式理解&quot; class=&quot;headerlink&quot; title=&quot;SparkStreming + Kafka
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="Kafka" scheme="https://blog.hsiehchou.com/tags/Kafka/"/>
+    
+      <category term="SparkStreaming" scheme="https://blog.hsiehchou.com/tags/SparkStreaming/"/>
+    
+      <category term="Receiver" scheme="https://blog.hsiehchou.com/tags/Receiver/"/>
+    
+      <category term="Direct" scheme="https://blog.hsiehchou.com/tags/Direct/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Elasticsearch的9200端口和9300端口的区别</title>
+    <link href="https://blog.hsiehchou.com/2019/07/18/elasticsearch-de-9200-duan-kou-he-9300-duan-kou-de-qu-bie/"/>
+    <id>https://blog.hsiehchou.com/2019/07/18/elasticsearch-de-9200-duan-kou-he-9300-duan-kou-de-qu-bie/</id>
+    <published>2019-07-18T11:11:38.000Z</published>
+    <updated>2020-02-27T11:51:14.950Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;9200端口作为HTTP协议，&lt;strong&gt;主要用于外部通讯&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;9300端口作为TCP协议，jar之间就是通过
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="ElasticSearch" scheme="https://blog.hsiehchou.com/tags/ElasticSearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Elasticsearch集群配置</title>
+    <link href="https://blog.hsiehchou.com/2019/07/06/elasticsearch-ji-qun-an-zhuang-pei-zhi/"/>
+    <id>https://blog.hsiehchou.com/2019/07/06/elasticsearch-ji-qun-an-zhuang-pei-zhi/</id>
+    <published>2019-07-06T05:11:38.000Z</published>
+    <updated>2020-02-27T11:51:18.457Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;安装Elasticsearch&lt;/strong&gt;&lt;br&gt;mkdir /opt/software/elasticsearch/data/&lt;/p&gt;
+&lt;p&gt;mkdir /opt/software/elasticsearch/logs/&lt;/p&gt;
+&lt;p&gt;chmod
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="ElasticSearch" scheme="https://blog.hsiehchou.com/tags/ElasticSearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一万小时天才理论（阅读笔记）</title>
+    <link href="https://blog.hsiehchou.com/2019/06/19/yi-wan-xiao-shi-tian-cai-li-lun/"/>
+    <id>https://blog.hsiehchou.com/2019/06/19/yi-wan-xiao-shi-tian-cai-li-lun/</id>
+    <published>2019-06-19T12:16:42.000Z</published>
+    <updated>2019-07-25T15:52:54.233Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;一万小时天才理论（阅读笔记）&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="读书" scheme="https://blog.hsiehchou.com/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="读书" scheme="https://blog.hsiehchou.com/tags/%E8%AF%BB%E4%B9%A6/"/>
+    
+      <category term="个人感悟" scheme="https://blog.hsiehchou.com/tags/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>系统定时任务</title>
+    <link href="https://blog.hsiehchou.com/2019/06/04/xi-tong-ding-shi-ren-wu/"/>
+    <id>https://blog.hsiehchou.com/2019/06/04/xi-tong-ding-shi-ren-wu/</id>
+    <published>2019-06-04T11:16:35.000Z</published>
+    <updated>2019-07-25T13:04:26.204Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;crond系统定时任务&quot;&gt;&lt;a href=&quot;#crond系统定时任务&quot; class=&quot;headerlink&quot; title=&quot;crond系统定时任务&quot;&gt;&lt;/a&gt;crond系统定时任务&lt;/h3&gt;&lt;h4 id=&quot;1、crond服务管理&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://blog.hsiehchou.com/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://blog.hsiehchou.com/tags/Linux/"/>
+    
+      <category term="定时脚本" scheme="https://blog.hsiehchou.com/tags/%E5%AE%9A%E6%97%B6%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电信大数据</title>
+    <link href="https://blog.hsiehchou.com/2019/05/19/dian-xin-da-shu-ju/"/>
+    <id>https://blog.hsiehchou.com/2019/05/19/dian-xin-da-shu-ju/</id>
+    <published>2019-05-19T02:36:20.000Z</published>
+    <updated>2020-02-09T16:08:28.098Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一、项目背景&quot;&gt;&lt;a href=&quot;#一、项目背景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据项目" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+      <category term="大数据项目" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="电信" scheme="https://blog.hsiehchou.com/tags/%E7%94%B5%E4%BF%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flink练习</title>
+    <link href="https://blog.hsiehchou.com/2019/05/18/flink-lian-xi/"/>
+    <id>https://blog.hsiehchou.com/2019/05/18/flink-lian-xi/</id>
+    <published>2019-05-18T01:34:54.000Z</published>
+    <updated>2019-08-02T16:11:31.096Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一、Flink开发IDEA环境搭建与测试&quot;&gt;&lt;a href=&quot;#一、Flink开发IDEA环境搭建与测试&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="Flink" scheme="https://blog.hsiehchou.com/tags/Flink/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flink基础</title>
+    <link href="https://blog.hsiehchou.com/2019/05/16/flink-ji-chu/"/>
+    <id>https://blog.hsiehchou.com/2019/05/16/flink-ji-chu/</id>
+    <published>2019-05-16T10:21:45.000Z</published>
+    <updated>2019-08-02T16:10:52.842Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一、Flink概述&quot;&gt;&lt;a href=&quot;#一、Flink概述&quot; class=&quot;headerlink&quot; title=&quot;一、Flink概述&quot;&gt;&lt;/a&gt;一、Flink概述&lt;/h3&gt;&lt;p&gt;官网：&lt;a href=&quot;http://flink.apache.org/&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="Flink" scheme="https://blog.hsiehchou.com/tags/Flink/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Storm练习</title>
+    <link href="https://blog.hsiehchou.com/2019/05/14/storm-lian-xi/"/>
+    <id>https://blog.hsiehchou.com/2019/05/14/storm-lian-xi/</id>
+    <published>2019-05-14T07:41:15.000Z</published>
+    <updated>2019-08-02T16:08:11.483Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;Storm练习&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;一、需求&quot;&gt;&lt;a href=&quot;#一、需求&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="Storm" scheme="https://blog.hsiehchou.com/tags/Storm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Storm集群和集成</title>
+    <link href="https://blog.hsiehchou.com/2019/05/12/storm-ji-qun-he-ji-cheng/"/>
+    <id>https://blog.hsiehchou.com/2019/05/12/storm-ji-qun-he-ji-cheng/</id>
+    <published>2019-05-12T13:39:45.000Z</published>
+    <updated>2019-08-02T16:07:39.307Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;一、Storm集群任务提交流程&quot;&gt;&lt;a href=&quot;#一、Storm集群任务提交流程&quot; class=&quot;headerlink&quot; title=&quot;一、Storm集群任务提交流程&quot;&gt;&lt;/a&gt;一、Storm集群任务提交流程&lt;/h3&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="Storm" scheme="https://blog.hsiehchou.com/tags/Storm/"/>
+    
+  </entry>
+  
+</feed>

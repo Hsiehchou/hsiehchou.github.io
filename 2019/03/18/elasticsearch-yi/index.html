@@ -1,0 +1,1308 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ElasticSearch（一）, 谢舟，博客，大数据，Java">
+    <meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>ElasticSearch（一） | 谢舟的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">谢舟的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">谢舟的博客</div>
+        <div class="logo-desc">
+            
+            发布关于大数据,Java的一些信息和自己实践中的经验
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ElasticSearch（一）</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">大数据</span>
+                            </a>
+                        
+                            <a href="/tags/ElasticSearch/">
+                                <span class="chip bg-color">ElasticSearch</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                大数据
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-03-18
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    16 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="1-全文检索技术简介"><a href="#1-全文检索技术简介" class="headerlink" title="1. 全文检索技术简介"></a>1. 全文检索技术简介</h3><h4 id="什么是搜索？"><a href="#什么是搜索？" class="headerlink" title="什么是搜索？"></a>什么是搜索？</h4><p>搜索，就是在任何场景下，找寻你想要的信息，这个时候，会输入一段你要搜索的关键字，然后就期望找到这个关键字相关的有些信息</p>
+<h4 id="如何实现搜索？"><a href="#如何实现搜索？" class="headerlink" title="如何实现搜索？"></a>如何实现搜索？</h4><p>OA系统，比如：通过名字搜索员工等等<br>mysql :<br>select * from employee e where e.name like “%李雷%”;<br>select * from employee e where e.comment like “%好%”;<br>问题：<br>1）性能<br>2）比如搜索“优秀工”，mysql 无法支持</p>
+<h4 id="全文检索"><a href="#全文检索" class="headerlink" title="全文检索"></a>全文检索</h4><p>全文数据库是全文检索系统的主要构成部分。所谓全文数据库是将一个完整的信息源的全部内容转化为计算机可以识别、处理的信息单元而形成的数据集合</p>
+<p>全文数据库不仅存储了信息，而且还有对全文数据进行词、字、段落等更深层次的编辑、加工的功能</p>
+<p>所有全文数据库无一不是海量信息数据库</p>
+<h4 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h4><p>传统数据库存储：<br>| id  |  描述 |<br>| :—:| :—:|<br>|  1  |  优秀员工  |<br>|  2  |  销售冠军  |<br>|  3  |  优秀团队领导|<br>|  4  |  优秀项目  |</p>
+<p>倒排索引处理步骤：<br>1、切词：<br>优秀员工 —— 优秀 员工<br>销售冠军 —— 销售 冠军<br>优秀团队领导 —— 优秀 团队 领导<br>优秀项目 —— 优秀 项目</p>
+<p>2、建立倒排索引：<br>关键词 id<br>| 关键词 |  id  |<br>| :—:| :—:|<br>| 优秀 | 1,3,4 |<br>| 员工 |  1  |<br>| 销售 |  2  |<br>| 团队 |  3  |<br>|。。。| 。。。| </p>
+<h4 id="Lucene"><a href="#Lucene" class="headerlink" title="Lucene"></a>Lucene</h4><p><strong>全文检索引擎</strong><br>Lucene 能够为文本类型的数据建立索引，所以你只要能把你要索引的数据格式转化的文本的，Lucene 就能对你的文档进行索引和搜索。比如你要对一些 HTML 文档，PDF 文档进行索引的话你就首先需要把 HTML 文档和 PDF 文档转化成文本格式的，然后将转化后的内容交给 Lucene 进行索引，然后把创建好的索引文件保存到磁盘或者内存中，最后根据用户输入的查询条件在索引文件上进行查询。不指定要索引的文档的格式也使 Lucene 能够几乎适用于所有的搜索应用程序</p>
+<p>换句话说，使用 Lucene 可以轻松完成上述步骤</p>
+<h4 id="Elasticsearch"><a href="#Elasticsearch" class="headerlink" title="Elasticsearch"></a>Elasticsearch</h4><p>Elasticsearch 是一个高度可伸缩的开源全文搜索和分析引擎。它允许你以近实时的方式快速存储、搜索和分析大量的数据。它通常被用作基础的技术来赋予应用程序复杂的搜索特性和需求</p>
+<p>Elasticsearch ，是基于 lucene 开发的，隐藏复杂性，提供简单易用的 restful api 接口、java api 接口（还有其他语言的 api 接口）</p>
+<h4 id="Elasticsearch-特点"><a href="#Elasticsearch-特点" class="headerlink" title="Elasticsearch 特点"></a>Elasticsearch 特点</h4><p>可以作为一个大型分布式集群（数百台服务器）技术，处理 PB 级数据，服务大公司；也可以运行在单机上，服务小公司</p>
+<p>Elasticsearch 不是什么新技术，主要是将全文检索、数据分析以及分布式技术，合并在了一起，才形成了独一无二的 ES</p>
+<p>对用户而言，是开箱即用的，非常简单，作为中小型的应用，直接3分钟部署一下 ES ，就可以作为生产环境的系统来使用了，数据量不大，操作不是太复杂</p>
+<p>数据库的功能面对很多领域是不够用的（事务，还有各种联机事务型的操作）；特殊的功能，比如全文检索，同义词处理，相关度排名，复杂数据分析，海量数据的近实时处理； Elasticsearch 作为传统数据库的一个补充，提供了数据库所不能提供的很多功能</p>
+<h4 id="Elasticsearch核心概念"><a href="#Elasticsearch核心概念" class="headerlink" title="Elasticsearch核心概念"></a>Elasticsearch核心概念</h4><p><strong>近实时</strong><br>近实时，两个意思，从写入数据到数据可以被搜索到有一个小延迟（大概1秒）；基于es执行搜索和分析可以达到秒级</p>
+<p><strong>Cluster（集群）</strong><br>集群包含多个节点，每个节点属于哪个集群是通过一个配置（集群名称，默认是elasticsearch）来决定的，对于中小型应用来说，刚开始一个集群就一个节点很正常</p>
+<p><strong>Node（节点）</strong><br>集群中的一个节点，节点也有一个名称（默认是随机分配的），节点名称很重要（在执行运维管理操作的时候），默认节点会去加入一个名称为“elasticsearch”的集群，如果直接启动一堆节点，那么它们会自动组成一个elasticsearch集群，当然一个节点也可以组成一个elasticsearch集群</p>
+<p><strong>Index（索引-数据库）</strong><br>索引包含一堆有相似结构的文档数据，比如可以有一个客户索引，商品分类索引，订单索引，索引有一个名称。一个index包含很多document，一个index就代表了一类类似的或者相同的document。比如说建立一个product index，商品索引，里面可能就存放了所有的商品数据，所有的商品document</p>
+<p><strong>Type（类型-表）</strong><br>每个索引里都可以有一个或多个type，type是index中的一个逻辑数据分类，一个type下的document，都有相同的field，比如博客系统，有一个索引，可以定义用户数据type，博客数据type，评论数据type</p>
+<p>商品index，里面存放了所有的商品数据，商品document<br>但是商品分很多种类，每个种类的document的field可能不太一样，比如说电器商品，可能还包含一些诸如售后时间范围这样的特殊field；生鲜商品，还包含一些诸如生鲜保质期之类的特殊field</p>
+<p>type，日化商品type，电器商品type，生鲜商品type<br>日化商品type：product_id，product_name，product_desc，category_id，category_name</p>
+<p>电器商品type：product_id，product_name，product_desc，category_id，category_name，service_period</p>
+<p>生鲜商品type：product_id，product_name，product_desc，category_id，category_name，eat_period</p>
+<p>每一个type里面，都会包含一堆document</p>
+<pre><code>{
+  &quot;product_id&quot;: &quot;1&quot;,
+  &quot;product_name&quot;: &quot;长虹电视机&quot;,
+  &quot;product_desc&quot;: &quot;4k高清&quot;,
+  &quot;category_id&quot;: &quot;3&quot;,
+  &quot;category_name&quot;: &quot;电器&quot;,
+  &quot;service_period&quot;: &quot;1年&quot;
+}
+{
+  &quot;product_id&quot;: &quot;2&quot;,
+  &quot;product_name&quot;: &quot;基围虾&quot;,
+  &quot;product_desc&quot;: &quot;纯天然，冰岛产&quot;,
+  &quot;category_id&quot;: &quot;4&quot;,
+  &quot;category_name&quot;: &quot;生鲜&quot;,
+  &quot;eat_period&quot;: &quot;7天&quot;
+}</code></pre><p><strong>Document（文档-行）</strong><br>文档是es中的最小数据单元，一个document可以是一条客户数据，一条商品分类数据，一条订单数据，通常用JSON数据结构表示，每个index下的type中，都可以去存储多个document</p>
+<p><strong>Field（字段-列）</strong><br>Field是Elasticsearch的最小单位。一个document里面有多个field，每个field就是一个数据字段</p>
+<pre><code>product document
+{
+  &quot;product_id&quot;: &quot;1&quot;,
+  &quot;product_name&quot;: &quot;高露洁牙膏&quot;,
+  &quot;product_desc&quot;: &quot;高效美白&quot;,
+  &quot;category_id&quot;: &quot;2&quot;,
+  &quot;category_name&quot;: &quot;日化用品&quot;
+}</code></pre><p><strong>mapping（映射-约束）</strong><br>数据如何存放到索引对象上，需要有一个映射配置，包括：数据类型、是否存储、是否分词等</p>
+<p>这样就创建了一个名为blog的Index。Type不用单独创建，在创建Mapping 时指定就可以。Mapping用来定义Document中每个字段的类型，即所使用的 analyzer、是否索引等属性，非常关键等。创建Mapping 的代码示例如下：</p>
+<pre><code>client.indices.putMapping({
+    index : &#39;blog&#39;,
+    type : &#39;article&#39;,
+    body : {
+        article: {
+            properties: {
+                id: {
+                    type: &#39;string&#39;,
+                    analyzer: &#39;ik&#39;,
+                    store: &#39;yes&#39;,
+                },
+                title: {
+                    type: &#39;string&#39;,
+                    analyzer: &#39;ik&#39;,
+                    store: &#39;no&#39;,
+                },
+                content: {
+                    type: &#39;string&#39;,
+                     analyzer: &#39;ik&#39;,
+                    store: &#39;yes&#39;,
+                }
+            }
+        }
+    }
+});</code></pre><h4 id="elasticsearch与数据库的类比"><a href="#elasticsearch与数据库的类比" class="headerlink" title="elasticsearch与数据库的类比"></a>elasticsearch与数据库的类比</h4><table>
+<thead>
+<tr>
+<th align="center">关系型数据库（比如Mysql）</th>
+<th align="center">非关系型数据库（Elasticsearch）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数据库Database</td>
+<td align="center">索引Index</td>
+</tr>
+<tr>
+<td align="center">表Table</td>
+<td align="center">类型Type</td>
+</tr>
+<tr>
+<td align="center">数据行Row</td>
+<td align="center">文档Document</td>
+</tr>
+<tr>
+<td align="center">数据列Column</td>
+<td align="center">字段Field</td>
+</tr>
+<tr>
+<td align="center">约束 Schema</td>
+<td align="center">映射Mapping</td>
+</tr>
+</tbody></table>
+<h4 id="ES存入数据和搜索数据机制"><a href="#ES存入数据和搜索数据机制" class="headerlink" title="ES存入数据和搜索数据机制"></a>ES存入数据和搜索数据机制</h4><p>1）索引对象（index）：存储数据的表结构 ，任何搜索数据，存放在索引对象上 </p>
+<p>2）映射（mapping）：数据如何存放到索引对象上，需要有一个映射配置， 包括：数据类型、是否存储、是否分词等</p>
+<p>3）文档（document）：一条数据记录，存在索引对象上 </p>
+<p>4）文档类型（type）：一个索引对象，存放多种类型数据，数据用文档类型进行标识</p>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><h4 id="单节点安装教程"><a href="#单节点安装教程" class="headerlink" title="单节点安装教程"></a>单节点安装教程</h4><p>java8<br>1）下载es安装包<br>curl -L -O <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.1.1.tar.gz" target="_blank" rel="noopener">https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.1.1.tar.gz</a></p>
+<p>2）浏览器下载上传到虚拟机安装并创建和修改文件</p>
+<p>解压elasticsearch-6.1.1.tar.gz到/opt/module目录下</p>
+<p>在/opt/module/elasticsearch-6.1.1路径下创建data和logs文件夹<br>mkdir data<br>mkdir logs</p>
+<p>修改配置文件/opt/module/elasticsearch-6.1.1/config/elasticsearch.yml<br>vi elasticsearch.yml</p>
+<pre><code># ----------- Cluster ----------- 
+cluster.name: my-application
+# ----------- Node ----------- 
+node.name: node-121
+# ----------- Paths ----------- 
+path.data: /opt/module/elasticsearch-6.1.1/data
+path.logs: /opt/module/elasticsearch-6.1.1/logs
+# ----------- Memory ----------- 
+bootstrap.memory_lock: false
+bootstrap.system_call_filter: false
+# ----------- Network ----------- 
+network.host: 192.168.116.121
+# ----------- Discovery ----------- 
+discovery.zen.ping.unicast.hosts: [&quot;hsiehchou121&quot;]</code></pre><p>（1）cluster.name<br>如果要配置集群需要两个节点上的elasticsearch配置的cluster.name相同，都启动可以自动组成集群，这里如果不改cluster.name则默认是cluster.name=my-application</p>
+<p>（2）nodename随意取但是集群内的各节点不能相同 </p>
+<p>（3）修改后的每行前面不能有空格，修改后的“：”后面必须有一个空格</p>
+<p>3）配置linux系统环境<br><strong>编辑limits.conf</strong><br>添加类似如下内容<br>sudo vi /etc/security/limits.conf<br>添加如下内容:</p>
+<ul>
+<li>soft nofile 65536</li>
+<li>hard nofile 131072</li>
+<li>soft nproc 4096</li>
+<li>hard nproc 4096</li>
+</ul>
+<p><strong>进入limits.d目录下修改配置文件</strong><br>sudo vi /etc/security/limits.d/20-nproc.conf<br>修改如下内容：</p>
+<ul>
+<li>soft nproc 4096（修改为此参数，6版本的默认就是4096）</li>
+</ul>
+<p><strong>修改配置sysctl.conf</strong><br>sudo vi /etc/sysctl.conf<br>添加下面配置：<br>vm.max_map_count=655360<br>并执行命令：<br>sudo sysctl -p<br>然后，重新启动elasticsearch，即可启动成功</p>
+<p><strong>启动（非root账户下启动）</strong><br>bin/elasticsearch<br>注意：can not run elasticsearch as root</p>
+<p><strong>测试elasticsearch</strong><br>curl <a href="http://hsiehchou121:9200" target="_blank" rel="noopener">http://hsiehchou121:9200</a><br>curl -XGET ‘hsiehchou121:9200/_cat/health?v&amp;pretty’</p>
+<p><strong>注：Linux中新建账户elasticsearch</strong><br>1、Linux中新建用户命令：<br>举例：我们创建一个名字叫 elasticsearch的用户<br>使用root用户操作如下命令：<br>useradd elasticsearch———–创建用户<br>passwd elasticsearch———–为用户设置密码<br>vim /etc/sudoers ———–为用户赋予sudo权限<br>添加 elasticsearch ALL=(ALL) ALL</p>
+<p>2、修改文件夹及其子文件夹属主命令<br>chown -R elasticsearch ./elasticsearch-6.1.1/<br>修改后即可以使用elasticsearch操作此文件夹内容</p>
+<p>4）安装elasticsearch-head.crx插件<br>页面连接按钮前面有个输入框输入：<a href="http://192.168.116.121:9200/" target="_blank" rel="noopener">http://192.168.116.121:9200/</a></p>
+<p>5）命令行验证<br>REST API<br>curl -XGET ‘localhost:9200/_cat/health?v&amp;pretty’<br>epoch timestamp cluster status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent<br>1550960314 06:18:34 elasticsearch green 1 1 0 0 0 0 0 0 - 100.0%</p>
+<p>看到status是 green，证明启动成功</p>
+<p><strong>Green</strong> - 一切运行正常(集群功能齐全)<br><strong>Yellow</strong> - 所有数据是可以获取的，但是一些复制品还没有被分配(集群功能齐全)<br><strong>Red</strong> - 一些数据因为一些原因获取不到(集群部分功能不可用)</p>
+<h4 id="多节点集群安装教程"><a href="#多节点集群安装教程" class="headerlink" title="多节点集群安装教程"></a>多节点集群安装教程</h4><p>1）分发Elasticsearch安装包至hsiehchou122、hsiehchou123、hsiehchou124<br>xsync elasticsearch-6.1.1/<br>或者scp -r elasticsearch-6.1.1/ hsiehchou122:/opt/module/</p>
+<p>2）修改hsiehchou121配置信息<br>[elasticsearch@hsiehchou121 config]$ vi elasticsearch.yml<br>添加如下信息：<br>node.master: true<br>node.data: true</p>
+<p>3）修改hsiehchou122配置信息<br>修改Elasticsearch配置信息<br>[elasticsearch@hsiehchou122 config]$ vi elasticsearch.yml<br>node.name: node-122<br>node.master: false<br>node.data: true<br>network.host: 192.168.116.122</p>
+<p>修改Linux相关配置信息（同hsiehchou121 ）</p>
+<p>修改hsiehchou122、hsiehchou123、hsiehchou124 配置信息</p>
+<p>因为是scp的，所以一些跟hsiehchou121一样的配置就不需要修改了</p>
+<p>5）分别启动三台节点的Elasticsearch<br>6）使用插件查看集群状态</p>
+<h4 id="集群安装（详细增加或者修改内容）"><a href="#集群安装（详细增加或者修改内容）" class="headerlink" title="集群安装（详细增加或者修改内容）"></a>集群安装（详细增加或者修改内容）</h4><p>vi /opt/module/elasticsearch-6.1.1/config/elasticsearch.yml<br>hsiehchou121增加<br>node.master: true<br>node.data: true</p>
+<p>hsiehchou121修改<br>discovery.zen.ping.unicast.hosts: [“hsiehchou121”,”hsiehchou122”,”hsiehchou123”,”hsiehchou124”]</p>
+<p>hsiehchou122增加<br>node.master: false<br>node.data: true</p>
+<p>hsiehchou122修改<br>node.name: node-122<br>network.host: 192.168.116.122<br>discovery.zen.ping.unicast.hosts: [“hsiehchou121”,”hsiehchou122”,”hsiehchou123”,”hsiehchou124”]</p>
+<p>hsiehchou123增加<br>node.master: false<br>node.data: true</p>
+<p>hsiehchou123修改<br>node.name: node-123<br>network.host: 192.168.116.123<br>discovery.zen.ping.unicast.hosts: [“hsiehchou121”,”hsiehchou122”,”hsiehchou123”,”hsiehchou124”]</p>
+<p>hsiehchou124增加<br>node.master: false<br>node.data: true</p>
+<p>hsiehchou124修改<br>node.name: node-124<br>network.host: 192.168.116.124<br>discovery.zen.ping.unicast.hosts: [“hsiehchou121”,”hsiehchou122”,”hsiehchou123”,”hsiehchou124”]</p>
+<p><strong>说明</strong><br>cluster.name ：如果要配置集群需要两个节点上的 elasticsearch 配置的 cluster.name ：相同，都启动可以自动组成集群，这里如果不改 cluster.name ：则默认是 cluster.name=my-application<br>nodename ：随意取但是集群内的各节点不能相同</p>
+<p><strong>启动es，报错：</strong><br>[1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]<br>[2]: max number of threads [1024] for user [hduser] is too low, increase to at least [4096]<br>[3]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]<br>[4]: system call filters failed to install; check the logs and fix your configuration or disable system</p>
+<p>配置 linux 系统环境：<br>切换到 root 用户，编辑 limits.conf 添加类似如下内容<br>vi /etc/security/limits.conf</p>
+<p>添加如下内容：</p>
+<ul>
+<li>soft nofile 65536</li>
+<li>hard nofile 131072</li>
+<li>soft nproc 4096</li>
+<li>hard nproc 4096<br>进入 limits.d 目录下修改配置jian</li>
+</ul>
+<p>vi /etc/security/limits.d/20-nproc.conf<br>把 * soft nproc 1024 改成4096<br>es6版本的我没有要改，默认就是4096</p>
+<p>修改配置 sysctl.conf<br>vi /etc/sysctl.conf<br>添加：<br>vm.max_map_count=655360<br>执行：<br>sysctl -p</p>
+<p>重新登录elasticsearch用户，重新启动es<br>如果还有报错，则需重启虚拟机</p>
+<p>查看集群状态命令：<br>curl -XGET ‘your ip:9200/_cat/health?v&amp;pretty’</p>
+<p>查看所有数据命令：</p>
+<pre><code>[elasticsearch@hsiehchou121 config]$ curl -XGET &#39;192.168.116.121:9200/blog/_search?pretty&#39; -H &#39;Content-Type: application/json&#39; -d&#39;
+&gt; {
+&gt;  &quot;query&quot;: { &quot;match_all&quot;: {} }
+&gt; }
+&gt; &#39;</code></pre><p>Elasticsearch head插件安装<br>node js下载插件：<a href="https://github.com/mobz/elasticsearch-head" target="_blank" rel="noopener">https://github.com/mobz/elasticsearch-head</a><br>nodejs官网下载安装包：<a href="https://nodejs.org/dist/" target="_blank" rel="noopener">https://nodejs.org/dist/</a><br>node-v6.9.2-linux-x64.tar.xz<br>拷贝<br>安装nodejs：<br>解压<br>配置环境变量：<br>export NODE_HOME=/usr/local/node-v6.9.2-linux-x64<br>export PATH=<code>$PATH:$NODE_HOME/bin</code></p>
+<p>查看node和npm版本：<br>node -v<br>v6.9.2</p>
+<p>npm -v<br>3.10.9</p>
+<p>解压head插件到/opt/module目录下：<br>unzip elasticsearch-head-master.zip</p>
+<p>查看当前head插件目录下有无node_modules/grunt目录：<br>没有的话，执行下面命令创建：<br>npm install grunt <code>--save</code> <code>--registry</code>=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>安装head插件：</p>
+<p>npm install -g cnpm <code>--registry</code>=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>安装grunt：</p>
+<p>npm install -g grunt-cli <code>--registry</code>=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>编辑Gruntfile.js<br>vim Gruntfile.js</p>
+<p><strong>文件93行添加</strong><br><strong>hostname: ‘0.0.0.0’,</strong></p>
+<p>检查head根目录下是否存在base文件夹<br>没有的话，将 _site下的base文件夹及其内容复制到head根目录下<br>mkdir base<br>cp base/* ../base/</p>
+<p>启动grunt server：<br>[root@hsiehchou121 elasticsearch-head-master]# grunt server -d</p>
+<p>如果提示grunt的模块没有安装：<br>Local Npm module “grunt-contrib-clean” not found. Is it installed?<br>Local Npm module “grunt-contrib-concat” not found. Is it installed?<br>Local Npm module “grunt-contrib-watch” not found. Is it installed?<br>Local Npm module “grunt-contrib-connect” not found. Is it installed?<br>Local Npm module “grunt-contrib-copy” not found. Is it installed?<br>Local Npm module “grunt-contrib-jasmine” not found. Is it installed?</p>
+<p>执行以下命令：<br>npm install grunt-contrib-clean -registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>npm install grunt-contrib-concat -registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>npm install grunt-contrib-watch -registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>npm install grunt-contrib-connect -registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>npm install grunt-contrib-copy -registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a><br>npm install grunt-contrib-jasmine -registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<p>最后一个模块可能安装不成功，但是不影响使用</p>
+<p>浏览器访问head插件：<br><a href="http://192.168.116.121:9100" target="_blank" rel="noopener">http://192.168.116.121:9100</a></p>
+<p><strong>CDH上的elasticsearch的配置</strong><br>vim /etc/security/limits.conf</p>
+<ul>
+<li>soft nofile 65536</li>
+<li>hard nofile 131072</li>
+<li>soft nproc 2048</li>
+<li>hard nproc 4096</li>
+</ul>
+<p>vim /etc/security/limits.d/90-nproc.conf</p>
+<ul>
+<li>soft    nproc     4096<br>root       soft    nproc     unlimited</li>
+</ul>
+<p>vim /etc/sysctl.conf</p>
+<p><strong>添加下面配置</strong><br>vm.max_map_count=655360</p>
+<p>并执行命令：<br>sysctl -p</p>
+<p><a href="http://hadoop2:9200" target="_blank" rel="noopener">http://hadoop2:9200</a></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com/2019/03/18/elasticsearch-yi/">https://blog.hsiehchou.com/2019/03/18/elasticsearch-yi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">大数据</span>
+                                </a>
+                            
+                                <a href="/tags/ElasticSearch/">
+                                    <span class="chip bg-color">ElasticSearch</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/03/20/elasticsearch-er/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="ElasticSearch（二）">
+                        
+                        <span class="card-title">ElasticSearch（二）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、Java API操作Elasticsearch的Java客户端非常强大；它可以建立一个嵌入式实例并在必要时运行管理任务
+运行一个Java应用程序和Elasticsearch时，有两种操作模式可供使用。该应用程序可在Elasticsear
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/ElasticSearch/">
+                        <span class="chip bg-color">ElasticSearch</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/15/hbase-cao-zuo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="HBase 操作">
+                        
+                        <span class="card-title">HBase 操作</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1、HBase API操作1）首先将core-site.xml、hbase-site.xml、hdfs-site.xml引入maven工程的resources下面
+2）配置pom.xml文件增加hbase依赖
+&lt;dependencie
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/HBase/">
+                        <span class="chip bg-color">HBase</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 谢舟的博客<br />'
+            + '文章作者: 谢舟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">240.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            
+			<br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

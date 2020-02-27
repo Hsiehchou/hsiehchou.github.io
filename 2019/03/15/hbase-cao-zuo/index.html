@@ -1,0 +1,1539 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="HBase 操作, 谢舟，博客，大数据，Java">
+    <meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>HBase 操作 | 谢舟的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">谢舟的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">谢舟的博客</div>
+        <div class="logo-desc">
+            
+            发布关于大数据,Java的一些信息和自己实践中的经验
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">HBase 操作</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">大数据</span>
+                            </a>
+                        
+                            <a href="/tags/HBase/">
+                                <span class="chip bg-color">HBase</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                大数据
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-03-15
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h4 id="1、HBase-API操作"><a href="#1、HBase-API操作" class="headerlink" title="1、HBase API操作"></a>1、HBase API操作</h4><p>1）首先将core-site.xml、hbase-site.xml、hdfs-site.xml引入maven工程的resources下面</p>
+<p>2）配置pom.xml文件<br>增加hbase依赖</p>
+<pre><code>&lt;dependencies&gt;
+   &lt;dependency&gt;
+       &lt;groupId&gt;org.apache.hbase&lt;/groupId&gt;
+       &lt;artifactId&gt;hbase-server&lt;/artifactId&gt;
+       &lt;version&gt;1.3.0&lt;/version&gt;
+   &lt;/dependency&gt;
+
+   &lt;dependency&gt;
+       &lt;groupId&gt;org.apache.hbase&lt;/groupId&gt;
+       &lt;artifactId&gt;hbase-client&lt;/artifactId&gt;
+       &lt;version&gt;1.3.0&lt;/version&gt;
+   &lt;/dependency&gt;
+&lt;/dependencies&gt;</code></pre><p>3）创建HbaseTest.java</p>
+<pre><code>package com.hsiehchou.hbase;
+
+import org.apache.hadoop.conf.Configuration; 
+import org.apache.hadoop.hbase.*; 
+import org.apache.hadoop.hbase.client.*; 
+import org.apache.hadoop.hbase.util.Bytes;
+
+import java.io.IOException; 
+import java.util.ArrayList; 
+import java.util.List;
+
+public class HbaseTest { 
+    //配置信息 
+    public static Configuration conf; 
+    //获取配置信息 
+    static{ 
+        //alt + enter 
+        conf = HBaseConfiguration.create(); 
+    }</code></pre><p><strong>判断HBase中表是否存在</strong></p>
+<pre><code>//1.判断HBase中表是否存在
+public static boolean isExist(String tableName) throws IOException{
+    //对表操作需要用HbaseAdmin
+    //HBaseAdmin admin = new HBaseAdmin(conf);老版本
+    Connection connection = ConnectionFactory.createConnection(conf);
+    //管理器
+    HBaseAdmin admin = (HBaseAdmin) connection.getAdmin();
+    return  admin.tableExists(TableName.valueOf(tableName));
+}</code></pre><p><strong>在HBase中创建表</strong></p>
+<pre><code>//2.在HBase中创建表
+public static void createTable(String tableName, String... columnFamily) throws IOException {
+    //1.如果对表操作需要使用管理器
+    Connection connection = ConnectionFactory.createConnection(conf);
+    HBaseAdmin admin = (HBaseAdmin)connection.getAdmin();
+
+    //2.创建描述器
+    HTableDescriptor hd = new HTableDescriptor(TableName.valueOf(tableName));
+
+    //3.指定多个列族
+    for(String cf:columnFamily){
+        hd.addFamily(new HColumnDescriptor(cf));
+    }
+
+    //4.创建表
+    admin.createTable(hd);
+    System.out.println(&quot;表已经创建成功！！！！&quot;);
+}</code></pre><p><strong>bin/hbase shell操作</strong><br>list<br>scan ‘ni’<br>describe ‘ni’</p>
+<p><strong>向表中添加数据</strong></p>
+<pre><code>//3,向表中添加数据 put   rowkey  cf:列族
+public static void addData(String tableName, String rowkey, String cf, String column, String value) throws IOException {
+  Connection connection = ConnectionFactory.createConnection(conf);
+  Table table = connection.getTable(TableName.valueOf(tableName));
+
+  //添加数据 put方式
+  Put put = new Put(Bytes.toBytes(rowkey));
+
+  //指定列族 列 值
+  put.addColumn(Bytes.toBytes(cf), Bytes.toBytes(column), Bytes.toBytes(value));
+
+  table.put(put);
+}</code></pre><p><strong>删除一行数据</strong></p>
+<pre><code>//4.删除一行数据
+public static void deleteRow(String tableName, String rowkey) throws IOException {
+    Connection connection = ConnectionFactory.createConnection(conf);
+    Table table = connection.getTable(TableName.valueOf(tableName));
+
+    Delete delete = new Delete(Bytes.toBytes(rowkey));
+
+    table.delete(delete);
+}</code></pre><p><strong>删除多个rowkey的数据</strong></p>
+<pre><code>//5.删除多个rowkey的数据
+public static void deleteMore(String tableName, String... rowkey) throws IOException {
+    Connection connection = ConnectionFactory.createConnection(conf);
+    Table table = connection.getTable(TableName.valueOf(tableName));
+
+    //封装delete
+    List&lt;Delete&gt; d = new ArrayList&lt;Delete&gt;();
+
+    //遍历rowkey
+    for(String rk:rowkey){
+        Delete dd = new Delete(Bytes.toBytes(rk));
+        d.add(dd);
+    }
+
+    table.delete(d);
+}</code></pre><p><strong>全表扫描</strong></p>
+<pre><code>//6.全表扫描
+public static void scanAll(String tableName) throws IOException {
+    Connection connection = ConnectionFactory.createConnection(conf);
+    Table table = connection.getTable(TableName.valueOf(tableName));
+
+    Scan scan = new Scan();
+
+    ResultScanner rs = table.getScanner(scan);
+
+    //遍历
+    for(Result r:rs){
+        //单元格
+        Cell[] cells = r.rawCells();
+
+        for(Cell c:cells) {
+            System.out.println(&quot;rowkey为：&quot; + Bytes.toString(CellUtil.cloneRow(c)));
+            System.out.println(&quot;列族为：&quot; + Bytes.toString(CellUtil.cloneFamily(c)));
+            System.out.println(&quot;值为：&quot; + Bytes.toString(CellUtil.cloneValue(c)));
+        }
+    }
+}</code></pre><p><strong>删除表</strong></p>
+<pre><code>//7.删除表
+public static void deleteTable(String tableName) throws IOException {
+    //1.如果对表操作需要使用管理器
+    Connection connection = ConnectionFactory.createConnection(conf);
+    HBaseAdmin admin = (HBaseAdmin)connection.getAdmin();
+
+    admin.disableTable(tableName);
+
+    admin.deleteTable(TableName.valueOf(tableName));
+}
+public static void main(String[] args) throws IOException { 
+    //System.out.println(isExist(“user”)); 
+    //create ‘表名’,’列族名’ 
+    //createTable(“ni”,”info1”,”info2”,”info3”); 
+    //addData(“ni”,”shanghai”,”info1”,”name”,”lilei”); 
+    //deleteRow(“ni”,”shanghai”); 
+    //deleteMore(“ni”,”shanghai1”,”shanghai2”);
+
+    //scanAll(“ni”); 
+    deleteTable(“ni”); 
+} 
+}</code></pre><h4 id="2、HBase-MR"><a href="#2、HBase-MR" class="headerlink" title="2、HBase-MR"></a>2、HBase-MR</h4><p>HBase主要擅长的领域是存储数据，不擅长分析数据</p>
+<p>HBase如果想计算的话需要结合Hadoop的MapReduce</p>
+<p>HBase-MR所需的jar包查看<br>bin/hbase mapredcp</p>
+<p>配置临时环境变量</p>
+<p>export HBASE_HOME=/root/hd/hbase-1.3.0<br>export HADOOP_HOME=/root/hd/hadoop-2.8.4<br>export HADOOP_CLASSPATH=<code>${HBASE_HOME}/bin/hbase mapredcp</code><br>跑hbase-mr程序<br>bin/yarn jar /root/hd/hbase-1.3.0/lib/hbase-server-1.3.0.jar rowcounter user</p>
+<h4 id="3、HBase的表操作"><a href="#3、HBase的表操作" class="headerlink" title="3、HBase的表操作"></a>3、HBase的表操作</h4><p><strong>场景一</strong>：<br>region分片<br>指定列的过滤<br>name age high<br>name</p>
+<p><strong>代码实现</strong><br><strong>ReadLoveMapper.java</strong></p>
+<pre><code>package com.hsiehchou.mr;
+
+import org.apache.hadoop.hbase.Cell;
+import org.apache.hadoop.hbase.CellUtil;
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.client.Result;
+import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
+import org.apache.hadoop.hbase.mapreduce.TableMapper;
+import org.apache.hadoop.hbase.util.Bytes;
+
+import java.io.IOException;
+
+/**
+ * HBase -MR
+ * mapper类进行对数据的读取操作
+ * key:ImmutableBytesWritable hbase中的rowkey
+ * value:封装的一条条的数据
+ */
+public class ReadLoveMapper extends TableMapper&lt;ImmutableBytesWritable, Put&gt; {
+    @Override
+    protected void map(ImmutableBytesWritable key, Result value, Context context) throws IOException, InterruptedException {
+        //1.读取数据  根据rowkey拿到数据
+        Put put = new Put(key.get());
+
+        //2.过滤列 Cell单元格
+        for (Cell c:value.rawCells()){
+            //拿到info列族数据  如果是info列族  取出  如果不是info 过滤掉
+            if(&quot;info&quot;.equals(Bytes.toString(CellUtil.cloneFamily(c)))){
+                //过滤列
+                if(&quot;name&quot;.equals(Bytes.toString(CellUtil.cloneQualifier(c)))){
+                    put.add(c);
+                }
+            }
+        }
+        //3.输出到reducer端
+        context.write(key,put);
+    }
+}</code></pre><p><strong>WriteLoveReducer .java</strong></p>
+<pre><code>package com.hsiehchou.mr;
+
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
+import org.apache.hadoop.hbase.mapreduce.TableReducer;
+import org.apache.hadoop.io.NullWritable;
+
+import java.io.IOException;
+
+/**
+ * keyIn:ImmutableBytesWritable
+ * valueIn:Put
+ * keyOut:NullWritable（在put里面已经有了rowkey了，所以不需要了）
+ */
+public class WriteLoveReducer extends TableReducer&lt;ImmutableBytesWritable, Put, NullWritable&gt; {
+    @Override
+    protected void reduce(ImmutableBytesWritable key, Iterable&lt;Put&gt; values, Context context) throws IOException, InterruptedException {
+        for (Put p:values){
+            context.write(NullWritable.get(),p);
+        }
+    }
+}</code></pre><p><strong>LoverDriver .java</strong></p>
+<pre><code>package com.hsiehchou.mr;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.client.Scan;
+import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
+import org.apache.hadoop.hbase.mapreduce.TableMapReduceUtil;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;
+
+public class LoverDriver implements Tool {
+
+    private Configuration conf;
+
+    public void setConf(Configuration configuration) {
+        this.conf = HBaseConfiguration.create(configuration);
+    }
+
+    public Configuration getConf() {
+        return this.conf;
+    }
+
+    public int run(String[] strings) throws Exception {
+        //1.创建任务
+        Job job = Job.getInstance(conf);
+
+        //2.指定运行的主类
+        job.setJarByClass(LoverDriver.class);
+
+        //3.配置job
+        Scan scan = new Scan();
+
+        //4.设置具体运行的mapper类
+        TableMapReduceUtil.initTableMapperJob(&quot;love&quot;,
+                    scan,
+                    ReadLoveMapper.class,
+                    ImmutableBytesWritable.class,
+                    Put.class,
+                    job
+                );
+
+        //5.设置具体运行的Reducer类
+        TableMapReduceUtil.initTableReducerJob(&quot;lovemr&quot;,
+                    WriteLoveReducer.class,
+                    job
+                );
+
+        //6.设置reduceTask
+        job.setNumReduceTasks(1);
+
+        boolean rs = job.waitForCompletion(true);
+
+        return rs?0:1;
+    }
+
+    public static void main(String[] args) {
+        try {
+            //状态码
+            int sts = ToolRunner.run(new LoverDriver(), args);
+            System.exit(sts);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre><p><strong>场景二</strong></p>
+<p>把HDFS中的数据导入到HBase表中<br>HBase-MR</p>
+<p><strong>代码实现</strong> </p>
+<p><strong>ReadHdfsMapper .java</strong></p>
+<pre><code>package com.hsiehchou.mr1;
+
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
+import org.apache.hadoop.hbase.util.Bytes;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+import java.io.IOException;
+
+/**
+ * 读取hdfs中的数据
+ * hdfs -&gt;hbase
+ */
+public class ReadHdfsMapper extends Mapper&lt;LongWritable, Text, ImmutableBytesWritable, Put&gt; {
+    @Override
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+
+        //1.读取数据
+        String line = value.toString();
+
+        //2.切分数据
+        String[] fields = line.split(&quot;\t&quot;);
+
+        //3.封装数据
+        byte[] rowkey = Bytes.toBytes(fields[0]);
+        byte[] name = Bytes.toBytes(fields[1]);
+        byte[] desc = Bytes.toBytes(fields[2]);
+
+        //4.封装成put
+        Put put = new Put(rowkey);
+        put.addColumn(Bytes.toBytes(&quot;info&quot;),Bytes.toBytes(&quot;name&quot;),name);
+        put.addColumn(Bytes.toBytes(&quot;info&quot;),Bytes.toBytes(&quot;desc&quot;),desc);
+
+        //5.输出到reducer
+        context.write(new ImmutableBytesWritable(rowkey),put);
+    }
+}</code></pre><p><strong>WriteHbaseReducer.java</strong></p>
+<pre><code>package com.hsiehchou.mr1;
+
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
+import org.apache.hadoop.hbase.mapreduce.TableReducer;
+import org.apache.hadoop.io.NullWritable;
+
+import java.io.IOException;
+
+public class WriteHbaseReducer extends TableReducer&lt;ImmutableBytesWritable, Put, NullWritable&gt; {
+
+    @Override
+    protected void reduce(ImmutableBytesWritable key, Iterable&lt;Put&gt; values, Context context) throws IOException, InterruptedException {
+        for(Put p:values){
+            context.write(NullWritable.get(),p);
+        }
+    }
+}</code></pre><p><strong>LoveDriver.java</strong></p>
+<pre><code>package com.hsiehchou.mr1;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.hbase.HBaseConfiguration;
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.io.ImmutableBytesWritable;
+import org.apache.hadoop.hbase.mapreduce.TableMapReduceUtil;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;
+
+public class LoveDriver implements Tool {
+
+    private Configuration conf = null;
+
+    public void setConf(Configuration configuration) {
+        this.conf = HBaseConfiguration.create(configuration);
+    }
+
+    public Configuration getConf() {
+        return this.conf;
+    }
+
+    public int run(String[] strings) throws Exception {
+        //1.创建job
+        Job job = Job.getInstance();
+        job.setJarByClass(LoveDriver.class);
+
+        //2.配置mapper
+        job.setMapperClass(ReadHdfsMapper.class);
+        job.setMapOutputKeyClass(ImmutableBytesWritable.class);
+        job.setMapOutputValueClass(Put.class);
+
+        //3.配置reducer
+        TableMapReduceUtil.initTableReducerJob(&quot;lovehdfs&quot;, WriteHbaseReducer.class, job);
+
+        //4.输入配置 hdfs读数据 inputformat
+        FileInputFormat.addInputPath(job,new Path(&quot;/lovehbase/&quot;));
+
+        //5.需要配置outputformat吗？不需要 reducer中已经指定了表
+
+        return job.waitForCompletion(true)? 0:1;
+    }
+
+    public static void main(String[] args) {
+        try {
+            int sts = ToolRunner.run(new LoveDriver(),args);
+            System.exit(sts);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre><h4 id="4、HBase优化"><a href="#4、HBase优化" class="headerlink" title="4、HBase优化"></a>4、HBase优化</h4><p>1）预分区问题<br>region分片？表很大 bigtable</p>
+<p>分布式？数据量大</p>
+<p>region存储数据，如果有多个region，每个region负责维护一部分的rowkey{startrowkey, endrowkey}<br>1<del>10001<br>1</del>2001 1980<br>2001~40002</p>
+<p>分多少片？提前规划好，提高hbase的性能<br>进行存储数据前做好rowkey的预分区优化hbase</p>
+<p>实际操作：<br>create ‘user_p’,’info’,’partition’,SPLITS =&gt;[‘201’,’202’,’203’,’204’]</p>
+<p><strong>Table Regions</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Region Server</th>
+<th align="center">Start Key</th>
+<th align="center">End Key</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">hsiehchou123:16020</td>
+<td align="center">-∞</td>
+<td align="center">201</td>
+</tr>
+<tr>
+<td align="center">hsiehchou124:16020</td>
+<td align="center">201</td>
+<td align="center">202</td>
+</tr>
+<tr>
+<td align="center">hsiehchou124:16020</td>
+<td align="center">202</td>
+<td align="center">203</td>
+</tr>
+<tr>
+<td align="center">hsiehchou123:16020</td>
+<td align="center">203</td>
+<td align="center">204</td>
+</tr>
+<tr>
+<td align="center">hsiehchou122:16020</td>
+<td align="center">204</td>
+<td align="center">+∞</td>
+</tr>
+</tbody></table>
+<p>create ‘user_pppp’,’partition’,SPLITS_FILE =&gt; ‘partitions.txt’</p>
+<p>partitions.txt’放在hbase-shell路径下</p>
+<p>2）rowkey如何设计<br>rowkey是数据的唯一标识，这条数据存储在哪个分区由预分区范围决定</p>
+<p>合理设计rowkey<br>如一份数据分为5个region存储<br>但是我们需要尽可能的保持每个region中的数据量差不多</p>
+<p>尽可能的打散数据，平均分配到每个region中即可</p>
+<p>解决方案：<br>生成随机数、hash/散列值<br>原本的rowkey是201，hash后<br>dfgyfugpgdcjhgfd11412nod<br>202变为：<br>21dqddwdgjohfxsovbxiufq12</p>
+<p>字符串拼接：<br>20190316_a3d4<br>20190316_g04f</p>
+<p>反转字符串：<br>201903161-&gt;161309102<br>201903162-&gt;261309102</p>
+<p>3）HBase基础优化<br>HBase用的HDFS存储<br>DataNode允许最大文件打开数<br>默认4096 调大<br>dfs.datanode.max.transfer.threads<br>hdfs-site.xml</p>
+<p>优化等待时间<br>dfs.image.transfer.timeout<br>默认60000毫秒<br>调大</p>
+<p>内存优化：<br>hadoop-env.sh设置内存的堆大小<br>30%~40%最好</p>
+<p>2G<br>512m</p>
+<p>export HADOOP_PORTMAP_OPTS=’-Xmx512m $HADOOP_PORTMAP_OPTS’</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com/2019/03/15/hbase-cao-zuo/">https://blog.hsiehchou.com/2019/03/15/hbase-cao-zuo/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">大数据</span>
+                                </a>
+                            
+                                <a href="/tags/HBase/">
+                                    <span class="chip bg-color">HBase</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/03/18/elasticsearch-yi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="ElasticSearch（一）">
+                        
+                        <span class="card-title">ElasticSearch（一）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. 全文检索技术简介什么是搜索？搜索，就是在任何场景下，找寻你想要的信息，这个时候，会输入一段你要搜索的关键字，然后就期望找到这个关键字相关的有些信息
+如何实现搜索？OA系统，比如：通过名字搜索员工等等mysql :select * fr
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/ElasticSearch/">
+                        <span class="chip bg-color">ElasticSearch</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/12/hbase-ji-chu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="HBase基础">
+                        
+                        <span class="card-title">HBase基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1、hbasegoogle:gfs –&gt; hdfsmapreduce –&gt; mapreducebigtable –&gt; hbase
+Apache HBase™是Hadoop数据库，是一个分布式，可扩展的大数据存储
+当您需要对
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/HBase/">
+                        <span class="chip bg-color">HBase</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 谢舟的博客<br />'
+            + '文章作者: 谢舟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">240.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            
+			<br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

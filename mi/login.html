@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<!--声明当前页面的编码集，GBK,GB2312中文编码，utf-8国际编码-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--当前页面三要素-->
+		<title>登录</title>
+		<meta name="Keywords" content="关键词,关键词">
+		<meta name="Description" content="描述信息">
+		<!--css,js-->
+		<style type="text/css">
+			*{margin:0;padding:0;}
+			.login .top{margin-left:10px;}
+			.login .lay{width:100%;height:588px;display:block;background:#14212a;}
+			.login .lay .content{width:1183px;margin-left:30px;padding-top:80px;background:url("/medias/mi/dl.jpg") no-repeat;}
+			.login .lay .content img{z-index:-2;}
+			.login .lay .content .nav_tabs_panel{width:370px;height:450px;margin:0px 0px 0px 800px;padding-top:10px;background:#fff;display:block;z-index:99;}
+			.login .lay .content .nav_tabs_panel .nav_tabs{padding:30px 0px 0px 128px;}
+			.login .lay .content .nav_tabs_panel .nav_tabs a{font-size:30px;color:#f56600;text-decoration:none;}
+			.login .lay .content .mainbox{width:310px;height:440px;margin:-360px 0px 0px 864px;}
+			.login .lay .content .s{width:100%;height:10px;}
+			.login .lay .content .mainbox .item_account{height:55px;margin-top:20px;padding-left:10px;}
+			.login .lay .content .mainbox .btnadpt{width:252px;height:60px;margin-top:30px;font-size:20px;cursor:pointer;color:#fff;background:#f56600;}
+			.login .lay .content .zc{width:300px;height:170px;margin:-154px 0px 0px 900px;font-size:14px;color:rgba(0,0,0,0.2);}
+			.login .lay .content .zc a{text-decoration:none;color:#333;}
+			.login .lay .content .zc a:hover{color:#f56600;}
+			.login .lay .content .zc span{font-size:16px;font-weight:normal;padding:0px 0px 0px 8px;color:rgba(0,0,0,0.2);}
+			.footer{color:#9d9d9d;}
+			.footer .f1{width:700px;margin:10px auto 0;}
+			.footer a{text-decoration:none;color:#9d9d9d;}
+			.footer a:hover{color:#ff6700;}
+		</style>
+	</head>
+	
+<body>
+	<div class="login">
+		<div class="top">
+			<img src="/medias/mi/dl_logo.png" alt="" width="200" height="98" />
+		</div>
+		<div class="lay" id="lay">
+			<div class="content" data-color="#fff">
+				<div class="nav_tabs_panel">
+					<div id="nav-tabs" class="nav_tabs">
+						<a class="navtab-link now" href="">帐号登录</a>
+					</div>
+				 </div>
+				<div class="mainbox" id="login-main">
+					<input class="item_account" size="30" autocomplete="off" type="text" name="user" id="username" placeholder="邮箱/手机号码/小米帐号"/>
+					<input class="item_account" type="password" size="30" autocomplete="off" name="pwd" id="pwd" placeholder="密码"/>
+					<a href="2.html"><input class="btnadpt" id="login-button" type="submit" value="立即登录"/></a>
+				</div>
+				<div class="zc">
+					<a href="register.html">注册小米账户</a><span>|<span><a href="login-manager.html">管理员登录</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
