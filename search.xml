@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>第一章 Python概述与开发环境安装</title>
+      <link href="/2020/04/30/di-yi-zhang-python-gai-shu-yu-kai-fa-huan-jing-an-zhuang/"/>
+      <url>/2020/04/30/di-yi-zhang-python-gai-shu-yu-kai-fa-huan-jing-an-zhuang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="第一章-Python概述与开发环境安装"><a href="#第一章-Python概述与开发环境安装" class="headerlink" title="第一章 Python概述与开发环境安装"></a>第一章 Python概述与开发环境安装</h2><h3 id="1、Python开发环境安装"><a href="#1、Python开发环境安装" class="headerlink" title="1、Python开发环境安装"></a>1、Python开发环境安装</h3><h3 id="2、Anaconda安装"><a href="#2、Anaconda安装" class="headerlink" title="2、Anaconda安装"></a>2、Anaconda安装</h3><p>选择 just me<br>不用勾选添加本地环境变量</p><ol><li>查看Anaconda环境是否安装成功（查看Anaconda版本号）：conda –version</li><li>查看目前安装了哪些环境变量：conda info –envs</li><li>查看 Anaconda 当前版本以及安装了哪些包：conda list</li></ol><h3 id="3、Spyder"><a href="#3、Spyder" class="headerlink" title="3、Spyder"></a>3、Spyder</h3><h4 id="3-1-读取文件里面的行数"><a href="#3-1-读取文件里面的行数" class="headerlink" title="3.1 读取文件里面的行数"></a>3.1 读取文件里面的行数</h4><pre><code>import sys import os.path# 文件目录dir = os.path.dirname(sys.executable)# 打开文件进行操作with open(dir+&#39;\\num.txt&#39;, encoding = &#39;utf-8&#39;) as fp:    content = fp.readlines()# 打印文件内容的类型print(type(content))# 打印文件内容print(content)# 打印文件所在的目录print(dir)# 打印文件里面内容的行数print(len(content))</code></pre><p><strong>结果：</strong><br>&lt;class ‘list’&gt;<br>[‘12\n’, ‘6\n’, ‘2\n’, ‘35\n’, ‘11\n’, ‘22\n’, ‘23\n’, ‘11\n’, ‘254\n’, ‘12’]<br>F:\Anaconda<br>10</p><h3 id="4、Jupyter-Notebook"><a href="#4、Jupyter-Notebook" class="headerlink" title="4、Jupyter Notebook"></a>4、Jupyter Notebook</h3><p>默认地址：<a href="http://localhost:8888" target="_blank" rel="noopener">http://localhost:8888</a></p><pre><code># 使用递归def fib(n):    if n==1 or n==2:        return 1    elif n==0:        return 0    return fib(n-1)+fib(n-2)# 输出第10个斐波那契数列print(fib(10))print(fib(0))</code></pre><p><strong>结果：</strong><br>55<br>0</p><h3 id="5、Python环境管理"><a href="#5、Python环境管理" class="headerlink" title="5、Python环境管理"></a>5、Python环境管理</h3><h4 id="5-1-打开管理终端"><a href="#5-1-打开管理终端" class="headerlink" title="5.1 打开管理终端"></a>5.1 打开管理终端</h4><p>Windows用户打开“Anaconda Prompt”</p><p>macOS和Linux用户打开”Terminal”（终端）</p><h4 id="5-2-创建新环境"><a href="#5-2-创建新环境" class="headerlink" title="5.2 创建新环境"></a>5.2 创建新环境</h4><pre><code>conda create --name &lt;env_name&gt; &lt;package_name&gt;</code></pre><p><strong>注：</strong></p><ol><li><code>env_name</code>–创建的环境名，建议英文命名，且不加空格，名称两边不加尖括号”&lt;&gt;”</li><li><code>package_name</code>–安装环境中的包名，名称两边不加尖括号”&lt;&gt;”</li><li>如果要安装指定的版本号， 则只需要在包名后面以=和版本号的形式执行。如：<code>conda create name python2  python=2.7</code>，即创建一个名为“python2”的环境，环境中安装版本为2.7的python。</li><li>如果要在新创建的环境中创建多个包，则直接在<code>&lt;package_names&gt;</code>后以空格隔开，添加多个即可。如：<code>conda create -n python3 python=3.7 numpy pandas</code>，即创建一个名为“python”的环境，环境中安装版本为3.7的python，同时也安装了<code>numpy</code>和<code>pandas</code>。</li><li>默认情况下，新创建的环境会被保存在<code>/User/&lt;username&gt;/anaconda3/env</code>目录下，其中<code>&lt;user_name&gt;</code>为系统当前用户的用户名。</li></ol><h4 id="5-3-激活-退出环境"><a href="#5-3-激活-退出环境" class="headerlink" title="5.3 激活/退出环境"></a>5.3 激活/退出环境</h4><p>激活：<code>conda activate python3</code></p><p>退出：<code>conda deactivate</code></p><h4 id="5-4-删除环境"><a href="#5-4-删除环境" class="headerlink" title="5.4 删除环境"></a>5.4 删除环境</h4><p> <code>conda  remove --name python3 --all</code></p><h3 id="6、Python扩展库安装"><a href="#6、Python扩展库安装" class="headerlink" title="6、Python扩展库安装"></a>6、Python扩展库安装</h3><h4 id="6-1-添加清华大学的Anaconda镜像"><a href="#6-1-添加清华大学的Anaconda镜像" class="headerlink" title="6.1 添加清华大学的Anaconda镜像"></a>6.1 添加清华大学的Anaconda镜像</h4><pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/# 设置搜索时显示通道地址conda config --set show_channel_urls yes</code></pre><p><code>conda install numpy</code> 测试</p><p><strong>查询可供安装的扩展库版本</strong><br><code>conda search --full-name pandas</code></p><p><strong>获取当前环境中已安装的扩展库信息</strong><br><code>conda list</code></p><h4 id="6-2-在指定环境中安装包"><a href="#6-2-在指定环境中安装包" class="headerlink" title="6.2 在指定环境中安装包"></a>6.2 在指定环境中安装包</h4><pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/conda config --set show_channel_urls yesconda activate python3conda install numpy</code></pre><h4 id="6-3-在当前环境中卸载包"><a href="#6-3-在当前环境中卸载包" class="headerlink" title="6.3 在当前环境中卸载包"></a>6.3 在当前环境中卸载包</h4><p><code>conda remove &lt;package_name&gt;</code></p><h4 id="6-4-在指定环境中卸载包"><a href="#6-4-在指定环境中卸载包" class="headerlink" title="6.4 在指定环境中卸载包"></a>6.4 在指定环境中卸载包</h4><p><code>conda remove --name &lt;env_name&gt; &lt;package_name&gt;</code></p><h3 id="7、-Python扩展库导入"><a href="#7、-Python扩展库导入" class="headerlink" title="7、 Python扩展库导入"></a>7、 Python扩展库导入</h3><p><strong>建议先导入标准库再导入扩展库对象，只导入确实需要使用的标准库和扩展库对象，提高加载速度，减少打包体积</strong></p><h4 id="7-1-import-模块名-as-别名"><a href="#7-1-import-模块名-as-别名" class="headerlink" title="7.1 import 模块名[as 别名]"></a>7.1 import 模块名[as 别名]</h4><p><strong>使用时需要在对象之前加上模块名作为前缀，即“模块名.对象名”</strong></p><pre><code>import math import randomimport posixpath as pathprint(math.sqrt(16))                # 计算并输出16的平方根print(math.cos(math.pi/4))            # 计算余弦值print(random.choices(&#39;abcd&#39;, k=8))    # 从字符串&#39;abcd&#39;随机选择8个字符                                    # 允许重复print(path.isfile(r&#39;C:Windows\notepad.exe&#39;))    #测试指定路径是否为文件</code></pre><p><strong>结果：</strong><br>4.0<br>0.7071067811865476<br>[‘b’, ‘b’, ‘d’, ‘b’, ‘a’, ‘d’, ‘a’, ‘c’]<br>False</p><h4 id="7-2-from-模块名-import-对象名-as-别名"><a href="#7-2-from-模块名-import-对象名-as-别名" class="headerlink" title="7.2 from  模块名  import  对象名 [as 别名]"></a>7.2 from  模块名  import  对象名 [as 别名]</h4><p>不需要模块名作为前缀，导入方式可以减少查询次数，提高访问速度</p><pre><code>from math import pi as PIfrom os.path import getsizefrom random import choicer = 3print(round(PI*r*r, 2))                     # 计算半径为3的圆面积print(getsize(r&#39;C:Windows\notepad.exe&#39;))    # 计算文件大小，单位为字节print(choice(&#39;Python&#39;))                        # 从字符串中随机选择一个字符</code></pre><p><strong>结果：</strong><br>28.27<br>254464<br>o</p><h4 id="7-3-from-模块名-import"><a href="#7-3-from-模块名-import" class="headerlink" title="7.3 from  模块名  import  *"></a>7.3 from  模块名  import  *</h4><p><strong>不推荐使用</strong></p><pre><code>from itertools import *characters = &#39;1234&#39;for item in combinations(characters, 3):    # 从4个字符中任选3个组合    print(item, end=&#39; &#39;)                    # end=&#39; &#39; 表示输出后不换行print(&#39;\n&#39;+&#39;=&#39;*20)                          # 行号后输出20个等于号for item in permutations(characters, 3):    # 从4个字符中任选3个的排列    print(item, end=&#39; &#39;)                    </code></pre><h3 id="8、Python常用标准库"><a href="#8、Python常用标准库" class="headerlink" title="8、Python常用标准库"></a>8、Python常用标准库</h3><h4 id="8-1-字符串"><a href="#8-1-字符串" class="headerlink" title="8.1 字符串"></a>8.1 字符串</h4><p><code>re</code>：正则表达式。用来判断是否是你指定的特定字符串。<br><code>StringIO</code>：提供以文件形式来读写字符串。<br><code>struct</code>：以二进制字节序列来解释字符串。可以通过格式化参数，指定类型、长度、字节序（大小端）、内存对齐等。</p><pre><code>import re print(re.findall(r&#39;f[a-z]*&#39;,  &#39;which foot or hand fell fastest&#39;))</code></pre><p><strong>结果：</strong><br>[‘foot’, ‘fell’, ‘fastest’]</p><p>如果只需要简单的功能，应该首先考虑字符串，因为简单，易于阅读和调试，如：</p><pre><code>print(&#39;tea for too&#39;.replace(&#39;&#39;too,&#39;&#39;two&#39;))</code></pre><p>结果：<br>‘tea for two’</p><h4 id="8-2-数据类型"><a href="#8-2-数据类型" class="headerlink" title="8.2  数据类型"></a>8.2  数据类型</h4><p><code>datetime</code>：提供操作日期和时间的类。<br><code>collections</code>：高性能容器数据类型。实现了Python的通用内置容器、字典、列表、集合，和元组专门的数据类型。<br><code>pprint</code>：提供“整洁打印”功能，具有打印任意Python数据结构的能力。</p><h4 id="8-3-数学运算"><a href="#8-3-数学运算" class="headerlink" title="8.3 数学运算"></a>8.3 数学运算</h4><p><code>random</code>：各种分布的伪随机数的生成器。<br><code>math</code>：数学函数。提供了由C标准的数学函数访问。该库函数不适用于复数。<br><code>cmath</code>：为复数提供的数学函数。<br><code>operator</code>： 重载运算符。</p><p><strong>math 模块为浮点运算提供了对底层C函数库的访问</strong></p><pre><code>import math print(math.cos(math.pi/4))print(math.log(1024, 2))</code></pre><p><strong>结果：</strong><br>0.7071067811865476<br>10.0</p><p><strong>random 提供了生成随机数的工具</strong></p><pre><code>import randomfruits = random.choice([&#39;apple&#39;, &#39;pear&#39;, &#39;banana&#39;])x = random.sample(range(100), 10)     # 0-100选择不能重复的10个数y = random.random()                    # 随机浮点数z = random.randrange(6)                # 从范围0-6中选择随机整数print(fruits)print(x)print(y)print(z)</code></pre><p><strong>结果：</strong><br>apple<br>[64, 97, 91, 21, 40, 55, 63, 79, 77, 1]<br>0.8885638928051524<br>0</p><h4 id="8-4-文件和目录"><a href="#8-4-文件和目录" class="headerlink" title="8.4 文件和目录"></a>8.4 文件和目录</h4><p><code>os.path</code>：常用路径名操作。<br><code>filecmp</code>：文件和目录的比较。<br><code>shutil</code>：高级的文件操作：支持文件复制和删除。</p><h4 id="8-5-操作系统"><a href="#8-5-操作系统" class="headerlink" title="8.5 操作系统"></a>8.5 操作系统</h4><p><code>time</code>：时间获取和转换，各种与时间相关的函数。<br><code>argparse</code>：命令行选项、参数和子命令的解析器。<br><code>io</code>：提供接口处理的IO流。<br><code>logging</code>： Python的日志工具，提供日志记录的API。<br><code>logging.config</code>：Python日志配置，用于配置日志模块的API。<br><code>os</code>：提供丰富的与MAC，NT，Posix等操作系统进行交互的能力。<br><code>sys</code>：提供访问和维护python解释器的能力。这包括了提示信息，版本，整数的最大值，可用模块，路径钩子，标准错误，标准输入输出的定位和解释器调用的命令参数。</p><p><strong>os模块提供了不少与操作系统相关联的函数</strong></p><pre><code>import os print(os.getcwd())            # 返回当前的工作目录os.chdir(r&#39;C:Users\winner\Python3Learn\Lesson1Code&#39;) # 修改当前的工作目录os.system(&#39;mkdir today&#39;)     # 执行系统命令 mkdirprint(os.getcwd())            # 返回当前的工作目录</code></pre><p>建议使用<code>import os</code> 风格而非<code>from os import *</code>，这样可以保证随操作系统不同而有所变化的os.open()不会覆盖内置函数open()。</p><p>在使用os这样的大型模块时，内置的dir()和help()函数非常有用。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼</title>
+      <link href="/2020/04/04/dui-kang-ji-xin-guan-fei-yan-yi-qing-dou-zheng-xi-sheng-lie-shi-he-shi-shi-tong-bao-de-shen-qie-ai-dao/"/>
+      <url>/2020/04/04/dui-kang-ji-xin-guan-fei-yan-yi-qing-dou-zheng-xi-sheng-lie-shi-he-shi-shi-tong-bao-de-shen-qie-ai-dao/</url>
+      
+        <content type="html"><![CDATA[<h3 id="对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼"><a href="#对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼" class="headerlink" title="对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼"></a>对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼</h3><p>牺牲的烈士们，逝世同胞们，一路走好，愿你们天堂安息！！！<br>致敬英雄，缅怀逝者！！！</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 全国性哀悼活动 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 哀悼 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL将Windows和Linux时区同步的时区表</title>
+      <link href="/2020/04/03/wang-zhan-zai-ai-dao-jie-ri-shi-shi-zheng-ge-ye-mian-hui-se-de-dai-ma/"/>
+      <url>/2020/04/03/wang-zhan-zai-ai-dao-jie-ri-shi-shi-zheng-ge-ye-mian-hui-se-de-dai-ma/</url>
+      
+        <content type="html"><![CDATA[<h3 id="网站在哀悼节日时使整个页面灰色的代码"><a href="#网站在哀悼节日时使整个页面灰色的代码" class="headerlink" title="网站在哀悼节日时使整个页面灰色的代码"></a>网站在哀悼节日时使整个页面灰色的代码</h3><p>html {<br>    -webkit-filter: grayscale(100%);<br>    -moz-filter: grayscale(100%);<br>    -ms-filter: grayscale(100%);<br>    -o-filter: grayscale(100%);<br>    filter: grayscale(100%);<br>    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);<br>}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 哀悼 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>npm换成淘宝的源</title>
       <link href="/2020/02/26/npm-huan-cheng-tao-bao-de-yuan/"/>
       <url>/2020/02/26/npm-huan-cheng-tao-bao-de-yuan/</url>
@@ -21,6 +96,31 @@
         <tags>
             
             <tag> npm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL将Windows和Linux时区同步的时区表</title>
+      <link href="/2020/02/26/mysql-jiang-windows-he-linux-shi-qu-tong-bu-de-shi-qu-biao/"/>
+      <url>/2020/02/26/mysql-jiang-windows-he-linux-shi-qu-tong-bu-de-shi-qu-biao/</url>
+      
+        <content type="html"><![CDATA[<p><strong>时区表</strong> mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -u root mysql -p</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -54,6 +154,31 @@
     
     
     <entry>
+      <title>Django阿里云部署详解之服务器安装安装Nginx</title>
+      <link href="/2020/02/22/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-an-zhuang-nginx/"/>
+      <url>/2020/02/22/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-an-zhuang-nginx/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Django阿里云部署详解之服务器安装安装Nginx"><a href="#Django阿里云部署详解之服务器安装安装Nginx" class="headerlink" title="Django阿里云部署详解之服务器安装安装Nginx"></a>Django阿里云部署详解之服务器安装安装Nginx</h3><h4 id="（本系统就是阿里云部署的）"><a href="#（本系统就是阿里云部署的）" class="headerlink" title="（本系统就是阿里云部署的）"></a>（本系统就是阿里云部署的）</h4><h4 id="大家照做就行，这我试了很多次才总结出来的"><a href="#大家照做就行，这我试了很多次才总结出来的" class="headerlink" title="大家照做就行，这我试了很多次才总结出来的"></a>大家照做就行，这我试了很多次才总结出来的</h4><p>这个在开始准备环境时已经安装了</p><pre><code>yum install epel-releaseyum install -y nginx</code></pre><p>在/etc/nginx/nginx.conf里面修改sever{}</p><pre><code>    listen 443 ssl;    server_name 你的网站名字;    charset utf-8;    ssl_certificate cert/?.pem;    ssl_certificate_key cert/?.key;    ssl_session_timeout 5m;    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;    ssl_prefer_server_ciphers on;    client_max_body_size 75M;    location /static {        alias /home/tests/static_collected;    }    location /media {        alias /home/tests/media;    }    location / {        uwsgi_pass 127.0.0.1:8001;        include /etc/nginx/uwsgi_params;    }</code></pre><p><strong>查看运行nginx</strong></p><pre><code>nginx -tservice nginx restartservice nginx reloadservice nginx startservice nginx statusservice nginx stop</code></pre><p><strong>找到运行的端口号</strong></p><pre><code>netstat -antp</code></pre><p><strong>杀死进程</strong></p><pre><code>kill -9  编号</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>github ssh 连接失败解决方法</title>
       <link href="/2020/02/21/github-ssh-lian-jie-shi-bai-jie-jue-fang-fa/"/>
       <url>/2020/02/21/github-ssh-lian-jie-shi-bai-jie-jue-fang-fa/</url>
@@ -71,6 +196,131 @@
         <tags>
             
             <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Django阿里云部署详解之服务器安装安装uwsgi</title>
+      <link href="/2020/02/16/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-an-zhuang-uwsgi/"/>
+      <url>/2020/02/16/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-an-zhuang-uwsgi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Django阿里云部署详解之服务器安装安装uwsgi"><a href="#Django阿里云部署详解之服务器安装安装uwsgi" class="headerlink" title="Django阿里云部署详解之服务器安装安装uwsgi"></a>Django阿里云部署详解之服务器安装安装uwsgi</h3><h4 id="（本系统就是阿里云部署的）"><a href="#（本系统就是阿里云部署的）" class="headerlink" title="（本系统就是阿里云部署的）"></a>（本系统就是阿里云部署的）</h4><h4 id="大家照做就行，这我试了很多次才总结出来的"><a href="#大家照做就行，这我试了很多次才总结出来的" class="headerlink" title="大家照做就行，这我试了很多次才总结出来的"></a>大家照做就行，这我试了很多次才总结出来的</h4><h4 id="1、安装uwsgi"><a href="#1、安装uwsgi" class="headerlink" title="1、安装uwsgi"></a>1、安装uwsgi</h4><p>注意：<br>    1）在系统环境安装，非虚拟环境<br>    2）使用对应python版本安装<br>    3）要先安装python开发包<br><strong>pip install uwsgi</strong></p><h4 id="2、测试-uwsgi-是否正常"><a href="#2、测试-uwsgi-是否正常" class="headerlink" title="2、测试 uwsgi 是否正常"></a>2、测试 uwsgi 是否正常</h4><p>vim test.py<br>新建 test.py 文件，内容如下：</p><pre><code>def application(env, start_response):    start_response(&#39;200 OK&#39;, [(&#39;Content-Type&#39;,&#39;text/html&#39;)])    return &quot;Hello World&quot;</code></pre><p>然后在终端运行：</p><pre><code>uwsgi --wsgi-file test.py  --http :8001</code></pre><p>注意：需要开启端口才可以正常访问<br><strong>杀死uwsgi</strong></p><pre><code>ps -aux | grep uwsgi + awk &#39;{print $2}&#39; | xargs kill -9</code></pre><h4 id="3、可以用uwsgi的http协议访问django写的网站"><a href="#3、可以用uwsgi的http协议访问django写的网站" class="headerlink" title="3、可以用uwsgi的http协议访问django写的网站"></a>3、可以用uwsgi的http协议访问django写的网站</h4><p>执行如下命令可以测试自己的项目</p><pre><code>uwsgi --http :8001 --chdir /home/tests --home /home/test_env --module tests.wsgi:application</code></pre><p><strong>mkdir tests_uwsgi</strong><br><strong>tests.ini</strong></p><pre><code>[uwsgi]chdir=/home/tests    #项目地质home=/home/test_env  #环境地质module=tests.wsgi:applicationmaster=Trueprocesses=4          #工作进程数harakiri=60          #60秒重启max-requests=5000      #服务5000个请求后重新启动进程socket=127.0.0.1:8001uid=nginxgid=nginxpidfile=/home/tests_uwsgi/master.piddaemonize=/home/tests_uwsgi/tests.logvacuum=True   #清理</code></pre><p><strong>初始化ini</strong><br>uwsgi –ini /home/tests_uwsgi/tests.ini</p><p><strong>重新运行uwsgi</strong><br>uwsgi –reload /home/tests_uwsgi/master.pid</p><p><strong>查看uwsgi是否运行</strong><br>ps aux | grep uwsgi</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Django阿里云部署详解之服务器安装MySQL8.0系列的版本（服务器是Linux的系统）</title>
+      <link href="/2020/02/10/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-mysql8.0-xi-lie-de-ban-ben-fu-wu-qi-shi-linux-de-xi-tong/"/>
+      <url>/2020/02/10/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-mysql8.0-xi-lie-de-ban-ben-fu-wu-qi-shi-linux-de-xi-tong/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Django阿里云部署详解之服务器安装MySQL8-0系列的版本（服务器是Linux的系统）"><a href="#Django阿里云部署详解之服务器安装MySQL8-0系列的版本（服务器是Linux的系统）" class="headerlink" title="Django阿里云部署详解之服务器安装MySQL8.0系列的版本（服务器是Linux的系统）"></a>Django阿里云部署详解之服务器安装MySQL8.0系列的版本（服务器是Linux的系统）</h3><h4 id="（本系统就是阿里云部署的）"><a href="#（本系统就是阿里云部署的）" class="headerlink" title="（本系统就是阿里云部署的）"></a>（本系统就是阿里云部署的）</h4><h4 id="大家照做就行，这我试了很多次才总结出来的"><a href="#大家照做就行，这我试了很多次才总结出来的" class="headerlink" title="大家照做就行，这我试了很多次才总结出来的"></a>大家照做就行，这我试了很多次才总结出来的</h4><pre><code>wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpmrpm -ivh mysql80-community-release-el7-3.noarch.rpmyum -y install mysql-community-server</code></pre><h4 id="修改-etc-my-cnf"><a href="#修改-etc-my-cnf" class="headerlink" title="修改/etc/my.cnf"></a>修改/etc/my.cnf</h4><pre><code>[mysqld]# 设置mysql的安装目录basedir=/usr/local/mysql# 设置mysql数据库的数据的存放目录datadir=/usr/local/mysql/data# 设置默认使用的端口port=3306# 允许最大连接数max_connections=200# 允许连接失败的次数。这是为了防止有人试图攻击数据库max_connect_errors=10# 服务端使用的字符集character-set-server=utf8mb4# 数据库字符集对应一些排序等规则使用的字符集collation-server=utf8mb4_general_ci# 创建新表时将使用的默认存储引擎default-storage-engine=INNODB# 默认使用“mysql_native_password”插件作为认证加密方式# MySQL8.0默认认证加密方式为caching_sha2_passworddefault_authentication_plugin=mysql_native_password#server_id=socket=/var/lib/mysql/mysql.sock#这里可以加也可以不加，如果有lc_messages_dir警告就加上，，lc_messages_dir=/usr/local/mysql/share lc_messages=en_USlog-error=/var/log/mysqld.logpid-file=/var/run/mysqld/mysqld.pid</code></pre><h4 id="创建目录（一定要，不然初始化不成功，因为是你自己设定好的文件夹）"><a href="#创建目录（一定要，不然初始化不成功，因为是你自己设定好的文件夹）" class="headerlink" title="创建目录（一定要，不然初始化不成功，因为是你自己设定好的文件夹）"></a>创建目录（一定要，不然初始化不成功，因为是你自己设定好的文件夹）</h4><p>这里要自己创建/usr/local/mysql和/usr/local/mysql/share<br>报错的时候这里加（看自己报什么错，可选）</p><pre><code>copy /usr/share/mysql-8.0/bulgarian/errmsg.sys /usr/local/mysql/share </code></pre><pre><code>systemctl start mysqldsystemctl status mysqldsystemctl stop mysqld</code></pre><p>初始化MySQL(有时候不一定要，在/var/log/mysqld.log里面可能有，基本上systemctl start mysqld是可以找到临时密码的)</p><pre><code>mysqld --initialize --user=mysql</code></pre><h4 id="重置root密码"><a href="#重置root密码" class="headerlink" title="重置root密码"></a>重置root密码</h4><pre><code>alter user  &#39;root&#39;@&#39;localhost&#39; identified by &#39;your passwoed&#39;;</code></pre><h4 id="新建新账户针对一个数据库（为了安全起见的）"><a href="#新建新账户针对一个数据库（为了安全起见的）" class="headerlink" title="新建新账户针对一个数据库（为了安全起见的）"></a>新建新账户针对一个数据库（为了安全起见的）</h4><pre><code>show databases;create database ?_db default charset=utf8 default collate utf8_unicode_ci;create user &#39;&#39;@&#39;localhost&#39; identified by &#39;&#39;;grant all privileges on ?_db.* to &#39;xiezhouHCH&#39;@&#39;localhost&#39;;flush privileges;</code></pre><p>新账户只能访问指定的数据库</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Django阿里云部署详解之服务器安装虚拟环境、Python</title>
+      <link href="/2020/01/31/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-xu-ni-huan-jing-python/"/>
+      <url>/2020/01/31/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-xu-ni-huan-jing-python/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Django阿里云部署详解之服务器安装虚拟环境、Python"><a href="#Django阿里云部署详解之服务器安装虚拟环境、Python" class="headerlink" title="Django阿里云部署详解之服务器安装虚拟环境、Python"></a>Django阿里云部署详解之服务器安装虚拟环境、Python</h3><h4 id="（本系统就是阿里云部署的）"><a href="#（本系统就是阿里云部署的）" class="headerlink" title="（本系统就是阿里云部署的）"></a>（本系统就是阿里云部署的）</h4><h4 id="大家照做就行，这我试了很多次才总结出来的"><a href="#大家照做就行，这我试了很多次才总结出来的" class="headerlink" title="大家照做就行，这我试了很多次才总结出来的"></a>大家照做就行，这我试了很多次才总结出来的</h4><pre><code>yum update -yyum -y install gcc gcc-c++yum -y groupinstall &quot;Development tools&quot;yum -y install zlib zlib-devel openssl openssl-devel ncurses-devel sqlite sqlite-devel bzip2-deve readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-develyum install epel-releaseyum -y install nginxyum install libffi-devel -y</code></pre><pre><code>wget https://www.python.org/ftp/python/3.8.1/Python-3.8.1.tgz</code></pre><pre><code>mkdir -p /usr/local/python3tar -zxvf Python-3.8.1.tgz</code></pre><pre><code>cd Python-3.8.1./configure --prefix=/usr/local/python3make &amp;&amp; make install</code></pre><pre><code>ln -s /usr/local/python3/bin/python3 /usr/bin/python3</code></pre><p>原来的pip自己备份下：<br>mv /usr/bin/pip /usr/bin/pip.bak<br>这里使用新的pip</p><pre><code>ln -s /usr/local/python3/bin/pip3 /usr/bin/pippip install --upgrade pip</code></pre><h4 id="修改系统默认的python为自己装的版本"><a href="#修改系统默认的python为自己装的版本" class="headerlink" title="修改系统默认的python为自己装的版本"></a>修改系统默认的python为自己装的版本</h4><p>先找到新版本python安装位置，<br>然后</p><pre><code>vi /etc/profile.d/python.sh</code></pre><p>创建新文件，然后输入</p><pre><code>alias python=&#39;/usr/bin/python3&#39;  # 此处的路径为新版本python的路径，通过我上一篇文章来</code></pre><p>查找此路径<br>重启会话使配置生效</p><pre><code>source /etc/profile.d/python.sh</code></pre><pre><code>pip install --upgrade pippip install --upgrade setuptoolspip install virtualenv</code></pre><pre><code>ln -s /usr/local/python3/bin/virtualenv /usr/bin/virtualenvcd /home/virtualenv --python=/usr/bin/python test_envvirtualenv test_env(也一样是python3，之前已经修改了默认Python版本)source test_env/bin/activate</code></pre><h4 id="进入虚拟环境安装各个软件"><a href="#进入虚拟环境安装各个软件" class="headerlink" title="进入虚拟环境安装各个软件"></a>进入虚拟环境安装各个软件</h4><pre><code>pip install Django==3.0.2 pip install uwsgiln -s /usr/local/python3/bin/uwsgi /usr/bin/uwsgipip install pillowpip install django-mdeditorpip install Markdown</code></pre><h4 id="特别的，安装mysqlclient需要系统安装过mysql-devel，不然报错"><a href="#特别的，安装mysqlclient需要系统安装过mysql-devel，不然报错" class="headerlink" title="特别的，安装mysqlclient需要系统安装过mysql-devel，不然报错"></a>特别的，安装mysqlclient需要系统安装过mysql-devel，不然报错</h4><pre><code>yum -y install mysql-devel</code></pre><pre><code>pip install mysqlclient</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Django开启虚拟环境（Windows中）</title>
+      <link href="/2020/01/10/django-kai-qi-xu-ni-huan-jing-windows-zhong/"/>
+      <url>/2020/01/10/django-kai-qi-xu-ni-huan-jing-windows-zhong/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Django开启虚拟环境（Windows中）"><a href="#Django开启虚拟环境（Windows中）" class="headerlink" title="Django开启虚拟环境（Windows中）"></a>Django开启虚拟环境（Windows中）</h3><p>开启本地虚拟环境<br>1)避免多个项目之间python库的冲突<br>2)完整便捷导出python库的列表</p><pre><code>pip install virtualenv</code></pre><p>创建：virtualenv &lt;虚拟环境名称&gt;</p><pre><code>virtualenv blog_env</code></pre><p>启动：Scripts\activate</p><pre><code>pip install Django</code></pre><p>退出：deactivate</p><p>建立目录</p><pre><code>django-admin startproject django_introduction</code></pre><p>运行</p><pre><code>python manage.py runserver 80</code></pre><p>创建应用</p><pre><code>python manage.py startapp blog</code></pre><p>制作数据迁移</p><pre><code>python manage.py makemigrations (app)</code></pre><p>迁移动作</p><pre><code>python manage.py migrate</code></pre><pre><code>python manage.py createsuperuser</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Django </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pip 一键导出和安装</title>
+      <link href="/2020/01/10/pip-yi-jian-dao-chu-he-an-zhuang/"/>
+      <url>/2020/01/10/pip-yi-jian-dao-chu-he-an-zhuang/</url>
+      
+        <content type="html"><![CDATA[<h3 id="pip-一键导出和安装"><a href="#pip-一键导出和安装" class="headerlink" title="pip 一键导出和安装"></a>pip 一键导出和安装</h3><p>将本地使用的虚拟环境pip install 的所有软件导出<br>pip freeze &gt; requirements.txt</p><p>另一个新的环境安装<br>pip install -r requirements.txt</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> pip </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pip </tag>
             
         </tags>
       

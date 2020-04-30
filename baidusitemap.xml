@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.hsiehchou.com/2020/04/30/di-yi-zhang-python-gai-shu-yu-kai-fa-huan-jing-an-zhuang/</loc>
+    <lastmod>2020-04-30</lastmod>
+  </url>  <url>
+    <loc>https://blog.hsiehchou.com/2020/04/04/dui-kang-ji-xin-guan-fei-yan-yi-qing-dou-zheng-xi-sheng-lie-shi-he-shi-shi-tong-bao-de-shen-qie-ai-dao/</loc>
+    <lastmod>2020-04-30</lastmod>
+  </url>  <url>
+    <loc>https://blog.hsiehchou.com/2020/04/03/wang-zhan-zai-ai-dao-jie-ri-shi-shi-zheng-ge-ye-mian-hui-se-de-dai-ma/</loc>
+    <lastmod>2020-04-30</lastmod>
+  </url>  <url>
+    <loc>https://blog.hsiehchou.com/2020/02/26/mysql-jiang-windows-he-linux-shi-qu-tong-bu-de-shi-qu-biao/</loc>
+    <lastmod>2020-04-30</lastmod>
+  </url>  <url>
+    <loc>https://blog.hsiehchou.com/2020/02/22/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-an-zhuang-nginx/</loc>
+    <lastmod>2020-04-30</lastmod>
+  </url>  <url>
+    <loc>https://blog.hsiehchou.com/2020/02/16/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-an-zhuang-uwsgi/</loc>
+    <lastmod>2020-04-30</lastmod>
+  </url>  <url>
+    <loc>https://blog.hsiehchou.com/2020/02/10/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-mysql8.0-xi-lie-de-ban-ben-fu-wu-qi-shi-linux-de-xi-tong/</loc>
+    <lastmod>2020-04-30</lastmod>
+  </url>  <url>
+    <loc>https://blog.hsiehchou.com/2020/01/31/django-a-li-yun-bu-shu-xiang-jie-zhi-fu-wu-qi-an-zhuang-xu-ni-huan-jing-python/</loc>
+    <lastmod>2020-04-30</lastmod>
+  </url>  <url>
+    <loc>https://blog.hsiehchou.com/2020/01/10/django-kai-qi-xu-ni-huan-jing-windows-zhong/</loc>
+    <lastmod>2020-04-30</lastmod>
+  </url>  <url>
+    <loc>https://blog.hsiehchou.com/2020/01/10/pip-yi-jian-dao-chu-he-an-zhuang/</loc>
+    <lastmod>2020-04-30</lastmod>
+  </url>  <url>
     <loc>https://blog.hsiehchou.com/2019/07/06/elasticsearch-ji-qun-an-zhuang-pei-zhi/</loc>
     <lastmod>2020-02-27</lastmod>
   </url>  <url>
