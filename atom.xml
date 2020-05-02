@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.hsiehchou.com/"/>
-  <updated>2020-04-30T09:06:01.751Z</updated>
+  <updated>2020-05-02T12:07:01.587Z</updated>
   <id>https://blog.hsiehchou.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第二章 Python基础语法</title>
+    <link href="https://blog.hsiehchou.com/2020/05/02/di-er-zhang-python-ji-chu-yu-fa/"/>
+    <id>https://blog.hsiehchou.com/2020/05/02/di-er-zhang-python-ji-chu-yu-fa/</id>
+    <published>2020-05-02T14:12:35.000Z</published>
+    <updated>2020-05-02T12:07:01.587Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;第二章-Python基础语法&quot;&gt;&lt;a href=&quot;#第二章-Python基础语法&quot; class=&quot;headerlink&quot; title=&quot;第二章 Python基础语法&quot;&gt;&lt;/a&gt;第二章 Python基础语法&lt;/h2&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://blog.hsiehchou.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://blog.hsiehchou.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>第一章 Python概述与开发环境安装</title>
@@ -542,38 +569,6 @@
       <category term="Eureka" scheme="https://blog.hsiehchou.com/tags/Eureka/"/>
     
       <category term="nohup" scheme="https://blog.hsiehchou.com/tags/nohup/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ZooKeeper清除已有的消费的offsets</title>
-    <link href="https://blog.hsiehchou.com/2019/07/23/zookeeper-qing-chu-yi-you-de-xiao-fei-de-offsets/"/>
-    <id>https://blog.hsiehchou.com/2019/07/23/zookeeper-qing-chu-yi-you-de-xiao-fei-de-offsets/</id>
-    <published>2019-07-23T02:19:38.000Z</published>
-    <updated>2019-08-04T07:45:23.589Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;strong&gt;CDH集群中的ZooKeeper&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;启动ZooKeeper客户端&lt;/strong&gt;&lt;br&gt;zookeeper-client&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;清除消费者&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong
-        
-      
-    
-    </summary>
-    
-    
-      <category term="大数据" scheme="https://blog.hsiehchou.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-    
-      <category term="大数据" scheme="https://blog.hsiehchou.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="ZooKeeper" scheme="https://blog.hsiehchou.com/tags/ZooKeeper/"/>
     
   </entry>
   
