@@ -1300,7 +1300,7 @@ plt.polar(0.25*np.pi, 20, &#39;ro&#39;, lw=2)
 plt.ylim(0,50)    #设置极轴的上下限
 plt.show()</code></pre><p><img src="/medias/1591448807308.png" alt="雷达图之 polar 函数"></p>
 <p><strong>注：</strong><br>0.25*np.pi=45°：极角<br>20：极径<br>’ro’：绘极坐标形状为红色圆点<br>lw=2：极坐标图形宽度为 2</p>
-<p><strong>2. 如果绘制多个极角和极轴时</strong></p>
+<p><strong>2. 如果绘制多个极角和极轴</strong></p>
 <pre><code>import numpy as np
 import matplotlib.pyplot as plt
 
@@ -1309,7 +1309,7 @@ r = [75,60,50,70,50,85,45,70]
 
 plt.polar(theta*np.pi, r, &#39;ro&#39;, lw=2)
 plt.ylim(0,100)
-plt.show()</code></pre><p><img src="/medias/1591448900309.png" alt="绘制多个极角和极轴时"></p>
+plt.show()</code></pre><p><img src="/medias/1591448900309.png" alt="绘制多个极角和极轴"></p>
 <p><strong>注：</strong><br>theta：定义了一个 ndarray 数组存储多个数据<br>r：定义了一个数组存放极轴的长度，也叫极径</p>
 <ol start="3">
 <li><p>则在图中绘制出多个点:（0.25<em>π，75）,（0.5</em>π， 60）,（0.75<em>π，50）,（1.0</em>π，70）等。</p>
@@ -1484,7 +1484,7 @@ ax.set_zlabel(&#39;Z&#39;)
 # 设置图形标题
 ax.set_title(&#39;三维曲面&#39;, fontproperties=&#39;simhei&#39;, fontsize=24)
 
-plt.show()</code></pre><p><img src="/medias/1591450640439.png" alt="三维曲线"></p>
+plt.show()</code></pre><p><img src="/medias/1591450640439.png" alt="三维曲面"></p>
 <ol start="3">
 <li>生成测试数据，绘制三维柱状图，设置每个柱的颜色随机，且宽度和厚度都为 1。 </li>
 </ol>

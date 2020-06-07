@@ -446,14 +446,12 @@
 </li>
 </ol>
 <h5 id="1-2-2-分类学习常用算法"><a href="#1-2-2-分类学习常用算法" class="headerlink" title="1.2.2 分类学习常用算法"></a>1.2.2 分类学习常用算法</h5><ol>
-<li><p>K近邻分类器(KNN)<br>KNN：通过计算待分类数据点，与已有数据集中的所有数据点的距离。取距离最小的前K个点，根据“少数服从多数“的原则，将这个数据点划分为出现次数最多的那个类别。<img src="/medias/1591458262946.png" alt="Alt text"></p>
+<li><p>K近邻分类器(KNN)<br>KNN：通过计算待分类数据点，与已有数据集中的所有数据点的距离。取距离最小的前K个点，根据“少数服从多数“的原则，将这个数据点划分为出现次数最多的那个类别。<br><img src="/medias/1591458262946.png" alt="K近邻分类器(KNN)"></p>
 </li>
-<li><p>决策树<br>1）决策树是一种树形结构的分类器，通过顺序询问分类点的属性决定分类点最终的类别。<br>2）通常根据特征的信息增益或其他指标，构建一颗决策树。<br>3）在分类时，只需要按照决策树中的结点依次进行判断，即可得到样本所属类别。</p>
+<li><p>决策树<br>1）决策树是一种树形结构的分类器，通过顺序询问分类点的属性决定分类点最终的类别。<br>2）通常根据特征的信息增益或其他指标，构建一颗决策树。<br>3）在分类时，只需要按照决策树中的结点依次进行判断，即可得到样本所属类别。<br><img src="/medias/1591458315138.png" alt="判定是否去相亲的决策树"></p>
 </li>
-</ol>
-<p><strong>判定是否去相亲的决策树</strong><img src="/medias/1591458315138.png" alt="Alt text"></p>
-<ol start="3">
-<li>朴素贝叶斯<br>1）朴素贝叶斯分类器是一个以贝叶斯定理为基础的多分类的分类器。<br>2）对于给出的待分类项，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项属于哪个类别。<br>$$P(A|B)=\frac{P(B|A)P(A)}{P(B)}$$</li>
+<li><p>朴素贝叶斯<br>1）朴素贝叶斯分类器是一个以贝叶斯定理为基础的多分类的分类器。<br>2）对于给出的待分类项，求解在此项出现的条件下各个类别出现的概率，哪个最大，就认为此待分类项属于哪个类别。<br>$$P(A|B)=\frac{P(B|A)P(A)}{P(B)}$$</p>
+</li>
 </ol>
 <h4 id="1-3-监督学习-回归分析"><a href="#1-3-监督学习-回归分析" class="headerlink" title="1.3 监督学习-回归分析"></a>1.3 监督学习-回归分析</h4><h5 id="1-3-1-回归分析"><a href="#1-3-1-回归分析" class="headerlink" title="1.3.1 回归分析"></a>1.3.1 回归分析</h5><ol>
 <li><p>回归：统计学分析数据的方法，目的在于了解两个或多个<code>变数间是否相关</code>、研究其<code>相关方向与强度</code>，并建立<code>数学模型</code>以便<code>观察特定变数</code>来<code>预测</code>研究者感兴趣的<code>变数</code>。</p>
@@ -466,12 +464,12 @@
 <h5 id="1-3-2-回归分析方法"><a href="#1-3-2-回归分析方法" class="headerlink" title="1.3.2 回归分析方法"></a>1.3.2 回归分析方法</h5><ol>
 <li>线性回归<br>线性回归 (Linear Regression) 是利用数理统计中回归分析，来确定两种或两种以上变量间相互依赖的定量关系的一种统计分析方法，其使用形如 y=wx+b 的<code>线性模型</code>拟合数据输入和输出之间的映射关系。</li>
 </ol>
-<p><img src="/medias/1591458735099.png" alt="Alt text"></p>
+<p><img src="/medias/1591458735099.png" alt="线性回归"></p>
 <ol start="2">
 <li><p>线性回归——实际用途<br>1）利用数据拟合<code>模型进行预测</code>：如果目标是预测或者映射，线性回归可以用来对观测数据集的 y 和 X 的值拟合出一个预测模型。当完成这样一个模型以后，对于一个新增的 X 值，在没有给定与它相配对的 y 的情况下，可以用这个拟合过的模型预测出一个 y 值。<br>2）相关性分析<code>去除冗余</code>：给定一个变量 y 和一些变量 $X_1-X_n$，这些变量有可能与 y 相关，线性回归分析可以用来量化 y 与 $X_i$  之间相关性的强度，评估出与 y 不相关的 $X_i$ ，并识别出哪些 $X_i$ 的子集包含了关于 y 的冗余信息。</p>
 </li>
 <li><p>房价与房屋尺寸关系的线性拟合<br>1）背景：我们可以根据已知的房屋成交价和房屋的尺寸进行线性回归，继而可以对已知房屋尺寸，而未知房屋成交价格的实例进行成交价格的预测。<br>2）目标：对房屋成交信息建立回归方程，并依据回归方程对房屋价格进行预测。</p>
-<p><img src="/medias/1591458884615.png" alt="Alt text"></p>
+<p><img src="/medias/1591458884615.png" alt="房价与房屋尺寸关系的线性拟合图"></p>
 </li>
 <li><p>非线性拟合：多项式回归<br>1）多项式回归(Polynomial Regression)是研究一个因变量与一个或多个自变量间多项式的回归分析方法。<br>2）如果自变量只有一个时，称为一元多项式回归；如果自变量有多个时，称为多元多项式回归。</p>
 </li>
@@ -484,7 +482,7 @@
 <li>Scikit-learn 相比其他开源项目显得更为保守，主要体现在：一是Scikit-learn 从来不做除机器学习领域之外的其他扩展，二是 Scikit-learn 从来不采用未经广泛验证的算法。</li>
 <li><a href="http://scikit-learn.org/stable/index.html" target="_blank" rel="noopener">http://scikit-learn.org/stable/index.html</a></li>
 </ol>
-<p><img src="/medias/1591459169266.png" alt="Alt text"></p>
+<p><img src="/medias/1591459169266.png" alt="Scikit-learn 库"></p>
 <h5 id="2-1-2-Scikit-learn-库数据集"><a href="#2-1-2-Scikit-learn-库数据集" class="headerlink" title="2.1.2 Scikit-learn 库数据集"></a>2.1.2 Scikit-learn 库数据集</h5><p>在机器学习中，经常需要使用各种各样的数据集，Scikit-learn 库提供了一些常用的数据集：</p>
 <table>
 <thead>
@@ -546,12 +544,12 @@
 <li><p>数据预处理<br>1）数据预处理是指数据的特征提取和归一化，是机器学习过程中的第一个也是最重要的一个环节。<br>2）归一化是指将输入数据转换为具有零均值和单位权方差的新变量，但因为大多数时候都做不到精确等于零，因此会设置一个可接受的范围，一般都要求落在 0-1 之间。<br>3）特征提取是指将文本或图像数据转换为可用于机器学习的数字变量。</p>
 </li>
 </ol>
-<p><img src="/medias/1591459683330.png" alt="Alt text"></p>
+<p><img src="/medias/1591459683330.png" alt="Scikit-learn 库功能"></p>
 <h4 id="2-2-Sklearn-库分类算法"><a href="#2-2-Sklearn-库分类算法" class="headerlink" title="2.2 Sklearn 库分类算法"></a>2.2 Sklearn 库分类算法</h4><h5 id="2-2-1-Scikit-learn-库分类算法"><a href="#2-2-1-Scikit-learn-库分类算法" class="headerlink" title="2.2.1 Scikit-learn 库分类算法"></a>2.2.1 Scikit-learn 库分类算法</h5><ol>
 <li>K近邻分类器(KNN)<br>KNN：通过计算待分类数据点，与已有数据集中的所有数据点的距离。取距离最小的前 K 个点，根据“少数服从多数“的原则，将这个数据点划分为出现次数最多的那个类别。</li>
 </ol>
 <p><strong>K近邻算法</strong></p>
-<p> <img src="/medias/1591459969667.png" alt="Alt text"></p>
+<p> <img src="/medias/1591459969667.png" alt="K近邻分类器(KNN)"></p>
 <ol start="2">
 <li>Sklearn 中的 k 邻分类器<br>在 sklearn 库中，可以使用 sklearn.neighbors.KNeighborsClassifier 创建一个 K 近邻分类器，主要参数有：<br>1）n_neighbors：用于指定分类器中K的大小(默认值为5)。<br>2）Weights：设置选中的K个点对分类结果影响的权重（默认值为平均权重”uniform”，可以选择“distance”代表越近的点权重越高，或者传入自己编写的以距离为参数的权重计算函数）。<br>3）algorithm：设置用于计算临近点的方法 （ 选项中有ball_tree、kd_tree 和 brute，分别代表不同的寻找邻居的优化算法，默认值为 auto，根据训练数据自动选择）。<br> <strong>k值的选择</strong><br>①    如果 k 值较小，就相当于用较小邻域中的训练实例进行预测，极端情况下 k=1，测试实例只和最接近的一个样本有关，训练误差很小(0)，但是如果这个样本恰好是噪声，预测就会出错。也就是说，如果k值过小，容易产生过拟合，误差过大。<br>②    如果 k 值较大，就相当于用很大邻域中的训练实例进行预测，相当于和估计数据不相近的样本也参与了，造成模型偏差过大。极端情况是 k=n，测试实例的结果是训练数据集中实例最多的类，这样会产生欠拟合。<br>③    在应用中，一般选择较小 k 并且 k 是奇数。通常采用交叉验证的方法来选取合适的 k 值，或者 k 一般低于训练样本数的平方根。<br> <strong>Sklearn 中的 k 邻分类器——示例</strong></li>
 </ol>
@@ -573,10 +571,10 @@ print(neigh.predict([[2.4]]))
 print(neigh.predict([[2.5]]))
 print(neigh.predict([[2.6]]))</code></pre><p><strong>运行结果</strong><br>[0]<br>[0]<br>[0]<br>[1]</p>
 <ol start="3">
-<li>决策树<br>1）决策树是一种树形结构的分类器，通过顺序询问分类点的属性决定分类点最终的类别。<br>2）通常根据特征的信息增益或其他指标，构建一颗决策树。<br>3）在分类时，只需要按照决策树中的结点依次进行判断，即可得到样本所属类别。</li>
+<li><p>决策树<br>1）决策树是一种树形结构的分类器，通过顺序询问分类点的属性决定分类点最终的类别。<br>2）通常根据特征的信息增益或其他指标，构建一颗决策树。<br>3）在分类时，只需要按照决策树中的结点依次进行判断，即可得到样本所属类别。</p>
+<p><img src="/medias/1591460354838.png" alt="判定是否去相亲的决策树"><br><strong>Sklearn中的决策树</strong><br>在 sklearn 库中 ， 可以使用sklearn.tree.DecisionTreeClassifier 创建一个决策树用于分类，其主要参数有：<br>1）criterion ：用于选择属性的准则，可以传入 “gini” 代表基尼系数，或者 “entropy”  代表信息增益。<br>2）max_features ：表示在决策树结点进行分裂时，从多少个特征中选择最优特征。可以设定固定数目、百分比或其他标准，默认值是所有特征个数。</p>
+</li>
 </ol>
-<p><strong>判定是否去相亲的决策树</strong></p>
-<p> <img src="/medias/1591460354838.png" alt="Alt text"><br>   <strong>Sklearn中的决策树</strong><br>在 sklearn 库中 ， 可以使用sklearn.tree.DecisionTreeClassifier 创建一个决策树用于分类，其主要参数有：<br>1）criterion ：用于选择属性的准则，可以传入 “gini” 代表基尼系数，或者 “entropy”  代表信息增益。<br>2）max_features ：表示在决策树结点进行分裂时，从多少个特征中选择最优特征。可以设定固定数目、百分比或其他标准，默认值是所有特征个数。</p>
 <p><strong>Sklearn中的决策树算法示例</strong></p>
 <pre><code>from sklearn import datasets # 导入方法类
 
@@ -682,8 +680,8 @@ plt.show()</code></pre><h3 id="3、线性回归预测实战"><a href="#3、线�
 <li>回归方程：反映自变量和因变量之间联系的数学表达式</li>
 <li>回归模型：某一类回归方程的总称</li>
 </ol>
-<h5 id="3-1-3-回归分析步骤"><a href="#3-1-3-回归分析步骤" class="headerlink" title="3.1.3 回归分析步骤"></a>3.1.3 回归分析步骤</h5><p><img src="/medias/1591461605573.png" alt="Alt text"></p>
-<h4 id="3-2-线性回归模型原理"><a href="#3-2-线性回归模型原理" class="headerlink" title="3.2 线性回归模型原理"></a>3.2 线性回归模型原理</h4><p><img src="/medias/1591461655296.png" alt="Alt text"><br><img src="/medias/1591461668594.png" alt="Alt text"><br><img src="/medias/1591461678967.png" alt="Alt text"></p>
+<h5 id="3-1-3-回归分析步骤"><a href="#3-1-3-回归分析步骤" class="headerlink" title="3.1.3 回归分析步骤"></a>3.1.3 回归分析步骤</h5><p><img src="/medias/1591461605573.png" alt="回归分析步骤"></p>
+<h4 id="3-2-线性回归模型原理"><a href="#3-2-线性回归模型原理" class="headerlink" title="3.2 线性回归模型原理"></a>3.2 线性回归模型原理</h4><p><img src="/medias/1591461655296.png" alt="线性回归模型"><br><img src="/medias/1591461668594.png" alt="线性回归模型"><br><img src="/medias/1591461678967.png" alt="线性回归模型"></p>
 <h4 id="3-3-预测儿童身高实战"><a href="#3-3-预测儿童身高实战" class="headerlink" title="3.3 预测儿童身高实战"></a>3.3 预测儿童身高实战</h4><h5 id="3-3-1-线性回归预测实战"><a href="#3-3-1-线性回归预测实战" class="headerlink" title="3.3.1 线性回归预测实战"></a>3.3.1 线性回归预测实战</h5><ol>
 <li><p>线性回归预测儿童身高<br>•    假定一个人的身高只受年龄、性别、父母身高、祖父母身高和外祖父母身高这几个因素的影响，并假定大致符合线性关系。<br>•    在其他条件不变的情况下，随着年龄的增长，会越来越高；<br>•    同样，对于其他条件都相同的儿童，其父母身高较高的话，儿童也会略高一些。<br>•    假定到18岁后身高会长期保持固定而不再变化（不考虑年龄太大之后会稍微变矮一点的情况）。<br>•    根据给定<code>训练数据和对应标签</code>，线性拟合出儿童身高模型，预测测试数据儿童身高。</p>
 </li>
@@ -712,11 +710,11 @@ lr.fit(x, y)</code></pre><p>4）待预测数据准备</p>
         item1[0] = 18
     print(item, &#39;:&#39;, lr.predict(item1.reshape(1,-1)))</code></pre><p><strong>运行结果</strong><br>[ 10   0 180 165 175 165 170 165] : [140.56153846]<br>[ 17   1 173 153 175 161 170 161] : [158.41]<br>[ 34   0 170 165 170 165 170 165] : [176.03076923]</p>
 <h3 id="4、贝叶斯分类实战"><a href="#4、贝叶斯分类实战" class="headerlink" title="4、贝叶斯分类实战"></a>4、贝叶斯分类实战</h3><h4 id="4-1-分类基本概念"><a href="#4-1-分类基本概念" class="headerlink" title="4.1 分类基本概念"></a>4.1 分类基本概念</h4><h5 id="4-1-1-什么是分类"><a href="#4-1-1-什么是分类" class="headerlink" title="4.1.1 什么是分类"></a>4.1.1 什么是分类</h5><p><strong>超市物品分类</strong></p>
-<p><img src="/medias/1591462398944.png" alt="Alt text"></p>
+<p><img src="/medias/1591462398944.png" alt="超市物品分类"></p>
 <p><strong>垃圾分类</strong></p>
-<p><img src="/medias/1591462403300.png" alt="Alt text"></p>
+<p><img src="/medias/1591462403300.png" alt="垃圾分类"></p>
 <p><strong>生活信息分类</strong></p>
-<p><img src="/medias/1591462408292.png" alt="Alt text"></p>
+<p><img src="/medias/1591462408292.png" alt="生活信息分类"></p>
 <h5 id="4-1-2-分类在数据挖掘中的定义"><a href="#4-1-2-分类在数据挖掘中的定义" class="headerlink" title="4.1.2 分类在数据挖掘中的定义"></a>4.1.2 分类在数据挖掘中的定义</h5><p>•    分类就是把一些新的数据项<code>映射到给定类别</code>的中的某一个类别。<br>•    分类属于<code>有监督学习</code>(supervised learning)，与之相对于的是无监督学习<br>(unsupervised learning)，比如聚类。<br>•    分类与聚类的最大区别在于，分类数据中的一部分的<code>类别是已知</code>的，而聚类数据的<code>类别未知</code>。</p>
 <h5 id="4-1-3-分类问题"><a href="#4-1-3-分类问题" class="headerlink" title="4.1.3 分类问题"></a>4.1.3 分类问题</h5><p><strong>动物分类问题</strong><br>根据现有的知识，我们得到了一些关于哺乳动物和鸟类的信息，我们能否对新发现的物种，比如动物A，动物B进行分类？</p>
 <table>
@@ -895,14 +893,14 @@ lr.fit(x, y)</code></pre><p>4）待预测数据准备</p>
 <ol start="6">
 <li>四种贝叶斯分类器<br>1）Naïve Bayes：朴素贝叶斯，假定各特征变量 x 是相互独立的。<br>2）TAN：对朴素贝叶斯进行了扩展，允许各特征变量所对应的节点构成一棵树。<br>3）BAN：对 TAN 扩展，允许各特征变量所对应的节点间关系构成一个图，而不止是树。<br>4）GBN：一种无约束的贝叶斯网络分类器。</li>
 </ol>
-<p><img src="/medias/1591463598040.png" alt="Alt text"></p>
+<p><img src="/medias/1591463598040.png" alt="四种贝叶斯分类器"></p>
 <ol start="7">
 <li><p>贝叶斯分类流程<br>1）准备阶段：主要是依据具体情况<code>确定特征属性</code>，并且对特征属性进行适当划分。然后就是对一部分待分类项进行人工划分，以确定训练样本。<code>输入是所有的待分类项，输出是特征属性和训练样本</code>。<br>2）分类器训练阶段：计算每个类别在训练样本中出现频率以及每个特征属性划分对每个类别的条件概率估计。<code>输入是特征属性和训练样本，输出是分类器</code>。<br>3）应用阶段：使用分类器对待分类项进行分类，其<code>输入是分类器和待分类项，输出是待分类项与类别的映射关系</code>。</p>
-<p><img src="/medias/1591463645577.png" alt="Alt text"></p>
+<p><img src="/medias/1591463645577.png" alt="贝叶斯分类流程"></p>
 </li>
 </ol>
 <h4 id="4-3-垃圾邮件分类实战"><a href="#4-3-垃圾邮件分类实战" class="headerlink" title="4.3 垃圾邮件分类实战"></a>4.3 垃圾邮件分类实战</h4><p>训练数据：<br>垃圾邮件（0.txt至150.txt），其中 0-127 为垃圾邮件，128 至 150 为正常邮件，151 至 156 为测试邮件。</p>
-<p><img src="/medias/1591463717009.png" alt="Alt text"></p>
+<p><img src="/medias/1591463717009.png" alt="垃圾邮件分类"></p>
 <h5 id="4-3-1-问题分析"><a href="#4-3-1-问题分析" class="headerlink" title="4.3.1 问题分析"></a>4.3.1 问题分析</h5><p>①    读取全部训练集，<code>删除其中的干扰字符</code>，例如【】*。、，等等，然后<code>分词</code>，再删除<code>长度为 1</code>的单个字，这样的单个字对于文本分类没有贡献，剩下的词汇认为是有效词汇。</p>
 <p>②    统计全部训练集中每个<code>有效词汇的出现次数</code>，截取出现次数最多的<code>前N个</code>。</p>
 <p>③    根据第 1 步预处理后的垃圾邮件和非垃圾邮件内容生成特征向量，统计第 2 步中得到的N个词语分别在该邮件中的出现频率。</p>
