@@ -1113,8 +1113,7 @@ dtype: int64</code></pre><h4 id="3-4-DataFrame"><a href="#3-4-DataFrame" class="
 <td align="left">如果默认值为 <code>False</code>，则此命令（或任何它）用于复制数据</td>
 </tr>
 </tbody></table>
-<pre><code>
-</code></pre><h5 id="3-4-5-DataFrame"><a href="#3-4-5-DataFrame" class="headerlink" title="3.4.5 DataFrame"></a>3.4.5 DataFrame</h5><ol>
+<h5 id="3-4-5-DataFrame"><a href="#3-4-5-DataFrame" class="headerlink" title="3.4.5 DataFrame"></a>3.4.5 DataFrame</h5><ol>
 <li>创建一个空的 DataFrame：函数不指定参数返回空 DataFrame</li>
 </ol>
 <pre><code># 创建一个空的DataFrame 
@@ -1264,6 +1263,7 @@ five    2002    Nevada    2.9     -1.7
 &gt;&gt;&gt; frame2[&#39;eastern&#39;] = frame2.state == &#39;Ohio&#39; 
 &gt;&gt;&gt; frame2
 ```
+
 **运行结果**
 ```
         year    state    pop      debt    eastern
@@ -1278,6 +1278,7 @@ five    2002    Nevada    2.9     -1.7     False
 &gt;&gt;&gt; del frame2[&#39;eastern&#39;]
 &gt;&gt;&gt; frame2.columns
 ```
+
 **运行结果**
 Index([&#39;year&#39;, &#39;state&#39;, &#39;pop&#39;, &#39;debt&#39;], dtype=&#39;object&#39;)
 
@@ -1290,7 +1291,9 @@ Index([&#39;year&#39;, &#39;state&#39;, &#39;pop&#39;, &#39;debt&#39;], dtype=&#
 &gt;&gt;&gt; frame3 = pd.DataFrame(pop)
 &gt;&gt;&gt; frame3
 ```
+
 **运行结果**
+
 ```
         Nevada    Ohio
 2001     2.4    1.7
@@ -1301,7 +1304,9 @@ Index([&#39;year&#39;, &#39;state&#39;, &#39;pop&#39;, &#39;debt&#39;], dtype=&#
 ```
 &gt;&gt;&gt; frame3.T
 ```
+
 **运行结果**
+
 ```
         2001    2002    2000
 Nevada    2.4        2.9        NaN
@@ -1315,7 +1320,9 @@ Ohio    1.7        3.6        1.5
 &gt;&gt;&gt; frame3.columns.name = &#39;state&#39; 
 &gt;&gt;&gt; frame3
 ```
+
 **运行结果**
+
 ```
 state    Nevada    Ohio
 year        
@@ -1331,6 +1338,7 @@ year
 ```
 &gt;&gt;&gt; frame3.values
 ```
+
 **运行结果**
 ```
 array([[2.4, 1.7],
@@ -1341,7 +1349,9 @@ array([[2.4, 1.7],
 ```
 &gt;&gt;&gt; frame2.values
 ```
+
 **运行结果**
+
 ```
 array([[2000, &#39;Ohio&#39;, 1.5, nan],
        [2001, &#39;Ohio&#39;, 1.7, -1.2],
@@ -1358,7 +1368,7 @@ array([[2000, &#39;Ohio&#39;, 1.5, nan],
 
 2. 一般情况下 ， 读取文件的方法以 pd.read_ 开头， 而写入文件的方法以 pd.to_ 开头。
 
-3. # 示例1
+3. 示例1
 
 |  数据类型  |  描述符  |  读方法  |  写方法  |
 | :------ | :------ | :------ | :------ |
@@ -1379,7 +1389,7 @@ array([[2000, &#39;Ohio&#39;, 1.5, nan],
 3. dtype：数据类型转换
 
 4. skiprows：跳过指定的行数
-5. # 示例2
+5. 示例2
 
 ```
 df=pd.read_csv(&quot;temp.csv&quot;) 
@@ -1403,6 +1413,7 @@ print (df)
 ```
 
 #### 4.2 描述性统计方法
+
 1. Pandas 提供了几个统计和描述性方法，方便你从宏观的角度去了解数据集，例如count() 用于统计非空数据的数量。
 
 2. 除了统计类的方法，Pandas 还 提供了很多计算类的方法，比如 sum() 用于计算数值数据的总和；mean() 用 于 计 算 数 值 数 据 的 平 均 值 ；median() 用于计算数值数据的算术中值。
@@ -1449,7 +1460,9 @@ print(df.std(), &#39;\n&#39;)    # 标准差
 print(&quot;\n统计信息摘要&quot;)
 print(df.describe(include=[&#39;number&#39;]))    # 统计信息摘要
 ```
+
 **运行结果**
+
 ```
       Name   Age  Rating
 0      Tom   25    4.23
@@ -1514,6 +1527,7 @@ max    51.000000   4.800000
 ```
 
 #### 4.3 迭代与遍历
+
 1. pandas 对象之间的基本迭代的行为取决于类型。当迭代一个系列时，它被视为数组式，基本迭代产生这些值。其他数据结构，如：DataFrame，遵循类似惯例迭代对象的键。
 
 2. 简而言之，基本迭代(对于 i 在对象中)产生：
@@ -1541,7 +1555,9 @@ print(df,&#39;\n&#39;)
 for col in df:
     print(col)
 ```
+
 **运行结果**
+
 ```
            D    x         y       z
 0 2019-01-31  0.0  0.484448     Low
@@ -1557,6 +1573,7 @@ z
 ```
 
 ##### 4.3.2 遍历Dataframe 示例
+
 1. iteritems（）:将索引和值作为键和列值迭代为 Series 对象。
 2. iterrows() 返回迭代器，产生每个索引值以及包含每行数据的序列。
 3. itertuples() 方法将为 DataFrame 中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值。
@@ -1576,7 +1593,9 @@ print(&quot;\nitertuples---------&quot;)
 for row in df.itertuples():    
     print (row)
 ```
+
 **运行结果**
+
 ```
 iteritems---------
 col1 0    1.695599
@@ -1621,6 +1640,7 @@ Pandas(Index=3, col1=0.019115935065828222, col2=1.850636585984077, col3=0.081476
 ```
 
 #### 4.4 排序
+
 1. 按索引排序：使用 sort_index() 方法，通过传递 axis 参数和排序顺序，可以对 DataFrame 进行排序。 默认情况下，按照升序对行标签进行排序。
 
 2. 按数值排序：sort_values() 是按值排序的方法。它接受一个 by 参数，它将使用要与其排序值的 DataFrame 的列名称。
@@ -1644,7 +1664,9 @@ print(&quot;\n按&#39;B&#39;列的值进行排序------&quot;)
 sorted_df = unsorted_df.sort_values(by=&#39;B&#39;) # 按&#39;B&#39;列的值进行排序
 print (sorted_df,&#39;\n&#39;)
 ```
+
 **运行结果**
+
 ```
 待排序------
           A         B
@@ -1762,25 +1784,7 @@ Name: one, dtype: bool
 df = pd.DataFrame({&#39;one&#39;:[10,20,30,40,50,2000],&#39;two&#39;:[1000,0,30,40,50,60]}) 
 print(df,&#39;\n&#39;)
 print(df.replace({1000:10,2000:60}))
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</code></pre>
+```</code></pre>
             </div>
             <hr/>
 

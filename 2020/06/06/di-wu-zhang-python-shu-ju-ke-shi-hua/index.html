@@ -972,6 +972,7 @@ plt.show()</code></pre><p><img src="/medias/Figure_1.png" alt="Alt text"></p>
 <pre><code>![Alt text](/medias/1591446055626.png)
 
 ##### 3.1.5 柱状图实战：使用 matplotlib 绘制
+
 1. 堆叠柱状图
 </code></pre><p>import matplotlib.pyplot as plt</p>
 <p>name_list = [‘Monday’,’Tuesday’,’Friday’,’Sunday’]<br>num_list = [1.5,0.6,7.8,6]<br>num_list1 = [1,2,3,1]  </p>
@@ -990,6 +991,7 @@ plt.show()</code></pre><p><img src="/medias/Figure_1.png" alt="Alt text"></p>
 #### 3.2 饼状图实战
 
 ##### 3.2.1 饼状图
+
 1. 概念：
 1）饼状图显示一个系列中各项的大小与各项总和的比例。
 2）饼状图可自动根据数据的百分比画饼。
@@ -1074,6 +1076,7 @@ plt.show()</code></pre><p><img src="/medias/Figure_1.png" alt="Alt text"></p>
 <pre><code>![Alt text](/medias/1591447788057.png)
 
 ##### 3.2.4 饼状图实战二：学生成绩分布饼状图
+
 已知某高校某班级的操作系统、高等数学、英语和 Python 课程考试成绩如下表所示，要求利用 matplotlib 库绘制饼状图显示该班级每门课的成绩中优（85分以上）、及格（60-84分）、不及格（60分以下）的学生占比。
 
 | 课程/学生 |1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|
@@ -1163,6 +1166,7 @@ r：定义了一个数组存放极轴的长度，也叫极径
 <pre><code>![Alt text](/medias/1591449248638.png)
 
 ##### 4.1.4 实战：学生课程成绩雷达图
+
 一般来说，大学的学位证只能证明学生达到该学习阶段的最低要求，并不能体现学生的综合能力以及擅长的学科与领域，因此用人单位在招聘时往往还需要借助于成绩单进行综合考察。如果把每个学生的专业核心课成绩绘制成雷达图印在学位证书上，就可让用人单位非常直观地了解学生综合能力。编写程序，根据某学生的部分专业核心课程和成绩清单绘制雷达图。
 
 | 科目  |  C++ | Python | 高等数学 | 大学英语 | 软件工程 | 组成原理 | 操作系统 | 网络工程 |
@@ -1180,6 +1184,7 @@ r：定义了一个数组存放极轴的长度，也叫极径
 #### 4.2 三维图实战
 
 ##### 4.2.1 三维图概述
+
 1. matplotlib 支持一些基础的三维图表绘制，比如曲面图散点图和柱状图，需要使用 mpl_toolkits 模块。
 
 2. 如果要绘制三维图形，首先需要使用下面的语句导入相应的对象：
@@ -1192,14 +1197,17 @@ r：定义了一个数组存放极轴的长度，也叫极径
 4. 接下来就可以使用 ax 的 plot() 方法绘制三维曲线、plot_surface() 方法绘制三维曲面、 scatter() 方法绘制三维散点图或 bar3d() 方法绘制三维柱状图了。
 
 ##### 4.2.2 三维曲面绘制方法:  p3d.Axes3D. plot_surface()
-1. 在绘制三维图形时，至少需要指定x、y、z三个坐标轴的数据，然后再根据不同的图形类型指定额外的参数设置图形的属性。</code></pre><p>plot_surface(X, Y, Z, <em>args, *</em>kwargs)</p>
+
+1. 在绘制三维图形时，至少需要指定x、y、z三个坐标轴的数据，然后再根据不同的图形类型指定额外的参数设置图形的属性。
+</code></pre><p>plot_surface(X, Y, Z, <em>args, *</em>kwargs)</p>
 <pre><code>
 2. 常用参数：
 ➢    rstride 和 cstride 分别控制 x 和 y 两个方向的步长，这决定了曲面上每个面片的大小；
 ➢    color 用来指定面片的颜色；
 ➢    cmap 用来指定面片的颜色映射表。
 
-##### 4.2.3 三维散点图绘制方法：p3d.Axes3D.scatter()</code></pre><p>p3d.Axes3D.scatter (xs, ys, zs=0, zdir=’z’, s=20, c=None, depthshade=True, <em>args,  *</em>kwargs)</p>
+##### 4.2.3 三维散点图绘制方法：p3d.Axes3D.scatter()
+</code></pre><p>p3d.Axes3D.scatter (xs, ys, zs=0, zdir=’z’, s=20, c=None, depthshade=True, <em>args,  *</em>kwargs)</p>
 <pre><code>
 **常用参数**
 ➢    xs、ys、zs 分别用来指定散点符号的 x、y、z 坐标，如果同时为标量则指定一个三点符号的坐标，如果同时为等长数组则指定一系列散点符号的坐标。
@@ -1213,6 +1221,7 @@ r：定义了一个数组存放极轴的长度，也叫极径
 ➢    color 用来指定柱的表面颜色。
 
 ##### 4.2.5 三维曲线图实战
+
 1. 生成测试数据 x、y、z，然后绘制三维曲线，并设置图例的字体和字号。
 </code></pre><p>import numpy as np<br>import matplotlib as mpl<br>from mpl_toolkits.mplot3d import Axes3D<br>import matplotlib.pyplot as plt<br>import matplotlib.font_manager as fm</p>
 <h1 id="绘制三维图形"><a href="#绘制三维图形" class="headerlink" title="绘制三维图形"></a>绘制三维图形</h1><p>fig = plt.figure()<br>ax = fig.gca(projection=’3d’)</p>
@@ -1239,18 +1248,7 @@ r：定义了一个数组存放极轴的长度，也叫极径
 <p>ax = plt.subplot(projection=’3d’)<br>for xx, yy, zz in zip(x, y, z):<br>    color = np.random.random(3)<br>    ax.bar3d(xx, yy, 0, dx=1, dy=1, dz=zz, color=color)</p>
 <p>ax.set_xlabel(‘X’)<br>ax.set_ylabel(‘Y’)<br>ax.set_zlabel(‘Z’) </p>
 <p>plt.show()</p>
-<pre><code>![Alt text](/medias/1591450739894.png)
-
-
-
-
-
-
-
-
-
-
-</code></pre>
+<pre><code>![Alt text](/medias/1591450739894.png)</code></pre>
             </div>
             <hr/>
 

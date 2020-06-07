@@ -502,15 +502,12 @@ he       </code></pre><h3 id="2、文件"><a href="#2、文件" class="headerlin
 <h5 id="2-2-2-二进制文件"><a href="#2-2-2-二进制文件" class="headerlink" title="2.2.2 二进制文件"></a>2.2.2 二进制文件</h5><p>直接由比特 0 和比特 1 组成，没有统一字符编码</p>
 <h4 id="2-3-文件操作"><a href="#2-3-文件操作" class="headerlink" title="2.3 文件操作"></a>2.3 文件操作</h4><h5 id="2-3-1-打开文件"><a href="#2-3-1-打开文件" class="headerlink" title="2.3.1 打开文件"></a>2.3.1 打开文件</h5><p>建立磁盘上的文件与程序中的对象相关联</p>
 <ol>
-<li><p>Python 通过解释器内置的 open() 函数打开一个文件，并实现该文件与一个程序变量的关联，open() 函数格式如下：</p>
-<pre><code>&lt;变量名&gt;=open(&lt;文件名&gt;,&lt;打开模式&gt;)</code></pre></li>
-<li><p>open() 函数有两个参数：文件名和打开模式。</p>
-</li>
-<li><p>文件名可以是文件的实际名字，也可以是包含完整路径的名字。</p>
-</li>
-<li><p>文件打开模式：只读，写入，追加等。这个参数是非强制的，默认文件访问模式为只读 (r)。</p>
-</li>
-<li><p>open() 函数提供 7 种基本的打开模式</p>
+<li>Python 通过解释器内置的 open() 函数打开一个文件，并实现该文件与一个程序变量的关联，open() 函数格式如下：<pre><code>&lt;变量名&gt;=open(&lt;文件名&gt;,&lt;打开模式&gt;)</code></pre></li>
+<li>open() 函数有两个参数：文件名和打开模式。</li>
+<li>文件名可以是文件的实际名字，也可以是包含完整路径的名字。</li>
+<li>文件打开模式：只读，写入，追加等。这个参数是非强制的，默认文件访问模式为只读 (r)。</li>
+<li>open() 函数提供 7 种基本的打开模式</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -547,8 +544,9 @@ he       </code></pre><h3 id="2、文件"><a href="#2、文件" class="headerlin
 <td align="left">读、写模式（可与其他模式组合使用）</td>
 </tr>
 </tbody></table>
-</li>
-<li><p>读写模式</p>
+<ol start="6">
+<li>读写模式</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -616,16 +614,58 @@ he       </code></pre><h3 id="2、文件"><a href="#2、文件" class="headerlin
 <td align="center">+</td>
 </tr>
 </tbody></table>
-</li>
-</ol>
 <h5 id="2-3-2-文件操作"><a href="#2-3-2-文件操作" class="headerlink" title="2.3.2 文件操作"></a>2.3.2 文件操作</h5><ol>
 <li>读取</li>
 </ol>
-<p><strong>文件读取</strong><br>根据打开方式不同可以对文件进行相应的读写操作，Python提供4个常用的文件内容读取方法。<br>|  方法   |  含义   |<br>| :—— | :—— |<br>| <code>&lt;file&gt;.readall()</code>   |  读入整个文件内容，返回一个字符串或字节流   |<br>| <code>&lt;file&gt;.read(size = -1)</code>  | 从文件中读入整个文件内容，如果给出参数，读入前size长度的字符串或字节流   |<br>| <code>&lt;file&gt;.readline(size = -1)</code>  | 从文件中读入一行内容，如果给出参数，读入前  size 长度的字符串或字节流 |<br>| <code>&lt;file&gt;.readlines(hint = -1)</code>  |  从文件中读入所有行，以每行为元素形成一个列表，如果给出参数，读入 hint 行  |</p>
+<p><strong>文件读取</strong><br>根据打开方式不同可以对文件进行相应的读写操作，Python提供4个常用的文件内容读取方法。</p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>&lt;file&gt;.readall()</code></td>
+<td align="left">读入整个文件内容，返回一个字符串或字节流</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;file&gt;.read(size = -1)</code></td>
+<td align="left">从文件中读入整个文件内容，如果给出参数，读入前size长度的字符串或字节流</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;file&gt;.readline(size = -1)</code></td>
+<td align="left">从文件中读入一行内容，如果给出参数，读入前  size 长度的字符串或字节流</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;file&gt;.readlines(hint = -1)</code></td>
+<td align="left">从文件中读入所有行，以每行为元素形成一个列表，如果给出参数，读入 hint 行</td>
+</tr>
+</tbody></table>
 <ol start="2">
 <li>写入</li>
 </ol>
-<p><strong>文件写入</strong><br>Python 提供 3 个与文件内容写入有关的方法<br>|  方法   |  含义   |<br>| :—— | :——  |<br>| <code>&lt;file&gt;. write(s)</code>  | 向文件写入一个字符串或字节流 |<br>| <code>&lt;file&gt;. writelines(lines)</code>  | 将一个元素为字符串的列表写入文件 |<br>| <code>&lt;file&gt;. seek(offset)</code>   | 0：文件开头；1：当前位置；2：文件结尾   |  </p>
+<p><strong>文件写入</strong><br>Python 提供 3 个与文件内容写入有关的方法</p>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>&lt;file&gt;. write(s)</code></td>
+<td align="left">向文件写入一个字符串或字节流</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;file&gt;. writelines(lines)</code></td>
+<td align="left">将一个元素为字符串的列表写入文件</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;file&gt;. seek(offset)</code></td>
+<td align="left">0：文件开头；1：当前位置；2：文件结尾</td>
+</tr>
+</tbody></table>
 <ol start="3">
 <li><p>定位</p>
 </li>
@@ -638,9 +678,100 @@ he       </code></pre><h3 id="2、文件"><a href="#2、文件" class="headerlin
 # 这里写通过文件对象 fp 读写文件内容的语句块</code></pre><ol start="6">
 <li>文件操作示例<br>编写程序将电话簿 teleAddressBook.txt 和电子邮件 emailAddressBook.txt 合并为一个完整的 addressBook.txt</li>
 </ol>
-<p><strong>teleAddressBook.txt</strong><br>| 姓名  | 电话号码 |<br>| :—— | :——|<br>| 张伟 | 1534098751  |<br>| 王伟 | 1520878752  |<br>| 王芳 | 1520658753  |<br>| 李娜 | 1523098754  |<br>| 刘伟 | 1596098755  |</p>
-<p><strong>emailAddressBook.txt</strong><br>| 姓名  | 邮箱 |<br>| :—— | :——|<br>| 张伟 | <a href="mailto:1534098751@qq.com">1534098751@qq.com</a>  |<br>| 王伟 | <a href="mailto:1520878752@qq.com">1520878752@qq.com</a>  |<br>| 王芳 | <a href="mailto:1520658753@qq.com">1520658753@qq.com</a>  |<br>| 李伟 | <a href="mailto:1520098754@qq.com">1520098754@qq.com</a>  |</p>
-<p><strong>addressBook.txt</strong><br>| 姓名  | 电话  |邮箱 |<br>| :—— | :——| :——|<br>| 张伟 | 1534098751  | <a href="mailto:1534098751@qq.com">1534098751@qq.com</a> |<br>| 王伟 | 1520878752  | <a href="mailto:1520878752@qq.com">1520878752@qq.com</a> |<br>| 王芳 | 1520658753  | <a href="mailto:1520658753@qq.com">1520658753@qq.com</a> |<br>| 李娜 | 1523098754  |  |<br>| 刘伟 | 1596098755  |  |<br>| 李伟 |   | <a href="mailto:1520098754@qq.com">1520098754@qq.com</a> |</p>
+<p><strong>teleAddressBook.txt</strong> </p>
+<table>
+<thead>
+<tr>
+<th align="left">姓名</th>
+<th align="left">电话号码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">张伟</td>
+<td align="left">1534098751</td>
+</tr>
+<tr>
+<td align="left">王伟</td>
+<td align="left">1520878752</td>
+</tr>
+<tr>
+<td align="left">王芳</td>
+<td align="left">1520658753</td>
+</tr>
+<tr>
+<td align="left">李娜</td>
+<td align="left">1523098754</td>
+</tr>
+<tr>
+<td align="left">刘伟</td>
+<td align="left">1596098755</td>
+</tr>
+</tbody></table>
+<p><strong>emailAddressBook.txt</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">姓名</th>
+<th align="left">邮箱</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">张伟</td>
+<td align="left"><a href="mailto:1534098751@qq.com">1534098751@qq.com</a></td>
+</tr>
+<tr>
+<td align="left">王伟</td>
+<td align="left"><a href="mailto:1520878752@qq.com">1520878752@qq.com</a></td>
+</tr>
+<tr>
+<td align="left">王芳</td>
+<td align="left"><a href="mailto:1520658753@qq.com">1520658753@qq.com</a></td>
+</tr>
+<tr>
+<td align="left">李伟</td>
+<td align="left"><a href="mailto:1520098754@qq.com">1520098754@qq.com</a></td>
+</tr>
+</tbody></table>
+<p><strong>addressBook.txt</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">姓名</th>
+<th align="left">电话</th>
+<th align="left">邮箱</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">张伟</td>
+<td align="left">1534098751</td>
+<td align="left"><a href="mailto:1534098751@qq.com">1534098751@qq.com</a></td>
+</tr>
+<tr>
+<td align="left">王伟</td>
+<td align="left">1520878752</td>
+<td align="left"><a href="mailto:1520878752@qq.com">1520878752@qq.com</a></td>
+</tr>
+<tr>
+<td align="left">王芳</td>
+<td align="left">1520658753</td>
+<td align="left"><a href="mailto:1520658753@qq.com">1520658753@qq.com</a></td>
+</tr>
+<tr>
+<td align="left">李娜</td>
+<td align="left">1523098754</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">刘伟</td>
+<td align="left">1596098755</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">李伟</td>
+<td align="left"></td>
+<td align="left"><a href="mailto:1520098754@qq.com">1520098754@qq.com</a></td>
+</tr>
+</tbody></table>
 <ol start="7">
 <li>文件操作示例代码</li>
 </ol>

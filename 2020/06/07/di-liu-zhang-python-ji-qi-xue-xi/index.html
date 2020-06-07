@@ -598,6 +598,7 @@ target_test: [1 0 2 1 1 0 1 2 1 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0 0 0 1 
 #### 2.3 Sklearn 库回归算法
 
 ##### 2.3.1 Scikit-learn 库回归算法
+
 1. Sklearn 中的回归算法
 •    线性回归函数包括：普通线性回归函数（LinearRegression），岭回归（Ridge）， Lasso回归（Lasso）。
 •    非线性回归函数，如多项式回归（Polynomial Features）通过
@@ -622,7 +623,9 @@ sklearn.preprocessing 子模块进行调用
 ### 3、线性回归预测实战
 
 #### 3.1 线性回归原理
+
 ##### 3.1.1 “回归”的由来
+
 1. “回归” 是由高尔顿在研究人类遗传问题时提出来的。
 
 2. 为研究父代与子代身高的关系，高尔顿搜集了 1078 对父亲及其儿子的身高数据并进行了深入分析，发现了回归效应:
@@ -632,6 +635,7 @@ sklearn.preprocessing 子模块进行调用
 4. 即这两种身高父亲的儿子的身高，有向他们父辈的平均身高回归的趋势，解释为：大自然约束使人类身高分布相对稳定而非两极分化，就是所谓的“回归效应”。
 
 ##### 3.1.2 回归分析概念
+
 1. 回归分析法：指将具有相关关系的两个变量之间的数量关系进行测定，通过建立一个数学表达式进行统计估计和预测的统计研究方法。
 2. 自变量：一般把作为估测依据的变量叫做自变量
 3. 因变量： 待估测的变量
@@ -639,9 +643,11 @@ sklearn.preprocessing 子模块进行调用
 5. 回归模型：某一类回归方程的总称
 
 ##### 3.1.3 回归分析步骤
+
 ![Alt text](/medias/1591461605573.png)
 
 #### 3.2 线性回归模型原理
+
 ![Alt text](/medias/1591461655296.png)
 ![Alt text](/medias/1591461668594.png)
 ![Alt text](/medias/1591461678967.png)
@@ -649,6 +655,7 @@ sklearn.preprocessing 子模块进行调用
 #### 3.3 预测儿童身高实战
 
 ##### 3.3.1 线性回归预测实战
+
 1. 线性回归预测儿童身高
 •    假定一个人的身高只受年龄、性别、父母身高、祖父母身高和外祖父母身高这几个因素的影响，并假定大致符合线性关系。
 •    在其他条件不变的情况下，随着年龄的增长，会越来越高；
@@ -694,6 +701,7 @@ sklearn.preprocessing 子模块进行调用
 #### 4.1 分类基本概念
 
 ##### 4.1.1 什么是分类
+
 **超市物品分类**
 ![Alt text](/medias/1591462398944.png)
 
@@ -704,12 +712,14 @@ sklearn.preprocessing 子模块进行调用
 ![Alt text](/medias/1591462408292.png)
 
 ##### 4.1.2 分类在数据挖掘中的定义
+
 •    分类就是把一些新的数据项`映射到给定类别`的中的某一个类别。
 •    分类属于`有监督学习`(supervised learning)，与之相对于的是无监督学习
 (unsupervised learning)，比如聚类。
 •    分类与聚类的最大区别在于，分类数据中的一部分的`类别是已知`的，而聚类数据的`类别未知`。
 
 ##### 4.1.3 分类问题
+
 **动物分类问题**
 根据现有的知识，我们得到了一些关于哺乳动物和鸟类的信息，我们能否对新发现的物种，比如动物A，动物B进行分类？
 
@@ -725,6 +735,7 @@ sklearn.preprocessing 子模块进行调用
 | 动物B | 中 | 2 | 2 | 否 | 是 | ? |
 
 ##### 4.1.4 分类的流程
+
 1. 步骤一：将样本转化为等维的数据特征（`特征提取`）。所有样本必须具有相同数量的特征。兼顾特征的全面性和独立性。
 2. 步骤二：选择与类别相关的特征（`特征选择`）。比如，绿色代表与类别非常相关，黑色代表部分相关，浅蓝色代表完全无关。
 3. 步骤三：建立分类模型或分类器。
@@ -741,10 +752,12 @@ sklearn.preprocessing 子模块进行调用
 
 
 ##### 4.1.5 分类的方法
+
 1）常用分类算法主要包括相似函数，关联规则分类算法，K近邻分类算法，决策树分类算法，贝叶斯分类算法和基于模糊逻辑，遗传算法，粗糙集和神经网络的分类算法。
 2）分类算法有很多种，都有各自的优缺点和应用范围，本课程我们以贝叶斯分类算法为例。
 
 #### 4.2 贝叶斯分类概述
+
 1. 背景
 1）贝叶斯分类基于`贝叶斯`定理，贝叶斯定理是由 18 世纪概率论和决策论的研究者 Thomas Bayes 发明的，故用其名字命名为贝叶斯定理。
 2）通过对分类算法的比较研究发现，朴素贝叶斯分类法可以与决策树和经过挑选的神经网络分类器相媲美。用于大型数据库，贝叶斯分类法也具有很高准确率和速度。
@@ -784,11 +797,13 @@ $$P(A|B)=P(A)\frac{P(B|A)}{P(B)}$$
  ![Alt text](/medias/1591463645577.png)
 
 #### 4.3 垃圾邮件分类实战
+
 训练数据：
 垃圾邮件（0.txt至150.txt），其中 0-127 为垃圾邮件，128 至 150 为正常邮件，151 至 156 为测试邮件。
 ![Alt text](/medias/1591463717009.png)
 
 ##### 4.3.1 问题分析
+
 ①    读取全部训练集，`删除其中的干扰字符`，例如【】*。、，等等，然后`分词`，再删除`长度为 1`的单个字，这样的单个字对于文本分类没有贡献，剩下的词汇认为是有效词汇。
 
 ②    统计全部训练集中每个`有效词汇的出现次数`，截取出现次数最多的`前N个`。
@@ -802,14 +817,19 @@ $$P(A|B)=P(A)\frac{P(B|A)}{P(B)}$$
 ⑥    使用第 4 步中训练好的模型，根据第 5 步提取的特征向量对邮件进行分类。
 
 ##### 4.3.2 垃圾邮件分类实战
-1. 导入扩展库</code></pre><p>from re import sub<br>from collections import Counter<br>from itertools import chain<br>from numpy import array<br>from jieba import cut<br>from sklearn.naive_bayes import MultinomialNB</p>
+
+1. 导入扩展库
+</code></pre><p>from re import sub<br>from collections import Counter<br>from itertools import chain<br>from numpy import array<br>from jieba import cut<br>from sklearn.naive_bayes import MultinomialNB</p>
 <pre><code>
-2. 获取文件中所有词</code></pre><p>def getWordsFromFile(txtFile):<br>    words = []<br>    with open(txtFile, encoding=’utf8’) as fp:<br>        for line in fp:<br>            line = line.strip()<br>            line = sub(r’[.【】0-9、—。，！~*]’, ‘’, line)<br>            line = cut(line)<br>            line = filter(lambda word: len(word)&gt;1, line)<br>            words.extend(line)<br>    return words</p>
+2. 获取文件中所有词
+</code></pre><p>def getWordsFromFile(txtFile):<br>    words = []<br>    with open(txtFile, encoding=’utf8’) as fp:<br>        for line in fp:<br>            line = line.strip()<br>            line = sub(r’[.【】0-9、—。，！~*]’, ‘’, line)<br>            line = cut(line)<br>            line = filter(lambda word: len(word)&gt;1, line)<br>            words.extend(line)<br>    return words</p>
 <pre><code>
-3. 获得全部训练集中出现次数最多的词</code></pre><p>allWords = []<br>def getTopNWords(topN):<br>    txtFiles = [str(i)+’.txt’ for i in range(151)]<br>    for txtFile in txtFiles:<br>        allWords.append(getWordsFromFile(txtFile))<br>    freq = Counter(chain(*allWords))<br>    return [w[0] for w in freq.most_common(topN)]</p>
+3. 获得全部训练集中出现次数最多的词
+</code></pre><p>allWords = []<br>def getTopNWords(topN):<br>    txtFiles = [str(i)+’.txt’ for i in range(151)]<br>    for txtFile in txtFiles:<br>        allWords.append(getWordsFromFile(txtFile))<br>    freq = Counter(chain(*allWords))<br>    return [w[0] for w in freq.most_common(topN)]</p>
 <p>topWords = getTopNWords(600)</p>
 <pre><code>
-4. 获取特征向量、创建模型训练</code></pre><p>vectors = []<br>for words in allWords:<br>    temp = list(map(lambda x: words.count(x), topWords))<br>    vectors.append(temp) </p>
+4. 获取特征向量、创建模型训练
+</code></pre><p>vectors = []<br>for words in allWords:<br>    temp = list(map(lambda x: words.count(x), topWords))<br>    vectors.append(temp) </p>
 <p>vectors = array(vectors)<br>labels = array([1]<em>127 + [0]</em>24)</p>
 <p>model = MultinomialNB()<br>model.fit(vectors, labels)</p>
 <pre><code>
