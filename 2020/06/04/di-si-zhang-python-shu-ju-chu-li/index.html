@@ -1179,268 +1179,254 @@ five    2002    Nevada    2.9      NaN</code></pre><pre><code>&gt;&gt;&gt; frame
 <li><p>返回的 Series 拥有原 DataFrame 相同的索引，且其 name 属性也已经被相应地设置好了。</p>
 </li>
 </ol>
-<pre><code>&gt;&gt;&gt; frame2[&#39;state&#39;]
-```
-**运行结果**
-```
-one        Ohio
+<pre><code>&gt;&gt;&gt; frame2[&#39;state&#39;]</code></pre><p><strong>运行结果</strong></p>
+<pre><code>one        Ohio
 two        Ohio
 three      Ohio
 four     Nevada
 five     Nevada
-Name: state, dtype: object
-```
-
-```
-&gt;&gt;&gt; frame2[&#39;year&#39;]
-```
-**运行结果**
-```
-one      2000
+Name: state, dtype: object</code></pre><pre><code>&gt;&gt;&gt; frame2[&#39;year&#39;]</code></pre><p><strong>运行结果</strong></p>
+<pre><code>one      2000
 two      2001
 three    2002
 four     2001
 five     2002
-Name: year, dtype: int64
-```
-
-9. 列可以通过赋值的方式进行修改。
-
-10. 例如，给那个空的“delt”列赋上一个标量值或一组值。
-
-```
-&gt;&gt;&gt; frame2[&#39;debt&#39;] = 16.5 
-&gt;&gt;&gt; frame2
-```
-**运行结果**
-```
-        year    state    pop     debt
+Name: year, dtype: int64</code></pre><ol start="9">
+<li><p>列可以通过赋值的方式进行修改。</p>
+</li>
+<li><p>例如，给那个空的“delt”列赋上一个标量值或一组值。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; frame2[&#39;debt&#39;] = 16.5 
+&gt;&gt;&gt; frame2</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        year    state    pop     debt
 one        2000    Ohio    1.5     16.5
 two        2001    Ohio    1.7     16.5
 three    2002    Ohio    3.6  16.5
 four    2001    Nevada    2.4  16.5
-five    2002    Nevada    2.9  16.5
-```
-
-```
-&gt;&gt;&gt; frame2[&#39;debt&#39;] = np.arange(5.) 
-&gt;&gt;&gt; frame2
-```
-**运行结果**
-```
-        year    state    pop  debt
+five    2002    Nevada    2.9  16.5</code></pre><pre><code>&gt;&gt;&gt; frame2[&#39;debt&#39;] = np.arange(5.) 
+&gt;&gt;&gt; frame2</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        year    state    pop  debt
 one        2000    Ohio    1.5  0.0
 two        2001    Ohio    1.7  1.0
 three    2002    Ohio    3.6  2.0
 four    2001    Nevada    2.4  3.0
-five    2002    Nevada    2.9     4.0
-```
-
-11. 将列表或数组赋值给某个列时，其长度必须跟DataFrame的长度相匹配。
-
-12. 如果赋值的是一个 Series，就会精确匹配 DataFrame 的索引，所有空位都将被填上缺失值。
-
-```
-&gt;&gt;&gt; val = pd.Series([-1.2, -1.5, -1.7], index=[&#39;two&#39;, &#39;four&#39;, &#39;five&#39;]) 
+five    2002    Nevada    2.9     4.0</code></pre><ol start="11">
+<li><p>将列表或数组赋值给某个列时，其长度必须跟DataFrame的长度相匹配。</p>
+</li>
+<li><p>如果赋值的是一个 Series，就会精确匹配 DataFrame 的索引，所有空位都将被填上缺失值。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; val = pd.Series([-1.2, -1.5, -1.7], index=[&#39;two&#39;, &#39;four&#39;, &#39;five&#39;]) 
 &gt;&gt;&gt; frame2[&#39;debt&#39;] = val
-&gt;&gt;&gt; frame2
-```
-**运行结果**
-```
-        year    state    pop     debt
+&gt;&gt;&gt; frame2</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        year    state    pop     debt
 one        2000    Ohio    1.5     NaN
 two        2001    Ohio    1.7     -1.2
 three    2002    Ohio    3.6     NaN
 four    2001    Nevada    2.4     -1.5
-five    2002    Nevada    2.9     -1.7
-```
-
-13. 为不存在的列赋值会创建出一个新列
-
-14. 关键字 del 用于删除列
-
-```
-&gt;&gt;&gt; frame2[&#39;eastern&#39;] = frame2.state == &#39;Ohio&#39; 
-&gt;&gt;&gt; frame2
-```
-
-**运行结果**
-```
-        year    state    pop      debt    eastern
+five    2002    Nevada    2.9     -1.7</code></pre><ol start="13">
+<li><p>为不存在的列赋值会创建出一个新列</p>
+</li>
+<li><p>关键字 del 用于删除列</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; frame2[&#39;eastern&#39;] = frame2.state == &#39;Ohio&#39; 
+&gt;&gt;&gt; frame2</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        year    state    pop      debt    eastern
 one     2000    Ohio    1.5      NaN    True
 two        2001    Ohio    1.7     -1.2     True
 three    2002    Ohio    3.6      NaN    True
 four    2001    Nevada    2.4     -1.5     False
-five    2002    Nevada    2.9     -1.7     False
-```
-
-```
-&gt;&gt;&gt; del frame2[&#39;eastern&#39;]
-&gt;&gt;&gt; frame2.columns
-```
-
-**运行结果**
-Index([&#39;year&#39;, &#39;state&#39;, &#39;pop&#39;, &#39;debt&#39;], dtype=&#39;object&#39;)
-
-15. 将嵌套字典（也就是字典的字典）传给 DataFrame，它就会被解释为：外层字典的键作为列，内层键则作为行索引。
-
-16. 也可以对上述结果进行转置。
-
-```
-&gt;&gt;&gt; pop = {&#39;Nevada&#39;: {2001: 2.4, 2002: 2.9}, &#39;Ohio&#39;: {2000: 1.5, 2001: 1.7, 2002: 3.6}}
+five    2002    Nevada    2.9     -1.7     False</code></pre><pre><code>&gt;&gt;&gt; del frame2[&#39;eastern&#39;]
+&gt;&gt;&gt; frame2.columns</code></pre><p><strong>运行结果</strong><br>Index([‘year’, ‘state’, ‘pop’, ‘debt’], dtype=’object’)</p>
+<ol start="15">
+<li><p>将嵌套字典（也就是字典的字典）传给 DataFrame，它就会被解释为：外层字典的键作为列，内层键则作为行索引。</p>
+</li>
+<li><p>也可以对上述结果进行转置。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; pop = {&#39;Nevada&#39;: {2001: 2.4, 2002: 2.9}, &#39;Ohio&#39;: {2000: 1.5, 2001: 1.7, 2002: 3.6}}
 &gt;&gt;&gt; frame3 = pd.DataFrame(pop)
-&gt;&gt;&gt; frame3
-```
-
-**运行结果**
-
-```
-        Nevada    Ohio
+&gt;&gt;&gt; frame3</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        Nevada    Ohio
 2001     2.4    1.7
 2002     2.9    3.6
-2000     NaN    1.5
-```
-
-```
-&gt;&gt;&gt; frame3.T
-```
-
-**运行结果**
-
-```
-        2001    2002    2000
+2000     NaN    1.5</code></pre><pre><code>&gt;&gt;&gt; frame3.T</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        2001    2002    2000
 Nevada    2.4        2.9        NaN
-Ohio    1.7        3.6        1.5
-```
-
-17. 如果设置了 DataFrame 的 index 和 columns 的 name 属性，则这些信息也会被显示出来。
-
-```
-&gt;&gt;&gt; frame3.index.name = &#39;year&#39; 
+Ohio    1.7        3.6        1.5</code></pre><ol start="17">
+<li>如果设置了 DataFrame 的 index 和 columns 的 name 属性，则这些信息也会被显示出来。</li>
+</ol>
+<pre><code>&gt;&gt;&gt; frame3.index.name = &#39;year&#39; 
 &gt;&gt;&gt; frame3.columns.name = &#39;state&#39; 
-&gt;&gt;&gt; frame3
-```
-
-**运行结果**
-
-```
-state    Nevada    Ohio
+&gt;&gt;&gt; frame3</code></pre><p><strong>运行结果</strong></p>
+<pre><code>state    Nevada    Ohio
 year        
 2001    2.4        1.7
 2002    2.9        3.6
-2000    NaN        1.5
-```
-
-18. 跟 Series 一样，values 属性也会以二维 ndarray 的形式返回 DataFrame 中的数据。
-
-19. 如果 DataFrame 各列的数据类型不同，则数组的数据类型就会选用能兼容所有列的数据类型。
-
-```
-&gt;&gt;&gt; frame3.values
-```
-
-**运行结果**
-```
-array([[2.4, 1.7],
+2000    NaN        1.5</code></pre><ol start="18">
+<li><p>跟 Series 一样，values 属性也会以二维 ndarray 的形式返回 DataFrame 中的数据。</p>
+</li>
+<li><p>如果 DataFrame 各列的数据类型不同，则数组的数据类型就会选用能兼容所有列的数据类型。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; frame3.values</code></pre><p><strong>运行结果</strong></p>
+<pre><code>array([[2.4, 1.7],
        [2.9, 3.6],
-       [nan, 1.5]])
-```
-
-```
-&gt;&gt;&gt; frame2.values
-```
-
-**运行结果**
-
-```
-array([[2000, &#39;Ohio&#39;, 1.5, nan],
+       [nan, 1.5]])</code></pre><pre><code>&gt;&gt;&gt; frame2.values</code></pre><p><strong>运行结果</strong></p>
+<pre><code>array([[2000, &#39;Ohio&#39;, 1.5, nan],
        [2001, &#39;Ohio&#39;, 1.7, -1.2],
        [2002, &#39;Ohio&#39;, 3.6, nan],
        [2001, &#39;Nevada&#39;, 2.4, -1.5],
-       [2002, &#39;Nevada&#39;, 2.9, -1.7]], dtype=object)
-```
-
-### 4、pandas 常用方法
-
-#### 4.1 数据读取与写入
-
-1. Pandas 支持常用的文本格式数据(csv、json、html、剪贴板)、二进制数据(excel、hdf5 格式、Feather 格式、Parquet 格式、Msgpack、 Stata、SAS、pkl)、SQL 数据(SQL、谷歌 BigQuery 云数据)等。
-
-2. 一般情况下 ， 读取文件的方法以 pd.read_ 开头， 而写入文件的方法以 pd.to_ 开头。
-
-3. 示例1
-
-|  数据类型  |  描述符  |  读方法  |  写方法  |
-| :------ | :------ | :------ | :------ |
-| text  |  CSV  |  `read_csv`  |  `to_csv`  |
-| text  |  JSON |  `read_json` |  `to_json` |
-| text  |  HTML |  `read_csv`  |  `to_csv`  |
-| text  | 剪切板|  `read_clipboard` |  `to_clipboard` |
-| 二进制| Excel |  `read_excel`  |  `to_excel`  |
-| 二进制|  HDF5 |  `read_hdf`  |  `to_hdf`  |
-| 二进制|  PKL  |  `read_pickle`  |  `to_pickle`  |
-|  SQL  |  SQL  |  `read_sql`  |  `to_sql`  |
-
-**数据读取函数read_csv示例**
-1. read_csv（）
-
-2. 自定义索引：可以指定 csv 文件中的一列来使用 index_col 定制索引
-
-3. dtype：数据类型转换
-
-4. skiprows：跳过指定的行数
-5. 示例2
-
-```
-df=pd.read_csv(&quot;temp.csv&quot;) 
+       [2002, &#39;Nevada&#39;, 2.9, -1.7]], dtype=object)</code></pre><h3 id="4、pandas-常用方法"><a href="#4、pandas-常用方法" class="headerlink" title="4、pandas 常用方法"></a>4、pandas 常用方法</h3><h4 id="4-1-数据读取与写入"><a href="#4-1-数据读取与写入" class="headerlink" title="4.1 数据读取与写入"></a>4.1 数据读取与写入</h4><ol>
+<li><p>Pandas 支持常用的文本格式数据(csv、json、html、剪贴板)、二进制数据(excel、hdf5 格式、Feather 格式、Parquet 格式、Msgpack、 Stata、SAS、pkl)、SQL 数据(SQL、谷歌 BigQuery 云数据)等。</p>
+</li>
+<li><p>一般情况下 ， 读取文件的方法以 pd.read_ 开头， 而写入文件的方法以 pd.to_ 开头。</p>
+</li>
+<li><p>示例1</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">数据类型</th>
+<th align="left">描述符</th>
+<th align="left">读方法</th>
+<th align="left">写方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">text</td>
+<td align="left">CSV</td>
+<td align="left"><code>read_csv</code></td>
+<td align="left"><code>to_csv</code></td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">JSON</td>
+<td align="left"><code>read_json</code></td>
+<td align="left"><code>to_json</code></td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">HTML</td>
+<td align="left"><code>read_csv</code></td>
+<td align="left"><code>to_csv</code></td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">剪切板</td>
+<td align="left"><code>read_clipboard</code></td>
+<td align="left"><code>to_clipboard</code></td>
+</tr>
+<tr>
+<td align="left">二进制</td>
+<td align="left">Excel</td>
+<td align="left"><code>read_excel</code></td>
+<td align="left"><code>to_excel</code></td>
+</tr>
+<tr>
+<td align="left">二进制</td>
+<td align="left">HDF5</td>
+<td align="left"><code>read_hdf</code></td>
+<td align="left"><code>to_hdf</code></td>
+</tr>
+<tr>
+<td align="left">二进制</td>
+<td align="left">PKL</td>
+<td align="left"><code>read_pickle</code></td>
+<td align="left"><code>to_pickle</code></td>
+</tr>
+<tr>
+<td align="left">SQL</td>
+<td align="left">SQL</td>
+<td align="left"><code>read_sql</code></td>
+<td align="left"><code>to_sql</code></td>
+</tr>
+</tbody></table>
+<p><strong>数据读取函数read_csv示例</strong></p>
+<ol>
+<li><p>read_csv（）</p>
+</li>
+<li><p>自定义索引：可以指定 csv 文件中的一列来使用 index_col 定制索引</p>
+</li>
+<li><p>dtype：数据类型转换</p>
+</li>
+<li><p>skiprows：跳过指定的行数</p>
+</li>
+<li><p>示例2</p>
+</li>
+</ol>
+<pre><code>df=pd.read_csv(&quot;temp.csv&quot;) 
+print(df)</code></pre><pre><code>df = pd.read_csv(&quot;temp.csv&quot;, dtype={&#39;Salary&#39;: np.float64})
 print(df)
-```
-
-```
-df = pd.read_csv(&quot;temp.csv&quot;, dtype={&#39;Salary&#39;: np.float64})
-print(df)
-print(df.dtypes)
-```
-
-```
-df=pd.read_csv(&quot;temp.csv&quot;, names=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;,&#39;d&#39;,&#39;e&#39;])
-print(df)
-```
-
-```
-df=pd.read_csv(&quot;temp.csv&quot;, skiprows=2) 
-print (df)
-```
-
-#### 4.2 描述性统计方法
-
-1. Pandas 提供了几个统计和描述性方法，方便你从宏观的角度去了解数据集，例如count() 用于统计非空数据的数量。
-
-2. 除了统计类的方法，Pandas 还 提供了很多计算类的方法，比如 sum() 用于计算数值数据的总和；mean() 用 于 计 算 数 值 数 据 的 平 均 值 ；median() 用于计算数值数据的算术中值。
-
-|  函数  |  描述  |
-| :------ | :------ |
-| count() | 非空观测数量 |
-| sum() | 所有值之和   |
-| mean() | 所有值的平均值 |
-| median() | 所有值的中位数 |
-| mode() | 值的模值 |
-| std() | 值的标准偏差 |
-| min() | 所有值中的最小值 |
-| max() | 所有值中的最大值 |
-| abs() | 绝对值 |
-| prod() | 数组元素的乘积 |
-| cumsum() | 累计总和 |
-| cumprod() | 累计乘积 |
-
-**描述性统计方法示例**
-**sum()**：求和；
-**mean()** ：求中值；
-**std()**：求标准差；
-**describe()**：描述性统计信息摘要。 
-
-```
-d = {&#39;Name&#39;:pd.Series([&#39;Tom&#39;,&#39;James&#39;,&#39;Ricky&#39;,&#39;Vin&#39;,&#39;Steve&#39;,&#39;Minsu&#39;,&#39;Jack&#39;,&#39;Lee&#39;,&#39;David&#39;,&#39;Gasper&#39;,&#39;Betina&#39;,&#39;Andres&#39;]),&#39;Age&#39;:pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),&#39;Rating&#39;:pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+print(df.dtypes)</code></pre><pre><code>df=pd.read_csv(&quot;temp.csv&quot;, names=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;,&#39;d&#39;,&#39;e&#39;])
+print(df)</code></pre><pre><code>df=pd.read_csv(&quot;temp.csv&quot;, skiprows=2) 
+print (df)</code></pre><h4 id="4-2-描述性统计方法"><a href="#4-2-描述性统计方法" class="headerlink" title="4.2 描述性统计方法"></a>4.2 描述性统计方法</h4><ol>
+<li><p>Pandas 提供了几个统计和描述性方法，方便你从宏观的角度去了解数据集，例如count() 用于统计非空数据的数量。</p>
+</li>
+<li><p>除了统计类的方法，Pandas 还 提供了很多计算类的方法，比如 sum() 用于计算数值数据的总和；mean() 用 于 计 算 数 值 数 据 的 平 均 值 ；median() 用于计算数值数据的算术中值。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">count()</td>
+<td align="left">非空观测数量</td>
+</tr>
+<tr>
+<td align="left">sum()</td>
+<td align="left">所有值之和</td>
+</tr>
+<tr>
+<td align="left">mean()</td>
+<td align="left">所有值的平均值</td>
+</tr>
+<tr>
+<td align="left">median()</td>
+<td align="left">所有值的中位数</td>
+</tr>
+<tr>
+<td align="left">mode()</td>
+<td align="left">值的模值</td>
+</tr>
+<tr>
+<td align="left">std()</td>
+<td align="left">值的标准偏差</td>
+</tr>
+<tr>
+<td align="left">min()</td>
+<td align="left">所有值中的最小值</td>
+</tr>
+<tr>
+<td align="left">max()</td>
+<td align="left">所有值中的最大值</td>
+</tr>
+<tr>
+<td align="left">abs()</td>
+<td align="left">绝对值</td>
+</tr>
+<tr>
+<td align="left">prod()</td>
+<td align="left">数组元素的乘积</td>
+</tr>
+<tr>
+<td align="left">cumsum()</td>
+<td align="left">累计总和</td>
+</tr>
+<tr>
+<td align="left">cumprod()</td>
+<td align="left">累计乘积</td>
+</tr>
+</tbody></table>
+<p><strong>描述性统计方法示例</strong><br><strong>sum()</strong>：求和；<br><strong>mean()</strong> ：求中值；<br><strong>std()</strong>：求标准差；<br><strong>describe()</strong>：描述性统计信息摘要。 </p>
+<pre><code>d = {&#39;Name&#39;:pd.Series([&#39;Tom&#39;,&#39;James&#39;,&#39;Ricky&#39;,&#39;Vin&#39;,&#39;Steve&#39;,&#39;Minsu&#39;,&#39;Jack&#39;,&#39;Lee&#39;,&#39;David&#39;,&#39;Gasper&#39;,&#39;Betina&#39;,&#39;Andres&#39;]),&#39;Age&#39;:pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),&#39;Rating&#39;:pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
 
 #Create a DataFrame
 df = pd.DataFrame(d)
@@ -1458,13 +1444,8 @@ print(&quot;\n标准差&quot;)
 print(df.std(), &#39;\n&#39;)    # 标准差
 
 print(&quot;\n统计信息摘要&quot;)
-print(df.describe(include=[&#39;number&#39;]))    # 统计信息摘要
-```
-
-**运行结果**
-
-```
-      Name   Age  Rating
+print(df.describe(include=[&#39;number&#39;]))    # 统计信息摘要</code></pre><p><strong>运行结果</strong></p>
+<pre><code>      Name   Age  Rating
 0      Tom   25    4.23
 1    James   26    3.24
 2    Ricky   25    3.98
@@ -1523,26 +1504,15 @@ min    23.000000   2.560000
 25%    25.000000   3.230000
 50%    29.500000   3.790000
 75%    35.500000   4.132500
-max    51.000000   4.800000
-```
-
-#### 4.3 迭代与遍历
-
-1. pandas 对象之间的基本迭代的行为取决于类型。当迭代一个系列时，它被视为数组式，基本迭代产生这些值。其他数据结构，如：DataFrame，遵循类似惯例迭代对象的键。
-
-2. 简而言之，基本迭代(对于 i 在对象中)产生：
-➢    Series - 值
-➢    DataFrame - 列标签
-
-3. 要遍历数据帧(DataFrame)中的行，可以使用以下函数：
-➢    iteritems() - 迭代(key，value)对
-➢    iterrows() - 将行迭代为(索引，系列)对
-➢    itertuples() - 以 namedtuples 的形式迭代行
-
-##### 4.3.1 迭代 DataFrame
-
-```
-N=5
+max    51.000000   4.800000</code></pre><h4 id="4-3-迭代与遍历"><a href="#4-3-迭代与遍历" class="headerlink" title="4.3 迭代与遍历"></a>4.3 迭代与遍历</h4><ol>
+<li><p>pandas 对象之间的基本迭代的行为取决于类型。当迭代一个系列时，它被视为数组式，基本迭代产生这些值。其他数据结构，如：DataFrame，遵循类似惯例迭代对象的键。</p>
+</li>
+<li><p>简而言之，基本迭代(对于 i 在对象中)产生：<br>➢    Series - 值<br>➢    DataFrame - 列标签</p>
+</li>
+<li><p>要遍历数据帧(DataFrame)中的行，可以使用以下函数：<br>➢    iteritems() - 迭代(key，value)对<br>➢    iterrows() - 将行迭代为(索引，系列)对<br>➢    itertuples() - 以 namedtuples 的形式迭代行</p>
+</li>
+</ol>
+<h5 id="4-3-1-迭代-DataFrame"><a href="#4-3-1-迭代-DataFrame" class="headerlink" title="4.3.1 迭代 DataFrame"></a>4.3.1 迭代 DataFrame</h5><pre><code>N=5
 df = pd.DataFrame({
     &#39;D&#39;: pd.date_range(start=&#39;2019-01-01&#39;,periods=N,freq=&#39;M&#39;), 
     &#39;x&#39;: np.linspace(0,stop=N-1,num=N),
@@ -1553,13 +1523,8 @@ df = pd.DataFrame({
 print(df,&#39;\n&#39;)
 
 for col in df:
-    print(col)
-```
-
-**运行结果**
-
-```
-           D    x         y       z
+    print(col)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>           D    x         y       z
 0 2019-01-31  0.0  0.484448     Low
 1 2019-02-28  1.0  0.524120     Low
 2 2019-03-31  2.0  0.828685     Low
@@ -1569,17 +1534,12 @@ for col in df:
 D
 x
 y
-z
-```
-
-##### 4.3.2 遍历Dataframe 示例
-
-1. iteritems（）:将索引和值作为键和列值迭代为 Series 对象。
-2. iterrows() 返回迭代器，产生每个索引值以及包含每行数据的序列。
-3. itertuples() 方法将为 DataFrame 中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值。
-
-```
-df = pd.DataFrame(np.random.randn(4,3), columns=[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])
+z</code></pre><h5 id="4-3-2-遍历Dataframe-示例"><a href="#4-3-2-遍历Dataframe-示例" class="headerlink" title="4.3.2 遍历Dataframe 示例"></a>4.3.2 遍历Dataframe 示例</h5><ol>
+<li>iteritems（）:将索引和值作为键和列值迭代为 Series 对象。</li>
+<li>iterrows() 返回迭代器，产生每个索引值以及包含每行数据的序列。</li>
+<li>itertuples() 方法将为 DataFrame 中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值。</li>
+</ol>
+<pre><code>df = pd.DataFrame(np.random.randn(4,3), columns=[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])
 
 print(&quot;\niteritems---------&quot;)
 for key,value in df.iteritems():  
@@ -1591,13 +1551,8 @@ for row_index,row in df.iterrows():
 
 print(&quot;\nitertuples---------&quot;)
 for row in df.itertuples():    
-    print (row)
-```
-
-**运行结果**
-
-```
-iteritems---------
+    print (row)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>iteritems---------
 col1 0    1.695599
 1    0.488772
 2   -0.619981
@@ -1636,23 +1591,18 @@ itertuples---------
 Pandas(Index=0, col1=1.6955989667355411, col2=1.330443199183925, col3=-0.6111232406395801)
 Pandas(Index=1, col1=0.48877226515862515, col2=-1.4252547843646672, col3=-0.4896771961954065)
 Pandas(Index=2, col1=-0.6199809960277997, col2=2.519533679337298, col3=-0.6636771740497193)
-Pandas(Index=3, col1=0.019115935065828222, col2=1.850636585984077, col3=0.08147652656559304)
-```
-
-#### 4.4 排序
-
-1. 按索引排序：使用 sort_index() 方法，通过传递 axis 参数和排序顺序，可以对 DataFrame 进行排序。 默认情况下，按照升序对行标签进行排序。
-
-2. 按数值排序：sort_values() 是按值排序的方法。它接受一个 by 参数，它将使用要与其排序值的 DataFrame 的列名称。
-
-3. 排序顺序：通过将布尔值传递给升序参数 ascending，可以控制排序顺序。
-
-4. 按行或列排序：通过设置 axis 参数为 0 或 1 ，为 0 时逐行排序，为 1 时逐列排序，默认为 0。
-
-**排序示例**
-
-```
-print(&quot;\n待排序------&quot;)
+Pandas(Index=3, col1=0.019115935065828222, col2=1.850636585984077, col3=0.08147652656559304)</code></pre><h4 id="4-4-排序"><a href="#4-4-排序" class="headerlink" title="4.4 排序"></a>4.4 排序</h4><ol>
+<li><p>按索引排序：使用 sort_index() 方法，通过传递 axis 参数和排序顺序，可以对 DataFrame 进行排序。 默认情况下，按照升序对行标签进行排序。</p>
+</li>
+<li><p>按数值排序：sort_values() 是按值排序的方法。它接受一个 by 参数，它将使用要与其排序值的 DataFrame 的列名称。</p>
+</li>
+<li><p>排序顺序：通过将布尔值传递给升序参数 ascending，可以控制排序顺序。</p>
+</li>
+<li><p>按行或列排序：通过设置 axis 参数为 0 或 1 ，为 0 时逐行排序，为 1 时逐列排序，默认为 0。</p>
+</li>
+</ol>
+<p><strong>排序示例</strong></p>
+<pre><code>print(&quot;\n待排序------&quot;)
 unsorted_df = pd.DataFrame(np.random.rand(10,2),index=[1,4,6,2,3,5,9,8,0,7],columns = [&#39;A&#39;,&#39;B&#39;])
 print(unsorted_df,&#39;\n&#39;)
 
@@ -1662,13 +1612,8 @@ print (sorted_df,&#39;\n&#39;)
 
 print(&quot;\n按&#39;B&#39;列的值进行排序------&quot;)
 sorted_df = unsorted_df.sort_values(by=&#39;B&#39;) # 按&#39;B&#39;列的值进行排序
-print (sorted_df,&#39;\n&#39;)
-```
-
-**运行结果**
-
-```
-待排序------
+print (sorted_df,&#39;\n&#39;)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>待排序------
           A         B
 1  0.301330  0.303682
 4  0.955318  0.035809
@@ -1707,36 +1652,26 @@ print (sorted_df,&#39;\n&#39;)
 2  0.408592  0.470527
 7  0.414039  0.531079
 6  0.254245  0.798225
-5  0.135931  0.859795 
-```
-
-#### 4.5 缺失值处理
-
-1. 缺失值主要是指数据丢失的现象，也就是数据集中的某一块数据不存在。
-
-2. 除了原始数据集就已经存在缺失值以外，当我们用到索引对齐（reindex()，选择等）方法时，也容易人为导致缺失值的产生。
-
-3. **缺失值处理**包括：
-➢ 缺失值标记
-➢ 缺失值填充
-➢ 缺失值插值
-
-4. Pandas 为了更方便地**检测缺失值**，将不同类型数据的缺失均采用 NaN 标记。这里的 NaN 代表 Not a Number ，它仅仅是作为一个标记。
-
-5. Pandas 中用于**标记缺失值主要用到两个方法**，分别是：isnull () 和 notnull ()，顾名思义就是「是缺失值」和「不是缺失值」。默认会返回布尔值用于判断。
-
-```
-# 使用reindex()人为生成缺失值
+5  0.135931  0.859795 </code></pre><h4 id="4-5-缺失值处理"><a href="#4-5-缺失值处理" class="headerlink" title="4.5 缺失值处理"></a>4.5 缺失值处理</h4><ol>
+<li><p>缺失值主要是指数据丢失的现象，也就是数据集中的某一块数据不存在。</p>
+</li>
+<li><p>除了原始数据集就已经存在缺失值以外，当我们用到索引对齐（reindex()，选择等）方法时，也容易人为导致缺失值的产生。</p>
+</li>
+<li><p><strong>缺失值处理</strong>包括：<br>➢ 缺失值标记<br>➢ 缺失值填充<br>➢ 缺失值插值</p>
+</li>
+<li><p>Pandas 为了更方便地<strong>检测缺失值</strong>，将不同类型数据的缺失均采用 NaN 标记。这里的 NaN 代表 Not a Number ，它仅仅是作为一个标记。</p>
+</li>
+<li><p>Pandas 中用于<strong>标记缺失值主要用到两个方法</strong>，分别是：isnull () 和 notnull ()，顾名思义就是「是缺失值」和「不是缺失值」。默认会返回布尔值用于判断。</p>
+</li>
+</ol>
+<pre><code># 使用reindex()人为生成缺失值
 df = pd.DataFrame(np.random.rand(4, 3), index=[&#39;a&#39;, &#39;c&#39;, &#39;e&#39;, &#39;f&#39;],columns=[&#39;one&#39;, &#39;two&#39;, &#39;three&#39;])
 df = df.reindex([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;])
 print (df,&#39;\n&#39;)
 
 print(df[&#39;one&#39;].isnull(),&#39;\n&#39;)  # 缺失值标记
-print (df[&#39;one&#39;].notnull(),&#39;\n&#39;)
-```
-**运行结果**
-```
-        one       two     three
+print (df[&#39;one&#39;].notnull(),&#39;\n&#39;)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        one       two     three
 a  0.720627  0.761773  0.864286
 b       NaN       NaN       NaN
 c  0.776613  0.207093  0.991348
@@ -1761,30 +1696,20 @@ d    False
 e     True
 f     True
 g    False
-Name: one, dtype: bool 
-```
-
-6. Pandas 提供了各种方法来**清除缺失的值**。fillna() 函数可以通过几种方法用非空数据“填充” NaN 值。
-1）用标量值替换 NaN
-**print (df.fillna(0))**
-2）向前填充：pad/fill
-3）向后填充：bfill/backfill
-**print (df.fillna(method=&#39;pad’))**
-**print (df.fillna(method=&#39;backfill&#39;))**
-
-7. **丢弃缺少的值**：如果只想排除缺少的值，则使用 dropna 函数和 axis 参数。默认情况下，axis=0，如果行内的任何值是 NaN，那么整个行被删除。
-1）丢弃含 NaN 值的行
-**print(df.dropna())**
-2）丢弃含 NaN 值的列
-**print (df.dropna(axis=1))**
-
-8. **替换缺失（或通用）值**：用一些具体的值取代一个通用的值或缺失值。用标量替换 NaN 和使用 fillna() 函数等效。
-
-```
-df = pd.DataFrame({&#39;one&#39;:[10,20,30,40,50,2000],&#39;two&#39;:[1000,0,30,40,50,60]}) 
+Name: one, dtype: bool </code></pre><ol start="6">
+<li>Pandas 提供了各种方法来<strong>清除缺失的值</strong>。fillna() 函数可以通过几种方法用非空数据“填充” NaN 值。<br>1）用标量值替换 NaN</li>
+</ol>
+<p><strong>print (df.fillna(0))</strong><br>2）向前填充：pad/fill<br>3）向后填充：bfill/backfill<br><strong>print (df.fillna(method=’pad’))</strong><br><strong>print (df.fillna(method=’backfill’))</strong></p>
+<ol start="7">
+<li><strong>丢弃缺少的值</strong>：如果只想排除缺少的值，则使用 dropna 函数和 axis 参数。默认情况下，axis=0，如果行内的任何值是 NaN，那么整个行被删除。<br>1）丢弃含 NaN 值的行</li>
+</ol>
+<p><strong>print(df.dropna())</strong><br>2）丢弃含 NaN 值的列<br><strong>print (df.dropna(axis=1))</strong></p>
+<ol start="8">
+<li><strong>替换缺失（或通用）值</strong>：用一些具体的值取代一个通用的值或缺失值。用标量替换 NaN 和使用 fillna() 函数等效。</li>
+</ol>
+<pre><code>df = pd.DataFrame({&#39;one&#39;:[10,20,30,40,50,2000],&#39;two&#39;:[1000,0,30,40,50,60]}) 
 print(df,&#39;\n&#39;)
-print(df.replace({1000:10,2000:60}))
-```</code></pre>
+print(df.replace({1000:10,2000:60}))</code></pre>
             </div>
             <hr/>
 
@@ -2296,7 +2221,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">359.7k</span>&nbsp;字
+                class="white-color">359.6k</span>&nbsp;字
             
             
             
