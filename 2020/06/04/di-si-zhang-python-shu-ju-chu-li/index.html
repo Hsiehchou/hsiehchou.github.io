@@ -389,14 +389,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.2k
+                    11.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    52 分
+                    54 分
                 </div>
                 
 
@@ -1323,216 +1323,594 @@ year
 <li><p>一般情况下 ， 读取文件的方法以 pd.read_ 开头， 而写入文件的方法以 pd.to_ 开头。</p>
 </li>
 <li><p>示例1</p>
+</li>
+</ol>
 <pre><code># 示例1，读入剪贴板数据，写入csv，转换为json、html、excel等格式
 import pandas as pd
 import numpy as np
 from pandas import Series, DataFrame
-</code></pre></li>
+
+# 粘贴板内容
+#    A    B    C
+# x    1    4    p
+# y    2    5    q
+# z    3    6    r
+
+# 从粘贴板读取数据
+df1 = pd.read_clipboard()
+
+# 把数据放入到粘贴板中，数据可以直接粘贴到 excel 文件中
+df1.to_clipboard()
+
+# 读写 csv 文件，可以取消 index
+df1.to_csv(&#39;df1.csv&#39;)
+df1.to_csv(&#39;df1_noIndex.csv&#39;, index = False)
+
+# 转化为 json 格式
+df1.to_json(&#39;df1.json&#39;)
+
+# 转化为 html 格式
+df1.to_html(&#39;df1.html&#39;)
+
+# 转换为 excel 格式
+df1.to_excel(&#39;df1.xlsx&#39;)</code></pre><table>
+<thead>
+<tr>
+<th align="left">数据类型</th>
+<th align="left">描述符</th>
+<th align="left">读方法</th>
+<th align="left">写方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">text</td>
+<td align="left">CSV</td>
+<td align="left"><code>read_csv</code></td>
+<td align="left"><code>to_csv</code></td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">JSON</td>
+<td align="left"><code>read_json</code></td>
+<td align="left"><code>to_json</code></td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">HTML</td>
+<td align="left"><code>read_csv</code></td>
+<td align="left"><code>to_csv</code></td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">剪切板</td>
+<td align="left"><code>read_clipboard</code></td>
+<td align="left"><code>to_clipboard</code></td>
+</tr>
+<tr>
+<td align="left">二进制</td>
+<td align="left">Excel</td>
+<td align="left"><code>read_excel</code></td>
+<td align="left"><code>to_excel</code></td>
+</tr>
+<tr>
+<td align="left">二进制</td>
+<td align="left">HDF5</td>
+<td align="left"><code>read_hdf</code></td>
+<td align="left"><code>to_hdf</code></td>
+</tr>
+<tr>
+<td align="left">二进制</td>
+<td align="left">PKL</td>
+<td align="left"><code>read_pickle</code></td>
+<td align="left"><code>to_pickle</code></td>
+</tr>
+<tr>
+<td align="left">SQL</td>
+<td align="left">SQL</td>
+<td align="left"><code>read_sql</code></td>
+<td align="left"><code>to_sql</code></td>
+</tr>
+</tbody></table>
+<p><strong>数据读取函数read_csv示例</strong></p>
+<ol>
+<li><p>read_csv（）</p>
+</li>
+<li><p>自定义索引：可以指定 csv 文件中的一列来使用 index_col 定制索引</p>
+</li>
+<li><p>dtype：数据类型转换</p>
+</li>
+<li><p>skiprows：跳过指定的行数</p>
+</li>
+<li><p>示例2</p>
+</li>
 </ol>
-<h1 id="粘贴板内容"><a href="#粘贴板内容" class="headerlink" title="粘贴板内容"></a>粘贴板内容</h1><h1 id="A-B-C"><a href="#A-B-C" class="headerlink" title="A    B    C"></a>A    B    C</h1><h1 id="x-1-4-p"><a href="#x-1-4-p" class="headerlink" title="x    1    4    p"></a>x    1    4    p</h1><h1 id="y-2-5-q"><a href="#y-2-5-q" class="headerlink" title="y    2    5    q"></a>y    2    5    q</h1><h1 id="z-3-6-r"><a href="#z-3-6-r" class="headerlink" title="z    3    6    r"></a>z    3    6    r</h1><h1 id="从粘贴板读取数据"><a href="#从粘贴板读取数据" class="headerlink" title="从粘贴板读取数据"></a>从粘贴板读取数据</h1><p>df1 = pd.read_clipboard()</p>
-<h1 id="把数据放入到粘贴板中，数据可以直接粘贴到-excel-文件中"><a href="#把数据放入到粘贴板中，数据可以直接粘贴到-excel-文件中" class="headerlink" title="把数据放入到粘贴板中，数据可以直接粘贴到 excel 文件中"></a>把数据放入到粘贴板中，数据可以直接粘贴到 excel 文件中</h1><p>df1.to_clipboard()</p>
-<h1 id="读写-csv-文件，可以取消-index"><a href="#读写-csv-文件，可以取消-index" class="headerlink" title="读写 csv 文件，可以取消 index"></a>读写 csv 文件，可以取消 index</h1><p>df1.to_csv(‘df1.csv’)<br>df1.to_csv(‘df1_noIndex.csv’, index = False)</p>
-<h1 id="转化为-json-格式"><a href="#转化为-json-格式" class="headerlink" title="转化为 json 格式"></a>转化为 json 格式</h1><p>df1.to_json(‘df1.json’)</p>
-<h1 id="转化为-html-格式"><a href="#转化为-html-格式" class="headerlink" title="转化为 html 格式"></a>转化为 html 格式</h1><p>df1.to_html(‘df1.html’)</p>
-<h1 id="转换为-excel-格式"><a href="#转换为-excel-格式" class="headerlink" title="转换为 excel 格式"></a>转换为 excel 格式</h1><p>df1.to_excel(‘df1.xlsx’)</p>
-<pre><code>
-|  数据类型  |  描述符  |  读方法  |  写方法  |
-| :------ | :------ | :------ | :------ |
-| text  |  CSV  |  `read_csv`  |  `to_csv`  |
-| text  |  JSON |  `read_json` |  `to_json` |
-| text  |  HTML |  `read_csv`  |  `to_csv`  |
-| text  | 剪切板|  `read_clipboard` |  `to_clipboard` |
-| 二进制| Excel |  `read_excel`  |  `to_excel`  |
-| 二进制|  HDF5 |  `read_hdf`  |  `to_hdf`  |
-| 二进制|  PKL  |  `read_pickle`  |  `to_pickle`  |
-|  SQL  |  SQL  |  `read_sql`  |  `to_sql`  |
+<pre><code># 示例 2-1 read_csv
+df=pd.read_csv(&#39;temp.csv&#39;) 
+print(df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>   S.No    Name  Agw       City  Salary
+0     1     Tom   28    Toronto   20000
+1     2     Lee   32   HongKong    3000
+2     3  Steven   43   Bay Area    8300
+3     4     Ram   38  Hyderabad    3900</code></pre><pre><code># 示例 2-2  自定义索引：可以指定 csv 文件中的一列来使用 index_col 指定索引
+df = pd.read_csv(&quot;temp.csv&quot;, index_col=[&#39;S.No&#39;]) 
+print(df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        Name  Agw       City  Salary
+S.No                                
+1        Tom   28    Toronto   20000
+2        Lee   32   HongKong    3000
+3     Steven   43   Bay Area    8300
+4        Ram   38  Hyderabad    3900</code></pre><pre><code># 示例 2-3 转换器 dtype
+df = pd.read_csv(&quot;temp.csv&quot;, dtype={&#39;Salary&#39;: np.float64}) 
+print(df) 
+print(df.dtypes)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>   S.No    Name  Agw       City   Salary
+0     1     Tom   28    Toronto  20000.0
+1     2     Lee   32   HongKong   3000.0
+2     3  Steven   43   Bay Area   8300.0
+3     4     Ram   38  Hyderabad   3900.0
+S.No        int64
+Name       object
+Agw         int64
+City       object
+Salary    float64
+dtype: object</code></pre><pre><code># 示例 2-4  使用 names参数指定标题名称
+df=pd.read_csv(&quot;temp.csv&quot;, names=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;,&#39;d&#39;,&#39;e&#39;]) 
+print(df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>      a       b    c          d       e
+0  S.No    Name  Agw       City  Salary
+1     1     Tom   28    Toronto   20000
+2     2     Lee   32   HongKong    3000
+3     3  Steven   43   Bay Area    8300
+4     4     Ram   38  Hyderabad    3900</code></pre><p>观察可以看到，标题名称附加了自定义名称，但文件中的标题还没有被消除。现在使用header参数来删除它。如果标题不是第一行，则将行号传递给标题，这将跳过前面的行。</p>
+<pre><code># 示例 2-5消除文件中的标题
+df=pd.read_csv(&quot;temp.csv&quot;, names=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;,&#39;d&#39;,&#39;e&#39;], header=0) 
+print(df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>   a       b   c          d      e
+0  1     Tom  28    Toronto  20000
+1  2     Lee  32   HongKong   3000
+2  3  Steven  43   Bay Area   8300
+3  4     Ram  38  Hyderabad   3900</code></pre><pre><code># 示例 2-6 skiprows跳过指定的行数
+df=pd.read_csv(&quot;temp.csv&quot;, skiprows=2) 
+print (df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>   2     Lee  32   HongKong  3000
+0  3  Steven  43   Bay Area  8300
+1  4     Ram  38  Hyderabad  3900</code></pre><h4 id="4-2-描述性统计方法"><a href="#4-2-描述性统计方法" class="headerlink" title="4.2 描述性统计方法"></a>4.2 描述性统计方法</h4><ol>
+<li><p>Pandas 提供了几个统计和描述性方法，方便你从宏观的角度去了解数据集，例如count() 用于统计非空数据的数量。</p>
+</li>
+<li><p>除了统计类的方法，Pandas 还 提供了很多计算类的方法，比如 sum() 用于计算数值数据的总和；mean() 用 于 计 算 数 值 数 据 的 平 均 值 ；median() 用于计算数值数据的算术中值。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">count()</td>
+<td align="left">非空观测数量</td>
+</tr>
+<tr>
+<td align="left">sum()</td>
+<td align="left">所有值之和</td>
+</tr>
+<tr>
+<td align="left">mean()</td>
+<td align="left">所有值的平均值</td>
+</tr>
+<tr>
+<td align="left">median()</td>
+<td align="left">所有值的中位数</td>
+</tr>
+<tr>
+<td align="left">mode()</td>
+<td align="left">值的模值</td>
+</tr>
+<tr>
+<td align="left">std()</td>
+<td align="left">值的标准偏差</td>
+</tr>
+<tr>
+<td align="left">min()</td>
+<td align="left">所有值中的最小值</td>
+</tr>
+<tr>
+<td align="left">max()</td>
+<td align="left">所有值中的最大值</td>
+</tr>
+<tr>
+<td align="left">abs()</td>
+<td align="left">绝对值</td>
+</tr>
+<tr>
+<td align="left">prod()</td>
+<td align="left">数组元素的乘积</td>
+</tr>
+<tr>
+<td align="left">cumsum()</td>
+<td align="left">累计总和</td>
+</tr>
+<tr>
+<td align="left">cumprod()</td>
+<td align="left">累计乘积</td>
+</tr>
+</tbody></table>
+<p><strong>描述性统计方法示例</strong><br><strong>sum()</strong>：求和；<br><strong>mean()</strong> ：求中值；<br><strong>std()</strong>：求标准差；<br><strong>describe()</strong>：描述性统计信息摘要。 </p>
+<pre><code># 示例3 描述统计方法
+import pandas as pd
+import numpy as np
 
-**数据读取函数read_csv示例**
-1. read_csv（）
+# Create a Dictionary of series
+d = {&#39;Name&#39;:pd.Series([&#39;Tom&#39;,&#39;James&#39;,&#39;Ricky&#39;,&#39;Vin&#39;,&#39;Steve&#39;,&#39;Minsu&#39;,&#39;Jack&#39;,&#39;Lee&#39;,&#39;David&#39;,&#39;Gasper&#39;,&#39;Betina&#39;,&#39;Andres&#39;]),&#39;Age&#39;:pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),&#39;Rating&#39;:pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
 
-2. 自定义索引：可以指定 csv 文件中的一列来使用 index_col 定制索引
+#Create a DataFrame
+df = pd.DataFrame(d)
+print(df, &#39;\n&#39;)
+print(&quot;\n列求和&quot;)
+print(df.sum(), &#39;\n&#39;)  # 列求和， 默认axis=0.
 
-3. dtype：数据类型转换
+print(&quot;\n行求和&quot;)
+print(df.sum(1), &#39;\n&#39;)   # 行求和，axis=1
 
-4. skiprows：跳过指定的行数
-5. 示例2
-</code></pre><h1 id="示例-2-1-read-csv"><a href="#示例-2-1-read-csv" class="headerlink" title="示例 2-1 read_csv"></a>示例 2-1 read_csv</h1><p>df=pd.read_csv(‘temp.csv’)<br>print(df)</p>
-<pre><code>
-**运行结果**
-</code></pre><p>   S.No    Name  Agw       City  Salary<br>0     1     Tom   28    Toronto   20000<br>1     2     Lee   32   HongKong    3000<br>2     3  Steven   43   Bay Area    8300<br>3     4     Ram   38  Hyderabad    3900</p>
-<pre><code></code></pre><h1 id="示例-2-2-自定义索引：可以指定-csv-文件中的一列来使用-index-col-指定索引"><a href="#示例-2-2-自定义索引：可以指定-csv-文件中的一列来使用-index-col-指定索引" class="headerlink" title="示例 2-2  自定义索引：可以指定 csv 文件中的一列来使用 index_col 指定索引"></a>示例 2-2  自定义索引：可以指定 csv 文件中的一列来使用 index_col 指定索引</h1><p>df = pd.read_csv(“temp.csv”, index_col=[‘S.No’])<br>print(df)</p>
-<pre><code>
-**运行结果**
-</code></pre><pre><code>    Name  Agw       City  Salary</code></pre><p>S.No<br>1        Tom   28    Toronto   20000<br>2        Lee   32   HongKong    3000<br>3     Steven   43   Bay Area    8300<br>4        Ram   38  Hyderabad    3900</p>
-<pre><code>
-</code></pre><h1 id="示例-2-3-转换器-dtype"><a href="#示例-2-3-转换器-dtype" class="headerlink" title="示例 2-3 转换器 dtype"></a>示例 2-3 转换器 dtype</h1><p>df = pd.read_csv(“temp.csv”, dtype={‘Salary’: np.float64})<br>print(df)<br>print(df.dtypes)</p>
-<pre><code>
-**运行结果**
-</code></pre><p>   S.No    Name  Agw       City   Salary<br>0     1     Tom   28    Toronto  20000.0<br>1     2     Lee   32   HongKong   3000.0<br>2     3  Steven   43   Bay Area   8300.0<br>3     4     Ram   38  Hyderabad   3900.0<br>S.No        int64<br>Name       object<br>Agw         int64<br>City       object<br>Salary    float64<br>dtype: object</p>
-<pre><code></code></pre><h1 id="示例-2-4-使用-names参数指定标题名称"><a href="#示例-2-4-使用-names参数指定标题名称" class="headerlink" title="示例 2-4  使用 names参数指定标题名称"></a>示例 2-4  使用 names参数指定标题名称</h1><p>df=pd.read_csv(“temp.csv”, names=[‘a’, ‘b’, ‘c’,’d’,’e’])<br>print(df)</p>
-<pre><code>
-**运行结果**
-</code></pre><pre><code>  a       b    c          d       e</code></pre><p>0  S.No    Name  Agw       City  Salary<br>1     1     Tom   28    Toronto   20000<br>2     2     Lee   32   HongKong    3000<br>3     3  Steven   43   Bay Area    8300<br>4     4     Ram   38  Hyderabad    3900</p>
-<pre><code>
-观察可以看到，标题名称附加了自定义名称，但文件中的标题还没有被消除。现在使用header参数来删除它。如果标题不是第一行，则将行号传递给标题，这将跳过前面的行。
-</code></pre><h1 id="示例-2-5消除文件中的标题"><a href="#示例-2-5消除文件中的标题" class="headerlink" title="示例 2-5消除文件中的标题"></a>示例 2-5消除文件中的标题</h1><p>df=pd.read_csv(“temp.csv”, names=[‘a’, ‘b’, ‘c’,’d’,’e’], header=0)<br>print(df)</p>
-<pre><code>
-**运行结果**
-</code></pre><p>   a       b   c          d      e<br>0  1     Tom  28    Toronto  20000<br>1  2     Lee  32   HongKong   3000<br>2  3  Steven  43   Bay Area   8300<br>3  4     Ram  38  Hyderabad   3900</p>
-<pre><code></code></pre><h1 id="示例-2-6-skiprows跳过指定的行数"><a href="#示例-2-6-skiprows跳过指定的行数" class="headerlink" title="示例 2-6 skiprows跳过指定的行数"></a>示例 2-6 skiprows跳过指定的行数</h1><p>df=pd.read_csv(“temp.csv”, skiprows=2)<br>print (df)</p>
-<pre><code>
-**运行结果**
-</code></pre><p>   2     Lee  32   HongKong  3000<br>0  3  Steven  43   Bay Area  8300<br>1  4     Ram  38  Hyderabad  3900</p>
-<pre><code>
+print(&quot;\n求均值&quot;)
+print(df.mean(), &#39;\n&#39;)   # 求均值
 
-#### 4.2 描述性统计方法
+print(&quot;\n标准差&quot;)
+print(df.std(), &#39;\n&#39;)    # 标准差
 
-1. Pandas 提供了几个统计和描述性方法，方便你从宏观的角度去了解数据集，例如count() 用于统计非空数据的数量。
+# include参数是用于传递关于什么列需要考虑用于总结的必要信息的参数，获取值列表，默认情况下是“数字值”。
+# object - 汇总字符串列；
+# number - 汇总数字列；
+# all - 将所有列汇总在一起（不应将其作为列表值传递）。
 
-2. 除了统计类的方法，Pandas 还 提供了很多计算类的方法，比如 sum() 用于计算数值数据的总和；mean() 用 于 计 算 数 值 数 据 的 平 均 值 ；median() 用于计算数值数据的算术中值。
+print(&quot;\n统计信息摘要&quot;)
+print(df.describe(include=[&#39;number&#39;]))    # 统计信息摘要</code></pre><p><strong>运行结果</strong></p>
+<pre><code>      Name   Age  Rating
+0      Tom   25    4.23
+1    James   26    3.24
+2    Ricky   25    3.98
+3      Vin   23    2.56
+4    Steve   30    3.20
+5    Minsu   29    4.60
+6     Jack   23    3.80
+7      Lee   34    3.78
+8    David   40    2.98
+9   Gasper   30    4.80
+10  Betina   51    4.10
+11  Andres   46    3.65 
 
-|  函数  |  描述  |
-| :------ | :------ |
-| count() | 非空观测数量 |
-| sum() | 所有值之和   |
-| mean() | 所有值的平均值 |
-| median() | 所有值的中位数 |
-| mode() | 值的模值 |
-| std() | 值的标准偏差 |
-| min() | 所有值中的最小值 |
-| max() | 所有值中的最大值 |
-| abs() | 绝对值 |
-| prod() | 数组元素的乘积 |
-| cumsum() | 累计总和 |
-| cumprod() | 累计乘积 |
 
-**描述性统计方法示例**
-**sum()**：求和；
-**mean()** ：求中值；
-**std()**：求标准差；
-**describe()**：描述性统计信息摘要。 
-</code></pre><h1 id="示例3-描述统计方法"><a href="#示例3-描述统计方法" class="headerlink" title="示例3 描述统计方法"></a>示例3 描述统计方法</h1><p>import pandas as pd<br>import numpy as np</p>
-<h1 id="Create-a-Dictionary-of-series"><a href="#Create-a-Dictionary-of-series" class="headerlink" title="Create a Dictionary of series"></a>Create a Dictionary of series</h1><p>d = {‘Name’:pd.Series([‘Tom’,’James’,’Ricky’,’Vin’,’Steve’,’Minsu’,’Jack’,’Lee’,’David’,’Gasper’,’Betina’,’Andres’]),’Age’:pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),’Rating’:pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}</p>
-<p>#Create a DataFrame<br>df = pd.DataFrame(d)<br>print(df, ‘\n’)<br>print(“\n列求和”)<br>print(df.sum(), ‘\n’)  # 列求和， 默认axis=0.</p>
-<p>print(“\n行求和”)<br>print(df.sum(1), ‘\n’)   # 行求和，axis=1</p>
-<p>print(“\n求均值”)<br>print(df.mean(), ‘\n’)   # 求均值</p>
-<p>print(“\n标准差”)<br>print(df.std(), ‘\n’)    # 标准差</p>
-<h1 id="include参数是用于传递关于什么列需要考虑用于总结的必要信息的参数，获取值列表，默认情况下是“数字值”。"><a href="#include参数是用于传递关于什么列需要考虑用于总结的必要信息的参数，获取值列表，默认情况下是“数字值”。" class="headerlink" title="include参数是用于传递关于什么列需要考虑用于总结的必要信息的参数，获取值列表，默认情况下是“数字值”。"></a>include参数是用于传递关于什么列需要考虑用于总结的必要信息的参数，获取值列表，默认情况下是“数字值”。</h1><h1 id="object-汇总字符串列；"><a href="#object-汇总字符串列；" class="headerlink" title="object - 汇总字符串列；"></a>object - 汇总字符串列；</h1><h1 id="number-汇总数字列；"><a href="#number-汇总数字列；" class="headerlink" title="number - 汇总数字列；"></a>number - 汇总数字列；</h1><h1 id="all-将所有列汇总在一起（不应将其作为列表值传递）。"><a href="#all-将所有列汇总在一起（不应将其作为列表值传递）。" class="headerlink" title="all - 将所有列汇总在一起（不应将其作为列表值传递）。"></a>all - 将所有列汇总在一起（不应将其作为列表值传递）。</h1><p>print(“\n统计信息摘要”)<br>print(df.describe(include=[‘number’]))    # 统计信息摘要</p>
-<pre><code>
-**运行结果**
-</code></pre><pre><code>  Name   Age  Rating</code></pre><p>0      Tom   25    4.23<br>1    James   26    3.24<br>2    Ricky   25    3.98<br>3      Vin   23    2.56<br>4    Steve   30    3.20<br>5    Minsu   29    4.60<br>6     Jack   23    3.80<br>7      Lee   34    3.78<br>8    David   40    2.98<br>9   Gasper   30    4.80<br>10  Betina   51    4.10<br>11  Andres   46    3.65 </p>
-<p>列求和<br>Name      TomJamesRickyVinSteveMinsuJackLeeDavidGasperBe…<br>Age                                                     382<br>Rating                                                44.92<br>dtype: object </p>
-<p>行求和<br>0     29.23<br>1     29.24<br>2     28.98<br>3     25.56<br>4     33.20<br>5     33.60<br>6     26.80<br>7     37.78<br>8     42.98<br>9     34.80<br>10    55.10<br>11    49.65<br>dtype: float64 </p>
-<p>求均值<br>Age       31.833333<br>Rating     3.743333<br>dtype: float64 </p>
-<p>标准差<br>Age       9.232682<br>Rating    0.661628<br>dtype: float64 </p>
-<p>统计信息摘要<br>             Age     Rating<br>count  12.000000  12.000000<br>mean   31.833333   3.743333<br>std     9.232682   0.661628<br>min    23.000000   2.560000<br>25%    25.000000   3.230000<br>50%    29.500000   3.790000<br>75%    35.500000   4.132500<br>max    51.000000   4.800000</p>
-<pre><code>
-#### 4.3 迭代与遍历
+列求和
+Name      TomJamesRickyVinSteveMinsuJackLeeDavidGasperBe...
+Age                                                     382
+Rating                                                44.92
+dtype: object 
 
-1. pandas 对象之间的基本迭代的行为取决于类型。当迭代一个系列时，它被视为数组式，基本迭代产生这些值。其他数据结构，如：DataFrame，遵循类似惯例迭代对象的键。
 
-2. 简而言之，基本迭代(对于 i 在对象中)产生：
-➢    Series - 值
-➢    DataFrame - 列标签
+行求和
+0     29.23
+1     29.24
+2     28.98
+3     25.56
+4     33.20
+5     33.60
+6     26.80
+7     37.78
+8     42.98
+9     34.80
+10    55.10
+11    49.65
+dtype: float64 
 
-3. 要遍历数据帧(DataFrame)中的行，可以使用以下函数：
-➢    iteritems() - 迭代(key，value)对
-➢    iterrows() - 将行迭代为(索引，系列)对
-➢    itertuples() - 以 namedtuples 的形式迭代行
 
-##### 4.3.1 迭代 DataFrame
-</code></pre><h1 id="迭代-DataFrame"><a href="#迭代-DataFrame" class="headerlink" title="迭代 DataFrame"></a>迭代 DataFrame</h1><p>import pandas as pd<br>import numpy as np</p>
-<p>N=5<br>df = pd.DataFrame({<br>    ‘D’: pd.date_range(start=’2019-01-01’,periods=N,freq=’M’),<br>    ‘x’: np.linspace(0,stop=N-1,num=N),<br>    ‘y’: np.random.rand(N),<br>    ‘z’: np.random.choice([‘Low’,’Medium’,’High’],N).tolist(),<br>})</p>
-<p>print(df,’\n’)</p>
-<p>for col in df:<br>    print(col)</p>
-<pre><code>
-**运行结果**
-</code></pre><pre><code>       D    x         y       z</code></pre><p>0 2019-01-31  0.0  0.088484    High<br>1 2019-02-28  1.0  0.763299    High<br>2 2019-03-31  2.0  0.918397    High<br>3 2019-04-30  3.0  0.785687  Medium<br>4 2019-05-31  4.0  0.821885     Low </p>
-<p>D<br>x<br>y<br>z</p>
-<pre><code>
-##### 4.3.2 遍历Dataframe 示例
+求均值
+Age       31.833333
+Rating     3.743333
+dtype: float64 
 
-1. iteritems()：将索引和值作为键和列值迭代为 Series 对象。
-2. iterrows()：返回迭代器，产生每个索引值以及包含每行数据的序列。
-3. itertuples()：方法将为 DataFrame 中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值。
-</code></pre><h1 id="遍历-iteritems-将每个列作为名称，将索引和值作为键和列值迭代为Series对象"><a href="#遍历-iteritems-将每个列作为名称，将索引和值作为键和列值迭代为Series对象" class="headerlink" title="遍历 iteritems()将每个列作为名称，将索引和值作为键和列值迭代为Series对象"></a>遍历 iteritems()将每个列作为名称，将索引和值作为键和列值迭代为Series对象</h1><p>df = pd.DataFrame(np.random.randn(4,3), columns=[‘col1’,’col2’,’col3’])</p>
-<p>print(df, ‘\n’)</p>
-<p>print(“\niteritems———“)<br>for key,value in df.iteritems():<br>    print (key,value)</p>
-<h1 id="iterrows-返回迭代数器，产生每个索引值以及包含每行数据的序列"><a href="#iterrows-返回迭代数器，产生每个索引值以及包含每行数据的序列" class="headerlink" title="iterrows()返回迭代数器，产生每个索引值以及包含每行数据的序列"></a>iterrows()返回迭代数器，产生每个索引值以及包含每行数据的序列</h1><p>print(“\niterrows———“)<br>for row_index,row in df.iterrows():<br>    print (row_index,row)</p>
-<h1 id="itertuples-方法将为-DataFrame-中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值"><a href="#itertuples-方法将为-DataFrame-中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值" class="headerlink" title="itertuples()方法将为 DataFrame 中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值"></a>itertuples()方法将为 DataFrame 中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值</h1><p>print(“\nitertuples———“)<br>for row in df.itertuples():<br>    print (row)</p>
-<pre><code>
-**运行结果**
-</code></pre><pre><code>   col1      col2      col3</code></pre><p>0  0.769239 -0.321667  0.229970<br>1 -0.414440 -0.686365 -1.804574<br>2 -0.625321 -0.410545 -0.266878<br>3  0.942061 -0.429502 -0.191403 </p>
-<p>iteritems———<br>col1 0    0.769239<br>1   -0.414440<br>2   -0.625321<br>3    0.942061<br>Name: col1, dtype: float64<br>col2 0   -0.321667<br>1   -0.686365<br>2   -0.410545<br>3   -0.429502<br>Name: col2, dtype: float64<br>col3 0    0.229970<br>1   -1.804574<br>2   -0.266878<br>3   -0.191403<br>Name: col3, dtype: float64</p>
-<p>iterrows———<br>0 col1    0.769239<br>col2   -0.321667<br>col3    0.229970<br>Name: 0, dtype: float64<br>1 col1   -0.414440<br>col2   -0.686365<br>col3   -1.804574<br>Name: 1, dtype: float64<br>2 col1   -0.625321<br>col2   -0.410545<br>col3   -0.266878<br>Name: 2, dtype: float64<br>3 col1    0.942061<br>col2   -0.429502<br>col3   -0.191403<br>Name: 3, dtype: float64</p>
-<p>itertuples———<br>Pandas(Index=0, col1=0.7692393725888382, col2=-0.3216667049027107, col3=0.22996991034224118)<br>Pandas(Index=1, col1=-0.41444004324475786, col2=-0.6863646340873751, col3=-1.8045739966582113)<br>Pandas(Index=2, col1=-0.625321480205094, col2=-0.4105445003436983, col3=-0.2668784127256191)<br>Pandas(Index=3, col1=0.9420608482646933, col2=-0.4295015650195585, col3=-0.191402644416027)<br>​</p>
-<pre><code>
-#### 4.4 排序
 
-1. 按索引排序：使用 sort_index() 方法，通过传递 axis 参数和排序顺序，可以对 DataFrame 进行排序。 默认情况下，按照升序对行标签进行排序。
+标准差
+Age       9.232682
+Rating    0.661628
+dtype: float64 
 
-2. 按数值排序：sort_values() 是按值排序的方法。它接受一个 by 参数，它将使用要与其排序值的 DataFrame 的列名称。
 
-3. 排序顺序：通过将布尔值传递给升序参数 ascending，可以控制排序顺序。
+统计信息摘要
+             Age     Rating
+count  12.000000  12.000000
+mean   31.833333   3.743333
+std     9.232682   0.661628
+min    23.000000   2.560000
+25%    25.000000   3.230000
+50%    29.500000   3.790000
+75%    35.500000   4.132500
+max    51.000000   4.800000</code></pre><h4 id="4-3-迭代与遍历"><a href="#4-3-迭代与遍历" class="headerlink" title="4.3 迭代与遍历"></a>4.3 迭代与遍历</h4><ol>
+<li><p>pandas 对象之间的基本迭代的行为取决于类型。当迭代一个系列时，它被视为数组式，基本迭代产生这些值。其他数据结构，如：DataFrame，遵循类似惯例迭代对象的键。</p>
+</li>
+<li><p>简而言之，基本迭代(对于 i 在对象中)产生：<br>➢    Series - 值<br>➢    DataFrame - 列标签</p>
+</li>
+<li><p>要遍历数据帧(DataFrame)中的行，可以使用以下函数：<br>➢    iteritems() - 迭代(key，value)对<br>➢    iterrows() - 将行迭代为(索引，系列)对<br>➢    itertuples() - 以 namedtuples 的形式迭代行</p>
+</li>
+</ol>
+<h5 id="4-3-1-迭代-DataFrame"><a href="#4-3-1-迭代-DataFrame" class="headerlink" title="4.3.1 迭代 DataFrame"></a>4.3.1 迭代 DataFrame</h5><pre><code># 迭代 DataFrame
+import pandas as pd
+import numpy as np
 
-4. 按行或列排序：通过设置 axis 参数为 0 或 1 ，为 0 时逐行排序，为 1 时逐列排序，默认为 0。
+N=5
+df = pd.DataFrame({
+    &#39;D&#39;: pd.date_range(start=&#39;2019-01-01&#39;,periods=N,freq=&#39;M&#39;), 
+    &#39;x&#39;: np.linspace(0,stop=N-1,num=N),
+    &#39;y&#39;: np.random.rand(N),
+    &#39;z&#39;: np.random.choice([&#39;Low&#39;,&#39;Medium&#39;,&#39;High&#39;],N).tolist(),
+})
 
-**排序示例**
-</code></pre><p>print(“\n待排序——“)<br>unsorted_df = pd.DataFrame(np.random.rand(10,2),index=[1,4,6,2,3,5,9,8,0,7],columns = [‘A’,’B’])<br>print(unsorted_df,’\n’)</p>
-<p>print(“\n按索引排序——“)<br>sorted_df=unsorted_df.sort_index(ascending = True)  #按索引排序<br>print (sorted_df,’\n’)</p>
-<p>print(“\n按’B’列的值进行排序——“)<br>sorted_df = unsorted_df.sort_values(by=’B’) # 按’B’列的值进行排序<br>print (sorted_df,’\n’)</p>
-<pre><code>
-**运行结果**
-</code></pre><p>待排序——<br>          A         B<br>1  0.301330  0.303682<br>4  0.955318  0.035809<br>6  0.254245  0.798225<br>2  0.408592  0.470527<br>3  0.885707  0.131258<br>5  0.135931  0.859795<br>9  0.934681  0.218391<br>8  0.992487  0.416087<br>0  0.221823  0.468366<br>7  0.414039  0.531079 </p>
-<p>按索引排序——<br>          A         B<br>0  0.221823  0.468366<br>1  0.301330  0.303682<br>2  0.408592  0.470527<br>3  0.885707  0.131258<br>4  0.955318  0.035809<br>5  0.135931  0.859795<br>6  0.254245  0.798225<br>7  0.414039  0.531079<br>8  0.992487  0.416087<br>9  0.934681  0.218391 </p>
-<p>按’B’列的值进行排序——<br>          A         B<br>4  0.955318  0.035809<br>3  0.885707  0.131258<br>9  0.934681  0.218391<br>1  0.301330  0.303682<br>8  0.992487  0.416087<br>0  0.221823  0.468366<br>2  0.408592  0.470527<br>7  0.414039  0.531079<br>6  0.254245  0.798225<br>5  0.135931  0.859795 </p>
-<pre><code>
-#### 4.5 缺失值处理
+print(df,&#39;\n&#39;)
 
-1. 缺失值主要是指数据丢失的现象，也就是数据集中的某一块数据不存在。
+for col in df:
+    print(col)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>           D    x         y       z
+0 2019-01-31  0.0  0.088484    High
+1 2019-02-28  1.0  0.763299    High
+2 2019-03-31  2.0  0.918397    High
+3 2019-04-30  3.0  0.785687  Medium
+4 2019-05-31  4.0  0.821885     Low 
 
-2. 除了原始数据集就已经存在缺失值以外，当我们用到索引对齐（reindex()，选择等）方法时，也容易人为导致缺失值的产生。
+D
+x
+y
+z</code></pre><h5 id="4-3-2-遍历Dataframe-示例"><a href="#4-3-2-遍历Dataframe-示例" class="headerlink" title="4.3.2 遍历Dataframe 示例"></a>4.3.2 遍历Dataframe 示例</h5><ol>
+<li>iteritems()：将索引和值作为键和列值迭代为 Series 对象。</li>
+<li>iterrows()：返回迭代器，产生每个索引值以及包含每行数据的序列。</li>
+<li>itertuples()：方法将为 DataFrame 中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值。</li>
+</ol>
+<pre><code># 遍历 iteritems()将每个列作为名称，将索引和值作为键和列值迭代为Series对象
+df = pd.DataFrame(np.random.randn(4,3), columns=[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])
 
-3. **缺失值处理**包括：
-➢ 缺失值标记
-➢ 缺失值填充
-➢ 缺失值插值
+print(df, &#39;\n&#39;)
 
-4. Pandas 为了更方便地**检测缺失值**，将不同类型数据的缺失均采用 NaN 标记。这里的 NaN 代表 Not a Number ，它仅仅是作为一个标记。
+print(&quot;\niteritems---------&quot;)
+for key,value in df.iteritems():  
+    print (key,value)
 
-5. Pandas 中用于**标记缺失值主要用到两个方法**，分别是：isnull () 和 notnull ()，顾名思义就是「是缺失值」和「不是缺失值」。默认会返回布尔值用于判断。
-</code></pre><h1 id="使用reindex-人为生成缺失值"><a href="#使用reindex-人为生成缺失值" class="headerlink" title="使用reindex()人为生成缺失值"></a>使用reindex()人为生成缺失值</h1><p>df = pd.DataFrame(np.random.rand(4, 3), index=[‘a’, ‘c’, ‘e’, ‘f’],columns=[‘one’, ‘two’, ‘three’])<br>print(‘原始：\n’, df,’\n’)<br>df = df.reindex([‘a’, ‘b’, ‘c’, ‘d’, ‘e’, ‘f’, ‘g’])<br>print(‘reindex后：\n’, df,’\n’)</p>
-<p>print(df[‘one’].isnull(),’\n’)  # 缺失值标记<br>print (df[‘one’].notnull(),’\n’)</p>
-<pre><code>**运行结果**</code></pre><p>原始：<br>         one       two     three<br>a  0.051237  0.164315  0.632927<br>c  0.459356  0.435970  0.615046<br>e  0.420776  0.668942  0.680803<br>f  0.086104  0.409684  0.162472 </p>
-<p>reindex后：<br>         one       two     three<br>a  0.051237  0.164315  0.632927<br>b       NaN       NaN       NaN<br>c  0.459356  0.435970  0.615046<br>d       NaN       NaN       NaN<br>e  0.420776  0.668942  0.680803<br>f  0.086104  0.409684  0.162472<br>g       NaN       NaN       NaN </p>
-<p>a    False<br>b     True<br>c    False<br>d     True<br>e    False<br>f    False<br>g     True<br>Name: one, dtype: bool </p>
-<p>a     True<br>b    False<br>c     True<br>d    False<br>e     True<br>f     True<br>g    False<br>Name: one, dtype: bool </p>
-<pre><code>
-6. Pandas 提供了各种方法来**清除缺失的值**。fillna() 函数可以通过几种方法用非空数据“填充” NaN 值。
-1）用标量值替换 NaN
-**print (df.fillna(0))**</code></pre><h1 id="用标量填充"><a href="#用标量填充" class="headerlink" title="用标量填充"></a>用标量填充</h1><p>print(“NaN replaced with ‘0’：”)<br>print(df.fillna(0))</p>
-<pre><code>**运行结果**</code></pre><p>NaN replaced with ‘0’：<br>        one       two     three<br>a  0.051237  0.164315  0.632927<br>b  0.000000  0.000000  0.000000<br>c  0.459356  0.435970  0.615046<br>d  0.000000  0.000000  0.000000<br>e  0.420776  0.668942  0.680803<br>f  0.086104  0.409684  0.162472<br>g  0.000000  0.000000  0.000000</p>
-<pre><code>2）向前填充：pad/fill
-**print(df.fillna(method=&#39;pad’))**</code></pre><h1 id="向前填充"><a href="#向前填充" class="headerlink" title="向前填充"></a>向前填充</h1><p>print(df.fillna(method=’pad’))</p>
-<pre><code>**运行结果**</code></pre><pre><code>    one       two     three</code></pre><p>a  0.051237  0.164315  0.632927<br>b  0.051237  0.164315  0.632927<br>c  0.459356  0.435970  0.615046<br>d  0.459356  0.435970  0.615046<br>e  0.420776  0.668942  0.680803<br>f  0.086104  0.409684  0.162472<br>g  0.086104  0.409684  0.162472</p>
-<pre><code>3）向后填充：bfill/backfill
-**print(df.fillna(method=&#39;backfill&#39;))**</code></pre><h1 id="向后填充"><a href="#向后填充" class="headerlink" title="向后填充"></a>向后填充</h1><p>print (df.fillna(method=’backfill’))</p>
-<pre><code>**运行结果**</code></pre><pre><code>    one       two     three</code></pre><p>a  0.051237  0.164315  0.632927<br>b  0.459356  0.435970  0.615046<br>c  0.459356  0.435970  0.615046<br>d  0.420776  0.668942  0.680803<br>e  0.420776  0.668942  0.680803<br>f  0.086104  0.409684  0.162472<br>g       NaN       NaN       NaN</p>
-<pre><code>
+# iterrows()返回迭代数器，产生每个索引值以及包含每行数据的序列
+print(&quot;\niterrows---------&quot;)
+for row_index,row in df.iterrows():    
+    print (row_index,row)
 
-7. **丢弃缺少的值**：如果只想排除缺少的值，则使用 dropna 函数和 axis 参数。默认情况下，axis=0，如果行内的任何值是 NaN，那么整个行被删除。
-1）丢弃含 NaN 值的行
-**print(df.dropna())**
-2）丢弃含 NaN 值的列
-**print (df.dropna(axis=1))**
-</code></pre><p>df = pd.DataFrame(np.random.rand(4, 3), index=[‘a’, ‘c’, ‘e’, ‘f’], columns=[‘one’, ‘two’, ‘three’])<br>df = df.reindex([‘a’, ‘b’, ‘c’, ‘d’, ‘e’, ‘f’, ‘g’])</p>
-<p>print(df,’\n’)<br>print(df.dropna()) # 丢弃含 NaN 值的行<br>print (df.dropna(axis=1)) # 丢弃含 NaN 值的列</p>
-<pre><code>**运行结果**</code></pre><pre><code>    one       two     three</code></pre><p>a  0.430961  0.718700  0.023831<br>b       NaN       NaN       NaN<br>c  0.560938  0.816387  0.409205<br>d       NaN       NaN       NaN<br>e  0.945503  0.838175  0.707113<br>f  0.987987  0.275285  0.532072<br>g       NaN       NaN       NaN </p>
-<pre><code>    one       two     three</code></pre><p>a  0.430961  0.718700  0.023831<br>c  0.560938  0.816387  0.409205<br>e  0.945503  0.838175  0.707113<br>f  0.987987  0.275285  0.532072<br>Empty DataFrame<br>Columns: []<br>Index: [a, b, c, d, e, f, g]</p>
-<pre><code>
-8. **替换缺失（或通用）值**：用一些具体的值取代一个通用的值或缺失值。用标量替换 NaN 和使用 fillna() 函数等效。
-</code></pre><h1 id="替换通用数据或者缺失值"><a href="#替换通用数据或者缺失值" class="headerlink" title="替换通用数据或者缺失值"></a>替换通用数据或者缺失值</h1><p>df = pd.DataFrame({‘one’:[10,20,30,40,50,2000],’two’:[1000,0,30,40,50,60]})<br>print(df,’\n’)<br>print(df.replace({1000:10,2000:60}))</p>
-<pre><code></code></pre>
+# itertuples()方法将为 DataFrame 中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值
+print(&quot;\nitertuples---------&quot;)
+for row in df.itertuples():    
+    print (row)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>       col1      col2      col3
+0  0.769239 -0.321667  0.229970
+1 -0.414440 -0.686365 -1.804574
+2 -0.625321 -0.410545 -0.266878
+3  0.942061 -0.429502 -0.191403 
+
+
+iteritems---------
+col1 0    0.769239
+1   -0.414440
+2   -0.625321
+3    0.942061
+Name: col1, dtype: float64
+col2 0   -0.321667
+1   -0.686365
+2   -0.410545
+3   -0.429502
+Name: col2, dtype: float64
+col3 0    0.229970
+1   -1.804574
+2   -0.266878
+3   -0.191403
+Name: col3, dtype: float64
+
+iterrows---------
+0 col1    0.769239
+col2   -0.321667
+col3    0.229970
+Name: 0, dtype: float64
+1 col1   -0.414440
+col2   -0.686365
+col3   -1.804574
+Name: 1, dtype: float64
+2 col1   -0.625321
+col2   -0.410545
+col3   -0.266878
+Name: 2, dtype: float64
+3 col1    0.942061
+col2   -0.429502
+col3   -0.191403
+Name: 3, dtype: float64
+
+itertuples---------
+Pandas(Index=0, col1=0.7692393725888382, col2=-0.3216667049027107, col3=0.22996991034224118)
+Pandas(Index=1, col1=-0.41444004324475786, col2=-0.6863646340873751, col3=-1.8045739966582113)
+Pandas(Index=2, col1=-0.625321480205094, col2=-0.4105445003436983, col3=-0.2668784127256191)
+Pandas(Index=3, col1=0.9420608482646933, col2=-0.4295015650195585, col3=-0.191402644416027)
+​</code></pre><h4 id="4-4-排序"><a href="#4-4-排序" class="headerlink" title="4.4 排序"></a>4.4 排序</h4><ol>
+<li><p>按索引排序：使用 sort_index() 方法，通过传递 axis 参数和排序顺序，可以对 DataFrame 进行排序。 默认情况下，按照升序对行标签进行排序。</p>
+</li>
+<li><p>按数值排序：sort_values() 是按值排序的方法。它接受一个 by 参数，它将使用要与其排序值的 DataFrame 的列名称。</p>
+</li>
+<li><p>排序顺序：通过将布尔值传递给升序参数 ascending，可以控制排序顺序。</p>
+</li>
+<li><p>按行或列排序：通过设置 axis 参数为 0 或 1 ，为 0 时逐行排序，为 1 时逐列排序，默认为 0。</p>
+</li>
+</ol>
+<p><strong>排序示例</strong></p>
+<pre><code>print(&quot;\n待排序------&quot;)
+unsorted_df = pd.DataFrame(np.random.rand(10,2),index=[1,4,6,2,3,5,9,8,0,7],columns = [&#39;A&#39;,&#39;B&#39;])
+print(unsorted_df,&#39;\n&#39;)
+
+print(&quot;\n按索引排序------&quot;)
+sorted_df=unsorted_df.sort_index(ascending = True)  #按索引排序
+print (sorted_df,&#39;\n&#39;)
+
+print(&quot;\n按&#39;B&#39;列的值进行排序------&quot;)
+sorted_df = unsorted_df.sort_values(by=&#39;B&#39;) # 按&#39;B&#39;列的值进行排序
+print (sorted_df,&#39;\n&#39;)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>待排序------
+          A         B
+1  0.301330  0.303682
+4  0.955318  0.035809
+6  0.254245  0.798225
+2  0.408592  0.470527
+3  0.885707  0.131258
+5  0.135931  0.859795
+9  0.934681  0.218391
+8  0.992487  0.416087
+0  0.221823  0.468366
+7  0.414039  0.531079 
+
+
+按索引排序------
+          A         B
+0  0.221823  0.468366
+1  0.301330  0.303682
+2  0.408592  0.470527
+3  0.885707  0.131258
+4  0.955318  0.035809
+5  0.135931  0.859795
+6  0.254245  0.798225
+7  0.414039  0.531079
+8  0.992487  0.416087
+9  0.934681  0.218391 
+
+
+按&#39;B&#39;列的值进行排序------
+          A         B
+4  0.955318  0.035809
+3  0.885707  0.131258
+9  0.934681  0.218391
+1  0.301330  0.303682
+8  0.992487  0.416087
+0  0.221823  0.468366
+2  0.408592  0.470527
+7  0.414039  0.531079
+6  0.254245  0.798225
+5  0.135931  0.859795 </code></pre><h4 id="4-5-缺失值处理"><a href="#4-5-缺失值处理" class="headerlink" title="4.5 缺失值处理"></a>4.5 缺失值处理</h4><ol>
+<li><p>缺失值主要是指数据丢失的现象，也就是数据集中的某一块数据不存在。</p>
+</li>
+<li><p>除了原始数据集就已经存在缺失值以外，当我们用到索引对齐（reindex()，选择等）方法时，也容易人为导致缺失值的产生。</p>
+</li>
+<li><p><strong>缺失值处理</strong>包括：<br>➢ 缺失值标记<br>➢ 缺失值填充<br>➢ 缺失值插值</p>
+</li>
+<li><p>Pandas 为了更方便地<strong>检测缺失值</strong>，将不同类型数据的缺失均采用 NaN 标记。这里的 NaN 代表 Not a Number ，它仅仅是作为一个标记。</p>
+</li>
+<li><p>Pandas 中用于<strong>标记缺失值主要用到两个方法</strong>，分别是：isnull () 和 notnull ()，顾名思义就是「是缺失值」和「不是缺失值」。默认会返回布尔值用于判断。</p>
+</li>
+</ol>
+<pre><code># 使用reindex()人为生成缺失值
+df = pd.DataFrame(np.random.rand(4, 3), index=[&#39;a&#39;, &#39;c&#39;, &#39;e&#39;, &#39;f&#39;],columns=[&#39;one&#39;, &#39;two&#39;, &#39;three&#39;])
+print(&#39;原始：\n&#39;, df,&#39;\n&#39;)
+df = df.reindex([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;])
+print(&#39;reindex后：\n&#39;, df,&#39;\n&#39;)
+
+print(df[&#39;one&#39;].isnull(),&#39;\n&#39;)  # 缺失值标记
+print (df[&#39;one&#39;].notnull(),&#39;\n&#39;)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>原始：
+         one       two     three
+a  0.051237  0.164315  0.632927
+c  0.459356  0.435970  0.615046
+e  0.420776  0.668942  0.680803
+f  0.086104  0.409684  0.162472 
+
+reindex后：
+         one       two     three
+a  0.051237  0.164315  0.632927
+b       NaN       NaN       NaN
+c  0.459356  0.435970  0.615046
+d       NaN       NaN       NaN
+e  0.420776  0.668942  0.680803
+f  0.086104  0.409684  0.162472
+g       NaN       NaN       NaN 
+
+a    False
+b     True
+c    False
+d     True
+e    False
+f    False
+g     True
+Name: one, dtype: bool 
+
+a     True
+b    False
+c     True
+d    False
+e     True
+f     True
+g    False
+Name: one, dtype: bool </code></pre><ol start="6">
+<li>Pandas 提供了各种方法来<strong>清除缺失的值</strong>。fillna() 函数可以通过几种方法用非空数据“填充” NaN 值。<br>1）用标量值替换 NaN</li>
+</ol>
+<p><strong>print (df.fillna(0))</strong></p>
+<pre><code># 用标量填充
+print(&quot;NaN replaced with &#39;0&#39;：&quot;)
+print(df.fillna(0))</code></pre><p><strong>运行结果</strong></p>
+<pre><code>NaN replaced with &#39;0&#39;：
+        one       two     three
+a  0.051237  0.164315  0.632927
+b  0.000000  0.000000  0.000000
+c  0.459356  0.435970  0.615046
+d  0.000000  0.000000  0.000000
+e  0.420776  0.668942  0.680803
+f  0.086104  0.409684  0.162472
+g  0.000000  0.000000  0.000000</code></pre><p>2）向前填充：pad/fill<br><strong>print(df.fillna(method=’pad’))</strong></p>
+<pre><code># 向前填充
+print(df.fillna(method=&#39;pad&#39;))</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        one       two     three
+a  0.051237  0.164315  0.632927
+b  0.051237  0.164315  0.632927
+c  0.459356  0.435970  0.615046
+d  0.459356  0.435970  0.615046
+e  0.420776  0.668942  0.680803
+f  0.086104  0.409684  0.162472
+g  0.086104  0.409684  0.162472</code></pre><p>3）向后填充：bfill/backfill<br><strong>print(df.fillna(method=’backfill’))</strong></p>
+<pre><code># 向后填充
+print (df.fillna(method=&#39;backfill&#39;))</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        one       two     three
+a  0.051237  0.164315  0.632927
+b  0.459356  0.435970  0.615046
+c  0.459356  0.435970  0.615046
+d  0.420776  0.668942  0.680803
+e  0.420776  0.668942  0.680803
+f  0.086104  0.409684  0.162472
+g       NaN       NaN       NaN</code></pre><ol start="7">
+<li><strong>丢弃缺少的值</strong>：如果只想排除缺少的值，则使用 dropna 函数和 axis 参数。默认情况下，axis=0，如果行内的任何值是 NaN，那么整个行被删除。<br>1）丢弃含 NaN 值的行</li>
+</ol>
+<p><strong>print(df.dropna())</strong><br>2）丢弃含 NaN 值的列<br><strong>print (df.dropna(axis=1))</strong></p>
+<pre><code>df = pd.DataFrame(np.random.rand(4, 3), index=[&#39;a&#39;, &#39;c&#39;, &#39;e&#39;, &#39;f&#39;], columns=[&#39;one&#39;, &#39;two&#39;, &#39;three&#39;])
+df = df.reindex([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;])
+
+print(df,&#39;\n&#39;)
+print(df.dropna()) # 丢弃含 NaN 值的行
+print (df.dropna(axis=1)) # 丢弃含 NaN 值的列</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        one       two     three
+a  0.430961  0.718700  0.023831
+b       NaN       NaN       NaN
+c  0.560938  0.816387  0.409205
+d       NaN       NaN       NaN
+e  0.945503  0.838175  0.707113
+f  0.987987  0.275285  0.532072
+g       NaN       NaN       NaN 
+
+        one       two     three
+a  0.430961  0.718700  0.023831
+c  0.560938  0.816387  0.409205
+e  0.945503  0.838175  0.707113
+f  0.987987  0.275285  0.532072
+Empty DataFrame
+Columns: []
+Index: [a, b, c, d, e, f, g]</code></pre><ol start="8">
+<li><strong>替换缺失（或通用）值</strong>：用一些具体的值取代一个通用的值或缺失值。用标量替换 NaN 和使用 fillna() 函数等效。</li>
+</ol>
+<pre><code># 替换通用数据或者缺失值
+df = pd.DataFrame({&#39;one&#39;:[10,20,30,40,50,2000],&#39;two&#39;:[1000,0,30,40,50,60]}) 
+print(df,&#39;\n&#39;)
+print(df.replace({1000:10,2000:60}))</code></pre>
             </div>
             <hr/>
 
@@ -2044,7 +2422,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">360.7k</span>&nbsp;字
+                class="white-color">361.1k</span>&nbsp;字
             
             
             
