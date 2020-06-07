@@ -423,7 +423,7 @@
 </li>
 </ol>
 <h5 id="1-1-1-Matplotlib-库效果"><a href="#1-1-1-Matplotlib-库效果" class="headerlink" title="1.1.1 Matplotlib 库效果"></a>1.1.1 Matplotlib 库效果</h5><p><a href="https://matplotlib.org/gallery/index.html" target="_blank" rel="noopener">https://matplotlib.org/gallery/index.html</a></p>
-<p><img src="/medias/1591439857009.png" alt="Alt text"></p>
+<p><img src="/medias/1591439857009.png" alt="Matplotlib 库"></p>
 <h5 id="1-1-2-Matplotlib-库-Gallery-示例"><a href="#1-1-2-Matplotlib-库-Gallery-示例" class="headerlink" title="1.1.2 Matplotlib 库 Gallery 示例"></a>1.1.2 Matplotlib 库 Gallery 示例</h5><pre><code>import numpy as np
 import matplotlib.pyplot as plt
 
@@ -444,7 +444,7 @@ plt.xticks(ind, (&#39;G1&#39;, &#39;G2&#39;, &#39;G3&#39;, &#39;G4&#39;, &#39;G5
 plt.yticks(np.arange(0, 81, 10))
 plt.legend((p1[0], p2[0]), (&#39;Men&#39;, &#39;Women&#39;))
 
-plt.show()</code></pre><p><img src="/medias/1591439822693.png" alt="Alt text"><br>或者新版本代码</p>
+plt.show()</code></pre><p><img src="/medias/1591439822693.png" alt="Gallery 示例"><br>或者新版本代码</p>
 <pre><code>import numpy as np
 import matplotlib.pyplot as plt
 
@@ -465,7 +465,7 @@ ax.set_ylabel(&#39;Scores&#39;)
 ax.set_title(&#39;Scores by group and gender&#39;)
 ax.legend()
 
-plt.show()</code></pre><p><img src="/medias/1591439831012.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591439831012.png" alt="Gallery 示例"></p>
 <h4 id="1-2-Matplotlib-快速绘图"><a href="#1-2-Matplotlib-快速绘图" class="headerlink" title="1.2 Matplotlib 快速绘图"></a>1.2 Matplotlib 快速绘图</h4><h5 id="1-2-1-快速绘图"><a href="#1-2-1-快速绘图" class="headerlink" title="1.2.1 快速绘图"></a>1.2.1 快速绘图</h5><ol>
 <li>matplotlib 中的快速绘图的函数库可以通过如下语句载入：</li>
 </ol>
@@ -515,7 +515,7 @@ plt.ylim(-1.2,1.2)
 plt.legend() 
 
 plt.show()
-#plt.savefig(&quot;test.png&quot;,dpi=120)</code></pre><p><img src="/medias/1591440532131.png" alt="Alt text"></p>
+#plt.savefig(&quot;test.png&quot;,dpi=120)</code></pre><p><img src="/medias/1591440532131.png" alt="快速绘图示例"></p>
 <h4 id="1-3-Matplotlib-库使用初探"><a href="#1-3-Matplotlib-库使用初探" class="headerlink" title="1.3 Matplotlib 库使用初探"></a>1.3 Matplotlib 库使用初探</h4><ol>
 <li>pyplot 的基础图标函数如下</li>
 </ol>
@@ -606,7 +606,7 @@ plt.text(0.5,0.5,
 &#39;subplot(2,1,2)&#39;,ha=&#39;center&#39;,va=&#39;center&#39;,size=24,alpha=.5)
 
 # plt.savefig(&#39;./medias/figures/subplot-horizontal.png&#39;, dpi=64) 
-plt.show()</code></pre><p><img src="/medias/1591440988040.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591440988040.png" alt="pyplot的绘图区域示例"></p>
 <pre><code>import matplotlib.pyplot as plt
 
 plt.subplot(1,2,1)
@@ -620,7 +620,7 @@ plt.text(0.5,0.5,
 &#39;subplot(1,2,2)&#39;,ha=&#39;center&#39;,va=&#39;center&#39;,size=24,alpha=.5)
 
 # plt.savefig(&#39;./medias/figures/subplot-horizontal.png&#39;, dpi=64) 
-plt.show()</code></pre><p><img src="/medias/1591441076189.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591441076189.png" alt="pyplot的绘图区域示例"></p>
 <pre><code>import matplotlib.pyplot as plt
 
 plt.subplot(2,2,1)
@@ -645,7 +645,7 @@ plt.text(0.5,0.5,
 &#39;subplot(2,2,4)&#39;,ha=&#39;center&#39;,va=&#39;center&#39;,size=24,alpha=.5)
 
 # plt.savefig(&#39;./medias/figures/subplot-horizontal.png&#39;, dpi=64) 
-plt.show()</code></pre><p><img src="/medias/1591441165908.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591441165908.png" alt="pyplot的绘图区域示例"></p>
 <h3 id="2、折线图、散点图实战"><a href="#2、折线图、散点图实战" class="headerlink" title="2、折线图、散点图实战"></a>2、折线图、散点图实战</h3><h4 id="2-1-折线图实战"><a href="#2-1-折线图实战" class="headerlink" title="2.1 折线图实战"></a>2.1 折线图实战</h4><h5 id="2-1-1-折线图"><a href="#2-1-1-折线图" class="headerlink" title="2.1.1 折线图"></a>2.1.1 折线图</h5><ol>
 <li>折线图通常用来表示数据随时间或有序类别变化的趋势。</li>
 <li>最简单的折线图示例。</li>
@@ -654,7 +654,7 @@ plt.show()</code></pre><p><img src="/medias/1591441165908.png" alt="Alt text"></
 
 data=[1,2,3,4,5,4,2,4,6,7] # 随意创建的数据
 plt.plot(data) # 引用matplotlib库中的pyplot模块绘图
-plt.show()</code></pre><p><img src="/medias/1591442728046.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591442728046.png" alt="折线图"></p>
 <ol start="3">
 <li><p>折线图通常用来表示数据随时间或有序类别变化的趋势。</p>
 </li>
@@ -689,7 +689,7 @@ plt.xlabel(&#39;X轴名称&#39;, fontproperties=&#39;simhei&#39;)
 plt.ylabel(&#39;Y轴名称&#39;, fontproperties=&#39;simhei&#39;)
 plt.title(&#39;折线图美化示例&#39;, fontproperties=&#39;simhei&#39;)
 
-plt.ylim(0,10)</code></pre><p>(0, 10)<br><img src="/medias/1591443248270.png" alt="Alt text"></p>
+plt.ylim(0,10)</code></pre><p>(0, 10)<br><img src="/medias/1591443248270.png" alt="绘制多条曲线、曲线颜色、线型、标记等参数"></p>
 <h5 id="2-1-2-折线图实战一"><a href="#2-1-2-折线图实战一" class="headerlink" title="2.1.2 折线图实战一"></a>2.1.2 折线图实战一</h5><p>已知王府井某小吃店 2018 年每个月份的营业额如下表所示。请使用matplotlib 扩展库编写 Python 程序绘制折线图对该小吃店全年营业额进行可视化，并使用红色点划线连接每个月份的数据，并在每个月份的数据处使用三角形标记。</p>
 <table>
 <thead>
@@ -736,7 +736,7 @@ plt.ylabel(&#39;营业额（万元）&#39;, fontproperties=&#39;simhei&#39;, fon
 plt.title(&#39;小吃店201８年营业额变化趋势图&#39;, fontproperties=&#39;simhei&#39;, fontsize=18)
 
 plt.tight_layout()   # 紧缩四周空白，扩大绘图区域可用面积
-plt.show()</code></pre><p><img src="/medias/1591443587731.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591443587731.png" alt="小吃店营业额折线图"></p>
 <h4 id="2-2-散点图实战"><a href="#2-2-散点图实战" class="headerlink" title="2.2 散点图实战"></a>2.2 散点图实战</h4><h5 id="2-2-1-散点图方法"><a href="#2-2-1-散点图方法" class="headerlink" title="2.2.1 散点图方法"></a>2.2.1 散点图方法</h5><ol>
 <li>在 matplotlib 中使用函数  matplotlib.pyplot.scatter  绘制散点图。</li>
 </ol>
@@ -752,7 +752,7 @@ N = 10
 x = np.random.rand(N)
 y = np.random.rand(N)
 plt.scatter(x, y)
-plt.show()</code></pre><p><img src="/medias/1591443956266.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591443956266.png" alt="普通散点图"></p>
 <h5 id="2-2-3-更改散点大小"><a href="#2-2-3-更改散点大小" class="headerlink" title="2.2.3 更改散点大小"></a>2.2.3 更改散点大小</h5><pre><code>import matplotlib 
 import matplotlib.pyplot as plt 
 import numpy as np
@@ -766,7 +766,7 @@ y = np.random.rand(N)
 s = (30*np.random.rand(N))**2 
 plt.scatter(x, y, s=s)
 
-plt.show()</code></pre><p><img src="/medias/1591444012764.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591444012764.png" alt="更改散点大小"></p>
 <h5 id="2-2-4-更改散点颜色、透明度"><a href="#2-2-4-更改散点颜色、透明度" class="headerlink" title="2.2.4 更改散点颜色、透明度"></a>2.2.4 更改散点颜色、透明度</h5><pre><code>import matplotlib 
 import matplotlib.pyplot as plt 
 import numpy as np
@@ -782,7 +782,7 @@ c = np.random.rand(N)
 
 plt.scatter(x, y, s=s, c=c, alpha=0.5) 
 
-plt.show()</code></pre><p><img src="/medias/1591444069805.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591444069805.png" alt="更改散点颜色、透明度"></p>
 <h5 id="2-2-5-更改散点形状"><a href="#2-2-5-更改散点形状" class="headerlink" title="2.2.5 更改散点形状"></a>2.2.5 更改散点形状</h5><pre><code>import matplotlib.pyplot as plt
 import numpy as np
 
@@ -795,7 +795,7 @@ c = np.random.rand(N)
 
 plt.scatter(x, y, s=s, c=c, marker=&#39;^&#39;, alpha=0.5)
 
-plt.show()</code></pre><p><img src="/medias/1591444111716.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591444111716.png" alt="更改散点形状"></p>
 <h5 id="2-2-6-一张图绘制两组数据的散点图"><a href="#2-2-6-一张图绘制两组数据的散点图" class="headerlink" title="2.2.6 一张图绘制两组数据的散点图"></a>2.2.6 一张图绘制两组数据的散点图</h5><pre><code>import matplotlib.pyplot as plt 
 import numpy as np
 
@@ -809,7 +809,7 @@ y2 = np.random.rand(N)
 plt.scatter(x1, y1, marker=&#39;o&#39;) 
 plt.scatter(x2, y2, marker=&#39;^&#39;) 
 
-plt.show()</code></pre><p><img src="/medias/1591444187747.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591444187747.png" alt="一张图绘制两组数据的散点图"></p>
 <h5 id="2-2-7-为散点图增加图例"><a href="#2-2-7-为散点图增加图例" class="headerlink" title="2.2.7 为散点图增加图例"></a>2.2.7 为散点图增加图例</h5><pre><code>import matplotlib.pyplot as plt 
 import numpy as np
 
@@ -824,7 +824,7 @@ plt.scatter(x1, y1, marker=&#39;o&#39;, label=&quot;circle&quot;)
 plt.scatter(x2, y2, marker=&#39;^&#39;, label=&quot;triangle&quot;)
 plt.legend(loc=&#39;best&#39;)
 
-plt.show()</code></pre><p><img src="/medias/1591444271870.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591444271870.png" alt="为散点图增加图例"></p>
 <h3 id="3、柱状图、饼状图实战"><a href="#3、柱状图、饼状图实战" class="headerlink" title="3、柱状图、饼状图实战"></a>3、柱状图、饼状图实战</h3><h4 id="3-1-柱状图实战"><a href="#3-1-柱状图实战" class="headerlink" title="3.1 柱状图实战"></a>3.1 柱状图实战</h4><h5 id="3-1-1-柱状图"><a href="#3-1-1-柱状图" class="headerlink" title="3.1.1 柱状图"></a>3.1.1 柱状图</h5><ol>
 <li><p>使用 Matplotlib 提供的 bar() 函数来绘制柱状图。</p>
 </li>
@@ -952,7 +952,7 @@ plt.ylabel(&#39;营业额（万元）&#39;, fontproperties=&#39;simhei&#39;)
 myfont = fm.FontProperties(fname=r&#39;STKAITI.ttf&#39;) 
 plt.legend(prop=myfont)
 
-plt.show()</code></pre><p><img src="/medias/Figure_1.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/Figure_1.png" alt="各部门每个月的业绩柱状图"></p>
 <h5 id="3-1-4-柱状图实战：使用-matplotlib-绘制"><a href="#3-1-4-柱状图实战：使用-matplotlib-绘制" class="headerlink" title="3.1.4 柱状图实战：使用 matplotlib 绘制"></a>3.1.4 柱状图实战：使用 matplotlib 绘制</h5><ol>
 <li>简单柱状图</li>
 </ol>
@@ -960,7 +960,7 @@ plt.show()</code></pre><p><img src="/medias/Figure_1.png" alt="Alt text"></p>
 
 num_list = [1.5,0.6,7.8,6]  
 plt.bar(range(len(num_list)), num_list)  
-plt.show() </code></pre><p><img src="/medias/1591445577900.png" alt="Alt text"></p>
+plt.show() </code></pre><p><img src="/medias/1591445577900.png" alt="简单柱状图"></p>
 <p><strong>设置标签</strong></p>
 <pre><code>import matplotlib.pyplot as plt  
 
@@ -968,7 +968,7 @@ name_list = [&#39;Monday&#39;,&#39;Tuesday&#39;,&#39;Friday&#39;,&#39;Sunday&#39
 num_list = [1.5,0.6,7.8,6]  
 plt.bar(range(len(num_list)), num_list, color=&#39;rgb&#39;, tick_label=name_list)  
 
-plt.show() </code></pre><p><img src="/medias/1591445668808.png" alt="Alt text"></p>
+plt.show() </code></pre><p><img src="/medias/1591445668808.png" alt="柱状图设置标签"></p>
 <ol start="2">
 <li>条形柱状图</li>
 </ol>
@@ -978,7 +978,7 @@ name_list = [&#39;Monday&#39;,&#39;Tuesday&#39;,&#39;Friday&#39;,&#39;Sunday&#39
 num_list = [1.5,0.6,7.8,6] 
 
 plt.barh(range(len(num_list)), num_list,color=&#39;rgb&#39;,tick_label=name_list)  
-plt.show() </code></pre><p><img src="/medias/1591446055626.png" alt="Alt text"></p>
+plt.show() </code></pre><p><img src="/medias/1591446055626.png" alt="条形柱状图设置标签"></p>
 <h5 id="3-1-5-柱状图实战：使用-matplotlib-绘制"><a href="#3-1-5-柱状图实战：使用-matplotlib-绘制" class="headerlink" title="3.1.5 柱状图实战：使用 matplotlib 绘制"></a>3.1.5 柱状图实战：使用 matplotlib 绘制</h5><ol>
 <li>堆叠柱状图</li>
 </ol>
@@ -992,7 +992,7 @@ plt.bar(range(len(num_list)), num_list, label=&#39;boy&#39;, fc = &#39;y&#39;)
 
 plt.bar(range(len(num_list)), num_list1, bottom=num_list, label=&#39;girl&#39;, tick_label = name_list, fc = &#39;r&#39;)  
 plt.legend()  
-plt.show() </code></pre><p><img src="/medias/1591446154977.png" alt="Alt text"></p>
+plt.show() </code></pre><p><img src="/medias/1591446154977.png" alt="堆叠柱状图"></p>
 <ol start="2">
 <li>并列柱状图</li>
 </ol>
@@ -1012,11 +1012,11 @@ for i in range(len(x)):
 plt.bar(x, num_list1, width=width, label=&#39;girl&#39;, tick_label = name_list, fc = &#39;r&#39;) 
 plt.legend()  
 
-plt.show() </code></pre><p><img src="/medias/1591446298354.png" alt="Alt text"></p>
+plt.show() </code></pre><p><img src="/medias/1591446298354.png" alt="并列柱状图"></p>
 <h4 id="3-2-饼状图实战"><a href="#3-2-饼状图实战" class="headerlink" title="3.2 饼状图实战"></a>3.2 饼状图实战</h4><h5 id="3-2-1-饼状图"><a href="#3-2-1-饼状图" class="headerlink" title="3.2.1 饼状图"></a>3.2.1 饼状图</h5><ol>
 <li><p>概念：<br>1）饼状图显示一个系列中各项的大小与各项总和的比例。<br>2）饼状图可自动根据数据的百分比画饼。</p>
 </li>
-<li><p>绘制饼状图的基本语法<br>1）创建数组 x 的饼图，每个楔形的面积由 x/sum(x) 决定；<br>2）若 sum(x)&lt;1，则 x 数组不会被标准化，x 值即为楔形区域面积占比。注意，该种情况会出现 1-sum(x) 的空楔形。<br>3）若 sum(x)&gt;1，则由 x[i]/sum(x) 算出每一个楔形占比，饼图 360° 区域均被填充。<br><img src="/medias/1591446413658.png" alt="Alt text"></p>
+<li><p>绘制饼状图的基本语法<br>1）创建数组 x 的饼图，每个楔形的面积由 x/sum(x) 决定；<br>2）若 sum(x)&lt;1，则 x 数组不会被标准化，x 值即为楔形区域面积占比。注意，该种情况会出现 1-sum(x) 的空楔形。<br>3）若 sum(x)&gt;1，则由 x[i]/sum(x) 算出每一个楔形占比，饼图 360° 区域均被填充。<br><img src="/medias/1591446413658.png" alt="饼状图"></p>
 </li>
 </ol>
 <h5 id="3-2-2-饼状图绘图方法-pie"><a href="#3-2-2-饼状图绘图方法-pie" class="headerlink" title="3.2.2 饼状图绘图方法 pie()"></a>3.2.2 饼状图绘图方法 pie()</h5><pre><code>pie(x, explode=None, labels=None, colors=None, autopct=None, pctdistance=0.6, shadow=False, labeldistance=1.1, startangle=None, radius=None, 
@@ -1047,7 +1047,7 @@ sizes = [10,20,30,40]
 plt.pie(sizes,labels=labels)
 plt.title(&quot;饼状图实战&quot;)
 plt.text(1,-1.2,&#39;By hsiehchou&#39;)
-plt.show()</code></pre><p><img src="/medias/1591447406454.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591447406454.png" alt="简单饼状图"></p>
 <ol start="2">
 <li>explode : 一块饼图离开中心距离，默认值为（0,0），就是不离开中心。</li>
 </ol>
@@ -1061,7 +1061,7 @@ explode = (0,0,0.1,0)  #将第三块分离出来
 plt.pie(sizes,labels=labels,explode=explode) #增加explode参数
 plt.title(&quot;饼状图实战&quot;)
 plt.text(1,-1.2,&#39;By hsiehchou&#39;)
-plt.show()</code></pre><p><img src="/medias/1591447385887.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591447385887.png" alt="一块饼图离开中心距离"></p>
 <ol start="3">
 <li>colors：数组，可选参数，默认为：None；用来标注每块饼图的 matplotlib 颜色。</li>
 </ol>
@@ -1076,7 +1076,7 @@ colors = [&#39;r&#39;,&#39;g&#39;,&#39;y&#39;,&#39;b&#39;] #自定义颜色列�
 plt.pie(sizes,labels=labels,explode=explode,colors=colors)
 plt.title(&quot;饼状图实战&quot;)
 plt.text(1,-1.2,&#39;By hsiehchou&#39;)
-plt.show()</code></pre><p><img src="/medias/1591447360661.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591447360661.png" alt="标注每块饼图的 matplotlib 颜色"></p>
 <ol start="4">
 <li>autopct：控制饼图内百分比设置,可以使用 format 字符串或者format function。<br>‘%1.1f’：指小数点后保留一位有效数值。</li>
 </ol>
@@ -1093,7 +1093,7 @@ colors = [&#39;r&#39;,&#39;g&#39;,&#39;y&#39;,&#39;b&#39;] #自定义颜色列�
 plt.pie(sizes,labels=labels,explode=explode,colors=colors, autopct=&#39;%1.2f%%&#39;)  #保留两位小数，增加百分号
 plt.title(&quot;饼状图实战&quot;)
 plt.text(1,-1.2,&#39;By hsiehchou&#39;)
-plt.show()</code></pre><p><img src="/medias/1591447572772.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591447572772.png" alt="饼图内百分比设置"></p>
 <ol start="5">
 <li>x：每一块饼图的比例，为必填项，如果 sum(x)&gt;1，会将多出的部分进行均分；如为必填项，如果 sum(x)&lt;1，1-sum(x) 的部分空出；</li>
 </ol>
@@ -1110,7 +1110,7 @@ colors = [&#39;r&#39;,&#39;g&#39;,&#39;y&#39;,&#39;b&#39;] #自定义颜色列�
 plt.pie(sizes,labels=labels,explode=explode,colors=colors, autopct=&#39;%1.1f&#39;)  #保留一位小数
 plt.title(&quot;饼状图实战&quot;)
 plt.text(1,-1.2,&#39;By hsiehchou&#39;)
-plt.show()</code></pre><p><img src="/medias/1591447644747.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591447644747.png" alt="每一块饼图的比例"></p>
 <ol start="6">
 <li>添加图例，plt.legend( )</li>
 </ol>
@@ -1127,7 +1127,7 @@ plt.legend(loc=&quot;upper right&quot;, fontsize=10, bbox_to_anchor=(1.1,1.05), 
 # borderaxespad = 0.3图例的内边距
 plt.title(&quot;饼状图实战&quot;)
 plt.text(1,-1.2,&#39;By hsiehchou&#39;)
-plt.show()</code></pre><p><img src="/medias/1591447788057.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591447788057.png" alt="添加图例"></p>
 <h5 id="3-2-4-饼状图实战二：学生成绩分布饼状图"><a href="#3-2-4-饼状图实战二：学生成绩分布饼状图" class="headerlink" title="3.2.4 饼状图实战二：学生成绩分布饼状图"></a>3.2.4 饼状图实战二：学生成绩分布饼状图</h5><p>已知某高校某班级的操作系统、高等数学、英语和 Python 课程考试成绩如下表所示，要求利用 matplotlib 库绘制饼状图显示该班级每门课的成绩中优（85分以上）、及格（60-84分）、不及格（60分以下）的学生占比。</p>
 <table>
 <thead>
@@ -1277,19 +1277,19 @@ for index, subjectData in enumerate(ratios.items()):
 
 plt.gca().set_aspect(&#39;equal&#39;) 
 plt.text(1,-1.2,&#39;By hsiehchou&#39;)
-plt.show()</code></pre><p><img src="/medias/1591448519409.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591448519409.png" alt="学生成绩分布饼状图"></p>
 <h3 id="4、雷达图、三维实战"><a href="#4、雷达图、三维实战" class="headerlink" title="4、雷达图、三维实战"></a>4、雷达图、三维实战</h3><h4 id="4-1-雷达图实战"><a href="#4-1-雷达图实战" class="headerlink" title="4.1 雷达图实战"></a>4.1 雷达图实战</h4><h5 id="4-1-1-雷达图"><a href="#4-1-1-雷达图" class="headerlink" title="4.1.1 雷达图"></a>4.1.1 雷达图</h5><ol>
 <li><p>雷达图（Radar Chart），又蜘蛛网图（Spider Chart），可以很好刻画出某些指标的横向或纵向的对比关系。</p>
 </li>
 <li><p>雷达图常用于对多项指标的全面分析。比如：HR 想要比较两个应聘者的综合素质，用雷达图分别画出来，就可以进行直观的比较。</p>
 </li>
-<li><p>python 中用 matplotlib 模块绘制雷达图需要用到极坐标系。<br><img src="/medias/1591448640196.png" alt="Alt text"></p>
+<li><p>python 中用 matplotlib 模块绘制雷达图需要用到极坐标系。<br><img src="/medias/1591448640196.png" alt="雷达图"></p>
 </li>
 </ol>
 <h5 id="4-1-2-雷达图之极坐标系"><a href="#4-1-2-雷达图之极坐标系" class="headerlink" title="4.1.2 雷达图之极坐标系"></a>4.1.2 雷达图之极坐标系</h5><ol>
 <li><p>在平面内取一个定点 O，叫<code>极点</code>，引一条射线 Ox，叫做<code>极轴</code>，再选定一个长度单位和角度的正方向（通常取逆时针方向）。对于平面内任何一点 M，用 ρ 表示线段 OM 的长度（有时也用 r 表示），θ 表示从 Ox 到 OM 的角度，ρ 叫做点 M 的<code>极径</code>，θ 叫做点 M 的<code>极角</code>，有序数对 (ρ,θ) 就叫点 M 的<code>极坐标</code>，这样建立的坐标系叫做<code>极坐标系</code>。</p>
 </li>
-<li><p>通常情况下，M 的极径坐标单位为 1（长度单位），极角坐标单位为 °。<br><img src="/medias/1591448745576.png" alt="Alt text"></p>
+<li><p>通常情况下，M 的极径坐标单位为 1（长度单位），极角坐标单位为 °。<br><img src="/medias/1591448745576.png" alt="雷达图之极坐标系"></p>
 </li>
 </ol>
 <h5 id="4-1-3-雷达图之-polar-函数"><a href="#4-1-3-雷达图之-polar-函数" class="headerlink" title="4.1.3 雷达图之 polar 函数"></a>4.1.3 雷达图之 polar 函数</h5><pre><code>polar(theta, r, **kwargs)</code></pre><p><strong>1. 主要参数：</strong><br>➢    theta：指极角θ。<br>➢    r：指极径。</p>
@@ -1298,7 +1298,7 @@ import matplotlib.pyplot as plt
 
 plt.polar(0.25*np.pi, 20, &#39;ro&#39;, lw=2) 
 plt.ylim(0,50)    #设置极轴的上下限
-plt.show()</code></pre><p><img src="/medias/1591448807308.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591448807308.png" alt="雷达图之 polar 函数"></p>
 <p><strong>注：</strong><br>0.25*np.pi=45°：极角<br>20：极径<br>’ro’：绘极坐标形状为红色圆点<br>lw=2：极坐标图形宽度为 2</p>
 <p><strong>2. 如果绘制多个极角和极轴时</strong></p>
 <pre><code>import numpy as np
@@ -1309,7 +1309,7 @@ r = [75,60,50,70,50,85,45,70]
 
 plt.polar(theta*np.pi, r, &#39;ro&#39;, lw=2)
 plt.ylim(0,100)
-plt.show()</code></pre><p><img src="/medias/1591448900309.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591448900309.png" alt="绘制多个极角和极轴时"></p>
 <p><strong>注：</strong><br>theta：定义了一个 ndarray 数组存储多个数据<br>r：定义了一个数组存放极轴的长度，也叫极径</p>
 <ol start="3">
 <li><p>则在图中绘制出多个点:（0.25<em>π，75）,（0.5</em>π， 60）,（0.75<em>π，50）,（1.0</em>π，70）等。</p>
@@ -1327,7 +1327,7 @@ r = [75,60,50,70,50,85,45,70]
 
 plt.polar(theta*np.pi, r, &#39;ro-&#39;, lw=2)
 plt.ylim(0,100)
-plt.show()</code></pre><p><img src="/medias/1591449048767.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591449048767.png" alt="极坐标点之间的连线"></p>
 <p><strong>注：</strong><br>’ro-’：其中-表示极坐标点之间的连线</p>
 <ol start="6">
 <li>闭合曲线：多构造一个极坐标点，和第一个点重叠。</li>
@@ -1340,7 +1340,7 @@ r = [75,60,50,70,50,85,45,70,75]
 
 plt.polar(theta*np.pi, r, &#39;ro-&#39;, lw=2)
 plt.ylim(0,100)
-plt.show()</code></pre><p><img src="/medias/1591449141208.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591449141208.png" alt="闭合曲线"></p>
 <p><strong>注：</strong><br>最后一个极坐标点与第一个参数相同：(0.25, 75)</p>
 <ol start="7">
 <li>fill() 函数填充雷达图。</li>
@@ -1354,7 +1354,7 @@ r = [75,60,50,70,50,85,45,70,75]
 plt.polar(theta*np.pi, r, &#39;ro-&#39;, lw=2)
 plt.fill(theta*np.pi, r, facecolor=&#39;r&#39;, alpha=0.25) #填充
 plt.ylim(0,100)
-plt.show()</code></pre><p><img src="/medias/1591449248638.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591449248638.png" alt="填充雷达图"></p>
 <h5 id="4-1-4-实战：学生课程成绩雷达图"><a href="#4-1-4-实战：学生课程成绩雷达图" class="headerlink" title="4.1.4 实战：学生课程成绩雷达图"></a>4.1.4 实战：学生课程成绩雷达图</h5><p>一般来说，大学的学位证只能证明学生达到该学习阶段的最低要求，并不能体现学生的综合能力以及擅长的学科与领域，因此用人单位在招聘时往往还需要借助于成绩单进行综合考察。如果把每个学生的专业核心课成绩绘制成雷达图印在学位证书上，就可让用人单位非常直观地了解学生综合能力。编写程序，根据某学生的部分专业核心课程和成绩清单绘制雷达图。</p>
 <table>
 <thead>
@@ -1410,7 +1410,7 @@ plt.polar(angles,  # 设置角度
 # 设置角度网格标签
 plt.thetagrids(angles*180/np.pi, courses, fontproperties=&#39;simhei&#39;) # 填充雷达图内部
 plt.fill(angles, scores, facecolor=&#39;r&#39;, alpha=0.5)
-plt.show()</code></pre><p><img src="/medias/1591449650714.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591449650714.png" alt="学生课程成绩雷达图"></p>
 <h4 id="4-2-三维图实战"><a href="#4-2-三维图实战" class="headerlink" title="4.2 三维图实战"></a>4.2 三维图实战</h4><h5 id="4-2-1-三维图概述"><a href="#4-2-1-三维图概述" class="headerlink" title="4.2.1 三维图概述"></a>4.2.1 三维图概述</h5><ol>
 <li><p>matplotlib 支持一些基础的三维图表绘制，比如曲面图散点图和柱状图，需要使用 mpl_toolkits 模块。</p>
 </li>
@@ -1458,30 +1458,55 @@ font = fm.FontProperties(fname=r&#39;C:\Users\hsiehchou\.spyder-py3\STKAITI.ttf&
 mpl.rcParams[&#39;legend.fontsize&#39;] = 10
 ax.legend(prop=font)
 
-plt.show()</code></pre><p><img src="/medias/1591450502805.png" alt="Alt text"></p>
+plt.show()</code></pre><p><img src="/medias/1591450502805.png" alt="三维曲线"></p>
 <ol start="2">
-<li>生成测试数据 x、y、z，然后绘制三维曲线，并设置图例的字体和字号。<pre><code>import numpy as np
+<li>生成测试数据 x、y、z，然后绘制三维曲线，并设置图例的字体和字号。</li>
+</ol>
+<pre><code>import numpy as np
 import matplotlib.pyplot as plt
 import mpl_toolkits.mplot3d
-</code></pre></li>
-</ol>
-<h1 id="生成测试数据，在x和y方向分布生成-2到2之间的20个数-步长使用虚数，虚部表示点的个数，并且包含end"><a href="#生成测试数据，在x和y方向分布生成-2到2之间的20个数-步长使用虚数，虚部表示点的个数，并且包含end" class="headerlink" title="生成测试数据，在x和y方向分布生成-2到2之间的20个数# 步长使用虚数，虚部表示点的个数，并且包含end"></a>生成测试数据，在x和y方向分布生成-2到2之间的20个数# 步长使用虚数，虚部表示点的个数，并且包含end</h1><p>x, y = np.mgrid[-2:2:20j, -2:2:20j]<br>z = 50 * np.sin(x+y*2)</p>
-<h1 id="创建三维图形"><a href="#创建三维图形" class="headerlink" title="创建三维图形"></a>创建三维图形</h1><p>ax = plt.subplot(111, projection=’3d’)</p>
-<h1 id="绘制三维曲面"><a href="#绘制三维曲面" class="headerlink" title="绘制三维曲面"></a>绘制三维曲面</h1><p>ax.plot_surface(x,y,z, rstride=3, cstride=2, cmap=plt.cm.coolwarm)</p>
-<h1 id="设置坐标轴标签"><a href="#设置坐标轴标签" class="headerlink" title="设置坐标轴标签"></a>设置坐标轴标签</h1><p>ax.set_xlabel(‘X’)<br>ax.set_ylabel(‘Y’)<br>ax.set_zlabel(‘Z’)</p>
-<h1 id="设置图形标题"><a href="#设置图形标题" class="headerlink" title="设置图形标题"></a>设置图形标题</h1><p>ax.set_title(‘三维曲面’, fontproperties=’simhei’, fontsize=24)</p>
-<p>plt.show()</p>
-<pre><code>
-![Alt text](/medias/1591450640439.png)
 
-3. 生成测试数据，绘制三维柱状图，设置每个柱的颜色随机，且宽度和厚度都为 1。 
-</code></pre><p>import numpy as np<br>import matplotlib.pyplot as plt<br>import mpl_toolkits.mplot3d</p>
-<p>x = np.random.randint(0, 40, 10)<br>y = np.random.randint(0, 40, 10)<br>z = 80*abs(np.sin(x+y))</p>
-<p>ax = plt.subplot(projection=’3d’)<br>for xx, yy, zz in zip(x, y, z):<br>    color = np.random.random(3)<br>    ax.bar3d(xx, yy, 0, dx=1, dy=1, dz=zz, color=color)</p>
-<p>ax.set_xlabel(‘X’)<br>ax.set_ylabel(‘Y’)<br>ax.set_zlabel(‘Z’) </p>
-<p>plt.show()</p>
-<pre><code>
-![Alt text](/medias/1591450739894.png)</code></pre>
+# 生成测试数据，在x和y方向分布生成-2到2之间的20个数# 步长使用虚数，虚部表示点的个数，并且包含end
+x, y = np.mgrid[-2:2:20j, -2:2:20j]
+z = 50 * np.sin(x+y*2)
+
+# 创建三维图形
+ax = plt.subplot(111, projection=&#39;3d&#39;)
+
+# 绘制三维曲面
+ax.plot_surface(x,y,z, rstride=3, cstride=2, cmap=plt.cm.coolwarm)
+
+# 设置坐标轴标签
+ax.set_xlabel(&#39;X&#39;)
+ax.set_ylabel(&#39;Y&#39;)
+ax.set_zlabel(&#39;Z&#39;)
+
+# 设置图形标题
+ax.set_title(&#39;三维曲面&#39;, fontproperties=&#39;simhei&#39;, fontsize=24)
+
+plt.show()</code></pre><p><img src="/medias/1591450640439.png" alt="三维曲线"></p>
+<ol start="3">
+<li>生成测试数据，绘制三维柱状图，设置每个柱的颜色随机，且宽度和厚度都为 1。 </li>
+</ol>
+<pre><code>import numpy as np
+import matplotlib.pyplot as plt
+import mpl_toolkits.mplot3d
+
+x = np.random.randint(0, 40, 10)
+y = np.random.randint(0, 40, 10)
+z = 80*abs(np.sin(x+y))
+
+ax = plt.subplot(projection=&#39;3d&#39;)
+for xx, yy, zz in zip(x, y, z):
+    color = np.random.random(3)
+    ax.bar3d(xx, yy, 0, dx=1, dy=1, dz=zz, color=color)
+
+ax.set_xlabel(&#39;X&#39;) 
+ax.set_ylabel(&#39;Y&#39;) 
+ax.set_zlabel(&#39;Z&#39;) 
+
+plt.show()</code></pre><p><img src="/medias/1591450739894.png" alt="三维柱状图"></p>
+
             </div>
             <hr/>
 

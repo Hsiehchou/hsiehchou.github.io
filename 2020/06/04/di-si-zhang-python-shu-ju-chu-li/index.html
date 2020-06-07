@@ -933,12 +933,11 @@ print(np.dot(a, x))    # 验证</code></pre><p><strong>运行结果</strong><br>
 </li>
 <li><p><strong>pandas</strong> 基于 numpy 实现，常与 numpy 和 matplotlib 一同使用。</p>
 </li>
+<li><p><strong>pandas</strong> 中有两大核心数据结构：<strong>Series</strong> （一维数据） 和 <strong>DataFrame</strong>（多特征数据，既有行索引，又有列索引）。</p>
+</li>
 </ol>
-<ol start="3">
-<li><strong>pandas</strong> 中有两大核心数据结构：<strong>Series</strong> （一维数据） 和 <strong>DataFrame</strong>（多特征数据，既有行索引，又有列索引）。</li>
-</ol>
-<p><img src="/medias/1591420106630.png" alt="Alt text"></p>
-<p><img src="/medias/1591420115214.png" alt="Alt text"></p>
+<p><img src="/medias/1591420106630.png" alt="Series"></p>
+<p><img src="/medias/1591420115214.png" alt="DataFrame"></p>
 <ol start="4">
 <li><p><strong>Series</strong><br>1）一维数组，与 Numpy 中的一维 array 类似 。<br>2）Series、numpy 中的一维 array 与 Python 基本的数据结构 List 也很相近， 其区别是： List 中的元素可以是不同的数据类型，而 array 和 Series 中则只允许存储相同的数据类型。<br>3）Series可以更有效的使用内存 ， 提高运算效率。</p>
 </li>
@@ -1083,7 +1082,7 @@ dtype: int64</code></pre><h4 id="3-4-DataFrame"><a href="#3-4-DataFrame" class="
 <li>标记轴( ( 行和列) )</li>
 <li>可以对行和列执行算术运算</li>
 </ol>
-<h5 id="3-4-3-DataFrame示例"><a href="#3-4-3-DataFrame示例" class="headerlink" title="3.4.3 DataFrame示例"></a>3.4.3 DataFrame示例</h5><p>学生数据<br><img src="/medias/1591421808705.png" alt="Alt text"></p>
+<h5 id="3-4-3-DataFrame示例"><a href="#3-4-3-DataFrame示例" class="headerlink" title="3.4.3 DataFrame示例"></a>3.4.3 DataFrame示例</h5><p>学生数据<br><img src="/medias/1591421808705.png" alt="学生数据"></p>
 <h5 id="3-4-4-DataFrame构造函数"><a href="#3-4-4-DataFrame构造函数" class="headerlink" title="3.4.4 DataFrame构造函数"></a>3.4.4 DataFrame构造函数</h5><p><strong>pandas.DataFrame( data, index, columns, dtype, copy)</strong></p>
 <table>
 <thead>
