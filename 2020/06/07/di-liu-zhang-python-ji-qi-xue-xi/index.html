@@ -591,7 +591,14 @@ dt_model.fit(feature_train,target_train) # 使用训练集训练模型
 predict_results = dt_model.predict(feature_test) # 使用模型对测试集进行预测
 
 print(&#39;predict_results:&#39;, predict_results)
-print(&#39;target_test:&#39;, target_test)</code></pre><p><strong>运行结果</strong><br>predict_results: [1 0 2 1 1 0 1 2 1 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0 0 0 1 0 0 2 1 0 0 0 2 1 1 0 0 1 1 2 1 2]<br>target_test: [1 0 2 1 1 0 1 2 1 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0 0 0 1 0 0 2 1 0 0 0 2 1 1 0 0 1 2 2 1 2]</p>
+print(&#39;target_test:&#39;, target_test)
+
+
+# 通过scikit-learn中提供的评估计算方法查看预测结果的准确度
+from sklearn.metrics import accuracy_score
+
+print(accuracy_score(predict_results, target_test))</code></pre><p><strong>运行结果</strong></p>
+<p>predict_results: [1 0 2 1 1 0 1 2 2 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0 0 0 1 0 0 2 1<br> 0 0 0 2 1 1 0 0 1 1 2 1 2]<br>target_test: [1 0 2 1 1 0 1 2 1 1 2 0 0 0 0 1 2 1 1 2 0 2 0 2 2 2 2 2 0 0 0 0 1 0 0 2 1<br> 0 0 0 2 1 1 0 0 1 2 2 1 2]<br>0.96</p>
 <ol start="4">
 <li>Sklearn 中的朴素贝叶斯<br>•    在 sklearn 库中，实现了三个朴素贝叶斯分类器，如下表所示</li>
 </ol>
@@ -614,11 +621,8 @@ print(&#39;target_test:&#39;, target_test)</code></pre><p><strong>运行结果</
 <td align="left">naive_bayes.BernoulliNB</td>
 <td align="left">针对多元伯努利模型的斯朴素贝叶斯分类器</td>
 </tr>
-<tr>
-<td align="left">•    区别在于假设某一特征的所有属于某个类别的观测值符合特定分布，如，分类问题的特征包括人的身高，身高符合高斯分布，这类问题适合高斯朴素贝叶斯</td>
-<td align="left"></td>
-</tr>
 </tbody></table>
+<p>区别在于假设某一特征的所有属于某个类别的观测值符合特定分布，如，分类问题的特征包括人的身高，身高符合高斯分布，这类问题适合高斯朴素贝叶斯</p>
 <p><strong>Sklearn中的朴素贝叶斯算法示例</strong></p>
 <pre><code>import numpy as np
 from sklearn.naive_bayes import GaussianNB
@@ -640,22 +644,26 @@ import numpy as np
 from sklearn import linear_model
 
 # 读取数据集
-datasets_X = []#房屋面积datasets_Y = []#房屋价格
-fr = open(&#39;prices.txt&#39;,&#39;r&#39;) lines = fr.readlines()
+datasets_X = []#房屋面积
+datasets_Y = []#房屋价格
+fr = open(&#39;prices.txt&#39;,&#39;r&#39;) 
+lines = fr.readlines()
 for line in lines:
     items = line.strip().split(&#39;,&#39;)
-    datasets_X.append(int(items[0]))#注意加上类型转换
+    datasets_X.append(int(items[0])) # 注意加上类型转换
     datasets_Y.append(int(items[1]))
 
-#将 datasets_X 转换为二维数组，以符合 linear.fit 函数的参数要求datasets_X = np.array(datasets_X).reshape([-1,1])
+# 将 datasets_X 转换为二维数组，以符合 linear.fit 函数的参数要求
+datasets_X = np.array(datasets_X).reshape([-1,1])
 datasets_Y = np.array(datasets_Y)
 
-#以数据datasets_X的最大值和最小值为范围，建立等差数列，方便后续画图。 
+# 以数据datasets_X的最大值和最小值为范围，建立等差数列，方便后续画图。 
 minX = min(datasets_X)
 maxX = max(datasets_X)
 X = np.arange(minX,maxX).reshape([-1,1])
 
-linear = linear_model.LinearRegression() linear.fit(datasets_X, datasets_Y)
+linear = linear_model.LinearRegression() 
+linear.fit(datasets_X, datasets_Y)
 
 # 图像中显示
 plt.scatter(datasets_X, datasets_Y, color = &#39;red&#39;,label=&#39;origin data&#39;)
@@ -1190,50 +1198,49 @@ for mail in (&#39;%d.txt&#39;%i for i in range(151, 156)):
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/">
+                <a href="/2020/06/19/matlab-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="第六章 Python机器学习">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="MATLAB学习">
                         
-                        <span class="card-title">第六章 Python机器学习</span>
+                        <span class="card-title">MATLAB学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第六章 Python 机器学习1、机器学习基础1.1 机器学习分类1.1.1 机器学习定义
-机器学习(Machine Learning, ML)是一门综合性非常强的多领域交叉学科，涉及线性代数、概率论、统计学、算法复杂度理论等多门学科。
-机
+                            第一章 MATLAB 介绍MATLAB(矩阵实验室的简称）是一种专业的计算机程序，用于工程科学的矩阵数学运算。但在以后的几年内，它逐渐发展为一种极其灵活的计算体系，用于解决各种重要的技术问题。
+1.1 MATLAB 的优点
+易用性
+平台独立
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category">
-                                    Python
+                            <a href="/categories/Matlab/" class="post-category">
+                                    Matlab
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python/">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/Matlab/">
+                        <span class="chip bg-color">Matlab</span>
                     </a>
                     
                 </div>
@@ -1470,7 +1477,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">361.1k</span>&nbsp;字
+                class="white-color">477.6k</span>&nbsp;字
             
             
             

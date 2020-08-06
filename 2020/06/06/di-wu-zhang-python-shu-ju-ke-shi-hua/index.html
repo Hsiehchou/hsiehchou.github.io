@@ -834,10 +834,8 @@ plt.show()</code></pre><p><img src="/medias/1591444271870.png" alt="为散点图
 </li>
 </ol>
 <h5 id="3-1-2-柱状图-绘图方法-bar"><a href="#3-1-2-柱状图-绘图方法-bar" class="headerlink" title="3.1.2 柱状图 绘图方法 bar()"></a>3.1.2 柱状图 绘图方法 bar()</h5><pre><code>bar(x, height, width=0.8, *, align=&#39;center&#39;, **kwargs) </code></pre><ol>
-<li><p>主要参数：<br>1）x：包含所有柱子的下标的列表。<br>2）height：y 轴的数值序列，也是柱状图的高度，一般就是我们需要展示的数据。<br>3）width：为柱状图的宽度，一般这是为 0.8 即可。<br>4）align：柱子对齐方式，有两个可选值：center 和 edge。center 表示每根柱子是根据下标来对齐,  edge 则表示每根柱子全部以下标为起点，然后显示到下标的右边。如果不指定该参数，默认值是 center。</p>
-</li>
-<li><p>可选参数：<br>1）color：每根柱子呈现的颜色，可指定一个固定值或者一个列表。<br>2）edgecolor：每根柱子边框的颜色。<br>3）linewidth：每根柱子的边框宽度。如果没有设置该参数，默认无边框。<br>4）tick_label：每根柱子上显示的标签，默认无标签。<br>5）xerr：每根柱子顶部在横轴方向的线段长度。<br>6）yerr：每根柱子顶端在纵轴方向的线段长度。<br>7）ecolor：设置 xerr 和 yerr 的线段的颜色，可以指定一个固定值或者一个列表。</p>
-</li>
+<li>主要参数：<br>1）x：包含所有柱子的下标的列表。<br>2）height：y 轴的数值序列，也是柱状图的高度，一般就是我们需要展示的数据。<br>3）width：为柱状图的宽度，一般这是为 0.8 即可。<br>4）align：柱子对齐方式，有两个可选值：center 和 edge。center 表示每根柱子是根据下标来对齐,  edge 则表示每根柱子全部以下标为起点，然后显示到下标的右边。如果不指定该参数，默认值是 center。</li>
+<li>可选参数：<br>1）color：每根柱子呈现的颜色，可指定一个固定值或者一个列表。<br>2）edgecolor：每根柱子边框的颜色。<br>3）linewidth：每根柱子的边框宽度。如果没有设置该参数，默认无边框。<br>4）tick_label：每根柱子上显示的标签，默认无标签。<br>5）xerr：每根柱子顶部在横轴方向的线段长度。<br>6）yerr：每根柱子顶端在纵轴方向的线段长度。<br>7）ecolor：设置 xerr 和 yerr 的线段的颜色，可以指定一个固定值或者一个列表。</li>
 </ol>
 <h5 id="3-1-3-柱状图实战：利用-pandas-快速绘制"><a href="#3-1-3-柱状图实战：利用-pandas-快速绘制" class="headerlink" title="3.1.3 柱状图实战：利用 pandas 快速绘制"></a>3.1.3 柱状图实战：利用 pandas 快速绘制</h5><p>某商场2018年各部门每个月的业绩如下表所示（单位：万元）。编写程序绘制柱状图可视化各部门的业绩，可以借助于 pandas 的DataFrame 结构快速绘制图形，并要求坐标轴、标题和图例以中文形式显示。</p>
 <table>
@@ -1039,7 +1037,7 @@ counterclock=True, wedgeprops=None, textprops=None, center=(0,0),frame=False, ro
 </ol>
 <pre><code>import matplotlib.pyplot as plt
 
-#用来正常显示中文标签
+# 用来正常显示中文标签
 plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;]
 
 labels = &#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;
@@ -1053,12 +1051,12 @@ plt.show()</code></pre><p><img src="/medias/1591447406454.png" alt="简单饼状
 </ol>
 <pre><code>import matplotlib.pyplot as plt
 
-plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;] #用来正常显示中文标签
+plt.rcParams[&#39;font.sans-serif&#39;]=[&#39;SimHei&#39;] # 用来正常显示中文标签
 
 labels = &#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;
 sizes = [10,20,30,40]
 explode = (0,0,0.1,0)  #将第三块分离出来
-plt.pie(sizes,labels=labels,explode=explode) #增加explode参数
+plt.pie(sizes, labels=labels, explode=explode) # 增加explode参数
 plt.title(&quot;饼状图实战&quot;)
 plt.text(1,-1.2,&#39;By hsiehchou&#39;)
 plt.show()</code></pre><p><img src="/medias/1591447385887.png" alt="一块饼图离开中心距离"></p>
@@ -1073,7 +1071,7 @@ labels = &#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;
 sizes = [10,20,30,40]
 explode = (0,0,0.1,0)
 colors = [&#39;r&#39;,&#39;g&#39;,&#39;y&#39;,&#39;b&#39;] #自定义颜色列表
-plt.pie(sizes,labels=labels,explode=explode,colors=colors)
+plt.pie(sizes, labels=labels, explode=explode, colors=colors)
 plt.title(&quot;饼状图实战&quot;)
 plt.text(1,-1.2,&#39;By hsiehchou&#39;)
 plt.show()</code></pre><p><img src="/medias/1591447360661.png" alt="标注每块饼图的 matplotlib 颜色"></p>
@@ -2014,7 +2012,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">361.1k</span>&nbsp;字
+                class="white-color">477.6k</span>&nbsp;字
             
             
             

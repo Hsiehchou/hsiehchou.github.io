@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.hsiehchou.com/"/>
-  <updated>2020-06-07T05:00:41.493Z</updated>
+  <updated>2020-06-26T08:52:35.668Z</updated>
   <id>https://blog.hsiehchou.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MATLAB学习</title>
+    <link href="https://blog.hsiehchou.com/2020/06/19/matlab-xue-xi/"/>
+    <id>https://blog.hsiehchou.com/2020/06/19/matlab-xue-xi/</id>
+    <published>2020-06-19T12:12:35.000Z</published>
+    <updated>2020-06-26T08:52:35.668Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;第一章-MATLAB-介绍&quot;&gt;&lt;a href=&quot;#第一章-MATLAB-介绍&quot; class=&quot;headerlink&quot; title=&quot;第一章 MATLAB 介绍&quot;&gt;&lt;/a&gt;第一章 MATLAB
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Matlab" scheme="https://blog.hsiehchou.com/categories/Matlab/"/>
+    
+    
+      <category term="Matlab" scheme="https://blog.hsiehchou.com/tags/Matlab/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第六章 Python机器学习</title>
     <link href="https://blog.hsiehchou.com/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/"/>
     <id>https://blog.hsiehchou.com/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/</id>
     <published>2020-06-07T01:15:03.000Z</published>
-    <updated>2020-06-07T05:00:41.493Z</updated>
+    <updated>2020-07-09T12:42:40.462Z</updated>
     
     <summary type="html">
     
@@ -48,7 +75,7 @@
     <link href="https://blog.hsiehchou.com/2020/06/06/di-wu-zhang-python-shu-ju-ke-shi-hua/"/>
     <id>https://blog.hsiehchou.com/2020/06/06/di-wu-zhang-python-shu-ju-ke-shi-hua/</id>
     <published>2020-06-06T11:35:32.000Z</published>
-    <updated>2020-07-09T09:23:32.356Z</updated>
+    <updated>2020-07-09T10:13:49.173Z</updated>
     
     <summary type="html">
     
@@ -528,35 +555,6 @@
     
     
       <category term="pip" scheme="https://blog.hsiehchou.com/tags/pip/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中华人民共和国70周年生日快乐，我爱你中国！！！！！！！</title>
-    <link href="https://blog.hsiehchou.com/2019/10/01/zhong-hua-ren-min-gong-he-guo-70-zhou-nian-qing/"/>
-    <id>https://blog.hsiehchou.com/2019/10/01/zhong-hua-ren-min-gong-he-guo-70-zhou-nian-qing/</id>
-    <published>2019-10-01T02:00:00.000Z</published>
-    <updated>2019-10-01T14:42:12.067Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;热烈祝贺中华人民共和国70周年生日快乐，我爱你中国！！！！！！！&quot;&gt;&lt;a href=&quot;#热烈祝贺中华人民共和国70周年生日快乐，我爱你中国！！！！！！！&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="中华人民共和国70周年" scheme="https://blog.hsiehchou.com/categories/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD70%E5%91%A8%E5%B9%B4/"/>
-    
-    
-      <category term="中华人民共和国70周年" scheme="https://blog.hsiehchou.com/tags/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD70%E5%91%A8%E5%B9%B4/"/>
-    
-      <category term="祖国生日" scheme="https://blog.hsiehchou.com/tags/%E7%A5%96%E5%9B%BD%E7%94%9F%E6%97%A5/"/>
     
   </entry>
   
