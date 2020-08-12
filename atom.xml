@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.hsiehchou.com/"/>
-  <updated>2020-06-26T08:52:35.668Z</updated>
+  <updated>2020-08-12T15:11:24.147Z</updated>
   <id>https://blog.hsiehchou.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第七章 机器学习入门</title>
+    <link href="https://blog.hsiehchou.com/2020/08/12/di-qi-zhang-ji-qi-xue-xi-ru-men/"/>
+    <id>https://blog.hsiehchou.com/2020/08/12/di-qi-zhang-ji-qi-xue-xi-ru-men/</id>
+    <published>2020-08-12T14:54:23.000Z</published>
+    <updated>2020-08-12T15:11:24.147Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;第七章-机器学习入门&quot;&gt;&lt;a href=&quot;#第七章-机器学习入门&quot; class=&quot;headerlink&quot; title=&quot;第七章 机器学习入门&quot;&gt;&lt;/a&gt;第七章 机器学习入门&lt;/h2&gt;&lt;h3 id=&quot;1、绪论&quot;&gt;&lt;a href=&quot;#1、绪论&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://blog.hsiehchou.com/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://blog.hsiehchou.com/tags/Python/"/>
+    
+      <category term="机器学习" scheme="https://blog.hsiehchou.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>MATLAB学习</title>
@@ -528,33 +557,6 @@
     
     
       <category term="Django" scheme="https://blog.hsiehchou.com/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pip 一键导出和安装</title>
-    <link href="https://blog.hsiehchou.com/2020/01/10/pip-yi-jian-dao-chu-he-an-zhuang/"/>
-    <id>https://blog.hsiehchou.com/2020/01/10/pip-yi-jian-dao-chu-he-an-zhuang/</id>
-    <published>2020-01-10T14:52:35.000Z</published>
-    <updated>2020-04-30T08:51:48.941Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;pip-一键导出和安装&quot;&gt;&lt;a href=&quot;#pip-一键导出和安装&quot; class=&quot;headerlink&quot; title=&quot;pip 一键导出和安装&quot;&gt;&lt;/a&gt;pip 一键导出和安装&lt;/h3&gt;&lt;p&gt;将本地使用的虚拟环境pip install
-        
-      
-    
-    </summary>
-    
-    
-      <category term="pip" scheme="https://blog.hsiehchou.com/categories/pip/"/>
-    
-    
-      <category term="pip" scheme="https://blog.hsiehchou.com/tags/pip/"/>
     
   </entry>
   
