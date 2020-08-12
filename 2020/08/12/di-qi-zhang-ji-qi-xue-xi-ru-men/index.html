@@ -27,8 +27,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
-</head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -443,7 +443,10 @@
 <li>2006至今，大数据分析的需求，<strong>神经网络</strong>又被重视，成为<strong>深度学习理论的基础</strong></li>
 </ol>
 <h4 id="1-4-机器学习方法"><a href="#1-4-机器学习方法" class="headerlink" title="1.4 机器学习方法"></a>1.4 机器学习方法</h4><p><strong>有监督学习(supervised learning)</strong>：从给定的<strong>有标注的训练数据集</strong>中学习出个函数(模型参数)，当新的数据到来时可以根据这个函数预测结果。常见任务包括<strong>分类</strong>与<strong>回归</strong>。</p>
-<p><img src="/medias/image-20200710000421349.png" alt=""><br><strong>无监督学习(unsupervised learning)</strong>：<strong>没有标注的训练数据集</strong>，需要根据样本间的统计规律对样本集进行分析，常见任务如聚类等。<br><img src="/medias/image-20200710000743328.png" alt=""><br><strong>半监督学习(Semi-supervised learning)</strong>：结合<strong>(少量的)标注训练数据</strong>和<strong>(大量的)未标注数据</strong>来进行数据的分类学习。<br><strong>两个基本假设:</strong></p>
+<p><img src="/medias/image-20200710000421349.png" alt=""></p>
+<p><strong>无监督学习(unsupervised learning)</strong>：<strong>没有标注的训练数据集</strong>，需要根据样本间的统计规律对样本集进行分析，常见任务如聚类等。</p>
+<p><img src="/medias/image-20200710000743328.png" alt=""></p>
+<p><strong>半监督学习(Semi-supervised learning)</strong>：结合<strong>(少量的)标注训练数据</strong>和<strong>(大量的)未标注数据</strong>来进行数据的分类学习。<br><strong>两个基本假设:</strong></p>
 <ol>
 <li><strong>聚类假设：</strong>处在相同聚类中的样本示例有较大的可能拥有相同的标记。根据该假设，决策边界就应该尽量通过数据较为稀疏的地方。</li>
 <li><strong>流形假设：</strong>处于一个很小的局部区域内的样本示例具有相似的性质，因此，其标记也应该相似。在该假设下，大量未标记示例的作用就是让数据空间变得更加稠密，从而有助于更加准确地刻画局部特性，使得决策函数能够更好地进行数据拟合。</li>
@@ -455,7 +458,8 @@
 <p><img src="/medias/image-20200715173008577.png" alt=""></p>
 <p><img src="/medias/image-20200715173309313.png" alt=""></p>
 <p><img src="/medias/image-20200715173415195.png" alt=""></p>
-<h4 id="1-5-机器学习面临的难题与挑战"><a href="#1-5-机器学习面临的难题与挑战" class="headerlink" title="1.5 机器学习面临的难题与挑战"></a>1.5 机器学习面临的难题与挑战</h4><p><img src="/medias/image-20200715173607548.png" alt=""><br>◆<strong>数据稀疏性</strong>: 训练一个模型，需要大量(标注)数据，但是<strong>数据往往比较稀疏</strong>。比如，我们想训练一个模型表征某人“购物兴趣”，但是这个人在网站上浏览行为很少，购物历史很少，<strong>很难训练出一个“meaningful mode”</strong>来预测应该给这个人推荐什么商品等…<br>◆<strong>高数量和高质量标注数据需求</strong>: 获取标定数据需要耗费大量人力和财力。而且人会出错，有主观性。<strong>如何获取高数量和高质量标定数据，或者用机器学习方法只标注“关键”数据(active learning)值得深入硏究…</strong><br>◆<strong>冷启动问题</strong>: 一个好互联网产品，用的人多，得到的数据多；得到的数据越多模型训练的越好，产品会变得更好用，用的人就会更多…进入良性循环。对于<strong>一个新产品，在初期，要面临数据不足</strong>的冷启动问题….<br>◆<strong>泛化能力问题</strong>: 训练数据不能全面、均衡的代表真实数据。 </p>
+<h4 id="1-5-机器学习面临的难题与挑战"><a href="#1-5-机器学习面临的难题与挑战" class="headerlink" title="1.5 机器学习面临的难题与挑战"></a>1.5 机器学习面临的难题与挑战</h4><p><img src="/medias/image-20200715173607548.png" alt=""></p>
+<p>◆<strong>数据稀疏性</strong>: 训练一个模型，需要大量(标注)数据，但是<strong>数据往往比较稀疏</strong>。比如，我们想训练一个模型表征某人“购物兴趣”，但是这个人在网站上浏览行为很少，购物历史很少，<strong>很难训练出一个“meaningful mode”</strong>来预测应该给这个人推荐什么商品等…<br>◆<strong>高数量和高质量标注数据需求</strong>: 获取标定数据需要耗费大量人力和财力。而且人会出错，有主观性。<strong>如何获取高数量和高质量标定数据，或者用机器学习方法只标注“关键”数据(active learning)值得深入硏究…</strong><br>◆<strong>冷启动问题</strong>: 一个好互联网产品，用的人多，得到的数据多；得到的数据越多模型训练的越好，产品会变得更好用，用的人就会更多…进入良性循环。对于<strong>一个新产品，在初期，要面临数据不足</strong>的冷启动问题….<br>◆<strong>泛化能力问题</strong>: 训练数据不能全面、均衡的代表真实数据。 </p>
 <p><img src="/medias/image-20200715174204776.png" alt=""></p>
 <p>◆<strong>模型抽象困难</strong>:总结归纳实际问题中的数学表示非常困难。<br>◆<strong>模型评估困难</strong>:在很多实际问题中，很难形式化的、定量的评估一个模型的结果是好还是不好?<br>◆<strong>寻找最优解困难</strong>:要解决的实际问题非常复杂，将其形式化后的目标函数也非常复杂，往往在目前还不存在一个有效的算法能找到目标函数的最优值。</p>
 <p><img src="/medias/image-20200729171807139.png" alt=""></p>
@@ -533,6 +537,8 @@
 <p>将某一属性特征的模长转化成1。</p>
 <img src="/medias/image-20200729203228670.png" style="float: left; zoom: 45%;" />
 
+
+
 <h4 id="3-3-数据建模"><a href="#3-3-数据建模" class="headerlink" title="3.3 数据建模"></a>3.3 数据建模</h4><p><img src="/medias/image-20200729203331334.png" alt=""></p>
 <h5 id="3-3-1-机器学习算法分类"><a href="#3-3-1-机器学习算法分类" class="headerlink" title="3.3.1 机器学习算法分类"></a>3.3.1 机器学习算法分类</h5><p><img src="/medias/image-20200729203355228.png" alt=""></p>
 <h4 id="3-4-分类问题"><a href="#3-4-分类问题" class="headerlink" title="3.4 分类问题"></a>3.4 分类问题</h4><p>分类问题是监督学习的一个核心问题，它从数据中学习一个分类决策函数或分类模型（分类器(classifier)），对新的输入进行输出预测，输出变量取有限个离散值。</p>
@@ -548,10 +554,13 @@
 <li><strong>特征选择</strong>：选取对训练数据具有分类能力的特征。</li>
 <li><strong>决策树生成</strong>：在决策树各个点上按照一定方法选择特征，递归构建决策树。</li>
 <li><strong>决策树剪枝</strong>：在已生成的树上减掉一些子树或者叶节点，从而简化分类树模型。</li>
+<li></li>
 </ol>
 </li>
 </ul>
 <img src="/medias/image-20200805184623616.png" style="zoom: 45%;" />
+
+
 
 <ul>
 <li><p><strong>核心算法</strong></p>
@@ -563,7 +572,11 @@
 <p><strong>信息熵</strong>：表示<strong>随机变量的不确定性，熵越大不确定性越大</strong>。<br><strong>信怠增益</strong>：信息增益 = 信息煵(前) - 信息熵(后)<br><strong>信息增益比</strong>：<strong>信息增益比 = 惩罚参数 * 信息增益</strong>。<u>特征个数较多时，惩罚参数较小；特征个数较少时，惩罚参数较大。</u><br><strong>基尼指数</strong>：表示集合的不确定性，<strong>基尼系数越大，表示不平等程度越高</strong>。</p>
 <img src="/medias/image-20200805184954501.png" style="zoom: 67%;" />
 
+
+
 <img src="/medias/image-20200805185018283.png" style="zoom:67%;" />
+
+
 
 <p><strong>决策树剪枝</strong></p>
 <p>在生成树的过程中，如果没有<strong>剪枝(pruning)</strong>操作，就会生成一个队训练集完全拟合的决策树，但这是对测试集非常不友好的，泛化能力不行。因此，需要减掉一些枝叶，使得模型泛化能力更强。</p>
@@ -575,13 +588,18 @@
 <p><strong>理想的决策树有三种：</strong>叶子节点数最少、叶子节点深度最小、叶子节点数最少且叶子节点深度最小。</p>
 <img src="/medias/image-20200805191238305.png" style="zoom:80%;" />
 
+
+
 <h5 id="3-4-2-贝叶斯分类"><a href="#3-4-2-贝叶斯分类" class="headerlink" title="3.4.2 贝叶斯分类"></a>3.4.2 贝叶斯分类</h5><p>贝叶斯分类是基于贝叶斯定理和属性特征条件独立性的分类方法。</p>
 <p>贝叶斯流派的核心：Probability theory is nothing but common sense reduced to calculation.<br>概率论只不过是把常识用数学公式表达了出来。——拉普拉斯</p>
 <p>案例：假设春季感冒流行，你同桌打了一个喷嚏，那你同桌感冒了的概率是多少?</p>
 <ol>
-<li>计算先验概率：你同桌没有任何症状的情况下可能得感冒的概率是多少?</li>
-<li>为每个属性计算条件概率：如果你同桌感冒了那么他会打喷嚏的概率是多少，如果他没感冒，出现打喷嚏症状的概率有多少?</li>
-<li>计算后验概率：根据1和2求解最终问题，这才是拥叶斯思想的你该做的分析。</li>
+<li><p>计算先验概率：你同桌没有任何症状的情况下可能得感冒的概率是多少?</p>
+</li>
+<li><p>为每个属性计算条件概率：如果你同桌感冒了那么他会打喷嚏的概率是多少，如果他没感冒，出现打喷嚏症状的概率有多少?</p>
+</li>
+<li><p>计算后验概率：根据1和2求解最终问题，这才是拥叶斯思想的你该做的分析。</p>
+</li>
 </ol>
 <p><img src="/medias/image-20200805200659941.png" alt=""></p>
 <p>举个栗子：一对男女朋友，男生向女生求婚，男生的四个特点分别是不帅，性格不好，身高矮，不上进，请你判断一下女生是嫁还是不嫁?</p>
@@ -606,11 +624,8 @@
 <p><strong>支持向量机(Support Vector Machine， SVM)</strong> 是一种有监督学习方法，主要思想是建立一个最优决策超平面，使得该平面两侧距离该平面最近的两类样本之间的距离最大化，从而对分类问题提供良好的泛化能力。</p>
 <p><img src="/medias/image-20200805203935893.png" alt=""></p>
 <img src="/medias/image-20200805204039399.png" style="zoom:38%;" />
-**SVM的优点**
-√ 相对于其他训练分类算法**不需要过多样本**，并且由于SWM引入了核函数，所以SVM可以处理高维样本。
-√ **结构风险最小**。这种风险是指分类器对问题真实模型的逼近与问题真实解之间的累积误差。
-√ **非线性**，是指SVM擅长应付样本数据线性不可分的情况，主要通过**松弛变量(也叫惩罚变量) 和核函数技术**来实现，这一部分也正是SVM的精髓所在。
 
+<p><strong>SVM的优点</strong><br>√ 相对于其他训练分类算法<strong>不需要过多样本</strong>，并且由于SWM引入了核函数，所以SVM可以处理高维样本。<br>√ <strong>结构风险最小</strong>。这种风险是指分类器对问题真实模型的逼近与问题真实解之间的累积误差。<br>√ <strong>非线性</strong>，是指SVM擅长应付样本数据线性不可分的情况，主要通过<strong>松弛变量(也叫惩罚变量) 和核函数技术</strong>来实现，这一部分也正是SVM的精髓所在。</p>
 <p><strong>常用软件工具包</strong><br>LibSVM: <a href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/" target="_blank" rel="noopener">http://www.csie.ntu.edu.tw/~cjlin/libsvm/</a><br>SVM-Light: <a href="http://svmlight.joachims.org/" target="_blank" rel="noopener">http://svmlight.joachims.org/</a><br>Liblinear: <a href="http://www.csie.ntu.edu.tw/~cjlin/liblinear/" target="_blank" rel="noopener">http://www.csie.ntu.edu.tw/~cjlin/liblinear/</a></p>
 <h5 id="3-4-4-逻辑回归"><a href="#3-4-4-逻辑回归" class="headerlink" title="3.4.4 逻辑回归"></a>3.4.4 逻辑回归</h5><p><strong>logistic回归</strong>是一个分类算法，它可以处理二元分类以及多元分类。首先逻辑回归构造广义的线性回归函数，然后使用 sigmoid 函数 g(z) 将回归值映射到离散类别。<br>二项逻辑回归模型、多项逻辑回归模型</p>
 <p><img src="/medias/image-20200805205315286.png" alt=""></p>
@@ -622,10 +637,16 @@
 <p><strong>为什么要用对数似然损失函数?</strong></p>
 <img src="/medias/image-20200805210237097.png" style="float: left; zoom: 40%;" />
 
+
+
 <img src="/medias/image-20200805210335105.png" style="zoom:50%;" />
+
+
 
 <h5 id="3-4-5-逻辑回归与最大熵模型"><a href="#3-4-5-逻辑回归与最大熵模型" class="headerlink" title="3.4.5 逻辑回归与最大熵模型"></a>3.4.5 逻辑回归与最大熵模型</h5><p>熵是随机变量不确定性的度量，不确定性越大，熵值就越大。<br>德国物理学家鲁道夫·克劳修斯首次提出施的概念，用来表示任何种能量在空间中分布的均匀程度，能量分布得越均匀，熵就越大。</p>
 <img src="/medias/image-20200808091721787.png" style="zoom:50%;" />
+
+
 
 <blockquote>
 <p>举个例子：你每次把耳机整理好，放入口袋中，下次再拿出来已经乱了让耳机线乱掉的看不见的“力”就是熵力，耳机线喜欢变成更混乱。</p>
@@ -637,6 +658,8 @@
 <h5 id="3-4-6-集成学习"><a href="#3-4-6-集成学习" class="headerlink" title="3.4.6 集成学习"></a>3.4.6 集成学习</h5><p><strong>集成学习</strong>通过将多个弱分类器集成在一起，使它们共同完成学习任务，构建一个强分类器。潜在哲<br>学思想是“<strong>三个臭皮匠赛过诸葛亮</strong>”。</p>
 <img src="/medias/image-20200808094812114.png" style="zoom:67%;" />
 
+
+
 <p>◆ <strong>理论基础</strong><br><strong>强可学习</strong>：在PAC学习框架中，一个概念，如果存在一个多项式的学习算法能够学习它，并且正确率<br>很高，那么久称这个概念是强可学习的。</p>
 <p><strong>弱可学习</strong>：如果存在一个多项式的学习算法能够学习它，学习的正确率金币随机猜测略好，那么就称这个<br>概念是弱可学习的。</p>
 <p><strong>Schapire</strong> 证明强可学习与弱可学习是<strong>等价</strong>的，也就是说，在PAC学习框架下，一个概念强可学习的充<br>分必要条件是这个概念弱可学习的。</p>
@@ -646,6 +669,8 @@
 <p><strong>1) Bagging(bootstrap aggregating)</strong></p>
 <img src="/medias/image-20200808095324837.png" style="zoom:67%;" />
 
+
+
 <p>Bagging：基于数据<strong>随机重抽样</strong>的分类器构建方法。</p>
 <ul>
 <li>利用 bootstrap方法从整体数据集中采取有放回抽样得到 N 个数据集（如何采样?）。</li>
@@ -654,6 +679,8 @@
 </ul>
 <p><strong>2) Boosting</strong></p>
 <img src="/medias/image-20200808095340194.png" style="zoom:67%;" />
+
+
 
 <p>Boosting(Adaptive Boosting的简称)，基于错误提升分类器性能，通过<strong>集中关注被已有分类器分类错误的样本</strong>，构建新分类器。</p>
 <ul>
@@ -671,24 +698,36 @@
 <p><strong>代表算法：</strong></p>
 <img src="/medias/image-20200808100517454.png" style="zoom:50%;" />
 
+
+
 <p><strong>优点：</strong><br>当先最先进的预测几乎都使用了算法集成。它比使用单个模型预测出来的结果要精确的多，在各大竞赛中得到了普遍应用。</p>
 <p><strong>缺点：</strong><br>需要大量的维护工作。</p>
 <h4 id="3-5-回归问题"><a href="#3-5-回归问题" class="headerlink" title="3.5 回归问题"></a>3.5 回归问题</h4><h5 id="3-5-1-回归问题"><a href="#3-5-1-回归问题" class="headerlink" title="3.5.1 回归问题"></a>3.5.1 回归问题</h5><p><strong>回归分析</strong>用于预测输入变量(自变量)和输出变量(因变量)之间的关系，特别是当输入变量的值发生变化时，输出变量值随之发生变化。直观来说回归问题等价于<strong>函数拟合</strong>，选择一条函数曲线使其很好地拟合已知数据且很好地预测未知数据。</p>
 <img src="/medias/image-20200812183041745.png" style="float:left;zoom:50%;" />
+
+
 
 <blockquote>
 <p><strong>为什么叫回归?</strong>：达尔文表兄弟 Francis Galton发明的。Galton于1877年完成了第一次回归预测，目的是根据上一代豌豆种子(双亲)的尺寸来预测下一代豌豆种子(孩子)的尺寸。他注意到双亲高的，孩子也倾向于比平均高，但尚不及双亲，孩子的高度会向着平均身高回退(回归)。</p>
 </blockquote>
 <img src="/medias/image-20200812183142089.png" style="float:left;zoom:50%;" />
 
+
+
 <h5 id="3-5-2-线性回归"><a href="#3-5-2-线性回归" class="headerlink" title="3.5.2 线性回归"></a>3.5.2 线性回归</h5><p><strong>线性回归算法</strong>假设特征和结果满足线性关系。这就意味着可以将输入项分别乘以一些常量，再将结果加起来得到输出。</p>
 <img src="/medias/image-20200812183533227.png" />
+
+
 
 <h5 id="3-5-3-线性回归扩展"><a href="#3-5-3-线性回归扩展" class="headerlink" title="3.5.3 线性回归扩展"></a>3.5.3 线性回归扩展</h5><p><strong>线性回归扩展算法</strong>用简单的基函数Φ(x)替换输入变量x。这样我们就把线性拟合形式扩展到了固定非线性函数的线性组合。</p>
 <img src="/medias/image-20200812184417019.png" style="zoom:46%;" />
 
+
+
 <h5 id="3-5-4-岭回归"><a href="#3-5-4-岭回归" class="headerlink" title="3.5.4 岭回归"></a>3.5.4 岭回归</h5><p><strong>岭回归</strong>应用结构风险最小化的模型选择策略，在经验风险最小化的基础上加入正则化因子。当<strong>正则化因子</strong>选择为模型参数的<strong>二范数</strong>的时候，整个回归的方法就叫做岭回归。</p>
 <img src="/medias/image-20200812184814045.png" style="float:left;zoom:44%;" />
+
+
 
 <blockquote>
 <p>λ越大，说明偏差就越大，原始数据对回归求取参数的作用就越小，当lamda取到个合适的值，就能在一定意义上解决过拟合的问题：原先过拟合的特别大或者特别小的参数会被约束到正常甚至很小的值，但不会为零。</p>
@@ -722,9 +761,13 @@
 </blockquote>
 <img src="/medias/image-20200812193529404.png" style="float:left;zoom: 70%;" />
 
+
+
 <h5 id="3-6-3-高斯混合模型"><a href="#3-6-3-高斯混合模型" class="headerlink" title="3.6.3 高斯混合模型"></a>3.6.3 高斯混合模型</h5><p><strong>高斯混合模型</strong>(Gaussian Mixed Model)指的是多个高斯分布函数的线性组合，是一种广泛使用的聚类算法，该方法使用了高斯分布作为参数模型。</p>
 <p><strong>单高斯模型</strong>：高斯分布(Gaussian distribution)有时也被称为<strong>正态分布</strong>(normal distribution)，是一种在自然界大量的存在的、最为常见的分布形式。</p>
 <img src="/medias/image-20200812194140068.png" style="float: left;zoom:56%;" />
+
+
 
 <img src="/medias/image-20200812194234964.png" style="float:left;zoom:60%;" />
 
@@ -733,7 +776,11 @@
 <p><strong>高斯混合模型</strong>：混合模型是一个可以用来表示在总体分布中含有K个子分布的概率模型，换句话说，混合模型表示了观测数据在总体中的概率分布，它是一个由K个子分布组成的混合分布。</p>
 <img src="/medias/image-20200812194418740.png" style="float:left;zoom:56%;" />
 
+
+
 <img src="/medias/image-20200812194350060.png" style="float:left;zoom:50%;" />
+
+
 
 <h5 id="3-6-4-高斯混合模型求解"><a href="#3-6-4-高斯混合模型求解" class="headerlink" title="3.6.4 高斯混合模型求解"></a>3.6.4 高斯混合模型求解</h5><p><strong>EM算法</strong>是一种迭代算法，1977年由 Dempster 等人总结提出，用于含有隐变量(Hidden variable)的概率模型参数的最大似然估计。</p>
 <ul>
@@ -741,13 +788,21 @@
 </ul>
 <img src="/medias/image-20200812195249767.png" style="float:left;zoom: 50%;" />
 
+
+
 <img src="/medias/image-20200812195030116.png" style="float:left;zoom: 50%;" />
+
+
 
 <h5 id="3-6-5-高斯混合模型与K-means"><a href="#3-6-5-高斯混合模型与K-means" class="headerlink" title="3.6.5 高斯混合模型与K- means"></a>3.6.5 高斯混合模型与K- means</h5><img src="/medias/image-20200812195744585.png" style="zoom:50%;" />
 
+
+
 <ul>
-<li>混合高斯和K- means很相似，相似点在于两者的分类受初始值影响；两者可能限于局部最优解；两者类别的个数(k)都要靠猜测。混合高斯计算复杂度高于K-means。</li>
-<li>K- means属于硬聚类，要么属于这类，要么属于那类，而GMM属于混合式软聚类，一个样本70%属于A，30%属于B。</li>
+<li><p>混合高斯和K- means很相似，相似点在于两者的分类受初始值影响；两者可能限于局部最优解；两者类别的个数(k)都要靠猜测。混合高斯计算复杂度高于K-means。</p>
+</li>
+<li><p>K- means属于硬聚类，要么属于这类，要么属于那类，而GMM属于混合式软聚类，一个样本70%属于A，30%属于B。</p>
+</li>
 </ul>
 <h5 id="3-6-6-密度聚类"><a href="#3-6-6-密度聚类" class="headerlink" title="3.6.6 密度聚类"></a>3.6.6 密度聚类</h5><p><strong>密度聚类算法</strong>假设聚类结构能通过样本分布的紧密程度确定，算法从样本密度的角度来考察样本之间的可连接性，并基于可连接样本不断扩展聚类簇以获得最终的聚类结果。</p>
 <p><strong>DBSCAN算法流程</strong></p>
@@ -756,12 +811,16 @@
 </blockquote>
 <img src="/medias/image-20200812200425530.png" style="float:left;zoom:50%;" />
 
+
+
 <h5 id="3-6-7-层次聚类"><a href="#3-6-7-层次聚类" class="headerlink" title="3.6.7 层次聚类"></a>3.6.7 层次聚类</h5><p><strong>层次聚类算法</strong>试图在不同层次对数据集进行划分，从而形成树形的聚类结构。数据集的划分可采用“自底向上”的聚合策略，也可采用“自顶向下”的分拆策略。</p>
 <p><strong>AGNES算法流程</strong></p>
 <blockquote>
 <p>① AGNES(Agglomerative NESting)算法最初将每个对象做为一个簇，然后这些簇根据某些准则被一步步的合并，使用单链接方法。<br>② 两个簇间的相似度由这两个不同簇中距离最近的数据点对的相似度来确定。此外当两个簇最近距离超过用户给定的阈值时聚类过程就会终止。<br>③ 聚类的合并过程反复进行直到所有的对象最终满足簇数据。</p>
 </blockquote>
 <img src="/medias/image-20200812200800237.png" style="float:left;zoom:50%;" />
+
+
 
 <h5 id="3-6-8-谱聚类"><a href="#3-6-8-谱聚类" class="headerlink" title="3.6.8 谱聚类"></a>3.6.8 谱聚类</h5><p><strong>谱聚类(Spectral Clustering，SC)</strong>是一种基于图论的聚类方法，将带权无向图划分为两个或两个以上的最优子图，使子图内部尽量相似，而子图间距离尽量距离较远，以达到常见的聚类的目的。</p>
 <p>输入：样本x，j，需要聚类的个数k</p>
@@ -788,22 +847,32 @@
 <img src="/medias/image-20200812202006591.png" style="zoom:60%;" />
 隐马尔可夫模型 **λ = (A， B， Π)**，状态转移概率矩阵 A，初始状态概率向量Π，确定了隐藏的马尔可夫链，生成不可观测的状态序列。观测概率矩阵 B 确定了如何从状态生成观测，与状态序列综合确定了如何产生观测序列。
 
+
+
 <p><strong>隐马可夫模型三个基本问题</strong></p>
 <blockquote>
 <p>① <strong>概率计算问题</strong>，给定模型 λ=(A，B，Π)和观测序列 O=(o<del>1</del>， o<del>2</del>， …，o<del>T</del>)，计算在模型 λ 下观测序列 O 出现的概率 P = (O|λ)。<br>② <strong>学习问题</strong>，已知观测序列 O=(o<del>1</del>， o<del>2</del>， …， o<del>T</del>) 估计模型 λ=(A， B， Π)参数，使得在该模型下观测序列概率 P = (O|λ)最大。<br>③ <strong>预测问题</strong>，已知模型 λ=(A，B，∏) 和观测O=(o<del>1</del>， o<del>2</del>， …， o<del>T</del>) ，求对给定观测序列条件概率P=(I|O)最大的状态序列。即给定观测序列，求最有可能的对应的状态序列。</p>
 </blockquote>
 <img src="/medias/image-20200812203756955.png" style="float:left;zoom:50%;" />
 
+
+
 <p><strong>应用</strong></p>
 <p><strong>词性标注、中文分词、天气预测等</strong></p>
 <h5 id="3-7-2-CRF-条件随机场"><a href="#3-7-2-CRF-条件随机场" class="headerlink" title="3.7.2 CRF 条件随机场"></a>3.7.2 CRF 条件随机场</h5><p>CRF(Conditional Random Field)条件随机场是一个序列标注模型，其优点在于为一个位置进行标注的过程中可以利用丰富的内部及上下文特征信息。</p>
 <img src="/medias/image-20200812204649234.png" style="zoom:50%;" />
 
+
+
 <p>CRF由 John Lafferty 最早在 NLP 技术领域任务中进行文本标注，有多种应用场景，如：</p>
 <blockquote>
 <p>√ 分词(标注字的词位信息，由字构词)<br>√ 词性标注(标注分词的词性，例如：名词，动词，助词)<br>√ 命名实体识别(识别人名，地名，机构名，商品名等具有一定内在规律的实体名词)</p>
 </blockquote>
-<h5 id="3-7-3-LDA-主题模型"><a href="#3-7-3-LDA-主题模型" class="headerlink" title="3.7.3 LDA 主题模型"></a>3.7.3 LDA 主题模型</h5><p><strong>LDA 主题模型</strong>是一种文档主题生成模型，是一种非监督机器学习技术。通过模拟文档生成过程，可以用来识别大规模文档集 (document collection) 或语料库 (corpus) 中潜藏的主题信息。<br><img src="/medias/image-20200812205037681.png" style="zoom:50%;" /></p>
+<h5 id="3-7-3-LDA-主题模型"><a href="#3-7-3-LDA-主题模型" class="headerlink" title="3.7.3 LDA 主题模型"></a>3.7.3 LDA 主题模型</h5><p><strong>LDA 主题模型</strong>是一种文档主题生成模型，是一种非监督机器学习技术。通过模拟文档生成过程，可以用来识别大规模文档集 (document collection) 或语料库 (corpus) 中潜藏的主题信息。</p>
+<img src="/medias/image-20200812205037681.png" style="zoom:50%;" />
+
+
+
 <h5 id="3-7-4-生成模型-VS-判别模型"><a href="#3-7-4-生成模型-VS-判别模型" class="headerlink" title="3.7.4 生成模型 VS 判别模型"></a>3.7.4 生成模型 VS 判别模型</h5><p><strong>监督学习方法</strong>可分为两大类，即生成方法与判别方法，它们所学到的模型称为生成模型与判别模型。</p>
 <p>例子：</p>
 <blockquote>
@@ -830,12 +899,18 @@
 <h4 id="3-8-结果评估"><a href="#3-8-结果评估" class="headerlink" title="3.8 结果评估"></a>3.8 结果评估</h4><p>拟合度量、查准率、查全率、F1值、PR曲线、ROC曲线</p>
 <h5 id="3-8-1-模型选择"><a href="#3-8-1-模型选择" class="headerlink" title="3.8.1 模型选择"></a>3.8.1 模型选择</h5><img src="/medias/image-20200812210226020.png" style="zoom:50%;" />
 
+
+
 <p><strong>泛化误差</strong>：在“未来”样本上的误差。</p>
 <p><strong>经验误差</strong>：在训练集上的误差。</p>
 <img src="/medias/image-20200812210440702.png" style="zoom:50%;" />
 
+
+
 <h5 id="3-8-2-性能评价指标——分类"><a href="#3-8-2-性能评价指标——分类" class="headerlink" title="3.8.2 性能评价指标——分类"></a>3.8.2 性能评价指标——分类</h5><p><strong>准确率(Accuracy)</strong> 是指在分类中，分类正确的记录个数占总记录个数的比。</p>
 <img src="/medias/image-20200812210758979.png" style="float:left;zoom: 36%;" />
+
+
 
 <p><strong>召回率(Recall)</strong> 也叫查全率，是指在分类中样本中的正例有多少被预测正确了。</p>
 <p>通常，准确率高时，召回率偏低；召回率高时，准确率偏低。</p>
@@ -845,40 +920,64 @@
 </ol>
 <img src="/medias/image-20200812211907811.png" style="zoom:50%;" />
 
+
+
 <p><strong>准确率(Accuracy)</strong>：分类正确的样本个数占所有样本个数的比例</p>
 <img src="/medias/image-20200812211532465.png" style="float:left;zoom: 33%;" />
+
+
 
 <p><strong>平均准确率(Average per- class accuracy)</strong>：每个类别下的准确率的算术平均</p>
 <img src="/medias/image-20200812211618026.png" style="float:left;zoom:33%;" />
 
+
+
 <p><strong>精确率(Precision)</strong>：分类正确的正样本个数占分类器所有的正样本个数的比例</p>
 <img src="/medias/image-20200812211655808.png" style="float:left;zoom:33%;" />
 
+
+
 <p><strong>召回率(Recall)</strong>：分类正确的正样本个数占正样本个数的比例</p>
 <img src="/medias/image-20200812211738354.png" style="float:left;zoom:33%;" />
+
+
 
 <p><strong>F1- Score</strong>：精确率与召回率的调和平均值，它的值更接近于 Precision 与 Recall 中较小的值</p>
 <img src="/medias/image-20200812211802440.png" style="float:left;zoom:33%;" />
 
 
+
+
 <p><strong>AUC(Area under the Curve(Receiver Operating Characteristic， ROC))</strong><br><strong>ROC</strong>：纵轴：真正例率 TPR；横轴：假正例率 FPR<br><strong>AUC</strong> 是 ROC 曲线下的面积。一般来说，如果ROC是光滑的，那么基本可以判断没有太大的 overfitting，这个时候调模型可以只看 AUC，面积越大一般认为模型越好。</p>
 <img src="/medias/image-20200812212012072.png" style="zoom:50%;" />
 
+
+
 <p><strong>PR曲线</strong>：根据学习器的预测结果按正例可能性大小对样例进行排序，并逐个把样本作为正例进行预测。</p>
-<p>√ 如果一个学习器的<strong>PR曲线</strong>包住了另一个，则可以认为A的性能优于C<br>√ 如果有交叉，如A、B，综合考虑 PR 性能引入<strong>平衡点(BEP)</strong>，基于BEP比较，A优于B<br><img src="/medias/image-20200812212505976.png" style="zoom:50%;" /></p>
+<p>√ 如果一个学习器的<strong>PR曲线</strong>包住了另一个，则可以认为A的性能优于C<br>√ 如果有交叉，如A、B，综合考虑 PR 性能引入<strong>平衡点(BEP)</strong>，基于BEP比较，A优于B</p>
+<img src="/medias/image-20200812212505976.png" style="zoom:50%;" />
+
+
+
 <img src="/medias/image-20200812212606762.png" style="zoom:40%;" />
 
-<p><strong>宏平均&amp;微平均</strong><br>多分类问题中，若能得到<strong>多个混淆矩阵</strong>，例如多次训练测试的结果，多分类的两两混淆短<br><img src="/medias/image-20200812213023222.png" style="zoom:50%;" /></p>
+<p><strong>宏平均&amp;微平均</strong><br>多分类问题中，若能得到<strong>多个混淆矩阵</strong>，例如多次训练测试的结果，多分类的两两混淆短</p>
+<img src="/medias/image-20200812213023222.png" style="zoom:50%;" />
+
 <p><strong>对数损失</strong>(Log loss) 亦被称为逻辑回归损失(Logistic regression loss)或交叉熵损失(Cross-entropy loss)。</p>
 <p><strong>二分类问题</strong>：y∈{0，1} 且P=Pr(y=1) 则对每个样本的对数损失为<br>L<del>log</del> (y， p) = -logPr(ylp) = -(ylog(p)+(1-y)log(1-p))</p>
-<p><strong>多分类问题</strong>：设 Y 为指示矩阵，即当样本的分类为 k，y<del>i，k</del>=1 设 P 为估计的概率矩阵，p<del>i，k</del>=Pr(t<del>i，k</del>=1)则对每个样本的对数损失为<br><img src="/medias/image-20200812224339654.png" style="zoom:33%;" /></p>
+<p><strong>多分类问题</strong>：设 Y 为指示矩阵，即当样本的分类为 k，y<del>i，k</del>=1 设 P 为估计的概率矩阵，p<del>i，k</del>=Pr(t<del>i，k</del>=1)则对每个样本的对数损失为</p>
+<img src="/medias/image-20200812224339654.png" style="zoom:33%;" />
+
 <h5 id="3-8-3-性能评价指标——回归"><a href="#3-8-3-性能评价指标——回归" class="headerlink" title="3.8.3 性能评价指标——回归"></a>3.8.3 性能评价指标——回归</h5><p><strong>平均绝对误差</strong>：平均绝对误差MAE(Mean Absolute Error)又被称为l1范数损失(l1- norm loss)</p>
 <img src="/medias/image-20200812224619460.png" style="float:left;zoom: 33%;" />
 
 <p><strong>平均平方误差</strong>：平均平方误差MSE( Mean Squared Error)又被称为l2范数损失(l2-norm loss)</p>
 <img src="/medias/image-20200812224719766.png" style="float:left;zoom:33%;" />
 
-<p><strong>均方根差RMSE</strong>：<br><strong>R Squared</strong>：是将预测值跟只使用均值的情况下相比，看能好多少。<br><img src="/medias/image-20200812224749117.png" style="zoom:33%;" /></p>
+<p><strong>均方根差RMSE</strong>：<br><strong>R Squared</strong>：是将预测值跟只使用均值的情况下相比，看能好多少。</p>
+<img src="/medias/image-20200812224749117.png" style="zoom:33%;" />
+
 <h5 id="3-8-4-性能评价指标——聚类"><a href="#3-8-4-性能评价指标——聚类" class="headerlink" title="3.8.4 性能评价指标——聚类"></a>3.8.4 性能评价指标——聚类</h5><p>外部指标对数据集D={x<del>1</del>，x<del>2</del>，…x<del>n</del>}，假定通过聚类给出的簇划分为C={C<del>1</del>，C<del>2</del>，…，C<del>k</del>}，参考模型给出的簇划分为 C^<em>^={C<del>1</del>^</em>^，C<del>2</del>^<em>^，…，C<del>k</del>^</em>^)通过比对 C 和 C^*^ 来判定聚类结果的好坏。<br>Jaccard系数，FM指数，Rand指数，纯度 purity，熵entropy，互信息，<br>Adjusted Rand Index(ARI)， F-measure， Probabilistic Rand Index(PRI)。</p>
 <p><strong>内部指标</strong>对聚类数据结构上的描述，类內距离小，类间距离大较好。</p>
 <p><strong>DB指数( Davies-Bouldin Index，简称DBI)</strong>：衡量同一簇中数据的紧密性，越小越好。<br><strong>Dunn指数( Dunn Index简称DI)</strong>：衡量同一簇中数据的紧密性，越大越好。<br><strong>Silouette</strong>：衡量同一簇中数据的紧密性，越大越好。<br><strong>Modurity</strong>：衡量模块性，越大越好。</p>
