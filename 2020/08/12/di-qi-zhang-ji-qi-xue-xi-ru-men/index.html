@@ -537,7 +537,7 @@
 <p>将某一属性特征的模长转化成1。</p>
 <img src="/medias/image-20200729203228670.png" style="float: left; zoom: 45%;" />
 
-
+<br />
 
 <h4 id="3-3-数据建模"><a href="#3-3-数据建模" class="headerlink" title="3.3 数据建模"></a>3.3 数据建模</h4><p><img src="/medias/image-20200729203331334.png" alt=""></p>
 <h5 id="3-3-1-机器学习算法分类"><a href="#3-3-1-机器学习算法分类" class="headerlink" title="3.3.1 机器学习算法分类"></a>3.3.1 机器学习算法分类</h5><p><img src="/medias/image-20200729203355228.png" alt=""></p>
@@ -554,7 +554,6 @@
 <li><strong>特征选择</strong>：选取对训练数据具有分类能力的特征。</li>
 <li><strong>决策树生成</strong>：在决策树各个点上按照一定方法选择特征，递归构建决策树。</li>
 <li><strong>决策树剪枝</strong>：在已生成的树上减掉一些子树或者叶节点，从而简化分类树模型。</li>
-<li></li>
 </ol>
 </li>
 </ul>
@@ -705,14 +704,14 @@
 <h4 id="3-5-回归问题"><a href="#3-5-回归问题" class="headerlink" title="3.5 回归问题"></a>3.5 回归问题</h4><h5 id="3-5-1-回归问题"><a href="#3-5-1-回归问题" class="headerlink" title="3.5.1 回归问题"></a>3.5.1 回归问题</h5><p><strong>回归分析</strong>用于预测输入变量(自变量)和输出变量(因变量)之间的关系，特别是当输入变量的值发生变化时，输出变量值随之发生变化。直观来说回归问题等价于<strong>函数拟合</strong>，选择一条函数曲线使其很好地拟合已知数据且很好地预测未知数据。</p>
 <img src="/medias/image-20200812183041745.png" style="float:left;zoom:50%;" />
 
-
+<br />
 
 <blockquote>
 <p><strong>为什么叫回归?</strong>：达尔文表兄弟 Francis Galton发明的。Galton于1877年完成了第一次回归预测，目的是根据上一代豌豆种子(双亲)的尺寸来预测下一代豌豆种子(孩子)的尺寸。他注意到双亲高的，孩子也倾向于比平均高，但尚不及双亲，孩子的高度会向着平均身高回退(回归)。</p>
 </blockquote>
 <img src="/medias/image-20200812183142089.png" style="float:left;zoom:50%;" />
 
-
+<br />
 
 <h5 id="3-5-2-线性回归"><a href="#3-5-2-线性回归" class="headerlink" title="3.5.2 线性回归"></a>3.5.2 线性回归</h5><p><strong>线性回归算法</strong>假设特征和结果满足线性关系。这就意味着可以将输入项分别乘以一些常量，再将结果加起来得到输出。</p>
 <img src="/medias/image-20200812183533227.png" />
@@ -727,7 +726,7 @@
 <h5 id="3-5-4-岭回归"><a href="#3-5-4-岭回归" class="headerlink" title="3.5.4 岭回归"></a>3.5.4 岭回归</h5><p><strong>岭回归</strong>应用结构风险最小化的模型选择策略，在经验风险最小化的基础上加入正则化因子。当<strong>正则化因子</strong>选择为模型参数的<strong>二范数</strong>的时候，整个回归的方法就叫做岭回归。</p>
 <img src="/medias/image-20200812184814045.png" style="float:left;zoom:44%;" />
 
-
+<br />
 
 <blockquote>
 <p>λ越大，说明偏差就越大，原始数据对回归求取参数的作用就越小，当lamda取到个合适的值，就能在一定意义上解决过拟合的问题：原先过拟合的特别大或者特别小的参数会被约束到正常甚至很小的值，但不会为零。</p>
@@ -765,38 +764,47 @@
 
 <h5 id="3-6-3-高斯混合模型"><a href="#3-6-3-高斯混合模型" class="headerlink" title="3.6.3 高斯混合模型"></a>3.6.3 高斯混合模型</h5><p><strong>高斯混合模型</strong>(Gaussian Mixed Model)指的是多个高斯分布函数的线性组合，是一种广泛使用的聚类算法，该方法使用了高斯分布作为参数模型。</p>
 <p><strong>单高斯模型</strong>：高斯分布(Gaussian distribution)有时也被称为<strong>正态分布</strong>(normal distribution)，是一种在自然界大量的存在的、最为常见的分布形式。</p>
+<br />
+
 <img src="/medias/image-20200812194140068.png" style="float: left;zoom:56%;" />
 
-
+<br />
 
 <img src="/medias/image-20200812194234964.png" style="float:left;zoom:60%;" />
 
-
+<br />
 
 <p><strong>高斯混合模型</strong>：混合模型是一个可以用来表示在总体分布中含有K个子分布的概率模型，换句话说，混合模型表示了观测数据在总体中的概率分布，它是一个由K个子分布组成的混合分布。</p>
+<br />
+
 <img src="/medias/image-20200812194418740.png" style="float:left;zoom:56%;" />
 
-
+<br />
 
 <img src="/medias/image-20200812194350060.png" style="float:left;zoom:50%;" />
 
-
+<br />
 
 <h5 id="3-6-4-高斯混合模型求解"><a href="#3-6-4-高斯混合模型求解" class="headerlink" title="3.6.4 高斯混合模型求解"></a>3.6.4 高斯混合模型求解</h5><p><strong>EM算法</strong>是一种迭代算法，1977年由 Dempster 等人总结提出，用于含有隐变量(Hidden variable)的概率模型参数的最大似然估计。</p>
 <ul>
-<li>基于高斯混合分布的<strong>聚类</strong></li>
+<li><p>基于高斯混合分布的<strong>聚类</strong></p>
+<br />
+
+</li>
 </ul>
 <img src="/medias/image-20200812195249767.png" style="float:left;zoom: 50%;" />
 
-
+<br />
 
 <img src="/medias/image-20200812195030116.png" style="float:left;zoom: 50%;" />
 
+<br />
 
+<h5 id="3-6-5-高斯混合模型与K-means"><a href="#3-6-5-高斯混合模型与K-means" class="headerlink" title="3.6.5 高斯混合模型与K- means"></a>3.6.5 高斯混合模型与K- means</h5><br />
 
-<h5 id="3-6-5-高斯混合模型与K-means"><a href="#3-6-5-高斯混合模型与K-means" class="headerlink" title="3.6.5 高斯混合模型与K- means"></a>3.6.5 高斯混合模型与K- means</h5><img src="/medias/image-20200812195744585.png" style="zoom:50%;" />
+<img src="/medias/image-20200812195744585.png" style="zoom:50%;" />
 
-
+<br />
 
 <ul>
 <li><p>混合高斯和K- means很相似，相似点在于两者的分类受初始值影响；两者可能限于局部最优解；两者类别的个数(k)都要靠猜测。混合高斯计算复杂度高于K-means。</p>
@@ -809,18 +817,22 @@
 <blockquote>
 <p>① DBSCAN通过检查数据集中每个点的Eps邻域来搜索簇，如果点p的Eps邻域包含的点多于MinPts个，则创建一个以p为核心对象的簇。<br>② 然后， DBSCAN迭代地聚集从这些核心对象直接密度可达的对象，这个过程可能涉及一些密度可达簇的合并。<br>③ 当没有新的点添加到任何簇时，该过程结束。</p>
 </blockquote>
+<br />
+
 <img src="/medias/image-20200812200425530.png" style="float:left;zoom:50%;" />
 
-
+<br />
 
 <h5 id="3-6-7-层次聚类"><a href="#3-6-7-层次聚类" class="headerlink" title="3.6.7 层次聚类"></a>3.6.7 层次聚类</h5><p><strong>层次聚类算法</strong>试图在不同层次对数据集进行划分，从而形成树形的聚类结构。数据集的划分可采用“自底向上”的聚合策略，也可采用“自顶向下”的分拆策略。</p>
 <p><strong>AGNES算法流程</strong></p>
 <blockquote>
 <p>① AGNES(Agglomerative NESting)算法最初将每个对象做为一个簇，然后这些簇根据某些准则被一步步的合并，使用单链接方法。<br>② 两个簇间的相似度由这两个不同簇中距离最近的数据点对的相似度来确定。此外当两个簇最近距离超过用户给定的阈值时聚类过程就会终止。<br>③ 聚类的合并过程反复进行直到所有的对象最终满足簇数据。</p>
 </blockquote>
+<br />
+
 <img src="/medias/image-20200812200800237.png" style="float:left;zoom:50%;" />
 
-
+<br />
 
 <h5 id="3-6-8-谱聚类"><a href="#3-6-8-谱聚类" class="headerlink" title="3.6.8 谱聚类"></a>3.6.8 谱聚类</h5><p><strong>谱聚类(Spectral Clustering，SC)</strong>是一种基于图论的聚类方法，将带权无向图划分为两个或两个以上的最优子图，使子图内部尽量相似，而子图间距离尽量距离较远，以达到常见的聚类的目的。</p>
 <p>输入：样本x，j，需要聚类的个数k</p>
@@ -844,32 +856,40 @@
 <blockquote>
 <p><strong>隐马可夫模型两个假设</strong><br>① <strong>齐次马尔可夫性假设</strong>，即假设隐藏的马尔可夫链在任意时刻 t 的状态只依赖于其前一时刻的状态，与其他时刻的状态及观测无关，也与时刻 t 无关。<br>P(i<del>t</del>|i<del>t-1</del>，o<del>t-1</del>，…，i<del>1</del>，o<del>1</del>)=P(i<del>t</del>li<del>t-1</del>)，t=1，2，…，T<br>② <strong>观测独立性假设</strong>，即假设任意时刻的观测只依赖于该时刻的马尔可夫链的状态，与其他观测及状态无关。<br>P(o<del>t</del>|i<del>t</del>，o<del>t</del>，…，i<del>1</del>，o<del>1</del>)=P(o<del>t</del>li<del>t</del>)，t=1，2，…，T</p>
 </blockquote>
+<br />
+
 <img src="/medias/image-20200812202006591.png" style="zoom:60%;" />
-隐马尔可夫模型 **λ = (A， B， Π)**，状态转移概率矩阵 A，初始状态概率向量Π，确定了隐藏的马尔可夫链，生成不可观测的状态序列。观测概率矩阵 B 确定了如何从状态生成观测，与状态序列综合确定了如何产生观测序列。
 
-
-
+<p><br />隐马尔可夫模型 <strong>λ = (A， B， Π)</strong>，状态转移概率矩阵 A，初始状态概率向量Π，确定了隐藏的马尔可夫链，生成不可观测的状态序列。观测概率矩阵 B 确定了如何从状态生成观测，与状态序列综合确定了如何产生观测序列。</p>
 <p><strong>隐马可夫模型三个基本问题</strong></p>
 <blockquote>
 <p>① <strong>概率计算问题</strong>，给定模型 λ=(A，B，Π)和观测序列 O=(o<del>1</del>， o<del>2</del>， …，o<del>T</del>)，计算在模型 λ 下观测序列 O 出现的概率 P = (O|λ)。<br>② <strong>学习问题</strong>，已知观测序列 O=(o<del>1</del>， o<del>2</del>， …， o<del>T</del>) 估计模型 λ=(A， B， Π)参数，使得在该模型下观测序列概率 P = (O|λ)最大。<br>③ <strong>预测问题</strong>，已知模型 λ=(A，B，∏) 和观测O=(o<del>1</del>， o<del>2</del>， …， o<del>T</del>) ，求对给定观测序列条件概率P=(I|O)最大的状态序列。即给定观测序列，求最有可能的对应的状态序列。</p>
 </blockquote>
+<br />
+
 <img src="/medias/image-20200812203756955.png" style="float:left;zoom:50%;" />
 
-
+<br />
 
 <p><strong>应用</strong></p>
 <p><strong>词性标注、中文分词、天气预测等</strong></p>
 <h5 id="3-7-2-CRF-条件随机场"><a href="#3-7-2-CRF-条件随机场" class="headerlink" title="3.7.2 CRF 条件随机场"></a>3.7.2 CRF 条件随机场</h5><p>CRF(Conditional Random Field)条件随机场是一个序列标注模型，其优点在于为一个位置进行标注的过程中可以利用丰富的内部及上下文特征信息。</p>
+<br />
+
 <img src="/medias/image-20200812204649234.png" style="zoom:50%;" />
 
-
+<br />
 
 <p>CRF由 John Lafferty 最早在 NLP 技术领域任务中进行文本标注，有多种应用场景，如：</p>
 <blockquote>
 <p>√ 分词(标注字的词位信息，由字构词)<br>√ 词性标注(标注分词的词性，例如：名词，动词，助词)<br>√ 命名实体识别(识别人名，地名，机构名，商品名等具有一定内在规律的实体名词)</p>
 </blockquote>
 <h5 id="3-7-3-LDA-主题模型"><a href="#3-7-3-LDA-主题模型" class="headerlink" title="3.7.3 LDA 主题模型"></a>3.7.3 LDA 主题模型</h5><p><strong>LDA 主题模型</strong>是一种文档主题生成模型，是一种非监督机器学习技术。通过模拟文档生成过程，可以用来识别大规模文档集 (document collection) 或语料库 (corpus) 中潜藏的主题信息。</p>
+<br />
+
 <img src="/medias/image-20200812205037681.png" style="zoom:50%;" />
+
+<br />
 
 
 
@@ -897,20 +917,26 @@
 </ul>
 </blockquote>
 <h4 id="3-8-结果评估"><a href="#3-8-结果评估" class="headerlink" title="3.8 结果评估"></a>3.8 结果评估</h4><p>拟合度量、查准率、查全率、F1值、PR曲线、ROC曲线</p>
-<h5 id="3-8-1-模型选择"><a href="#3-8-1-模型选择" class="headerlink" title="3.8.1 模型选择"></a>3.8.1 模型选择</h5><img src="/medias/image-20200812210226020.png" style="zoom:50%;" />
+<h5 id="3-8-1-模型选择"><a href="#3-8-1-模型选择" class="headerlink" title="3.8.1 模型选择"></a>3.8.1 模型选择</h5><br />
 
+<img src="/medias/image-20200812210226020.png" style="zoom:50%;" />
 
+<br />
 
 <p><strong>泛化误差</strong>：在“未来”样本上的误差。</p>
 <p><strong>经验误差</strong>：在训练集上的误差。</p>
+<br />
+
 <img src="/medias/image-20200812210440702.png" style="zoom:50%;" />
 
-
+<br />
 
 <h5 id="3-8-2-性能评价指标——分类"><a href="#3-8-2-性能评价指标——分类" class="headerlink" title="3.8.2 性能评价指标——分类"></a>3.8.2 性能评价指标——分类</h5><p><strong>准确率(Accuracy)</strong> 是指在分类中，分类正确的记录个数占总记录个数的比。</p>
+<br />
+
 <img src="/medias/image-20200812210758979.png" style="float:left;zoom: 36%;" />
 
-
+<br />
 
 <p><strong>召回率(Recall)</strong> 也叫查全率，是指在分类中样本中的正例有多少被预测正确了。</p>
 <p>通常，准确率高时，召回率偏低；召回率高时，准确率偏低。</p>
@@ -918,65 +944,103 @@
 <li><strong>地震的预测</strong><br>对于地震的预测，我们希望的是召回率非常高，也就是说每次地震我们都希望预测出来。这个时候我们可以牺牲准确率。情愿发岀1000次警报，把10次地震都预测正确了；也不要预测100次对了8次漏了两次。</li>
 <li><strong>嫌疑人定罪</strong><br>基于不错怪—个好人的原则，对于嫌疑人的定罪我们希望是非常准确的。及时有时候放过了一些罪犯(召回率低)，但也是值得的。</li>
 </ol>
+<br />
+
 <img src="/medias/image-20200812211907811.png" style="zoom:50%;" />
 
-
+<br />
 
 <p><strong>准确率(Accuracy)</strong>：分类正确的样本个数占所有样本个数的比例</p>
+<br />
+
 <img src="/medias/image-20200812211532465.png" style="float:left;zoom: 33%;" />
 
-
+<br />
 
 <p><strong>平均准确率(Average per- class accuracy)</strong>：每个类别下的准确率的算术平均</p>
+<br />
+
 <img src="/medias/image-20200812211618026.png" style="float:left;zoom:33%;" />
 
-
+<br />
 
 <p><strong>精确率(Precision)</strong>：分类正确的正样本个数占分类器所有的正样本个数的比例</p>
+<br />
+
 <img src="/medias/image-20200812211655808.png" style="float:left;zoom:33%;" />
 
-
+<br />
 
 <p><strong>召回率(Recall)</strong>：分类正确的正样本个数占正样本个数的比例</p>
+<br />
+
 <img src="/medias/image-20200812211738354.png" style="float:left;zoom:33%;" />
 
-
+<br />
 
 <p><strong>F1- Score</strong>：精确率与召回率的调和平均值，它的值更接近于 Precision 与 Recall 中较小的值</p>
+<br />
+
 <img src="/medias/image-20200812211802440.png" style="float:left;zoom:33%;" />
 
-
+<br />
 
 
 <p><strong>AUC(Area under the Curve(Receiver Operating Characteristic， ROC))</strong><br><strong>ROC</strong>：纵轴：真正例率 TPR；横轴：假正例率 FPR<br><strong>AUC</strong> 是 ROC 曲线下的面积。一般来说，如果ROC是光滑的，那么基本可以判断没有太大的 overfitting，这个时候调模型可以只看 AUC，面积越大一般认为模型越好。</p>
+<br />
+
 <img src="/medias/image-20200812212012072.png" style="zoom:50%;" />
 
-
+<br />
 
 <p><strong>PR曲线</strong>：根据学习器的预测结果按正例可能性大小对样例进行排序，并逐个把样本作为正例进行预测。</p>
 <p>√ 如果一个学习器的<strong>PR曲线</strong>包住了另一个，则可以认为A的性能优于C<br>√ 如果有交叉，如A、B，综合考虑 PR 性能引入<strong>平衡点(BEP)</strong>，基于BEP比较，A优于B</p>
+<br />
+
 <img src="/medias/image-20200812212505976.png" style="zoom:50%;" />
 
-
+<br />
 
 <img src="/medias/image-20200812212606762.png" style="zoom:40%;" />
 
-<p><strong>宏平均&amp;微平均</strong><br>多分类问题中，若能得到<strong>多个混淆矩阵</strong>，例如多次训练测试的结果，多分类的两两混淆短</p>
+<br />
+
+<p><strong>宏平均&amp;微平均</strong><br>多分类问题中，若能得到<strong>多个混淆矩阵</strong>，例如多次训练测试的结果，多分类的两两混淆短。</p>
+<br />
+
 <img src="/medias/image-20200812213023222.png" style="zoom:50%;" />
+
+<br />
 
 <p><strong>对数损失</strong>(Log loss) 亦被称为逻辑回归损失(Logistic regression loss)或交叉熵损失(Cross-entropy loss)。</p>
 <p><strong>二分类问题</strong>：y∈{0，1} 且P=Pr(y=1) 则对每个样本的对数损失为<br>L<del>log</del> (y， p) = -logPr(ylp) = -(ylog(p)+(1-y)log(1-p))</p>
 <p><strong>多分类问题</strong>：设 Y 为指示矩阵，即当样本的分类为 k，y<del>i，k</del>=1 设 P 为估计的概率矩阵，p<del>i，k</del>=Pr(t<del>i，k</del>=1)则对每个样本的对数损失为</p>
+<br />
+
 <img src="/medias/image-20200812224339654.png" style="zoom:33%;" />
 
+<br />
+
 <h5 id="3-8-3-性能评价指标——回归"><a href="#3-8-3-性能评价指标——回归" class="headerlink" title="3.8.3 性能评价指标——回归"></a>3.8.3 性能评价指标——回归</h5><p><strong>平均绝对误差</strong>：平均绝对误差MAE(Mean Absolute Error)又被称为l1范数损失(l1- norm loss)</p>
+<br />
+
 <img src="/medias/image-20200812224619460.png" style="float:left;zoom: 33%;" />
 
+<br />
+
 <p><strong>平均平方误差</strong>：平均平方误差MSE( Mean Squared Error)又被称为l2范数损失(l2-norm loss)</p>
+<br />
+
 <img src="/medias/image-20200812224719766.png" style="float:left;zoom:33%;" />
 
+<br />
+
 <p><strong>均方根差RMSE</strong>：<br><strong>R Squared</strong>：是将预测值跟只使用均值的情况下相比，看能好多少。</p>
+<br />
+
 <img src="/medias/image-20200812224749117.png" style="zoom:33%;" />
+
+<br />
 
 <h5 id="3-8-4-性能评价指标——聚类"><a href="#3-8-4-性能评价指标——聚类" class="headerlink" title="3.8.4 性能评价指标——聚类"></a>3.8.4 性能评价指标——聚类</h5><p>外部指标对数据集D={x<del>1</del>，x<del>2</del>，…x<del>n</del>}，假定通过聚类给出的簇划分为C={C<del>1</del>，C<del>2</del>，…，C<del>k</del>}，参考模型给出的簇划分为 C^<em>^={C<del>1</del>^</em>^，C<del>2</del>^<em>^，…，C<del>k</del>^</em>^)通过比对 C 和 C^*^ 来判定聚类结果的好坏。<br>Jaccard系数，FM指数，Rand指数，纯度 purity，熵entropy，互信息，<br>Adjusted Rand Index(ARI)， F-measure， Probabilistic Rand Index(PRI)。</p>
 <p><strong>内部指标</strong>对聚类数据结构上的描述，类內距离小，类间距离大较好。</p>
