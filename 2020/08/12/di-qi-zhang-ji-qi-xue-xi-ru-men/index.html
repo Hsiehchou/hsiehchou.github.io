@@ -393,14 +393,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    11.1k
+                    12.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    39 分
+                    47 分
                 </div>
                 
 
@@ -633,18 +633,12 @@
 <li>他是一个单调上升的函数，具有良好的连续性，不存在不连续点。微分形式简单。</li>
 </ol>
 <p><strong>为什么要用对数似然损失函数?</strong></p>
-<img src="/medias/image-20200805210237097.png" style="float: left; zoom: 40%;" />
-
-
+<img src="/medias/image-20200805210237097.png" style="zoom: 40%;" />
 
 <img src="/medias/image-20200805210335105.png" style="zoom:50%;" />
 
-
-
 <h5 id="3-4-5-逻辑回归与最大熵模型"><a href="#3-4-5-逻辑回归与最大熵模型" class="headerlink" title="3.4.5 逻辑回归与最大熵模型"></a>3.4.5 逻辑回归与最大熵模型</h5><p>熵是随机变量不确定性的度量，不确定性越大，熵值就越大。<br>德国物理学家鲁道夫·克劳修斯首次提出施的概念，用来表示任何种能量在空间中分布的均匀程度，能量分布得越均匀，熵就越大。</p>
 <img src="/medias/image-20200808091721787.png" style="zoom:50%;" />
-
-
 
 <blockquote>
 <p>举个例子：你每次把耳机整理好，放入口袋中，下次再拿出来已经乱了让耳机线乱掉的看不见的“力”就是熵力，耳机线喜欢变成更混乱。</p>
@@ -656,8 +650,6 @@
 <h5 id="3-4-6-集成学习"><a href="#3-4-6-集成学习" class="headerlink" title="3.4.6 集成学习"></a>3.4.6 集成学习</h5><p><strong>集成学习</strong>通过将多个弱分类器集成在一起，使它们共同完成学习任务，构建一个强分类器。潜在哲<br>学思想是“<strong>三个臭皮匠赛过诸葛亮</strong>”。</p>
 <img src="/medias/image-20200808094812114.png" style="zoom:67%;" />
 
-
-
 <p>◆ <strong>理论基础</strong><br><strong>强可学习</strong>：在PAC学习框架中，一个概念，如果存在一个多项式的学习算法能够学习它，并且正确率<br>很高，那么久称这个概念是强可学习的。</p>
 <p><strong>弱可学习</strong>：如果存在一个多项式的学习算法能够学习它，学习的正确率金币随机猜测略好，那么就称这个<br>概念是弱可学习的。</p>
 <p><strong>Schapire</strong> 证明强可学习与弱可学习是<strong>等价</strong>的，也就是说，在PAC学习框架下，一个概念强可学习的充<br>分必要条件是这个概念弱可学习的。</p>
@@ -667,8 +659,6 @@
 <p><strong>1) Bagging(bootstrap aggregating)</strong></p>
 <img src="/medias/image-20200808095324837.png" style="zoom:67%;" />
 
-
-
 <p>Bagging：基于数据<strong>随机重抽样</strong>的分类器构建方法。</p>
 <ul>
 <li>利用 bootstrap方法从整体数据集中采取有放回抽样得到 N 个数据集（如何采样?）。</li>
@@ -677,8 +667,6 @@
 </ul>
 <p><strong>2) Boosting</strong></p>
 <img src="/medias/image-20200808095340194.png" style="zoom:67%;" />
-
-
 
 <p>Boosting(Adaptive Boosting的简称)，基于错误提升分类器性能，通过<strong>集中关注被已有分类器分类错误的样本</strong>，构建新分类器。</p>
 <ul>
@@ -696,45 +684,30 @@
 <p><strong>代表算法：</strong></p>
 <img src="/medias/image-20200808100517454.png" style="zoom:50%;" />
 
-
-
 <p><strong>优点：</strong><br>当先最先进的预测几乎都使用了算法集成。它比使用单个模型预测出来的结果要精确的多，在各大竞赛中得到了普遍应用。</p>
 <p><strong>缺点：</strong><br>需要大量的维护工作。</p>
 <h4 id="3-5-回归问题"><a href="#3-5-回归问题" class="headerlink" title="3.5 回归问题"></a>3.5 回归问题</h4><h5 id="3-5-1-回归问题"><a href="#3-5-1-回归问题" class="headerlink" title="3.5.1 回归问题"></a>3.5.1 回归问题</h5><p><strong>回归分析</strong>用于预测输入变量(自变量)和输出变量(因变量)之间的关系，特别是当输入变量的值发生变化时，输出变量值随之发生变化。直观来说回归问题等价于<strong>函数拟合</strong>，选择一条函数曲线使其很好地拟合已知数据且很好地预测未知数据。</p>
-<img src="/medias/image-20200812183041745.png" style="float:left;zoom:50%;" />
+<img src="/medias/image-20200812183041745.png" style="zoom:50%;" />
 
-<p><br /><br /><br /></p>
 <blockquote>
 <p><strong>为什么叫回归?</strong>：达尔文表兄弟 Francis Galton发明的。Galton于1877年完成了第一次回归预测，目的是根据上一代豌豆种子(双亲)的尺寸来预测下一代豌豆种子(孩子)的尺寸。他注意到双亲高的，孩子也倾向于比平均高，但尚不及双亲，孩子的高度会向着平均身高回退(回归)。</p>
 </blockquote>
-<br />
+<img src="/medias/image-20200812183142089.png" style="zoom:50%;" />
 
-<img src="/medias/image-20200812183142089.png" style="float:left;zoom:50%;" />
-
-<br />
-
-<p><br /><br /></p>
 <h5 id="3-5-2-线性回归"><a href="#3-5-2-线性回归" class="headerlink" title="3.5.2 线性回归"></a>3.5.2 线性回归</h5><p><strong>线性回归算法</strong>假设特征和结果满足线性关系。这就意味着可以将输入项分别乘以一些常量，再将结果加起来得到输出。</p>
 <img src="/medias/image-20200812183533227.png" />
-
 
 
 <h5 id="3-5-3-线性回归扩展"><a href="#3-5-3-线性回归扩展" class="headerlink" title="3.5.3 线性回归扩展"></a>3.5.3 线性回归扩展</h5><p><strong>线性回归扩展算法</strong>用简单的基函数Φ(x)替换输入变量x。这样我们就把线性拟合形式扩展到了固定非线性函数的线性组合。</p>
 <img src="/medias/image-20200812184417019.png" style="zoom:46%;" />
 
-
-
 <h5 id="3-5-4-岭回归"><a href="#3-5-4-岭回归" class="headerlink" title="3.5.4 岭回归"></a>3.5.4 岭回归</h5><p><strong>岭回归</strong>应用结构风险最小化的模型选择策略，在经验风险最小化的基础上加入正则化因子。当<strong>正则化因子</strong>选择为模型参数的<strong>二范数</strong>的时候，整个回归的方法就叫做岭回归。</p>
-<img src="/medias/image-20200812184814045.png" style="float:left;zoom:44%;" />
+<img src="/medias/image-20200812184814045.png" style="zoom:44%;" />
 
-<br />
-
-<p><br /><br /></p>
 <blockquote>
 <p>λ越大，说明偏差就越大，原始数据对回归求取参数的作用就越小，当lamda取到个合适的值，就能在一定意义上解决过拟合的问题：原先过拟合的特别大或者特别小的参数会被约束到正常甚至很小的值，但不会为零。</p>
 </blockquote>
 <img src="/medias/image-20200812184848262.png" style="zoom:60%;" />
-
 
 
 <h5 id="3-5-5-Lasso回归"><a href="#3-5-5-Lasso回归" class="headerlink" title="3.5.5 Lasso回归"></a>3.5.5 Lasso回归</h5><p><strong>Lasso 回归</strong>是一种压缩估计。它通过构造一个惩罚函数得到一 个较为精炼的模型，使得它压缩一些系数，同时设定一些系数为零。因此保留了子集收缩的优点，是一种处理具有<strong>复共线性数据</strong>的<strong>有偏估计</strong>。</p>
@@ -744,7 +717,7 @@
 <img src="/medias/image-20200812190035858.png" style="zoom:70%;" />
 
 <h4 id="3-6-聚类问题"><a href="#3-6-聚类问题" class="headerlink" title="3.6 聚类问题"></a>3.6 聚类问题</h4><h5 id="3-6-1-聚类问题"><a href="#3-6-1-聚类问题" class="headerlink" title="3.6.1 聚类问题"></a>3.6.1 聚类问题</h5><p><strong>聚类问题</strong>是无监督学习的问题，算法的思想就是“物以类聚，人以群分”。聚类算法感知样本间的相似度，进行类别归纳，对新的输入进行输出预测，输出变量取有限个离散值。</p>
-<img src="/medias/image-20200812191726911.png" style="float:left;zoom: 50%;" />
+<img src="/medias/image-20200812191726911.png" style="zoom: 50%;" />
 
 <p>√ 可以作为一个单独过程，用于寻找数据内在的分布结构。<br>√ 可以作为分类、稀疏表示等其他学习任务的前驱过程。</p>
 <h5 id="3-6-2-K-means"><a href="#3-6-2-K-means" class="headerlink" title="3.6.2 K-means"></a>3.6.2 K-means</h5><p>K- means(又称k-均值或k-平均)聚类算法。算法思想就是首先随机确定k个中心点作为聚类中心，然后把每个数据点分配给最邻近的中心点，分配完成后形成k个聚类，计算各个聚类的平均中心点，将其作为该聚类新的类中心点，然后重复迭代上述步骤直到分配过程不再产生变化。</p>
@@ -760,66 +733,34 @@
 <blockquote>
 <p>√ K值的选取不好把握<br>√ 不平衡数据集的聚类效果不佳<br>√ 采用迭代方法，得到的结果只是局部最优<br>√ 对噪音和异常点比较的敏感</p>
 </blockquote>
-<img src="/medias/image-20200812193529404.png" style="float:left;zoom: 70%;" />
-
-<br />
-
-<br />
-
-
+<img src="/medias/image-20200812193529404.png" style="zoom: 70%;" />
 
 <h5 id="3-6-3-高斯混合模型"><a href="#3-6-3-高斯混合模型" class="headerlink" title="3.6.3 高斯混合模型"></a>3.6.3 高斯混合模型</h5><p><strong>高斯混合模型</strong>(Gaussian Mixed Model)指的是多个高斯分布函数的线性组合，是一种广泛使用的聚类算法，该方法使用了高斯分布作为参数模型。</p>
 <p><strong>单高斯模型</strong>：高斯分布(Gaussian distribution)有时也被称为<strong>正态分布</strong>(normal distribution)，是一种在自然界大量的存在的、最为常见的分布形式。</p>
-<p><br /><br /></p>
-<img src="/medias/image-20200812194140068.png" style="float: left;zoom:56%;" />
+<img src="/medias/image-20200812194140068.png" style="zoom:56%;" />
 
-<p><br /><br /></p>
-<img src="/medias/image-20200812194234964.png" style="float:left;zoom:60%;" />
-
-<br />
-
-<br />
-
+<img src="/medias/image-20200812194234964.png" style="zoom:60%;" />
 
 
 <p><strong>高斯混合模型</strong>：混合模型是一个可以用来表示在总体分布中含有K个子分布的概率模型，换句话说，混合模型表示了观测数据在总体中的概率分布，它是一个由K个子分布组成的混合分布。</p>
-<p><br /><br /></p>
-<img src="/medias/image-20200812194418740.png" style="float:left;zoom:56%;" />
+<img src="/medias/image-20200812194418740.png" style="zoom:56%;" />
 
-<p><br /><br /></p>
-<img src="/medias/image-20200812194350060.png" style="float:left;zoom:50%;" />
 
-<p><br /><br /></p>
+<img src="/medias/image-20200812194350060.png" style="zoom:50%;" />
+
+
+
 <h5 id="3-6-4-高斯混合模型求解"><a href="#3-6-4-高斯混合模型求解" class="headerlink" title="3.6.4 高斯混合模型求解"></a>3.6.4 高斯混合模型求解</h5><p><strong>EM算法</strong>是一种迭代算法，1977年由 Dempster 等人总结提出，用于含有隐变量(Hidden variable)的概率模型参数的最大似然估计。</p>
 <ul>
-<li><p>基于高斯混合分布的<strong>聚类</strong></p>
-<br />
-
-<br />
-
-</li>
+<li>基于高斯混合分布的<strong>聚类</strong></li>
 </ul>
-<img src="/medias/image-20200812195249767.png" style="float:left;zoom: 50%;" />
+<img src="/medias/image-20200812195249767.png" style="zoom: 50%;" />
 
-<br />
+<img src="/medias/image-20200812195030116.png" style="zoom: 50%;" />
 
-<br />
 
-<img src="/medias/image-20200812195030116.png" style="float:left;zoom: 50%;" />
+<h5 id="3-6-5-高斯混合模型与K-means"><a href="#3-6-5-高斯混合模型与K-means" class="headerlink" title="3.6.5 高斯混合模型与K- means"></a>3.6.5 高斯混合模型与K- means</h5><img src="/medias/image-20200812195744585.png" style="zoom:50%;" />
 
-<br />
-
-<br />
-
-<h5 id="3-6-5-高斯混合模型与K-means"><a href="#3-6-5-高斯混合模型与K-means" class="headerlink" title="3.6.5 高斯混合模型与K- means"></a>3.6.5 高斯混合模型与K- means</h5><br />
-
-<br />
-
-<img src="/medias/image-20200812195744585.png" style="zoom:50%;" />
-
-<br />
-
-<br />
 
 <ul>
 <li><p>混合高斯和K- means很相似，相似点在于两者的分类受初始值影响；两者可能限于局部最优解；两者类别的个数(k)都要靠猜测。混合高斯计算复杂度高于K-means。</p>
@@ -832,21 +773,18 @@
 <blockquote>
 <p>① DBSCAN通过检查数据集中每个点的Eps邻域来搜索簇，如果点p的Eps邻域包含的点多于MinPts个，则创建一个以p为核心对象的簇。<br>② 然后， DBSCAN迭代地聚集从这些核心对象直接密度可达的对象，这个过程可能涉及一些密度可达簇的合并。<br>③ 当没有新的点添加到任何簇时，该过程结束。</p>
 </blockquote>
-<br />
+<img src="/medias/image-20200812200425530.png" style="zoom:50%;" />
 
-<img src="/medias/image-20200812200425530.png" style="float:left;zoom:50%;" />
 
-<p><br /><br /></p>
+
 <h5 id="3-6-7-层次聚类"><a href="#3-6-7-层次聚类" class="headerlink" title="3.6.7 层次聚类"></a>3.6.7 层次聚类</h5><p><strong>层次聚类算法</strong>试图在不同层次对数据集进行划分，从而形成树形的聚类结构。数据集的划分可采用“自底向上”的聚合策略，也可采用“自顶向下”的分拆策略。</p>
 <p><strong>AGNES算法流程</strong></p>
 <blockquote>
 <p>① AGNES(Agglomerative NESting)算法最初将每个对象做为一个簇，然后这些簇根据某些准则被一步步的合并，使用单链接方法。<br>② 两个簇间的相似度由这两个不同簇中距离最近的数据点对的相似度来确定。此外当两个簇最近距离超过用户给定的阈值时聚类过程就会终止。<br>③ 聚类的合并过程反复进行直到所有的对象最终满足簇数据。</p>
 </blockquote>
-<br />
+<img src="/medias/image-20200812200800237.png" style="zoom:50%;" />
 
-<img src="/medias/image-20200812200800237.png" style="float:left;zoom:50%;" />
 
-<p><br /><br /></p>
 <h5 id="3-6-8-谱聚类"><a href="#3-6-8-谱聚类" class="headerlink" title="3.6.8 谱聚类"></a>3.6.8 谱聚类</h5><p><strong>谱聚类(Spectral Clustering，SC)</strong>是一种基于图论的聚类方法，将带权无向图划分为两个或两个以上的最优子图，使子图内部尽量相似，而子图间距离尽量距离较远，以达到常见的聚类的目的。</p>
 <p>输入：样本x，j，需要聚类的个数k</p>
 <blockquote>
@@ -869,49 +807,29 @@
 <blockquote>
 <p><strong>隐马可夫模型两个假设</strong><br>① <strong>齐次马尔可夫性假设</strong>，即假设隐藏的马尔可夫链在任意时刻 t 的状态只依赖于其前一时刻的状态，与其他时刻的状态及观测无关，也与时刻 t 无关。<br>P(i<del>t</del>|i<del>t-1</del>，o<del>t-1</del>，…，i<del>1</del>，o<del>1</del>)=P(i<del>t</del>li<del>t-1</del>)，t=1，2，…，T<br>② <strong>观测独立性假设</strong>，即假设任意时刻的观测只依赖于该时刻的马尔可夫链的状态，与其他观测及状态无关。<br>P(o<del>t</del>|i<del>t</del>，o<del>t</del>，…，i<del>1</del>，o<del>1</del>)=P(o<del>t</del>li<del>t</del>)，t=1，2，…，T</p>
 </blockquote>
-<br />
-
 <img src="/medias/image-20200812202006591.png" style="zoom:60%;" />
 
-<p><br />隐马尔可夫模型 <strong>λ = (A， B， Π)</strong>，状态转移概率矩阵 A，初始状态概率向量Π，确定了隐藏的马尔可夫链，生成不可观测的状态序列。观测概率矩阵 B 确定了如何从状态生成观测，与状态序列综合确定了如何产生观测序列。</p>
+<p>隐马尔可夫模型 <strong>λ = (A， B， Π)</strong>，状态转移概率矩阵 A，初始状态概率向量Π，确定了隐藏的马尔可夫链，生成不可观测的状态序列。观测概率矩阵 B 确定了如何从状态生成观测，与状态序列综合确定了如何产生观测序列。</p>
 <p><strong>隐马可夫模型三个基本问题</strong></p>
 <blockquote>
 <p>① <strong>概率计算问题</strong>，给定模型 λ=(A，B，Π)和观测序列 O=(o<del>1</del>， o<del>2</del>， …，o<del>T</del>)，计算在模型 λ 下观测序列 O 出现的概率 P = (O|λ)。<br>② <strong>学习问题</strong>，已知观测序列 O=(o<del>1</del>， o<del>2</del>， …， o<del>T</del>) 估计模型 λ=(A， B， Π)参数，使得在该模型下观测序列概率 P = (O|λ)最大。<br>③ <strong>预测问题</strong>，已知模型 λ=(A，B，∏) 和观测O=(o<del>1</del>， o<del>2</del>， …， o<del>T</del>) ，求对给定观测序列条件概率P=(I|O)最大的状态序列。即给定观测序列，求最有可能的对应的状态序列。</p>
 </blockquote>
-<br />
-
 <img src="/medias/image-20200812203756955.png" style="float:left;zoom:50%;" />
 
-<br />
-
-<br />
-
+<p><br><br><br><br><br><br></p>
 
 
 <p><strong>应用</strong></p>
 <p><strong>词性标注、中文分词、天气预测等</strong></p>
-<p><br /><br /></p>
 <h5 id="3-7-2-CRF-条件随机场"><a href="#3-7-2-CRF-条件随机场" class="headerlink" title="3.7.2 CRF 条件随机场"></a>3.7.2 CRF 条件随机场</h5><p>CRF(Conditional Random Field)条件随机场是一个序列标注模型，其优点在于为一个位置进行标注的过程中可以利用丰富的内部及上下文特征信息。</p>
-<br />
-
 <img src="/medias/image-20200812204649234.png" style="zoom:50%;" />
-
-<br />
 
 <p>CRF由 John Lafferty 最早在 NLP 技术领域任务中进行文本标注，有多种应用场景，如：</p>
 <blockquote>
 <p>√ 分词(标注字的词位信息，由字构词)<br>√ 词性标注(标注分词的词性，例如：名词，动词，助词)<br>√ 命名实体识别(识别人名，地名，机构名，商品名等具有一定内在规律的实体名词)</p>
 </blockquote>
 <h5 id="3-7-3-LDA-主题模型"><a href="#3-7-3-LDA-主题模型" class="headerlink" title="3.7.3 LDA 主题模型"></a>3.7.3 LDA 主题模型</h5><p><strong>LDA 主题模型</strong>是一种文档主题生成模型，是一种非监督机器学习技术。通过模拟文档生成过程，可以用来识别大规模文档集 (document collection) 或语料库 (corpus) 中潜藏的主题信息。</p>
-<br />
-
-<br />
-
 <img src="/medias/image-20200812205037681.png" style="zoom:50%;" />
-
-<br />
-
-
 
 <h5 id="3-7-4-生成模型-VS-判别模型"><a href="#3-7-4-生成模型-VS-判别模型" class="headerlink" title="3.7.4 生成模型 VS 判别模型"></a>3.7.4 生成模型 VS 判别模型</h5><p><strong>监督学习方法</strong>可分为两大类，即生成方法与判别方法，它们所学到的模型称为生成模型与判别模型。</p>
 <p>例子：</p>
@@ -937,219 +855,98 @@
 </ul>
 </blockquote>
 <h4 id="3-8-结果评估"><a href="#3-8-结果评估" class="headerlink" title="3.8 结果评估"></a>3.8 结果评估</h4><p>拟合度量、查准率、查全率、F1值、PR曲线、ROC曲线</p>
-<h5 id="3-8-1-模型选择"><a href="#3-8-1-模型选择" class="headerlink" title="3.8.1 模型选择"></a>3.8.1 模型选择</h5><br />
+<h5 id="3-8-1-模型选择"><a href="#3-8-1-模型选择" class="headerlink" title="3.8.1 模型选择"></a>3.8.1 模型选择</h5><img src="/medias/image-20200812210226020.png" style="zoom:50%;" />
 
-<br />
-
-
-
-<img src="/medias/image-20200812210226020.png" style="zoom:50%;" />
-
-<br />
-
-<p><strong>泛化误差</strong>：在“未来<br />”样本上的误差。</p>
+<p><strong>泛化误差</strong>：在“未来”样本上的误差。</p>
 <p><strong>经验误差</strong>：在训练集上的误差。</p>
-<br />
-
-
-
 <img src="/medias/image-20200812210440702.png" style="zoom:50%;" />
 
-<br />
+
+<h5 id="3-8-2-性能评价指标——分类"><a href="#3-8-2-性能评价指标——分类" class="headerlink" title="3.8.2 性能评价指标——分类"></a>3.8.2 性能评价指标——分类</h5><p><strong>准确率(Accuracy)</strong> 是指在分类中，分类正确的记录个数占总记录个数的比。<br><img src="/medias/image-20200812210758979.png" style="float:left;zoom: 36%;" /></p>
+<p><br><br></p>
 
 
-
-<h5 id="3-8-2-性能评价指标——分类"><a href="#3-8-2-性能评价指标——分类" class="headerlink" title="3.8.2 性能评价指标——分类"></a>3.8.2 性能评价指标——分类</h5><p><strong>准确率(Accuracy)</strong> 是指在分类中，分类正确的记录个数占总记录个数的比。</p>
-<br />
-
-<br />
-
-
-
-<img src="/medias/image-20200812210758979.png" style="float:left;zoom: 36%;" />
-
-<p><br /><br /></p>
-<p><strong>召回率(Recall)</strong> 也叫查全率，是指在分类中样本中的正例有多少被预测正确了。</p>
-<p>通常，准确率高时，召回率偏低；召回率高时，准确率偏低。</p>
+<p><strong>召回率(Recall)</strong> 也叫查全率，是指在分类中样本中的正例有多少被预测正确了。<br>通常，准确率高时，召回率偏低；召回率高时，准确率偏低。</p>
 <ol>
 <li><strong>地震的预测</strong><br>对于地震的预测，我们希望的是召回率非常高，也就是说每次地震我们都希望预测出来。这个时候我们可以牺牲准确率。情愿发岀1000次警报，把10次地震都预测正确了；也不要预测100次对了8次漏了两次。</li>
 <li><strong>嫌疑人定罪</strong><br>基于不错怪—个好人的原则，对于嫌疑人的定罪我们希望是非常准确的。及时有时候放过了一些罪犯(召回率低)，但也是值得的。</li>
 </ol>
-<br />
-
-<br />
-
-
-
 <img src="/medias/image-20200812211907811.png" style="zoom:50%;" />
-
-<br />
-
-<br />
-
 
 
 <p><strong>准确率(Accuracy)</strong>：分类正确的样本个数占所有样本个数的比例</p>
-<br />
-
-<br />
-
-
-
 <img src="/medias/image-20200812211532465.png" style="float:left;zoom: 33%;" />
 
-<br />
-
-<br />
+<p><br><br></p>
 
 
-
-<p><strong>平均准确率(Average per- class accuracy)</strong>：每个类别下的准确率的算术平均</p>
-<br />
-
-<br />
+<p><strong>平均准确率(Average per- class accuracy)</strong>：每个类别下的准确率的算术平均<br><img src="/medias/image-20200812211618026.png" style="float:left;zoom:33%;" /></p>
+<p><br><br></p>
 
 
+<p><strong>精确率(Precision)</strong>：分类正确的正样本个数占分类器所有的正样本个数的比例<br><img src="/medias/image-20200812211655808.png" style="float:left;zoom:33%;" /></p>
+<p><br><br></p>
 
-<img src="/medias/image-20200812211618026.png" style="float:left;zoom:33%;" />
-
-<br />
-
-<br />
-
-
-
-<p><strong>精确率(Precision)</strong>：分类正确的正样本个数占分类器所有的正样本个数的比例</p>
-<br />
-
-<br />
-
-
-
-<img src="/medias/image-20200812211655808.png" style="float:left;zoom:33%;" />
-
-<br />
-
-<br />
-
-
-
-<p><strong>召回率(Recall)</strong>：分类正确的正样本个数占正样本个数的比例</p>
-<br />
-
-<br />
-
-
-
-<img src="/medias/image-20200812211738354.png" style="float:left;zoom:33%;" />
-
-<br />
-
-<br />
+<p><strong>召回率(Recall)</strong>：分类正确的正样本个数占正样本个数的比例<br><img src="/medias/image-20200812211738354.png" style="float:left;zoom:33%;" /></p>
+<p><br><br></p>
 
 
 
 <p><strong>F1- Score</strong>：精确率与召回率的调和平均值，它的值更接近于 Precision 与 Recall 中较小的值</p>
-<br />
-
-<br />
-
-
-
 <img src="/medias/image-20200812211802440.png" style="float:left;zoom:33%;" />
 
-<br />
-
-<br />
-
-
-
+<p><br><br></p>
 
 <p><strong>AUC(Area under the Curve(Receiver Operating Characteristic， ROC))</strong><br><strong>ROC</strong>：纵轴：真正例率 TPR；横轴：假正例率 FPR<br><strong>AUC</strong> 是 ROC 曲线下的面积。一般来说，如果ROC是光滑的，那么基本可以判断没有太大的 overfitting，这个时候调模型可以只看 AUC，面积越大一般认为模型越好。</p>
-<br />
+<p><br><br></p>
 
 <img src="/medias/image-20200812212012072.png" style="zoom:50%;" />
 
-<br />
+<p><br><br></p>
 
 <p><strong>PR曲线</strong>：根据学习器的预测结果按正例可能性大小对样例进行排序，并逐个把样本作为正例进行预测。</p>
 <p>√ 如果一个学习器的<strong>PR曲线</strong>包住了另一个，则可以认为A的性能优于C<br>√ 如果有交叉，如A、B，综合考虑 PR 性能引入<strong>平衡点(BEP)</strong>，基于BEP比较，A优于B</p>
-<br />
-
-<br />
+<p><br><br></p>
 
 <img src="/medias/image-20200812212505976.png" style="zoom:50%;" />
 
-<br />
-
-
+<p><br><br></p>
 
 
 
 <img src="/medias/image-20200812212606762.png" style="zoom:40%;" />
 
-<br />
-
+<p><br><br></p>
 
 
 
 
 <p><strong>宏平均&amp;微平均</strong><br>多分类问题中，若能得到<strong>多个混淆矩阵</strong>，例如多次训练测试的结果，多分类的两两混淆短。</p>
-<br />
+<img src="/medias/image-20200812213023222.png" style="float:left;zoom:50%;" />
 
-
-
-<img src="/medias/image-20200812213023222.png" style="zoom:50%;" />
-
-<br />
+<p><br><br></p>
 
 
 
 <p><strong>对数损失</strong>(Log loss) 亦被称为逻辑回归损失(Logistic regression loss)或交叉熵损失(Cross-entropy loss)。</p>
 <p><strong>二分类问题</strong>：y∈{0，1} 且P=Pr(y=1) 则对每个样本的对数损失为<br>L<del>log</del> (y， p) = -logPr(ylp) = -(ylog(p)+(1-y)log(1-p))</p>
 <p><strong>多分类问题</strong>：设 Y 为指示矩阵，即当样本的分类为 k，y<del>i，k</del>=1 设 P 为估计的概率矩阵，p<del>i，k</del>=Pr(t<del>i，k</del>=1)则对每个样本的对数损失为</p>
-<br />
-
-<br />
-
 <img src="/medias/image-20200812224339654.png" style="zoom:33%;" />
-
-<br />
-
-
-
-<h5 id="3-8-3-性能评价指标——回归"><a href="#3-8-3-性能评价指标——回归" class="headerlink" title="3.8.3 性能评价指标——回归"></a>3.8.3 性能评价指标——回归</h5><p><strong>平均绝对误差</strong>：平均绝对误差MAE(Mean Absolute Error)又被称为l1范数损失(l1- norm loss)</p>
-<br />
-
-<br />
+<p><br><br></p>
 
 
 
-<img src="/medias/image-20200812224619460.png" style="float:left;zoom: 33%;" />
-
-<p><br /><br /></p>
-<p><strong>平均平方误差</strong>：平均平方误差MSE( Mean Squared Error)又被称为l2范数损失(l2-norm loss)</p>
-<p><br /><br /></p>
-<img src="/medias/image-20200812224719766.png" style="float:left;zoom:33%;" />
-
-<br />
-
-<br />
+<h5 id="3-8-3-性能评价指标——回归"><a href="#3-8-3-性能评价指标——回归" class="headerlink" title="3.8.3 性能评价指标——回归"></a>3.8.3 性能评价指标——回归</h5><p><strong>平均绝对误差</strong>：平均绝对误差MAE(Mean Absolute Error)又被称为l1范数损失(l1- norm loss)<br><img src="/medias/image-20200812224619460.png" style="float:left;zoom: 33%;" /></p>
+<p><br><br></p>
 
 
 
-<p><strong>均方根差RMSE</strong>：<br><strong>R Squared</strong>：是将预测值跟只使用均值的情况下相比，看能好多少。</p>
-<br />
-
-<br />
+<p><strong>平均平方误差</strong>：平均平方误差MSE( Mean Squared Error)又被称为l2范数损失(l2-norm loss)<br><img src="/medias/image-20200812224719766.png" style="float:left;zoom:33%;" /></p>
+<p><br><br></p>
 
 
-
-<img src="/medias/image-20200812224749117.png" style="zoom:33%;" />
-
-<br />
-
-<br />
+<p><strong>均方根差RMSE</strong>：<br><strong>R Squared</strong>：是将预测值跟只使用均值的情况下相比，看能好多少。<br><img src="/medias/image-20200812224749117.png" style="float:left;zoom:33%;" /></p>
+<p><br><br></p>
 
 
 
@@ -1157,6 +954,110 @@
 <p><strong>内部指标</strong>对聚类数据结构上的描述，类內距离小，类间距离大较好。</p>
 <p><strong>DB指数( Davies-Bouldin Index，简称DBI)</strong>：衡量同一簇中数据的紧密性，越小越好。<br><strong>Dunn指数( Dunn Index简称DI)</strong>：衡量同一簇中数据的紧密性，越大越好。<br><strong>Silouette</strong>：衡量同一簇中数据的紧密性，越大越好。<br><strong>Modurity</strong>：衡量模块性，越大越好。</p>
 <h3 id="4、课程实践"><a href="#4、课程实践" class="headerlink" title="4、课程实践"></a>4、课程实践</h3><p>实践：鸢尾花分类</p>
+<img src="C:\Users\hsiehchou\AppData\Roaming\Typora\typora-user-images\image-20200815092332525.png" style="zoom:50%;" />
+
+<p>当数据集在原始特征中不是线性可分的时候，支持向量机采用了引入映射函数Φ(·)的策略：通过映射函数将特征空间映射为更高维的空间，在原始空间中不可分的数据在高维空间中可能变成线性可分，此时再在空间再运用SVM，因此我们就需要使用核函数。</p>
+<p>包含150个数据，分为3类，每类50个数据，每个数据包含5个属性。0：Sepal.Length（花萼长度）；1: Sepal.Width（花萼宽度）；2：Petal.Length（花瓣长度）；3：Petal.Width（花瓣宽度）；4： 种类：Iris Setosa（山鸢尾）、Iris Versicolour（杂色鸢尾），以及Iris<br>Virginica（维吉尼亚鸢尾）</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ！pip install matplotlib</span>
+
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">from</span> matplotlib <span class="token keyword">import</span> colors
+<span class="token keyword">from</span> sklearn <span class="token keyword">import</span> svm
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>svm <span class="token keyword">import</span> SVC
+<span class="token keyword">from</span> sklearn <span class="token keyword">import</span> model_selection
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> matplotlib <span class="token keyword">as</span> mpl
+
+<span class="token comment" spellcheck="true"># *********将字符串转为整型*********</span>
+<span class="token keyword">def</span> <span class="token function">iris_type</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    it <span class="token operator">=</span> <span class="token punctuation">{</span>b<span class="token string">'Iris-setosa'</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> b<span class="token string">'Iris-versicolor'</span><span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span> b<span class="token string">'Iris-virginica'</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span>
+    <span class="token keyword">return</span> it<span class="token punctuation">[</span>s<span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">show_accuracy</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> tip<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    acc <span class="token operator">=</span> a<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> b<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'%s Accuracy: %.3f'</span> <span class="token operator">%</span><span class="token punctuation">(</span>tip<span class="token punctuation">,</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">(</span>acc<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">print_accuracy</span><span class="token punctuation">(</span>clf<span class="token punctuation">,</span> x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 分别打印训练集和测试集的准确率 score(x_train, y_train):表示输出x_train, y_train在模型上的准确率</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'training prediction: %.3f'</span> <span class="token operator">%</span><span class="token punctuation">(</span>clf<span class="token punctuation">.</span>score<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'test data prediction: %.3f'</span> <span class="token operator">%</span><span class="token punctuation">(</span>clf<span class="token punctuation">.</span>score<span class="token punctuation">(</span>x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 原始结果与预测结果进行对比 predict()表示对x_train样本进行预测，返回样本类别</span>
+    show_accuracy<span class="token punctuation">(</span>clf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>x_train<span class="token punctuation">)</span><span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> <span class="token string">'traing data'</span><span class="token punctuation">)</span>
+    show_accuracy<span class="token punctuation">(</span>clf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>x_test<span class="token punctuation">)</span><span class="token punctuation">,</span> y_test<span class="token punctuation">,</span> <span class="token string">'testing data'</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 计算决策函数的值，表示x到各分割平面的距离</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'decision_function:\n'</span><span class="token punctuation">,</span> clf<span class="token punctuation">.</span>decision_function<span class="token punctuation">(</span>x_train<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">draw</span><span class="token punctuation">(</span>clf<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    iris_feature <span class="token operator">=</span> <span class="token string">'sepal length'</span><span class="token punctuation">,</span> <span class="token string">'sepal width'</span><span class="token punctuation">,</span> <span class="token string">'petal length'</span><span class="token punctuation">,</span> <span class="token string">'petal width'</span>
+    <span class="token comment" spellcheck="true"># 开始画图</span>
+    x1_min<span class="token punctuation">,</span> x1_max <span class="token operator">=</span> x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>min<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>max<span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true"># 第0列的范围</span>
+    x2_min<span class="token punctuation">,</span> x2_max <span class="token operator">=</span> x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>min<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>max<span class="token punctuation">(</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true"># 第1列的范围</span>
+    x1<span class="token punctuation">,</span> x2 <span class="token operator">=</span> np<span class="token punctuation">.</span>mgrid<span class="token punctuation">[</span>x1_min<span class="token punctuation">:</span>x1_max<span class="token punctuation">:</span><span class="token number">200j</span><span class="token punctuation">,</span> x2_min<span class="token punctuation">:</span>x2_max<span class="token punctuation">:</span><span class="token number">200j</span><span class="token punctuation">]</span>   <span class="token comment" spellcheck="true"># 生成网格采样点</span>
+    grid_test <span class="token operator">=</span> np<span class="token punctuation">.</span>stack<span class="token punctuation">(</span><span class="token punctuation">(</span>x1<span class="token punctuation">.</span>flat<span class="token punctuation">,</span> x2<span class="token punctuation">.</span>flat<span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>            <span class="token comment" spellcheck="true"># 测试点</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'grid_test:\n'</span><span class="token punctuation">,</span> grid_test<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 输出样本到决策面的距离</span>
+    z <span class="token operator">=</span> clf<span class="token punctuation">.</span>decision_function<span class="token punctuation">(</span>grid_test<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'the distance to decision plane:\n'</span><span class="token punctuation">,</span> z<span class="token punctuation">)</span>
+
+    grid_hat <span class="token operator">=</span> clf<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>grid_test<span class="token punctuation">)</span>       <span class="token comment" spellcheck="true"># 预测分类得到[0,0,...,2,2,2]</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'grid_hat:\n'</span><span class="token punctuation">,</span> grid_hat<span class="token punctuation">)</span>
+    grid_hat <span class="token operator">=</span> grid_hat<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>x1<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># reshape grid_hat和x1形状一致</span>
+                                            <span class="token comment" spellcheck="true"># 若3*3矩阵e,则e.shape()为3*3，表示3行3列</span>
+    cm_light <span class="token operator">=</span> mpl<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>ListedColormap<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'#A0FFA0'</span><span class="token punctuation">,</span> <span class="token string">'#FFA0A0'</span><span class="token punctuation">,</span> <span class="token string">'#A0A0FF'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    cm_dark <span class="token operator">=</span> mpl<span class="token punctuation">.</span>colors<span class="token punctuation">.</span>ListedColormap<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'g'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>pcolormesh<span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> grid_hat<span class="token punctuation">,</span> cmap<span class="token operator">=</span>cm_light<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># pcolormesh(x, y, z, cmap)这里参数代入</span>
+                                                     <span class="token comment" spellcheck="true"># x1, x2， grid_hat, cmap=cm_light绘制的是背景</span>
+    plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>c<span class="token operator">=</span>np<span class="token punctuation">.</span>squeeze<span class="token punctuation">(</span>y<span class="token punctuation">)</span><span class="token punctuation">,</span> edgecolor<span class="token operator">=</span><span class="token string">'k'</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> cmap<span class="token operator">=</span>cm_dark<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 样本点</span>
+    plt<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x_test<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> x_test<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">120</span><span class="token punctuation">,</span> facecolor<span class="token operator">=</span><span class="token string">'none'</span><span class="token punctuation">,</span> zorder<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># 测试点</span>
+    plt<span class="token punctuation">.</span>xlabel<span class="token punctuation">(</span>iris_feature<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>ylabel<span class="token punctuation">(</span>iris_feature<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>xlim<span class="token punctuation">(</span>x1_min<span class="token punctuation">,</span> x1_max<span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>ylim<span class="token punctuation">(</span>x2_min<span class="token punctuation">,</span> x2_max<span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'svm in iris data classification'</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>grid<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">classifier</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    clf <span class="token operator">=</span> svm<span class="token punctuation">.</span>SVC<span class="token punctuation">(</span>C<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span>                            <span class="token comment" spellcheck="true"># 误差项惩罚系数</span>
+                  kernel<span class="token operator">=</span><span class="token string">'linear'</span><span class="token punctuation">,</span>                  <span class="token comment" spellcheck="true"># 线性核 kernel="rbf":高斯核</span>
+                  decision_function_shape<span class="token operator">=</span><span class="token string">'ovr'</span> <span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># 决策函数</span>
+    <span class="token keyword">return</span> clf
+
+<span class="token comment" spellcheck="true"># ******************训练模型*******************</span>
+<span class="token keyword">def</span>  <span class="token function">train</span><span class="token punctuation">(</span>clf<span class="token punctuation">,</span> x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>x_train<span class="token punctuation">,</span>          <span class="token comment" spellcheck="true"># 训练集特征向量</span>
+            y_train<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 训练集目标值</span>
+
+<span class="token comment" spellcheck="true"># 1.数据准备</span>
+<span class="token comment" spellcheck="true"># 1.1 加载数据</span>
+data <span class="token operator">=</span> np<span class="token punctuation">.</span>loadtxt<span class="token punctuation">(</span><span class="token string">'C:/Users/hsiehchou/Desktop/iris.data'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true"># 数据文件路径</span>
+                  dtype<span class="token operator">=</span>float<span class="token punctuation">,</span>                            <span class="token comment" spellcheck="true"># 数据类型</span>
+                  delimiter<span class="token operator">=</span><span class="token string">','</span><span class="token punctuation">,</span>                          <span class="token comment" spellcheck="true"># 数据分隔符</span>
+                  converters<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">:</span>iris_type<span class="token punctuation">}</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true"># 将第5列使用函数iris_type进行转换</span>
+
+<span class="token comment" spellcheck="true"># 1.2 数据分割</span>
+x<span class="token punctuation">,</span> y <span class="token operator">=</span> np<span class="token punctuation">.</span>split<span class="token punctuation">(</span>data<span class="token punctuation">,</span>       <span class="token comment" spellcheck="true"># 数组数据</span>
+                <span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">,</span>       <span class="token comment" spellcheck="true"># 第5列开始往后为y</span>
+                axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># 代表纵向分割，按列分割</span>
+x <span class="token operator">=</span> x<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span>
+x_train<span class="token punctuation">,</span> x_test<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> y_test<span class="token operator">=</span>model_selection<span class="token punctuation">.</span>train_test_split<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token comment" spellcheck="true"># 被划分的样本特征集</span>
+                                                                  y<span class="token punctuation">,</span> <span class="token comment" spellcheck="true"># 被划分的样本标签</span>
+                                                                  random_state<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true"># 随机数种子</span>
+                                                                  test_size<span class="token operator">=</span><span class="token number">0.3</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 测试样本占比</span>
+
+<span class="token comment" spellcheck="true"># print(x_train)</span>
+<span class="token comment" spellcheck="true"># print(y_train)</span>
+<span class="token comment" spellcheck="true"># 2.定义模型：SVM模型定义</span>
+clf<span class="token operator">=</span>classifier<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 3.训练模型</span>
+train<span class="token punctuation">(</span>clf<span class="token punctuation">,</span> x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 4.模型评估 </span>
+print_accuracy<span class="token punctuation">(</span>clf<span class="token punctuation">,</span> x_train<span class="token punctuation">,</span> y_train<span class="token punctuation">,</span> x_test<span class="token punctuation">,</span> y_test<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 5.模型使用</span>
+draw<span class="token punctuation">(</span>clf<span class="token punctuation">,</span> x<span class="token punctuation">)</span></code></pre>
+<p>输出：</p>
+<p>training prediction: 0.819<br>test data prediction: 0.778<br>traing data Accuracy: 0.819<br>testing data Accuracy: 0.778<br>decision_function:<br> [[-0.30200388  1.26702365  2.28292526]<br> [ 2.1831931  -0.19913458  1.06956422]<br> [ 2.25424706  0.79489006 -0.20587224]<br> [ 2.22927055  0.98556708 -0.22777916]<br> [ 0.95815482  2.18401419 -0.17375192]<br> [ 2.23120771  0.84075865 -0.19144453]<br> [ 2.17327158 -0.14884286  0.92795057]<br> [-0.28667175  1.11372202  2.28302495]<br> [-0.27989264  1.21274017  2.25881762]<br> [-0.29313813  1.24442795  2.2732035 ]<br> [-0.27008816  1.2272086   2.22682127]<br> [-0.25981661  2.21998499  1.20479842]<br> [-0.17071168  0.99542159  2.17180911]<br> [-0.30018876  1.25829325  2.2829419 ]<br> [-0.17539342  2.15368837  1.06772814]<br> [ 2.25702986  0.81715893 -0.22763295]<br> [-0.23988847  2.23286001  1.06656755]<br> [-0.26915223  2.23333222  1.21679709]<br> [ 2.22927055  0.98556708 -0.22777916]<br> [ 2.2530903   0.85932358 -0.2359772 ]<br> [-0.26740532  1.20784059  2.23528903]<br> [ 2.26803658  0.80468578 -0.24299359]<br> [-0.24030826  1.18556963  2.19011259]<br> [-0.25881807  1.17240759  2.23535197]<br> [-0.27273902  1.20332527  2.24866913]<br> [-0.20956348  2.19674141  1.06726512]<br> [-0.26556065  1.16490628  2.24871607]<br> [-0.22965507  1.17870942  2.17146651]<br> [ 2.25807657 -0.22526231  0.80881977]<br> [-0.27322701  2.25917947  1.17077691]<br> [-0.26638767  1.21631409  2.22685842]<br> [-0.26740532  1.20784059  2.23528903]<br> [-0.12135744  2.22922779  0.79343961]<br> [-0.2365929   1.12219635  2.21706342]<br> [-0.21558048  2.22640865  0.92573306]<br> [ 2.22344499 -0.19955645  0.88288227]<br> [ 2.22671228  0.93600592 -0.21794279]<br> [ 2.26578978 -0.24701281  0.82742467]<br> [-0.26556065  1.16490628  2.24871607]<br> [ 2.26204658  0.89725133 -0.25453765]<br> [-0.2518152   2.22343258  1.17120859]<br> [-0.27340098  1.23624732  2.22678409]<br> [-0.21624631  2.17118121  1.14723861]<br> [ 2.22874494 -0.17513313  0.8269183 ]<br> [ 2.2211989   0.87213971 -0.19151045]<br> [-0.23391072  2.21566697  1.11400955]<br> [ 2.22671228  0.93600592 -0.21794279]<br> [-0.29609931  1.25285329  2.27596663]<br> [-0.25476857  1.20746943  2.20485252]<br> [-0.29672783  1.24461331  2.28083131]<br> [-0.27578664  1.21663499  2.24864564]<br> [-0.28091389  2.25930846  1.21661886]<br> [-0.21369288  1.05233452  2.20512234]<br> [-0.27669555  1.12529292  2.27023906]<br> [-0.16942442  2.17056098  0.99533295]<br> [ 2.24933086 -0.25468768  1.0709247 ]<br> [-0.23391072  2.21566697  1.11400955]<br> [ 2.18638944  1.20994285 -0.24936796]<br> [-0.22656825  2.23557826  0.92551338]<br> [-0.27989264  1.21274017  2.25881762]<br> [ 2.24156015  0.83211053 -0.20597859]<br> [-0.28390119  1.23920595  2.25400509]<br> [ 2.24837463  0.81114157 -0.20592544]<br> [ 2.25702986  0.81715893 -0.22763295]<br> [-0.22765797  1.07419821  2.21710769]<br> [-0.18996302  2.19089984  0.99497945]<br> [-0.27357394  1.19278157  2.25408746]<br> [ 2.23355717  0.86019975 -0.2060317 ]<br> [ 2.25277813 -0.21394322  0.80875361]<br> [-0.18611572  1.10670475  2.14746524]<br> [ 2.25454797  0.88341904 -0.24307373]<br> [-0.23391072  2.21566697  1.11400955]<br> [ 2.23794605  0.91585392 -0.22774264]<br> [-0.26740532  1.20784059  2.23528903]<br> [ 2.0914977   1.20089769 -0.21820392]<br> [ 2.25962348  0.84878847 -0.24304703]<br> [-0.25213485  1.16423702  2.22696973]<br> [ 2.26725005  0.88232062 -0.25923379]<br> [-0.14201734  2.14344591  0.99568721]<br> [ 2.25731     0.95572321 -0.25455798]<br> [-0.22656825  2.23557826  0.92551338]<br> [-0.19708433  2.25161696  0.79328185]<br> [ 2.23957622  0.81769302 -0.19137855]<br> [ 2.21575566  1.0173258  -0.21798639]<br> [ 1.02668315  2.21468275 -0.21824732]<br> [ 2.27472592  0.77777882 -0.24294008]<br> [-0.21624631  2.17118121  1.14723861]<br> [-0.24730284  1.20252603  2.19004536]<br> [ 2.24156015  0.83211053 -0.20597859]<br> [-0.27273902  1.20332527  2.24866913]<br> [-0.19455078  2.17814555  1.06749683]<br> [-0.28027257  2.2623408   1.20447285]<br> [-0.28054312  1.20372124  2.26304729]<br> [-0.23391072  2.21566697  1.11400955]<br> [ 2.17896853 -0.12686338  0.8824238 ]<br> [ 2.19820639  1.04471124 -0.20619077]<br> [-0.26313706  2.23602532  1.18984329]<br> [-0.25331913  2.21599142  1.18997806]<br> [-0.28966527  1.23403227  2.27016072]<br> [-0.23157808  2.22314802  1.06680048]<br> [-0.26533811  1.22371567  2.21684157]<br> [-0.25751543  1.18608093  2.22693265]<br> [-0.27562627  2.24825903  1.21670804]<br> [-0.27273902  1.20332527  2.24866913]<br> [ 2.22671228  0.93600592 -0.21794279]]<br>grid_test:<br> [[4.3        2.        ]<br> [4.3        2.02964824]<br> [4.3        2.05929648]<br> …<br> [7.9        7.84070352]<br> [7.9        7.87035176]<br> [7.9        7.9       ]]<br>the distance to decision plane:<br> [[ 2.17689921  1.23467171 -0.25941323]<br> [ 2.18299337  1.23207323 -0.25940793]<br> [ 2.18863052  1.22933417 -0.25940262]<br> …<br> [ 2.2767579  -0.3057805   1.28707644]<br> [ 2.27757531 -0.30597655  1.28707851]<br> [ 2.27836945 -0.30616983  1.28708059]]<br>grid_hat:<br> [0. 0. 0. … 0. 0. 0.]</p>
+<p><img src="/medias/202008150958123.png" alt=""></p>
 
             </div>
             <hr/>
@@ -1677,7 +1578,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">488.7k</span>&nbsp;字
+                class="white-color">490.3k</span>&nbsp;字
             
             
             
