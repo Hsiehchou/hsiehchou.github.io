@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> Python </category>
+          <category> 机器学习 </category>
           
       </categories>
       
@@ -65,7 +65,7 @@
       
       <categories>
           
-          <category> Python </category>
+          <category> 机器学习 </category>
           
       </categories>
       
@@ -73,6 +73,8 @@
         <tags>
             
             <tag> Python </tag>
+            
+            <tag> 机器学习 </tag>
             
         </tags>
       
