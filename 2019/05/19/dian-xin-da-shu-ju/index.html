@@ -1,4 +1,227 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="电信大数据, 谢舟，博客，大数据，Java"><meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="baidu-site-verification" content="2VN5bX64Cz"><title>电信大数据 | 谢舟的博客</title><link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/favicon.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/awesome/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/animate/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/matery.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/my.css"><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/jquery/jquery.min.js"></script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml"><link rel="stylesheet" href="/css/prism-tomorrow.css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><div><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">谢舟的博客</span></div></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom:.6"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom:.6"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">谢舟的博客</div><div class="logo-desc">发布关于大数据,Java的一些信息和自己实践中的经验</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li></ul></div></div></nav></header><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/cryptojs/crypto-js.min.js"></script><script>(function() {
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="电信大数据, 谢舟，博客，大数据，Java">
+    <meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="baidu-site-verification" content="2VN5bX64Cz" />
+    <title>电信大数据 | 谢舟的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+					<div>
+						
+						<img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+						
+						<span class="logo-span">谢舟的博客</span>
+					</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">谢舟的博客</div>
+        <div class="logo-desc">
+            
+            发布关于大数据,Java的一些信息和自己实践中的经验
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
         let pwd = 'fe154608ff5f3a34f6191987f32d750cb7ea2c0960b93c66def4d51b996ed3e7';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
@@ -6,7 +229,291 @@
                 location.href = '/';
             }
         }
-    })();</script><div class="bg-cover pd-header post-cover" style="background-image:url(https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/15.jpg)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">电信大数据</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{height:calc(100vh - 250px);overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px}#toc-content .is-active-link{color:#42b983}#toc-content .is-active-link::before{background-color:#42b983}#floating-toc-btn{position:fixed;right:15px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/"><span class="chip bg-color">大数据项目</span></a> <a href="/tags/%E7%94%B5%E4%BF%A1/"><span class="chip bg-color">电信</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/" class="post-category">大数据项目</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2019-05-19</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 19.4k</div><div class="info-break-policy"><i class="far fa-clock fa-fw"></i> 阅读时长:&nbsp;&nbsp; 102 分</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h3 id="一、项目背景"><a href="#一、项目背景" class="headerlink" title="一、项目背景"></a>一、项目背景</h3><p>通信运营商每时每刻会产生大量的通信数据，例如通话记录，短信记录，彩信记录，第三方服务资费等等繁多信息。数据量如此巨大，除了要满足用户的实时查询和展示之外，还需要定时定期的对已有数据进行离线的分析处理。例如，当日话单，月度话单，季度话单，年度话单，通话详情，通话记录等等+。我们以此为背景，寻找一个切入点，学习其中的方法论</p><h3 id="二、项目架构"><a href="#二、项目架构" class="headerlink" title="二、项目架构"></a>二、项目架构</h3><p><img src="/medias/%E7%94%B5%E4%BF%A1%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84.PNG" alt="电信项目架构"></p><h3 id="三、项目实现"><a href="#三、项目实现" class="headerlink" title="三、项目实现"></a>三、项目实现</h3><p><strong>系统环境</strong></p><table><thead><tr><th align="center">系统</th><th align="center">版本</th></tr></thead><tbody><tr><td align="center">windows</td><td align="center">10 专业版</td></tr><tr><td align="center">linux</td><td align="center">CentOS7.2 1611内核</td></tr></tbody></table><p><strong>开发工具</strong></p><table><thead><tr><th align="center">工具</th><th align="center">版本</th></tr></thead><tbody><tr><td align="center">idea</td><td align="center">2018.2.5旗舰版</td></tr><tr><td align="center">maven</td><td align="center">3.3.9</td></tr><tr><td align="center">JDK</td><td align="center">1.8+</td></tr></tbody></table><p><strong>尖叫提示</strong>：idea2018.2.5必须使用Maven3.3.9，不要使用Maven3.5，有部分兼容性问题</p><h3 id="四、数据生产"><a href="#四、数据生产" class="headerlink" title="四、数据生产"></a>四、数据生产</h3><p>此情此景，对于该模块的业务，即数据生产过程，一般并不会让你来进行操作，数据生产是一套完整且严密的体系，这样可以保证数据的鲁棒性。但是如果涉及到项目的一体化方案的设计（数据的产生、存储、分析、展示），则必须清楚每一个环节是如何处理的，包括其中每个环境可能隐藏的问题；数据结构，数据内容可能出现的问题</p><h4 id="1、数据结构"><a href="#1、数据结构" class="headerlink" title="1、数据结构"></a>1、数据结构</h4><p>我们将在HBase中存储两个电话号码，以及通话建立的时间和通话持续时间，最后再加上一个flag作为判断第一个电话号码是否为主叫。姓名字段的存储我们可以放置于另外一张表做关联查询，当然也可以插入到当前表中</p><table><thead><tr><th align="center">列名</th><th align="center">解释</th><th align="center">举例</th></tr></thead><tbody><tr><td align="center">caller</td><td align="center">第一个手机号码</td><td align="center">15369468720</td></tr><tr><td align="center">callerName</td><td align="center">第一个手机号码人姓名(非必须)</td><td align="center">李雁</td></tr><tr><td align="center">callee</td><td align="center">第二个手机号码</td><td align="center">19920860202</td></tr><tr><td align="center">calleename</td><td align="center">第二个手机号码人姓名(非必须)</td><td align="center">卫艺</td></tr><tr><td align="center">dateTime</td><td align="center">建立通话的时间</td><td align="center">20181126091236</td></tr><tr><td align="center">date_time_ts</td><td align="center">建立通话的时间（时间戳形式）</td><td align="center"></td></tr><tr><td align="center">duration</td><td align="center">通话持续时间（秒）</td><td align="center">0820</td></tr><tr><td align="center">flag</td><td align="center">用于标记本次通话第一个字段(caller)是主叫还是被叫</td><td align="center">1为主叫，0为被叫</td></tr></tbody></table><h4 id="2、编写代码"><a href="#2、编写代码" class="headerlink" title="2、编写代码"></a>2、编写代码</h4><p><strong>思路</strong><br>a）创建Java集合类存放模拟的电话号码和联系人；<br>b） 随机选取两个手机号码当做“主叫”与“被叫”（注意判断两个手机号不能重复），产出<strong>caller</strong>与<strong>call2</strong>字段数据；<br>c） 创建随机生成通话建立时间的方法，可指定随机范围，最后生成通话建立时间，产出<strong>date_time</strong>字段数据；<br>d）随机一个通话时长，单位：秒，产出<strong>duration</strong>字段数据；<br>e）将产出的一条数据拼接封装到一个字符串中；<br>f）使用IO操作将产出的一条通话数据写入到本地文件中;</p><p>新建module项目：<strong>ct_producer</strong></p><p><strong>父pom.xml文件配置</strong></p><pre><code>&lt;properties&gt;
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/15.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">电信大数据</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/">
+                                <span class="chip bg-color">大数据项目</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%94%B5%E4%BF%A1/">
+                                <span class="chip bg-color">电信</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                大数据项目
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-05-19
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    19.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    102 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="一、项目背景"><a href="#一、项目背景" class="headerlink" title="一、项目背景"></a>一、项目背景</h3><p>通信运营商每时每刻会产生大量的通信数据，例如通话记录，短信记录，彩信记录，第三方服务资费等等繁多信息。数据量如此巨大，除了要满足用户的实时查询和展示之外，还需要定时定期的对已有数据进行离线的分析处理。例如，当日话单，月度话单，季度话单，年度话单，通话详情，通话记录等等+。我们以此为背景，寻找一个切入点，学习其中的方法论</p>
+<h3 id="二、项目架构"><a href="#二、项目架构" class="headerlink" title="二、项目架构"></a>二、项目架构</h3><p><img src="/medias/%E7%94%B5%E4%BF%A1%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84.PNG" alt="电信项目架构"> </p>
+<h3 id="三、项目实现"><a href="#三、项目实现" class="headerlink" title="三、项目实现"></a>三、项目实现</h3><p><strong>系统环境</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">系统</th>
+<th align="center">版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">windows</td>
+<td align="center">10 专业版</td>
+</tr>
+<tr>
+<td align="center">linux</td>
+<td align="center">CentOS7.2 1611内核</td>
+</tr>
+</tbody></table>
+<p><strong>开发工具</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">工具</th>
+<th align="center">版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">idea</td>
+<td align="center">2018.2.5旗舰版</td>
+</tr>
+<tr>
+<td align="center">maven</td>
+<td align="center">3.3.9</td>
+</tr>
+<tr>
+<td align="center">JDK</td>
+<td align="center">1.8+</td>
+</tr>
+</tbody></table>
+<p><strong>尖叫提示</strong>：idea2018.2.5必须使用Maven3.3.9，不要使用Maven3.5，有部分兼容性问题</p>
+<h3 id="四、数据生产"><a href="#四、数据生产" class="headerlink" title="四、数据生产"></a>四、数据生产</h3><p>此情此景，对于该模块的业务，即数据生产过程，一般并不会让你来进行操作，数据生产是一套完整且严密的体系，这样可以保证数据的鲁棒性。但是如果涉及到项目的一体化方案的设计（数据的产生、存储、分析、展示），则必须清楚每一个环节是如何处理的，包括其中每个环境可能隐藏的问题；数据结构，数据内容可能出现的问题</p>
+<h4 id="1、数据结构"><a href="#1、数据结构" class="headerlink" title="1、数据结构"></a>1、数据结构</h4><p>我们将在HBase中存储两个电话号码，以及通话建立的时间和通话持续时间，最后再加上一个flag作为判断第一个电话号码是否为主叫。姓名字段的存储我们可以放置于另外一张表做关联查询，当然也可以插入到当前表中</p>
+<table>
+<thead>
+<tr>
+<th align="center">列名</th>
+<th align="center">解释</th>
+<th align="center">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">caller</td>
+<td align="center">第一个手机号码</td>
+<td align="center">15369468720</td>
+</tr>
+<tr>
+<td align="center">callerName</td>
+<td align="center">第一个手机号码人姓名(非必须)</td>
+<td align="center">李雁</td>
+</tr>
+<tr>
+<td align="center">callee</td>
+<td align="center">第二个手机号码</td>
+<td align="center">19920860202</td>
+</tr>
+<tr>
+<td align="center">calleename</td>
+<td align="center">第二个手机号码人姓名(非必须)</td>
+<td align="center">卫艺</td>
+</tr>
+<tr>
+<td align="center">dateTime</td>
+<td align="center">建立通话的时间</td>
+<td align="center">20181126091236</td>
+</tr>
+<tr>
+<td align="center">date_time_ts</td>
+<td align="center">建立通话的时间（时间戳形式）</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">duration</td>
+<td align="center">通话持续时间（秒）</td>
+<td align="center">0820</td>
+</tr>
+<tr>
+<td align="center">flag</td>
+<td align="center">用于标记本次通话第一个字段(caller)是主叫还是被叫</td>
+<td align="center">1为主叫，0为被叫</td>
+</tr>
+</tbody></table>
+<h4 id="2、编写代码"><a href="#2、编写代码" class="headerlink" title="2、编写代码"></a>2、编写代码</h4><p><strong>思路</strong><br>a）创建Java集合类存放模拟的电话号码和联系人；<br>b） 随机选取两个手机号码当做“主叫”与“被叫”（注意判断两个手机号不能重复），产出<strong>caller</strong>与<strong>call2</strong>字段数据；<br>c） 创建随机生成通话建立时间的方法，可指定随机范围，最后生成通话建立时间，产出<strong>date_time</strong>字段数据；<br>d）随机一个通话时长，单位：秒，产出<strong>duration</strong>字段数据；<br>e）将产出的一条数据拼接封装到一个字符串中；<br>f）使用IO操作将产出的一条通话数据写入到本地文件中;</p>
+<p>新建module项目：<strong>ct_producer</strong></p>
+<p><strong>父pom.xml文件配置</strong></p>
+<pre><code>&lt;properties&gt;
         &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
     &lt;/properties&gt;
 
@@ -42,7 +549,8 @@
             &lt;/plugin&gt;
 
         &lt;/plugins&gt;
-    &lt;/build&gt;</code></pre><p>（1）随机输入一些手机号码以及联系人，保存于Java的集合中<br>新建类：ProductLog</p><pre><code>package producer;
+    &lt;/build&gt;</code></pre><p>（1）随机输入一些手机号码以及联系人，保存于Java的集合中<br>新建类：ProductLog</p>
+<pre><code>package producer;
 
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
@@ -106,7 +614,8 @@ public class ProductLog {
         phoneNameMap.put(&quot;16264433631&quot;, &quot;周朝王&quot;);
         phoneNameMap.put(&quot;17601615878&quot;, &quot;谢都都&quot;);
         phoneNameMap.put(&quot;15897468949&quot;, &quot;刘何思&quot;);
-    }</code></pre><p>（2）创建随机生成通话时间的方法：randomDate<br>该时间生成后的格式为yyyy-MM-dd HH:mm:ss，并使之可以根据传入的起始时间和结束时间来随机生成</p><pre><code>   /**
+    }</code></pre><p>（2）创建随机生成通话时间的方法：randomDate<br>该时间生成后的格式为yyyy-MM-dd HH:mm:ss，并使之可以根据传入的起始时间和结束时间来随机生成</p>
+<pre><code>   /**
      * 注：传入时间要在时间[startTime, endTime]
      * 公式：起始时间 + （结束时间 - 起始时间）* Math.random()
      * @param startTime
@@ -135,7 +644,8 @@ public class ProductLog {
         }
 
         return null;
-    }</code></pre><p>（3）创建生产日志一条日志的方法：productLog<br>随机抽取两个电话号码，随机产生通话建立时间，随机通话时长，将这几个字段拼接成一个字符串，然后return，便可以产生一条通话的记录。需要注意的是，如果随机出的两个电话号码一样，需要重新随机（随机过程可优化，但并非此次重点）。通话时长的随机为20分钟以内，即：60秒 * 30，并格式化为4位数字，例如：0600(10分钟)</p><pre><code>   /**
+    }</code></pre><p>（3）创建生产日志一条日志的方法：productLog<br>随机抽取两个电话号码，随机产生通话建立时间，随机通话时长，将这几个字段拼接成一个字符串，然后return，便可以产生一条通话的记录。需要注意的是，如果随机出的两个电话号码一样，需要重新随机（随机过程可优化，但并非此次重点）。通话时长的随机为20分钟以内，即：60秒 * 30，并格式化为4位数字，例如：0600(10分钟)</p>
+<pre><code>   /**
      * 产生数据
      * 格式： caller,callee,buildTime,duration
      * @return
@@ -173,7 +683,8 @@ public class ProductLog {
         sb.append(caller + &quot;,&quot;).append(callee + &quot;,&quot;).append(buildTime + &quot;,&quot;).append( duration);
 
         return sb.toString();
-    }</code></pre><p>（4）创建写入日志方法：writeLog<br>productLog每产生一条日志，便将日志写入到本地文件中，所以建立一个专门用于日志写入的方法，需要涉及到IO操作，需要注意的是，输出流每次写一条日之后需要flush，不然可能导致积攒多条数据才输出一次。最后需要将productLog方法放置于while死循环中执行</p><pre><code>/**
+    }</code></pre><p>（4）创建写入日志方法：writeLog<br>productLog每产生一条日志，便将日志写入到本地文件中，所以建立一个专门用于日志写入的方法，需要涉及到IO操作，需要注意的是，输出流每次写一条日之后需要flush，不然可能导致积攒多条数据才输出一次。最后需要将productLog方法放置于while死循环中执行</p>
+<pre><code>/**
  * 把数据写到文件当中
  * @param filePath
  */
@@ -191,7 +702,8 @@ public void writeLog(String filePath){
     } catch (Exception e) {
         e.printStackTrace();
     }
-}</code></pre><p>（5）在主函数中初始化以上逻辑，并测试：</p><pre><code> public static void main(String[] args) {
+}</code></pre><p>（5）在主函数中初始化以上逻辑，并测试：</p>
+<pre><code> public static void main(String[] args) {
         //args = new String[]{&quot;E:\\CT Project file\\calllog.csv&quot;};
         if(args == null || args.length &lt;= 0){
             System.out.println(&quot;没写路径&quot;);
@@ -200,8 +712,23 @@ public void writeLog(String filePath){
         ProductLog productLog = new ProductLog();
         productLog.initPhone();
         productLog.writeLog(args[0]);
-    }</code></pre><h4 id="3、打包测试"><a href="#3、打包测试" class="headerlink" title="3、打包测试"></a>3、打包测试</h4><p>1）Maven打包方式<br>分别在Windows上和Linux中进行测试：<br>java -cp jar包的绝对路径 全类名 输出路径</p><p>2）将此包放在在/opt/jar下面，并写如下脚本</p><p><strong>product.sh</strong></p><pre><code>#!bin.bash
-java -cp /opt/jars/CT_producer-1.0-SNAPSHOT.jar producer.ProductLog /opt/jars/calllog.csv</code></pre><p>3）运行<br>sh product.sh<br>产生calllog.csv文件</p><h3 id="五、数据采集-消费-存储"><a href="#五、数据采集-消费-存储" class="headerlink" title="五、数据采集/消费(存储)"></a>五、数据采集/消费(存储)</h3><p>欢迎来到数据采集模块（消费），在企业中你要清楚流式数据采集框架Flume和Kafka的定位是什么。我们在此需要将实时数据通过Flume采集到Kafka然后供给给HBase消费</p><p>Flume：Cloudera公司研发<br>适合下游数据消费者不多的情况；<br>适合数据安全性要求不高的操作；<br>适合与Hadoop生态圈对接的操作</p><p>Kafka：linkedin公司研发<br>适合数据下游消费众多的情况；<br>适合数据安全性要求较高的操作（支持replication）；</p><p><strong>因此我们常用的一种模型是</strong>：<br>线上数据 –&gt; Flume –&gt; Kafka –&gt; Flume(根据情景增删该流程) –&gt; HDFS</p><p><strong>消费存储模块流程图</strong>：</p><p><img src="/medias/%E6%B6%88%E8%B4%B9%E5%AD%98%E5%82%A8%E6%A8%A1%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9B%BE.PNG" alt="消费存储模块流程图"></p><h4 id="1、数据采集：采集实时产生的数据到kafka集群"><a href="#1、数据采集：采集实时产生的数据到kafka集群" class="headerlink" title="1、数据采集：采集实时产生的数据到kafka集群"></a>1、数据采集：采集实时产生的数据到kafka集群</h4><p>0）基础配置</p><ul><li>配置Kafka 略</li><li>配置Flume(flume2kafka.conf)</li></ul><pre><code># define
+    }</code></pre><h4 id="3、打包测试"><a href="#3、打包测试" class="headerlink" title="3、打包测试"></a>3、打包测试</h4><p>1）Maven打包方式<br>分别在Windows上和Linux中进行测试：<br>java -cp jar包的绝对路径 全类名 输出路径</p>
+<p>2）将此包放在在/opt/jar下面，并写如下脚本</p>
+<p><strong>product.sh</strong> </p>
+<pre><code>#!bin.bash
+java -cp /opt/jars/CT_producer-1.0-SNAPSHOT.jar producer.ProductLog /opt/jars/calllog.csv</code></pre><p>3）运行<br>sh product.sh<br>产生calllog.csv文件</p>
+<h3 id="五、数据采集-消费-存储"><a href="#五、数据采集-消费-存储" class="headerlink" title="五、数据采集/消费(存储)"></a>五、数据采集/消费(存储)</h3><p>欢迎来到数据采集模块（消费），在企业中你要清楚流式数据采集框架Flume和Kafka的定位是什么。我们在此需要将实时数据通过Flume采集到Kafka然后供给给HBase消费</p>
+<p>Flume：Cloudera公司研发<br>适合下游数据消费者不多的情况；<br>适合数据安全性要求不高的操作；<br>适合与Hadoop生态圈对接的操作</p>
+<p>Kafka：linkedin公司研发<br>适合数据下游消费众多的情况；<br>适合数据安全性要求较高的操作（支持replication）；</p>
+<p><strong>因此我们常用的一种模型是</strong>：<br>线上数据 –&gt; Flume –&gt; Kafka –&gt; Flume(根据情景增删该流程) –&gt; HDFS</p>
+<p><strong>消费存储模块流程图</strong>：</p>
+<p><img src="/medias/%E6%B6%88%E8%B4%B9%E5%AD%98%E5%82%A8%E6%A8%A1%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9B%BE.PNG" alt="消费存储模块流程图"> </p>
+<h4 id="1、数据采集：采集实时产生的数据到kafka集群"><a href="#1、数据采集：采集实时产生的数据到kafka集群" class="headerlink" title="1、数据采集：采集实时产生的数据到kafka集群"></a>1、数据采集：采集实时产生的数据到kafka集群</h4><p>0）基础配置</p>
+<ul>
+<li>配置Kafka 略</li>
+<li>配置Flume(flume2kafka.conf)</li>
+</ul>
+<pre><code># define
 a1.sources = r1
 a1.sinks = k1
 a1.channels = c1
@@ -225,7 +752,15 @@ a1.channels.c1.transactionCapacity = 100
 
 # bind
 a1.sources.r1.channels = c1
-a1.sinks.k1.channel = c1</code></pre><p>1）进入Flume根目录下，启动flume<br>/opt/module/flume-1.8.0/bin/flume-ng agent –conf /opt/module/flume-1.8.0/conf/ –name a1 –conf-file /opt/jars/flume2kafka.conf</p><p>2）运行生产日志的任务脚本，观察kafka控制台消费者是否成功显示产生的数据<br>$ sh productlog.sh</p><h4 id="2、编写代码：数据消费（HBase）"><a href="#2、编写代码：数据消费（HBase）" class="headerlink" title="2、编写代码：数据消费（HBase）"></a>2、编写代码：数据消费（HBase）</h4><p>如果以上操作均成功，则开始编写操作HBase的代码，用于消费数据，将产生的数据实时存储在HBase中</p><p><strong>思路</strong>：<br>a） 编写Kafka消费者，读取kafka集群中缓存的消息，并打印到控制台以观察是否成功；</p><p>b）既然能够读取到kafka中的数据了，就可以将读取出来的数据写入到HBase中，所以编写调用HBaseAPI相关方法，将从Kafka中读取出来的数据写入到HBase；</p><p>c） 以上两步已经足够完成消费数据，存储数据的任务，但是涉及到解耦，所以过程中需要将一些属性文件外部化，HBase通用性方法封装到某一个类中</p><p>创建新的module项目：<strong>ct_consumer</strong></p><p><strong>pom.xml文件配置</strong></p><pre><code>&lt;dependencies&gt;
+a1.sinks.k1.channel = c1</code></pre><p>1）进入Flume根目录下，启动flume<br>/opt/module/flume-1.8.0/bin/flume-ng agent –conf /opt/module/flume-1.8.0/conf/ –name a1 –conf-file /opt/jars/flume2kafka.conf</p>
+<p>2）运行生产日志的任务脚本，观察kafka控制台消费者是否成功显示产生的数据<br>$ sh productlog.sh</p>
+<h4 id="2、编写代码：数据消费（HBase）"><a href="#2、编写代码：数据消费（HBase）" class="headerlink" title="2、编写代码：数据消费（HBase）"></a>2、编写代码：数据消费（HBase）</h4><p>如果以上操作均成功，则开始编写操作HBase的代码，用于消费数据，将产生的数据实时存储在HBase中</p>
+<p><strong>思路</strong>：<br>a） 编写Kafka消费者，读取kafka集群中缓存的消息，并打印到控制台以观察是否成功；</p>
+<p>b）既然能够读取到kafka中的数据了，就可以将读取出来的数据写入到HBase中，所以编写调用HBaseAPI相关方法，将从Kafka中读取出来的数据写入到HBase；</p>
+<p>c） 以上两步已经足够完成消费数据，存储数据的任务，但是涉及到解耦，所以过程中需要将一些属性文件外部化，HBase通用性方法封装到某一个类中</p>
+<p>创建新的module项目：<strong>ct_consumer</strong></p>
+<p><strong>pom.xml文件配置</strong></p>
+<pre><code>&lt;dependencies&gt;
         &lt;dependency&gt;
             &lt;groupId&gt;junit&lt;/groupId&gt;
             &lt;artifactId&gt;junit&lt;/artifactId&gt;
@@ -282,7 +817,8 @@ a1.sinks.k1.channel = c1</code></pre><p>1）进入Flume根目录下，启动flum
                 &lt;/configuration&gt;
             &lt;/plugin&gt;
         &lt;/plugins&gt;
-    &lt;/build&gt;</code></pre><p>1）新建类：<strong>HBaseConsumer</strong>（kafka的package）<br>该类主要用于读取kafka中缓存的数据，然后调用HBaseAPI，持久化数据</p><pre><code>package kafka;
+    &lt;/build&gt;</code></pre><p>1）新建类：<strong>HBaseConsumer</strong>（kafka的package）<br>该类主要用于读取kafka中缓存的数据，然后调用HBaseAPI，持久化数据</p>
+<pre><code>package kafka;
 
 import hbase.HBaseDao;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -315,7 +851,8 @@ public class HBaseConsumer {
             }
         }
     }
-}</code></pre><p>2) 新建类：<strong>PropertiesUtil</strong>（utils的package）<br>该类主要用于将常用的项目所需的参数外部化，解耦，方便配置</p><pre><code>package utils;
+}</code></pre><p>2) 新建类：<strong>PropertiesUtil</strong>（utils的package）<br>该类主要用于将常用的项目所需的参数外部化，解耦，方便配置</p>
+<pre><code>package utils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -338,7 +875,8 @@ public class PropertiesUtil {
     public static String getProperty(String key){
         return properties.getProperty(key);
     }
-}</code></pre><p>3） 创建kafka.properties文件，并放置于resources目录下</p><pre><code># 设置kafka的brokerlist
+}</code></pre><p>3） 创建kafka.properties文件，并放置于resources目录下</p>
+<pre><code># 设置kafka的brokerlist
 bootstrap.servers=hsiehchou121:9092,hsiehchou122:9092,hsiehchou123:9092
 # 设置消费者所属的消费组
 group.id=hbase_consumer_group
@@ -357,7 +895,9 @@ kafka.topics=calllog
 # 设置HBase的一些变量
 hbase.calllog.regions=6
 hbase.calllog.namespace=ns_ct
-hbase.calllog.tablename=ns_ct:calllog</code></pre><p>4）将hdfs-site.xml、core-site.xml、hbase-site.xml、log4j.properties放置于resources目录</p><p>5）新建类：HBaseUtil（utils的package）<br>该类主要用于封装一些HBase的常用操作，比如创建命名空间，创建表等等</p><pre><code>package utils;
+hbase.calllog.tablename=ns_ct:calllog</code></pre><p>4）将hdfs-site.xml、core-site.xml、hbase-site.xml、log4j.properties放置于resources目录</p>
+<p>5）新建类：HBaseUtil（utils的package）<br>该类主要用于封装一些HBase的常用操作，比如创建命名空间，创建表等等</p>
+<pre><code>package utils;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HColumnDescriptor;
@@ -578,7 +1118,8 @@ public class HBaseUtil {
 
         return df.format(regionCode);
     }
-}</code></pre><p>6）新建类：ConnectionInstance（utils的package）</p><pre><code>package utils;
+}</code></pre><p>6）新建类：ConnectionInstance（utils的package）</p>
+<pre><code>package utils;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.client.Connection;
@@ -599,7 +1140,8 @@ public class ConnectionInstance {
         }
         return conn;
     }
-}</code></pre><p>7）新建类：HBaseDAO（完成以下内容后，考虑数据put的效率如何优化）（hbase的package）<br>该类主要用于执行具体的保存数据的操作，rowkey的生成规则等等</p><pre><code>package hbase;
+}</code></pre><p>7）新建类：HBaseDAO（完成以下内容后，考虑数据put的效率如何优化）（hbase的package）<br>该类主要用于执行具体的保存数据的操作，rowkey的生成规则等等</p>
+<pre><code>package hbase;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -708,7 +1250,8 @@ public class HBaseDao {
             e.printStackTrace();
         }
     }
-}</code></pre><p>8）新建类：HBaseDao（hbase的package）</p><pre><code>package hbase;
+}</code></pre><p>8）新建类：HBaseDao（hbase的package）</p>
+<pre><code>package hbase;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -817,7 +1360,16 @@ public class HBaseDao {
             e.printStackTrace();
         }
     }
-}</code></pre><h4 id="3、运行测试：HBase消费数据"><a href="#3、运行测试：HBase消费数据" class="headerlink" title="3、运行测试：HBase消费数据"></a>3、运行测试：HBase消费数据</h4><p>尖叫提示：请将Linux允许打开的文件个数和进程数进行优化，优化RegionServer与Zookeeper会话的超时时间。（参考HBase文档中优化章节）<br>项目成功后，则将项目打包后在linux中运行测试</p><p><strong>打包HBase消费者代码</strong><br>a） 在windows中，进入工程的pom.xml所在目录下（建议将该工程的pom.xml文件拷贝到其他临时目录中，例如我把pom.xml文件拷贝到了F:\maven-lib\目录下），然后使用mvn命令下载工程所有依赖的jar包<br>mvn -DoutputDirectory=./lib -DgroupId=com.hsiehchou -DartifactId=ct_consumer -Dversion=r-1.0-SNAPSHOT dependency:copy-dependencies<br>b） 使用maven打包工程<br>c） 测试执行该jar包</p><p>方案一：推荐，使用通配符，将所有依赖加入到classpath中，不可使用<em>.jar的方式<br>注意：如果是在Linux中实行，注意文件夹之间的分隔符。自己的工程要单独在cp中指定，不要直接放在maven-lib/lib目录下<br>java -cp F:\maven-lib\CT_consumerr-1.0-SNAPSHOT.jar;F:\maven-lib\lib\</em> com.hsiehchou.CT_kafka.HBaseConsumer</p><p>方案二：最最推荐，使用java.ext.dirs参数将所有依赖的目录添加进classpath中<br>注意：-Djava.ext.dirs=属性后边的路径不能为”~”<br>java -Djava.ext.dirs=F:\maven-lib\lib\ -cp F:\maven-lib\CT_consumerr-1.0-SNAPSHOT.jar com.hsiehchou.CT_consumer.kafka.HBaseConsumer</p><h4 id="4、编写代码：优化数据存储方案"><a href="#4、编写代码：优化数据存储方案" class="headerlink" title="4、编写代码：优化数据存储方案"></a>4、编写代码：优化数据存储方案</h4><p>现在我们要使用HBase查找数据时，尽可能的使用rowKey去精准的定位数据位置，而非使用ColumnValueFilter或者SingleColumnValueFilter，按照单元格Cell中的Value过滤数据，这样做在数据量巨大的情况下，效率是极低的——如果要涉及到全表扫描。所以尽量不要做这样可怕的事情。注意，这并非ColumnValueFilter就无用武之地。现在，我们将使用协处理器，将数据一分为二</p><p><strong>思路</strong></p><p>a）编写协处理器类，用于协助处理HBase的相关操作（增删改查）<br>b）在协处理器中，一条主叫日志成功插入后，将该日志切换为被叫视角再次插入一次，放入到与主叫日志不同的列族中<br>c）重新创建hbase表，并设置为该表设置协处理器<br>d）编译项目，发布协处理器的jar包到hbase的lib目录下，并群发该jar包<br>e）修改hbase-site.xml文件，设置协处理器，并群发该hbase-site.xml文件</p><p><strong>编码</strong></p><p>1） 新建协处理器类：CalleeWriteObserver，并覆写postPut方法，该方法会在数据成功插入之后被回调（hbase的package）</p><pre><code>package hbase;
+}</code></pre><h4 id="3、运行测试：HBase消费数据"><a href="#3、运行测试：HBase消费数据" class="headerlink" title="3、运行测试：HBase消费数据"></a>3、运行测试：HBase消费数据</h4><p>尖叫提示：请将Linux允许打开的文件个数和进程数进行优化，优化RegionServer与Zookeeper会话的超时时间。（参考HBase文档中优化章节）<br>项目成功后，则将项目打包后在linux中运行测试</p>
+<p><strong>打包HBase消费者代码</strong><br>a）  在windows中，进入工程的pom.xml所在目录下（建议将该工程的pom.xml文件拷贝到其他临时目录中，例如我把pom.xml文件拷贝到了F:\maven-lib\目录下），然后使用mvn命令下载工程所有依赖的jar包<br>mvn -DoutputDirectory=./lib -DgroupId=com.hsiehchou -DartifactId=ct_consumer -Dversion=r-1.0-SNAPSHOT dependency:copy-dependencies<br>b）  使用maven打包工程<br>c） 测试执行该jar包</p>
+<p>方案一：推荐，使用通配符，将所有依赖加入到classpath中，不可使用<em>.jar的方式<br>注意：如果是在Linux中实行，注意文件夹之间的分隔符。自己的工程要单独在cp中指定，不要直接放在maven-lib/lib目录下<br>java -cp F:\maven-lib\CT_consumerr-1.0-SNAPSHOT.jar;F:\maven-lib\lib\</em> com.hsiehchou.CT_kafka.HBaseConsumer</p>
+<p>方案二：最最推荐，使用java.ext.dirs参数将所有依赖的目录添加进classpath中<br>注意：-Djava.ext.dirs=属性后边的路径不能为”~”<br>java -Djava.ext.dirs=F:\maven-lib\lib\ -cp F:\maven-lib\CT_consumerr-1.0-SNAPSHOT.jar com.hsiehchou.CT_consumer.kafka.HBaseConsumer</p>
+<h4 id="4、编写代码：优化数据存储方案"><a href="#4、编写代码：优化数据存储方案" class="headerlink" title="4、编写代码：优化数据存储方案"></a>4、编写代码：优化数据存储方案</h4><p>现在我们要使用HBase查找数据时，尽可能的使用rowKey去精准的定位数据位置，而非使用ColumnValueFilter或者SingleColumnValueFilter，按照单元格Cell中的Value过滤数据，这样做在数据量巨大的情况下，效率是极低的——如果要涉及到全表扫描。所以尽量不要做这样可怕的事情。注意，这并非ColumnValueFilter就无用武之地。现在，我们将使用协处理器，将数据一分为二</p>
+<p><strong>思路</strong></p>
+<p>a）编写协处理器类，用于协助处理HBase的相关操作（增删改查）<br>b）在协处理器中，一条主叫日志成功插入后，将该日志切换为被叫视角再次插入一次，放入到与主叫日志不同的列族中<br>c）重新创建hbase表，并设置为该表设置协处理器<br>d）编译项目，发布协处理器的jar包到hbase的lib目录下，并群发该jar包<br>e）修改hbase-site.xml文件，设置协处理器，并群发该hbase-site.xml文件</p>
+<p><strong>编码</strong></p>
+<p>1） 新建协处理器类：CalleeWriteObserver，并覆写postPut方法，该方法会在数据成功插入之后被回调（hbase的package）</p>
+<pre><code>package hbase;
 
 import org.apache.hadoop.hbase.TableName;
 import org.apache.hadoop.hbase.client.Durability;
@@ -914,10 +1466,176 @@ public class CalleeWriteObserver extends BaseRegionObserver {
         table.put(calleePut);
         table.close();
     }
-}</code></pre><p>2）重新创建HBase表，并设置为该表设置协处理器。在“表描述器”中调用addCoprocessor方法进行协处理器的设置，大概是这样的：（你需要找到你的建表的那部分代码，添加如下逻辑）<br>tableDescriptor.addCoprocessor(“hbase.CalleeWriteObserver”);</p><h4 id="5、运行测试：协处理器"><a href="#5、运行测试：协处理器" class="headerlink" title="5、运行测试：协处理器"></a>5、运行测试：协处理器</h4><p>重新编译项目，发布jar包到hbase的lib目录下（注意需群发）：<br>$ scp -r CT_consumer-1.0-SNAPSHOT.jar root@hsiehchou121:<code>pwd</code></p><p>重新修改<strong>hbase-site.xml</strong>：</p><pre><code>    &lt;property&gt;
+}</code></pre><p>2）重新创建HBase表，并设置为该表设置协处理器。在“表描述器”中调用addCoprocessor方法进行协处理器的设置，大概是这样的：（你需要找到你的建表的那部分代码，添加如下逻辑）<br>tableDescriptor.addCoprocessor(“hbase.CalleeWriteObserver”);</p>
+<h4 id="5、运行测试：协处理器"><a href="#5、运行测试：协处理器" class="headerlink" title="5、运行测试：协处理器"></a>5、运行测试：协处理器</h4><p>重新编译项目，发布jar包到hbase的lib目录下（注意需群发）：<br>$ scp -r CT_consumer-1.0-SNAPSHOT.jar root@hsiehchou121:<code>pwd</code></p>
+<p>重新修改<strong>hbase-site.xml</strong>：</p>
+<pre><code>    &lt;property&gt;
         &lt;name&gt;hbase.coprocessor.region.classes&lt;/name&gt;
         &lt;value&gt;hbase.CalleeWriteObserver&lt;/value&gt;
-    &lt;/property&gt;</code></pre><p>完成以上步骤后，重新消费数据进行测试</p><h4 id="6、编写测试单元：范围查找数据"><a href="#6、编写测试单元：范围查找数据" class="headerlink" title="6、编写测试单元：范围查找数据"></a>6、编写测试单元：范围查找数据</h4><p><strong>思路</strong><br>a）已知要查询的手机号码以及起始时间节点和结束时间节点，查询该节点范围内的该手机号码的通话记录</p><p>b）拼装startRowKey和stopRowKey，即扫描范围，要想拼接出扫描范围，首先需要了解rowkey组成结构，我们再来复习一下，举个大栗子<br>rowkey：<br>分区号_手机号码1_通话建立时间_手机号码2_主(被)叫标记_通话持续时间<br>01_15837312345_20180725071833_1_0180</p><p>c）比如按月查询通话记录，则startRowKey举例：<br>regionHash_158373123456_20180805010000<br>stopRowKey举例：<br>regionHash_158373123456_20180805010000</p><p><strong>注意</strong>：startRowKey和stopRowKey设计时，后面的部分已经被去掉</p><p><strong>尖叫提示</strong>：rowKey的扫描范围为前闭后开</p><p><strong>尖叫提示</strong>：rowKey默认是有序的，排序规则为字符的按位比较<br>d）如果查找所有的，需要多次scan表，每次scan设置为下一个时间窗口即可，该操作可放置于for循环中</p><p><strong>编码</strong>：<br>e）<strong>运行测试</strong><br>观察是否已经按照时间范围查询出对应的数据</p><h4 id="7、将数据从本地读取到HBase"><a href="#7、将数据从本地读取到HBase" class="headerlink" title="7、将数据从本地读取到HBase"></a>7、将数据从本地读取到HBase</h4><p>1）<strong>启动ZooKeeper</strong>（配置了全局环境变量）</p><pre><code>zkServer.sh start</code></pre><p>2）<strong>启动Kafka</strong>（配置了全局环境变量）</p><pre><code>kafka-server-start.sh /root/hd/kafka/config/server.properties &amp;  </code></pre><p><strong>创建主题</strong></p><pre><code>bin/kafka-topics.sh --zookeeper hsiehchou121:2181 --topic calllog --create --replication-factor 1 --partitions 3</code></pre><p><strong>列出所有主题</strong></p><pre><code>bin/kafka-topics.sh --zookeeper hsiehchou121:2181 --list</code></pre><p><strong>启动 Kafka消费者</strong></p><pre><code>bin/kafka-console-consumer.sh --bootstrap-server hsiehchou121:9092 --topic calllog --from-beginning </code></pre><p>3）<strong>启动Hadoop</strong>（配置了全局环境变量）</p><pre><code>start-all.sh</code></pre><p>4）<strong>启动HBase</strong>（配置了全局环境变量）<br><strong>start-hbase.sh</strong></p><p>5）<strong>启动Flume</strong>（没有配置全局环境变量，去flume目录下）</p><pre><code>bin/flume-ng agent --conf conf/ --name a1 --conf-file myagent/flume2kafka.conf</code></pre><p>6）<strong>IDEA打包CT_consumer.jar</strong><br>此jar包要放入hbase的lib下面，不然HBase写不进数据</p><p>7）在IDEA里面<strong>运行HBaseConsumer.java</strong></p><h4 id="8、总结"><a href="#8、总结" class="headerlink" title="8、总结"></a>8、总结</h4><p>数据（本地）-&gt;Flume采集数据-&gt;Kafka消费数据-&gt;HBase</p><h3 id="六、数据分析"><a href="#六、数据分析" class="headerlink" title="六、数据分析"></a>六、数据分析</h3><p>我们的数据已经完整的采集到了HBase集群中，这次我们需要对采集到的数据进行分析，统计出我们想要的结果。注意，在分析的过程中，我们不一定会采取一个业务指标对应一个MapReduce-Job的方式，如果情景允许，我们会采取一个MapReduce分析多个业务指标的方式来进行任务</p><p><strong>数据分析模块流程图</strong></p><p><img src="/medias/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%A8%A1%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9B%BE.PNG" alt="数据分析模块流程图"></p><p><strong>业务指标</strong><br>a）用户每天主叫通话个数统计，通话时间统计<br>b）用户每月通话记录统计，通话时间统计<br>c）用户之间亲密关系统计。（通话次数与通话时间体现用户亲密关系）</p><h4 id="1、MySQL表结构设计"><a href="#1、MySQL表结构设计" class="headerlink" title="1、MySQL表结构设计"></a>1、MySQL表结构设计</h4><p>我们将分析的结果数据保存到Mysql中，以方便Web端进行查询展示<br>1）表：<strong>db_telecom.tb_contacts</strong></p><p>用于存放用户手机号码与联系人姓名</p><table><thead><tr><th align="center">列</th><th align="center">备注</th><th align="center">类型</th></tr></thead><tbody><tr><td align="center">id</td><td align="center">自增主键</td><td align="center">int(11) NOT NULL</td></tr><tr><td align="center">telephone</td><td align="center">手机号码</td><td align="center">varchar(255) NOT NULL</td></tr><tr><td align="center">name</td><td align="center">联系人姓名</td><td align="center">varchar(255) NOT NULL</td></tr></tbody></table><p>2）表：<strong>db_telecom.tb_call</strong></p><p>用于存放某个时间维度下通话次数与通话时长的总和</p><table><thead><tr><th align="center">列</th><th align="center">备注</th><th align="center">类型</th></tr></thead><tbody><tr><td align="center">id_date_contact</td><td align="center">复合主键（联系人维度id，时间维度id）</td><td align="center">varchar(255) NOT NULL</td></tr><tr><td align="center">id_date_dimension</td><td align="center">时间维度id</td><td align="center">int(11) NOT NULL</td></tr><tr><td align="center">id_contact</td><td align="center">查询人的电话号码</td><td align="center">int(11) NOT NULL</td></tr><tr><td align="center">call_sum</td><td align="center">通话次数总和</td><td align="center">int(11) NOT NULL DEFAULT 0</td></tr><tr><td align="center">call_duration_sum</td><td align="center">通话时长总和</td><td align="center">int(11) NOT NULL DEFAULT 0</td></tr></tbody></table><p>3）表：<strong>db_telecom.tb_dimension_date</strong></p><p>用于存放时间维度的相关数据</p><table><thead><tr><th align="center">列</th><th align="center">备注</th><th align="center">类型</th></tr></thead><tbody><tr><td align="center">id</td><td align="center">自增主键</td><td align="center">int(11) NOT NULL</td></tr><tr><td align="center">year</td><td align="center">年，当前通话信息所在年</td><td align="center">int(11) NOT NULL</td></tr><tr><td align="center">month</td><td align="center">月，当前通话信息所在月，如果按照年来统计信息，则month为-1</td><td align="center">int(11) NOT NULL</td></tr><tr><td align="center">day</td><td align="center">日，当前通话信息所在日，如果是按照月来统计信息，则day为-1</td><td align="center">int(11) NOT NULL</td></tr></tbody></table><p>MySQL的建表语句：</p><p>CREATE TABLE <code>tb_call</code> (<br><code>id_date_contact</code> varchar(255) NOT NULL,<br><code>id_date_dimension</code> int(11) NOT NULL,<br><code>id_contact</code> int(11) NOT NULL,<br><code>call_sum</code> int(11) NOT NULL,<br><code>call_duration_sum</code> int(11) NOT NULL,<br>PRIMARY KEY (<code>id_date_contact</code>)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8;</p><p>CREATE TABLE <code>tb_contacts</code> (<br><code>id</code> int(11) NOT NULL AUTO_INCREMENT,<br><code>telephone</code> varchar(255) NOT NULL,<br><code>name</code> varchar(255) NOT NULL,<br>PRIMARY KEY (<code>id</code>)<br>) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;</p><p>CREATE TABLE <code>tb_dimension_date</code> (<br><code>id</code> int(11) NOT NULL AUTO_INCREMENT,<br><code>year</code> int(11) NOT NULL,<br><code>month</code> int(11) NOT NULL,<br><code>day</code> int(11) NOT NULL,<br>PRIMARY KEY (<code>id</code>)<br>) ENGINE=InnoDB AUTO_INCREMENT=263 DEFAULT CHARSET=utf8;</p><h4 id="2、需求：按照不同的维度统计通话"><a href="#2、需求：按照不同的维度统计通话" class="headerlink" title="2、需求：按照不同的维度统计通话"></a>2、需求：按照不同的维度统计通话</h4><p>根据需求目标，设计出如上表结构。我们需要按照时间范围（年月日），结合MapReduce统计出所属时间范围内所有手机号码的通话次数总和以及通话时长总和。<br>思路：<br>a）维度，即某个角度，某个视角，按照时间维度来统计通话，比如我想统计2018年所有月份所有日子的通话记录，那这个维度我们大概可以表述为2018年<code>*</code>月<code>*</code>日<br>b）通过Mapper将数据按照不同维度聚合给Reducer<br>c）通过Reducer拿到按照各个维度聚合过来的数据，进行汇总，输出。<br>d）根据业务需求，将Reducer的输出通过Outputformat把数据<br>数据输入：HBase<br>数据输出：MySQL<br>HBase中数据源结构：</p><table><thead><tr><th align="center">标签</th><th align="center">举例&amp;说明</th></tr></thead><tbody><tr><td align="center">rowkey</td><td align="center">hashregion_caller_datetime_callee_flag_duration; 01_15837312345_20180527081033_13766889900_1_0180</td></tr><tr><td align="center">family</td><td align="center">f1列族：存放主叫信息； f2列族：存放被叫信息</td></tr><tr><td align="center">caller</td><td align="center">第一个手机号码</td></tr><tr><td align="center">callee</td><td align="center">第二个手机号码</td></tr><tr><td align="center">date_time</td><td align="center">通话建立的时间，例如：20181017081520</td></tr><tr><td align="center">date_time_ts</td><td align="center">date_time对应的时间戳形式</td></tr><tr><td align="center">duration</td><td align="center">通话时长(单位：秒)</td></tr><tr><td align="center">flag</td><td align="center">标记caller是主叫还是被叫（caller的身份与call2的身份互斥）</td></tr></tbody></table><p>a）已知目标，那么需要结合目标思考已有数据是否能够支撑目标实现；<br>b） 根据目标数据结构，构建MySQL表结构，建表；<br>c）思考代码需要涉及到哪些功能模块，建立不同功能模块对应的包结构。<br>d）描述数据，一定是基于某个维度（视角）的，所以构建维度类。比如按照“年”与“手机号码”的组合作为key聚合所有的数据，便可以统计这个手机号码，这一年的相关结果<br>e）自定义OutputFormat用于对接MySQL，使数据输出<br>f）创建相关工具类</p><h4 id="3、环境准备"><a href="#3、环境准备" class="headerlink" title="3、环境准备"></a>3、环境准备</h4><p>1） <strong>新建module：ct_analysis</strong><br><strong>pom文件配置</strong></p><pre><code>  &lt;properties&gt;
+    &lt;/property&gt;</code></pre><p>完成以上步骤后，重新消费数据进行测试</p>
+<h4 id="6、编写测试单元：范围查找数据"><a href="#6、编写测试单元：范围查找数据" class="headerlink" title="6、编写测试单元：范围查找数据"></a>6、编写测试单元：范围查找数据</h4><p><strong>思路</strong><br>a）已知要查询的手机号码以及起始时间节点和结束时间节点，查询该节点范围内的该手机号码的通话记录</p>
+<p>b）拼装startRowKey和stopRowKey，即扫描范围，要想拼接出扫描范围，首先需要了解rowkey组成结构，我们再来复习一下，举个大栗子<br>rowkey：<br>分区号_手机号码1_通话建立时间_手机号码2_主(被)叫标记_通话持续时间<br>01_15837312345_20180725071833_1_0180</p>
+<p>c）比如按月查询通话记录，则startRowKey举例：<br>regionHash_158373123456_20180805010000<br>stopRowKey举例：<br>regionHash_158373123456_20180805010000</p>
+<p><strong>注意</strong>：startRowKey和stopRowKey设计时，后面的部分已经被去掉</p>
+<p><strong>尖叫提示</strong>：rowKey的扫描范围为前闭后开</p>
+<p><strong>尖叫提示</strong>：rowKey默认是有序的，排序规则为字符的按位比较<br>d）如果查找所有的，需要多次scan表，每次scan设置为下一个时间窗口即可，该操作可放置于for循环中</p>
+<p><strong>编码</strong>：<br>e）<strong>运行测试</strong><br>观察是否已经按照时间范围查询出对应的数据</p>
+<h4 id="7、将数据从本地读取到HBase"><a href="#7、将数据从本地读取到HBase" class="headerlink" title="7、将数据从本地读取到HBase"></a>7、将数据从本地读取到HBase</h4><p>1）<strong>启动ZooKeeper</strong>（配置了全局环境变量）</p>
+<pre><code>zkServer.sh start</code></pre><p>2）<strong>启动Kafka</strong>（配置了全局环境变量）</p>
+<pre><code>kafka-server-start.sh /root/hd/kafka/config/server.properties &amp;  </code></pre><p><strong>创建主题</strong></p>
+<pre><code>bin/kafka-topics.sh --zookeeper hsiehchou121:2181 --topic calllog --create --replication-factor 1 --partitions 3</code></pre><p><strong>列出所有主题</strong></p>
+<pre><code>bin/kafka-topics.sh --zookeeper hsiehchou121:2181 --list</code></pre><p><strong>启动 Kafka消费者</strong></p>
+<pre><code>bin/kafka-console-consumer.sh --bootstrap-server hsiehchou121:9092 --topic calllog --from-beginning </code></pre><p>3）<strong>启动Hadoop</strong>（配置了全局环境变量）</p>
+<pre><code>start-all.sh</code></pre><p>4）<strong>启动HBase</strong>（配置了全局环境变量）<br><strong>start-hbase.sh</strong></p>
+<p>5）<strong>启动Flume</strong>（没有配置全局环境变量，去flume目录下）</p>
+<pre><code>bin/flume-ng agent --conf conf/ --name a1 --conf-file myagent/flume2kafka.conf</code></pre><p>6）<strong>IDEA打包CT_consumer.jar</strong><br>此jar包要放入hbase的lib下面，不然HBase写不进数据</p>
+<p>7）在IDEA里面<strong>运行HBaseConsumer.java</strong></p>
+<h4 id="8、总结"><a href="#8、总结" class="headerlink" title="8、总结"></a>8、总结</h4><p>数据（本地）-&gt;Flume采集数据-&gt;Kafka消费数据-&gt;HBase</p>
+<h3 id="六、数据分析"><a href="#六、数据分析" class="headerlink" title="六、数据分析"></a>六、数据分析</h3><p>我们的数据已经完整的采集到了HBase集群中，这次我们需要对采集到的数据进行分析，统计出我们想要的结果。注意，在分析的过程中，我们不一定会采取一个业务指标对应一个MapReduce-Job的方式，如果情景允许，我们会采取一个MapReduce分析多个业务指标的方式来进行任务</p>
+<p><strong>数据分析模块流程图</strong></p>
+<p><img src="/medias/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%A8%A1%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9B%BE.PNG" alt="数据分析模块流程图"></p>
+<p><strong>业务指标</strong><br>a）用户每天主叫通话个数统计，通话时间统计<br>b）用户每月通话记录统计，通话时间统计<br>c）用户之间亲密关系统计。（通话次数与通话时间体现用户亲密关系）</p>
+<h4 id="1、MySQL表结构设计"><a href="#1、MySQL表结构设计" class="headerlink" title="1、MySQL表结构设计"></a>1、MySQL表结构设计</h4><p>我们将分析的结果数据保存到Mysql中，以方便Web端进行查询展示<br>1）表：<strong>db_telecom.tb_contacts</strong></p>
+<p>用于存放用户手机号码与联系人姓名</p>
+<table>
+<thead>
+<tr>
+<th align="center">列</th>
+<th align="center">备注</th>
+<th align="center">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">id</td>
+<td align="center">自增主键</td>
+<td align="center">int(11) NOT NULL</td>
+</tr>
+<tr>
+<td align="center">telephone</td>
+<td align="center">手机号码</td>
+<td align="center">varchar(255) NOT NULL</td>
+</tr>
+<tr>
+<td align="center">name</td>
+<td align="center">联系人姓名</td>
+<td align="center">varchar(255) NOT NULL</td>
+</tr>
+</tbody></table>
+<p>2）表：<strong>db_telecom.tb_call</strong></p>
+<p>用于存放某个时间维度下通话次数与通话时长的总和</p>
+<table>
+<thead>
+<tr>
+<th align="center">列</th>
+<th align="center">备注</th>
+<th align="center">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">id_date_contact</td>
+<td align="center">复合主键（联系人维度id，时间维度id）</td>
+<td align="center">varchar(255) NOT NULL</td>
+</tr>
+<tr>
+<td align="center">id_date_dimension</td>
+<td align="center">时间维度id</td>
+<td align="center">int(11) NOT NULL</td>
+</tr>
+<tr>
+<td align="center">id_contact</td>
+<td align="center">查询人的电话号码</td>
+<td align="center">int(11) NOT NULL</td>
+</tr>
+<tr>
+<td align="center">call_sum</td>
+<td align="center">通话次数总和</td>
+<td align="center">int(11) NOT NULL DEFAULT 0</td>
+</tr>
+<tr>
+<td align="center">call_duration_sum</td>
+<td align="center">通话时长总和</td>
+<td align="center">int(11) NOT NULL DEFAULT 0</td>
+</tr>
+</tbody></table>
+<p>3）表：<strong>db_telecom.tb_dimension_date</strong></p>
+<p>用于存放时间维度的相关数据</p>
+<table>
+<thead>
+<tr>
+<th align="center">列</th>
+<th align="center">备注</th>
+<th align="center">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">id</td>
+<td align="center">自增主键</td>
+<td align="center">int(11) NOT NULL</td>
+</tr>
+<tr>
+<td align="center">year</td>
+<td align="center">年，当前通话信息所在年</td>
+<td align="center">int(11) NOT NULL</td>
+</tr>
+<tr>
+<td align="center">month</td>
+<td align="center">月，当前通话信息所在月，如果按照年来统计信息，则month为-1</td>
+<td align="center">int(11) NOT NULL</td>
+</tr>
+<tr>
+<td align="center">day</td>
+<td align="center">日，当前通话信息所在日，如果是按照月来统计信息，则day为-1</td>
+<td align="center">int(11) NOT NULL</td>
+</tr>
+</tbody></table>
+<p>MySQL的建表语句：</p>
+<p>CREATE TABLE <code>tb_call</code> (<br>  <code>id_date_contact</code> varchar(255) NOT NULL,<br>  <code>id_date_dimension</code> int(11) NOT NULL,<br>  <code>id_contact</code> int(11) NOT NULL,<br>  <code>call_sum</code> int(11) NOT NULL,<br>  <code>call_duration_sum</code> int(11) NOT NULL,<br>  PRIMARY KEY (<code>id_date_contact</code>)<br>) ENGINE=InnoDB DEFAULT CHARSET=utf8;</p>
+<p>CREATE TABLE <code>tb_contacts</code> (<br>  <code>id</code> int(11) NOT NULL AUTO_INCREMENT,<br>  <code>telephone</code> varchar(255) NOT NULL,<br>  <code>name</code> varchar(255) NOT NULL,<br>  PRIMARY KEY (<code>id</code>)<br>) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;</p>
+<p>CREATE TABLE <code>tb_dimension_date</code> (<br>  <code>id</code> int(11) NOT NULL AUTO_INCREMENT,<br>  <code>year</code> int(11) NOT NULL,<br>  <code>month</code> int(11) NOT NULL,<br>  <code>day</code> int(11) NOT NULL,<br>  PRIMARY KEY (<code>id</code>)<br>) ENGINE=InnoDB AUTO_INCREMENT=263 DEFAULT CHARSET=utf8;</p>
+<h4 id="2、需求：按照不同的维度统计通话"><a href="#2、需求：按照不同的维度统计通话" class="headerlink" title="2、需求：按照不同的维度统计通话"></a>2、需求：按照不同的维度统计通话</h4><p>根据需求目标，设计出如上表结构。我们需要按照时间范围（年月日），结合MapReduce统计出所属时间范围内所有手机号码的通话次数总和以及通话时长总和。<br>思路：<br>a）维度，即某个角度，某个视角，按照时间维度来统计通话，比如我想统计2018年所有月份所有日子的通话记录，那这个维度我们大概可以表述为2018年<code>*</code>月<code>*</code>日<br>b）通过Mapper将数据按照不同维度聚合给Reducer<br>c）通过Reducer拿到按照各个维度聚合过来的数据，进行汇总，输出。<br>d）根据业务需求，将Reducer的输出通过Outputformat把数据<br>数据输入：HBase<br>数据输出：MySQL<br>HBase中数据源结构：</p>
+<table>
+<thead>
+<tr>
+<th align="center">标签</th>
+<th align="center">举例&amp;说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">rowkey</td>
+<td align="center">hashregion_caller_datetime_callee_flag_duration;  01_15837312345_20180527081033_13766889900_1_0180</td>
+</tr>
+<tr>
+<td align="center">family</td>
+<td align="center">f1列族：存放主叫信息； f2列族：存放被叫信息</td>
+</tr>
+<tr>
+<td align="center">caller</td>
+<td align="center">第一个手机号码</td>
+</tr>
+<tr>
+<td align="center">callee</td>
+<td align="center">第二个手机号码</td>
+</tr>
+<tr>
+<td align="center">date_time</td>
+<td align="center">通话建立的时间，例如：20181017081520</td>
+</tr>
+<tr>
+<td align="center">date_time_ts</td>
+<td align="center">date_time对应的时间戳形式</td>
+</tr>
+<tr>
+<td align="center">duration</td>
+<td align="center">通话时长(单位：秒)</td>
+</tr>
+<tr>
+<td align="center">flag</td>
+<td align="center">标记caller是主叫还是被叫（caller的身份与call2的身份互斥）</td>
+</tr>
+</tbody></table>
+<p>a）已知目标，那么需要结合目标思考已有数据是否能够支撑目标实现；<br>b） 根据目标数据结构，构建MySQL表结构，建表；<br>c）思考代码需要涉及到哪些功能模块，建立不同功能模块对应的包结构。<br>d）描述数据，一定是基于某个维度（视角）的，所以构建维度类。比如按照“年”与“手机号码”的组合作为key聚合所有的数据，便可以统计这个手机号码，这一年的相关结果<br>e）自定义OutputFormat用于对接MySQL，使数据输出<br>f）创建相关工具类</p>
+<h4 id="3、环境准备"><a href="#3、环境准备" class="headerlink" title="3、环境准备"></a>3、环境准备</h4><p>1） <strong>新建module：ct_analysis</strong><br><strong>pom文件配置</strong></p>
+<pre><code>  &lt;properties&gt;
         &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
     &lt;/properties&gt;
 
@@ -988,7 +1706,12 @@ public class CalleeWriteObserver extends BaseRegionObserver {
                 &lt;/configuration&gt;
             &lt;/plugin&gt;
         &lt;/plugins&gt;
-    &lt;/build&gt;</code></pre><p>2）<strong>创建包结构</strong>，根包：<strong>com.hsiehchou</strong>(不同颜色代表不同层级的递进)</p><p><img src="/medias/CT_XZ.PNG" alt="CT_XZ"></p><p>直接看CT_analysis</p><p>3） <strong>类表</strong><br>| 类名 | 备注 |<br>| :——–: | :——–:|<br>| DimensionConverter | 负责实际的维度转id功能接口|<br>| DimensionConverterImpl | DimensionConverter 实现类，负责实际的维度转id功能 |<br>| BaseDimension | 维度（key）基类 |<br>| BaseValue | 值（value）基类 |<br>| ComDimension | 时间维度+联系人维度的组合维度 |<br>| ContactDimension | 联系人维度 |<br>| DateDimension | 时间维度 |<br>| CountDurationValue | 通话次数与通话时长的封装 |<br>| CountDurationMapper | 数据分析的Mapper类，继承自TableMapper |<br>| MysqlOutputFormat | 自定义Outputformat，对接Mysql |<br>| CountDurationReducer | 数据分析的Reducer类，继承自Reduccer |<br>| CountDurationRunner | 数据分析的驱动类，组装Job |<br>| JDBCInstance | 获取连接实例 |<br>| JDBCUtils | 连接Mysql的工具类 |<br>| LRUCache | 用于缓存已知的维度id，减少对mysql的操作次数，提高效率 |</p><h4 id="4、编写代码：数据分析"><a href="#4、编写代码：数据分析" class="headerlink" title="4、编写代码：数据分析"></a>4、编写代码：数据分析</h4><p>1）创建类：<strong>CountDurationMapper</strong></p><pre><code>package mapper;
+    &lt;/build&gt;</code></pre><p>2）<strong>创建包结构</strong>，根包：<strong>com.hsiehchou</strong>(不同颜色代表不同层级的递进)</p>
+<p><img src="/medias/CT_XZ.PNG" alt="CT_XZ"></p>
+<p>直接看CT_analysis</p>
+<p>3） <strong>类表</strong><br>|  类名    |    备注    |<br>| :——–: | :——–:|<br>| DimensionConverter | 负责实际的维度转id功能接口|<br>| DimensionConverterImpl  |  DimensionConverter  实现类，负责实际的维度转id功能 |<br>| BaseDimension  |  维度（key）基类   |<br>| BaseValue    | 值（value）基类    |<br>| ComDimension  | 时间维度+联系人维度的组合维度  |<br>| ContactDimension | 联系人维度  |<br>| DateDimension    |  时间维度   |<br>| CountDurationValue  |  通话次数与通话时长的封装 |<br>| CountDurationMapper |  数据分析的Mapper类，继承自TableMapper   |<br>| MysqlOutputFormat  | 自定义Outputformat，对接Mysql  |<br>| CountDurationReducer  | 数据分析的Reducer类，继承自Reduccer  |<br>| CountDurationRunner | 数据分析的驱动类，组装Job |<br>| JDBCInstance    |  获取连接实例   |<br>| JDBCUtils  |  连接Mysql的工具类   |<br>| LRUCache   |  用于缓存已知的维度id，减少对mysql的操作次数，提高效率   |  </p>
+<h4 id="4、编写代码：数据分析"><a href="#4、编写代码：数据分析" class="headerlink" title="4、编写代码：数据分析"></a>4、编写代码：数据分析</h4><p>1）创建类：<strong>CountDurationMapper</strong></p>
+<pre><code>package mapper;
 
 import kv.key.ComDimension;
 import kv.key.ContactDimension;
@@ -1095,7 +1818,8 @@ public class CountDurationMapper extends TableMapper&lt;Comparable, Text&gt; {
         comDimension.setDateDimension(dayDimension);
         context.write(comDimension, durationText);
     }
-}</code></pre><p>2）创建类：<strong>CountDurationReducer</strong></p><pre><code>package reducer;
+}</code></pre><p>2）创建类：<strong>CountDurationReducer</strong></p>
+<pre><code>package reducer;
 
 import kv.key.ComDimension;
 import kv.value.CountDurationValue;
@@ -1121,7 +1845,8 @@ public class CountDurationReducer extends Reducer&lt;ComDimension, Text, ComDime
 
         context.write(key, countDurationValue);
     }
-}</code></pre><p>3）创建类：<strong>CountDurationRunner</strong></p><pre><code>package runner;
+}</code></pre><p>3）创建类：<strong>CountDurationRunner</strong></p>
+<pre><code>package runner;
 
 import kv.key.ComDimension;
 import kv.value.CountDurationValue;
@@ -1223,7 +1948,8 @@ public class CountDurationRunner implements Tool {
             e.printStackTrace();
         }
     }
-}</code></pre><p>4）创建类：<strong>MysqlOutputFormat</strong></p><pre><code>package outputformat;
+}</code></pre><p>4）创建类：<strong>MysqlOutputFormat</strong></p>
+<pre><code>package outputformat;
 
 import converter.DimensionConverterImpl;
 import kv.key.ComDimension;
@@ -1357,7 +2083,8 @@ public class MysqlOutputFormat extends OutputFormat&lt;ComDimension, CountDurati
             }
         }
     }
-}</code></pre><p>5）创建类：<strong>BaseDimension</strong></p><pre><code>package kv.base;
+}</code></pre><p>5）创建类：<strong>BaseDimension</strong></p>
+<pre><code>package kv.base;
 
 import org.apache.hadoop.io.WritableComparable;
 
@@ -1375,12 +2102,14 @@ public abstract class BaseDimension implements WritableComparable&lt;BaseDimensi
     //从二进制流读取字节
     public abstract void readFields(DataInput in) throws IOException;
 
-}</code></pre><p>6）创建类：<strong>BaseValue</strong></p><pre><code>package kv.base;
+}</code></pre><p>6）创建类：<strong>BaseValue</strong></p>
+<pre><code>package kv.base;
 
 import org.apache.hadoop.io.Writable;
 
 public abstract class BaseValue implements Writable {
-}</code></pre><p>7）创建类：<strong>ComDimension</strong></p><pre><code>package kv.key;
+}</code></pre><p>7）创建类：<strong>ComDimension</strong></p>
+<pre><code>package kv.key;
 
 import kv.base.BaseDimension;
 import lombok.AllArgsConstructor;
@@ -1427,7 +2156,8 @@ public class ComDimension extends BaseDimension {
         this.contactDimension.readFields(in);
         this.dateDimension.readFields(in);
     }
-}</code></pre><p>8）创建类：<strong>ContactDimension</strong></p><pre><code>package kv.key;
+}</code></pre><p>8）创建类：<strong>ContactDimension</strong></p>
+<pre><code>package kv.key;
 
 import kv.base.BaseDimension;
 import lombok.AllArgsConstructor;
@@ -1478,7 +2208,8 @@ public class ContactDimension extends BaseDimension {
         this.telephone = in.readUTF();
         this.name = in.readUTF();
     }
-}</code></pre><p>9）创建类：<strong>DateDimension</strong></p><pre><code>package kv.key;
+}</code></pre><p>9）创建类：<strong>DateDimension</strong></p>
+<pre><code>package kv.key;
 
 import kv.base.BaseDimension;
 import lombok.AllArgsConstructor;
@@ -1536,7 +2267,8 @@ public class DateDimension extends BaseDimension {
         this.month = in.readUTF();
         this.day = in.readUTF();
     }
-}</code></pre><p>10）创建类：<strong>CountDurationValue</strong></p><pre><code>package kv.value;
+}</code></pre><p>10）创建类：<strong>CountDurationValue</strong></p>
+<pre><code>package kv.value;
 
 import kv.base.BaseValue;
 import lombok.AllArgsConstructor;
@@ -1571,7 +2303,8 @@ public class CountDurationValue extends BaseValue {
         this.callSum = dataInput.readUTF();
         this.callDurationSum = dataInput.readUTF();
     }
-}</code></pre><p>11） 创建类：<strong>JDBCUtil</strong></p><pre><code>package utils;
+}</code></pre><p>11） 创建类：<strong>JDBCUtil</strong></p>
+<pre><code>package utils;
 
 import java.sql.*;
 
@@ -1614,7 +2347,8 @@ public class JDBCUtils {
             e.printStackTrace();
         }
     }
-}</code></pre><p>12）创建类：<strong>JDBCInstance</strong></p><pre><code>package utils;
+}</code></pre><p>12）创建类：<strong>JDBCInstance</strong></p>
+<pre><code>package utils;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -1638,13 +2372,15 @@ public class JDBCInstance {
         }
         return connection;
     }
-}</code></pre><p>13） 创建接口：<strong>DimensionConverter</strong></p><pre><code>package converter;
+}</code></pre><p>13） 创建接口：<strong>DimensionConverter</strong></p>
+<pre><code>package converter;
 
 import kv.base.BaseDimension;
 
 public interface DimensionConverter {
     int getDimensionID(BaseDimension dimension);
-}</code></pre><p>14）创建类：<strong>DimensionConverterImpl</strong></p><pre><code>package converter;
+}</code></pre><p>14）创建类：<strong>DimensionConverterImpl</strong></p>
+<pre><code>package converter;
 
 import kv.base.BaseDimension;
 import kv.key.ContactDimension;
@@ -1862,7 +2598,8 @@ public class DimensionConverterImpl implements DimensionConverter {
         }
         return sb.toString();
     }
-}</code></pre><p>15） 创建类：<strong>LRUCache</strong></p><pre><code>package utils;
+}</code></pre><p>15） 创建类：<strong>LRUCache</strong></p>
+<pre><code>package utils;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -1882,7 +2619,13 @@ public class LRUCache extends LinkedHashMap&lt;String, Integer&gt; {
     protected boolean removeEldestEntry(Map.Entry&lt;String, Integer&gt; eldest) {
         return (size() &gt; this.maxElements);
     }
-}</code></pre><h4 id="5、运行测试"><a href="#5、运行测试" class="headerlink" title="5、运行测试"></a>5、运行测试</h4><p>1）将mysql驱动包放入到<strong>/opt/jars的lib目录下</strong><br><strong>mysql-connector-java-8.0.13.jar</strong></p><p>2）<strong>提交任务</strong></p><pre><code>$ /root/hd/hadoop-2.8.4/bin/yarn jar /opt/jars/CT_analysis-1.0-SNAPSHOT.jar runner.CountDurationRunner -libjars /opt/jars/lib/mysql-connector-java-8.0.13.jar</code></pre><p>观察Mysql中的结果</p><h3 id="七、数据展示"><a href="#七、数据展示" class="headerlink" title="七、数据展示"></a>七、数据展示</h3><p>令人兴奋的时刻马上到了，接下来我们需要将某人按照不同维度查询出来的结果，展示到web页面上<br><strong>数据展示模块流程图</strong></p><p><img src="/medias/%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E6%A8%A1%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9B%BE.PNG" alt="数据展示模块流程图"></p><h4 id="1、环境准备"><a href="#1、环境准备" class="headerlink" title="1、环境准备"></a>1、环境准备</h4><p>1）新建module或项目：<strong>CT_web</strong><br>pom.xml配置文件：</p><pre><code>&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+}</code></pre><h4 id="5、运行测试"><a href="#5、运行测试" class="headerlink" title="5、运行测试"></a>5、运行测试</h4><p>1）将mysql驱动包放入到<strong>/opt/jars的lib目录下</strong><br><strong>mysql-connector-java-8.0.13.jar</strong> </p>
+<p>2）<strong>提交任务</strong></p>
+<pre><code>$ /root/hd/hadoop-2.8.4/bin/yarn jar /opt/jars/CT_analysis-1.0-SNAPSHOT.jar runner.CountDurationRunner -libjars /opt/jars/lib/mysql-connector-java-8.0.13.jar</code></pre><p>观察Mysql中的结果</p>
+<h3 id="七、数据展示"><a href="#七、数据展示" class="headerlink" title="七、数据展示"></a>七、数据展示</h3><p>令人兴奋的时刻马上到了，接下来我们需要将某人按照不同维度查询出来的结果，展示到web页面上<br><strong>数据展示模块流程图</strong></p>
+<p><img src="/medias/%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA%E6%A8%A1%E5%9D%97%E6%B5%81%E7%A8%8B%E5%9B%BE.PNG" alt="数据展示模块流程图"></p>
+<h4 id="1、环境准备"><a href="#1、环境准备" class="headerlink" title="1、环境准备"></a>1、环境准备</h4><p>1）新建module或项目：<strong>CT_web</strong><br>pom.xml配置文件：</p>
+<pre><code>&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
   xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd&quot;&gt;
   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
   &lt;groupId&gt;com.hsiehchou&lt;/groupId&gt;
@@ -1981,10 +2724,71 @@ public class LRUCache extends LinkedHashMap&lt;String, Integer&gt; {
       &lt;/plugin&gt;
     &lt;/plugins&gt;
   &lt;/build&gt;
-&lt;/project&gt;</code></pre><p>2）创建包结构，根包：com.hsiehchou<br>bean<br>controller<br>dao<br>3）类表</p><table><thead><tr><th align="center">类名</th><th align="center">备注</th></tr></thead><tbody><tr><td align="center">CallLog</td><td align="center">用于封装数据分析结果的JavaBean</td></tr><tr><td align="center">QueryInfo</td><td align="center">用于封装向服务器发来的请求参数</td></tr><tr><td align="center">CallLogHandler</td><td align="center">用于处理请求的Controller</td></tr><tr><td align="center">CallLogDAO</td><td align="center">查询某人某个维度通话记录的DAO</td></tr></tbody></table><p>4）web目录结构，web部分的根目录：webapp</p><table><thead><tr><th align="center">文件夹名</th><th align="center">备注</th></tr></thead><tbody><tr><td align="center">css</td><td align="center">存放css静态资源的文件夹</td></tr><tr><td align="center">html</td><td align="center">存放html静态资源的文件夹</td></tr><tr><td align="center">images</td><td align="center">存放图片静态资源文件夹</td></tr><tr><td align="center">js</td><td align="center">存放js静态资源的文件夹</td></tr><tr><td align="center">jsp</td><td align="center">存放jsp页面的文件夹</td></tr><tr><td align="center">WEB-INF</td><td align="center">存放web相关配置的文件夹</td></tr></tbody></table><p>5） resources目录下创建spring相关配置文件</p><p><strong>dbconfig.properties</strong>：用于存放数据库连接配置</p><pre><code>jdbc.user=root
+&lt;/project&gt;</code></pre><p>2）创建包结构，根包：com.hsiehchou<br>bean<br>controller<br>dao<br>3）类表</p>
+<table>
+<thead>
+<tr>
+<th align="center">类名</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">CallLog</td>
+<td align="center">用于封装数据分析结果的JavaBean</td>
+</tr>
+<tr>
+<td align="center">QueryInfo</td>
+<td align="center">用于封装向服务器发来的请求参数</td>
+</tr>
+<tr>
+<td align="center">CallLogHandler</td>
+<td align="center">用于处理请求的Controller</td>
+</tr>
+<tr>
+<td align="center">CallLogDAO</td>
+<td align="center">查询某人某个维度通话记录的DAO</td>
+</tr>
+</tbody></table>
+<p>4）web目录结构，web部分的根目录：webapp</p>
+<table>
+<thead>
+<tr>
+<th align="center">文件夹名</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">css</td>
+<td align="center">存放css静态资源的文件夹</td>
+</tr>
+<tr>
+<td align="center">html</td>
+<td align="center">存放html静态资源的文件夹</td>
+</tr>
+<tr>
+<td align="center">images</td>
+<td align="center">存放图片静态资源文件夹</td>
+</tr>
+<tr>
+<td align="center">js</td>
+<td align="center">存放js静态资源的文件夹</td>
+</tr>
+<tr>
+<td align="center">jsp</td>
+<td align="center">存放jsp页面的文件夹</td>
+</tr>
+<tr>
+<td align="center">WEB-INF</td>
+<td align="center">存放web相关配置的文件夹</td>
+</tr>
+</tbody></table>
+<p>5） resources目录下创建spring相关配置文件</p>
+<p><strong>dbconfig.properties</strong>：用于存放数据库连接配置</p>
+<pre><code>jdbc.user=root
 jdbc.password=root
 jdbc.jdbcUrl=jdbc:mysql://hsiehchou121:3306/db_telecom?useUnicode=true&amp;characterEncoding=UTF-8
-jdbc.driverClass=com.mysql.cj.jdbc.Driver</code></pre><p><strong>applicationContext.xml</strong></p><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+jdbc.driverClass=com.mysql.cj.jdbc.Driver</code></pre><p><strong>applicationContext.xml</strong></p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
        xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
@@ -2027,7 +2831,8 @@ jdbc.driverClass=com.mysql.cj.jdbc.Driver</code></pre><p><strong>applicationCont
     &lt;!--&lt;mvc:resources location=&quot;/images/&quot; mapping=&quot;/images/**&quot;/&gt;--&gt;
     &lt;!--&lt;mvc:resources location=&quot;/js/&quot; mapping=&quot;/js/**&quot;/&gt;--&gt;
     &lt;!--&lt;mvc:resources location=&quot;/css/&quot; mapping=&quot;/css/**&quot;/&gt;--&gt;
-&lt;/beans&gt;</code></pre><p>6） webapp的WEB-INF目录下创建web相关配置<br><strong>web.xml</strong></p><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;/beans&gt;</code></pre><p>6） webapp的WEB-INF目录下创建web相关配置<br><strong>web.xml</strong></p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;web-app xmlns=&quot;http://xmlns.jcp.org/xml/ns/javaee&quot;
          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
          xsi:schemaLocation=&quot;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd&quot;
@@ -2081,7 +2886,9 @@ jdbc.driverClass=com.mysql.cj.jdbc.Driver</code></pre><p><strong>applicationCont
         &lt;servlet-name&gt;default&lt;/servlet-name&gt;
         &lt;url-pattern&gt;*.css&lt;/url-pattern&gt;
     &lt;/servlet-mapping&gt;
-&lt;/web-app&gt;</code></pre><p>7）拷贝js框架到webapp的js目录下<br>框架名称：<br>echarts.min.js</p><h4 id="2、编写代码-1"><a href="#2、编写代码-1" class="headerlink" title="2、编写代码"></a>2、编写代码</h4><p>思路：<br>a）首先测试数据通顺以及完整性，写一个联系人的测试用例。<br>b）测试通过后，通过输入手机号码以及时间参数，查询指定维度的数据，并以图表展示。<br>代码：<br>1）新建类： <strong>CallLog</strong></p><pre><code>package bean;
+&lt;/web-app&gt;</code></pre><p>7）拷贝js框架到webapp的js目录下<br>框架名称：<br>echarts.min.js</p>
+<h4 id="2、编写代码-1"><a href="#2、编写代码-1" class="headerlink" title="2、编写代码"></a>2、编写代码</h4><p>思路：<br>a）首先测试数据通顺以及完整性，写一个联系人的测试用例。<br>b）测试通过后，通过输入手机号码以及时间参数，查询指定维度的数据，并以图表展示。<br>代码：<br>1）新建类： <strong>CallLog</strong></p>
+<pre><code>package bean;
 
 /**
  * 用于存放返回给用户的数据
@@ -2190,7 +2997,8 @@ public class CallLog {
                 &quot;, day=&#39;&quot; + day + &#39;\&#39;&#39; +
                 &#39;}&#39;;
     }
-}</code></pre><p>2）新建类：<strong>QueryInfo</strong></p><pre><code>package bean;
+}</code></pre><p>2）新建类：<strong>QueryInfo</strong></p>
+<pre><code>package bean;
 
 /**
  * 该类用于存放用户请求的数据
@@ -2244,7 +3052,8 @@ public class QueryInfo {
     public void setDay(String day) {
         this.day = day;
     }
-}</code></pre><p>3）新建类： <strong>CallLogDAO</strong></p><pre><code>package dao;
+}</code></pre><p>3）新建类： <strong>CallLogDAO</strong></p>
+<pre><code>package dao;
 
 import bean.CallLog;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -2268,7 +3077,8 @@ public class CallLogDAO {
         List&lt;CallLog&gt; list = namedParameterJdbcTemplate.query(sql, paramsMap, beanPropertyRowMapper);
         return list;
     }
-}</code></pre><p>4）新建类：<strong>CallLogHandler</strong></p><pre><code>package controller;
+}</code></pre><p>4）新建类：<strong>CallLogHandler</strong></p>
+<pre><code>package controller;
 
 import bean.CallLog;
 import bean.QueryInfo;
@@ -2323,7 +3133,8 @@ public class CallLogHandler {
 
         return &quot;jsp/CallLogListEchart&quot;;
     }
-}</code></pre><p>5）新建：<strong>index.jsp</strong></p><pre><code>&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
+}</code></pre><p>5）新建：<strong>index.jsp</strong></p>
+<pre><code>&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
 &lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=utf-8&quot;
          pageEncoding=&quot;utf-8&quot; %&gt;
 &lt;%
@@ -2474,7 +3285,8 @@ public class CallLogHandler {
             &lt;/table&gt;
         &lt;/div&gt;
     &lt;/body&gt;
-&lt;/html&gt;</code></pre><p>6）新建：<strong>CallLogListEchart.jsp</strong></p><pre><code>&lt;%--
+&lt;/html&gt;</code></pre><p>6）新建：<strong>CallLogListEchart.jsp</strong></p>
+<pre><code>&lt;%--
   Created by IntelliJ IDEA.
   User: Z
   Date: 2017/10/28
@@ -2713,8 +3525,15 @@ public class CallLogHandler {
     }
 &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre><h4 id="3、最终预览"><a href="#3、最终预览" class="headerlink" title="3、最终预览"></a>3、最终预览</h4><p>查询人通话时长与通话次数统计大概如下所示：</p><p><strong>首页</strong></p><p><img src="/medias/index.PNG" alt="index"></p><p><strong>统一展示</strong></p><p><img src="/medias/%E5%9B%BE%E5%BD%A2%E5%8C%96%E5%B1%95%E7%A4%BA.PNG" alt="图形化展示"></p><h3 id="八、定时任务"><a href="#八、定时任务" class="headerlink" title="八、定时任务"></a>八、定时任务</h3><p>新的数据每天都会产生，所以我们每天都需要更新离线的分析结果，所以此时我们可以用各种各样的定时任务调度工具来完成此操作。此例我们使用crontab来执行该操作。<br>1）编写任务脚本：<strong>analysis.sh</strong></p><pre><code>#!/bin/bash
-/root/hd/hadoop-2.8.4/bin/yarn jar /opt/jars/CT_analysis-1.0-SNAPSHOT.jar runner.CountDurationRunner -libjars /root/hd/hadoop-2.8.4/lib/*</code></pre><p>2） 制定crontab任务</p><pre><code># .------------------------------------------minute(0~59)
+&lt;/html&gt;</code></pre><h4 id="3、最终预览"><a href="#3、最终预览" class="headerlink" title="3、最终预览"></a>3、最终预览</h4><p>查询人通话时长与通话次数统计大概如下所示：</p>
+<p><strong>首页</strong></p>
+<p><img src="/medias/index.PNG" alt="index"></p>
+<p><strong>统一展示</strong></p>
+<p><img src="/medias/%E5%9B%BE%E5%BD%A2%E5%8C%96%E5%B1%95%E7%A4%BA.PNG" alt="图形化展示"></p>
+<h3 id="八、定时任务"><a href="#八、定时任务" class="headerlink" title="八、定时任务"></a>八、定时任务</h3><p>新的数据每天都会产生，所以我们每天都需要更新离线的分析结果，所以此时我们可以用各种各样的定时任务调度工具来完成此操作。此例我们使用crontab来执行该操作。<br>1）编写任务脚本：<strong>analysis.sh</strong></p>
+<pre><code>#!/bin/bash
+/root/hd/hadoop-2.8.4/bin/yarn jar /opt/jars/CT_analysis-1.0-SNAPSHOT.jar runner.CountDurationRunner -libjars /root/hd/hadoop-2.8.4/lib/*</code></pre><p>2） 制定crontab任务</p>
+<pre><code># .------------------------------------------minute(0~59)
 # | .----------------------------------------hours(0~23)
 # | | .--------------------------------------day of month(1~31)
 # | | | .------------------------------------month(1~12)
@@ -2722,7 +3541,9 @@ public class CallLogHandler {
 # | | | | | .--------------------------------command
 # | | | | | |
 # | | | | | |
-0 0 * * * /opt/jars/analysis.sh</code></pre><p>3）考虑数据处理手段是否安全<br>a、定时任务统计结果是否会重复<br>b、定时任务处理的数据是否全面</p><h3 id="九、项目总结"><a href="#九、项目总结" class="headerlink" title="九、项目总结"></a>九、项目总结</h3><p>重新总结梳理整个项目流程和方法论<br>1、实现月查询（某个月每一天的数据展示）<br>2、用户亲密度展示<br>3、考虑Hive实现<br>4、用户按照时间区间，查找所有的通话数据<br>5、给读者建议—–按代码来—–》成功运行——》掌握此项目</p><h3 id="十、附录"><a href="#十、附录" class="headerlink" title="十、附录"></a>十、附录</h3><h4 id="1、-flume-myagent-flume2kafka-conf"><a href="#1、-flume-myagent-flume2kafka-conf" class="headerlink" title="1、/flume/myagent/flume2kafka.conf"></a>1、/flume/myagent/flume2kafka.conf</h4><pre><code># define
+0 0 * * * /opt/jars/analysis.sh</code></pre><p>3）考虑数据处理手段是否安全<br>a、定时任务统计结果是否会重复<br>b、定时任务处理的数据是否全面</p>
+<h3 id="九、项目总结"><a href="#九、项目总结" class="headerlink" title="九、项目总结"></a>九、项目总结</h3><p>重新总结梳理整个项目流程和方法论<br>1、实现月查询（某个月每一天的数据展示）<br>2、用户亲密度展示<br>3、考虑Hive实现<br>4、用户按照时间区间，查找所有的通话数据<br>5、给读者建议—–按代码来—–》成功运行——》掌握此项目</p>
+<h3 id="十、附录"><a href="#十、附录" class="headerlink" title="十、附录"></a>十、附录</h3><h4 id="1、-flume-myagent-flume2kafka-conf"><a href="#1、-flume-myagent-flume2kafka-conf" class="headerlink" title="1、/flume/myagent/flume2kafka.conf"></a>1、/flume/myagent/flume2kafka.conf</h4><pre><code># define
 a1.sources = r1
 a1.sinks = k1
 a1.channels = c1
@@ -3084,14 +3905,438 @@ log4j.logger.org.apache.hadoop.hbase.zookeeper.ZooKeeperWatcher=INFO
 # Prevent metrics subsystem start/stop messages (HBASE-17722)
 log4j.logger.org.apache.hadoop.metrics2.impl.MetricsConfig=WARN
 log4j.logger.org.apache.hadoop.metrics2.impl.MetricsSinkAdapter=WARN
-log4j.logger.org.apache.hadoop.metrics2.impl.MetricsSystemImpl=WARN</code></pre></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://blog.hsiehchou.com/2019/05/19/dian-xin-da-shu-ju/">https://blog.hsiehchou.com/2019/05/19/dian-xin-da-shu-ju/</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a> !</span></div></div><script async defer>document.addEventListener("copy", function (e) {
+log4j.logger.org.apache.hadoop.metrics2.impl.MetricsSystemImpl=WARN</code></pre>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com/2019/05/19/dian-xin-da-shu-ju/">https://blog.hsiehchou.com/2019/05/19/dian-xin-da-shu-ju/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
       function navToReprintStatement() {
         $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/"><span class="chip bg-color">大数据项目</span></a> <a href="/tags/%E7%94%B5%E4%BF%A1/"><span class="chip bg-color">电信</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/js/social-share.min.js"></script></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/2019/06/04/xi-tong-ding-shi-ren-wu/"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="系统定时任务"> <span class="card-title">系统定时任务</span></div></a><div class="card-content article-content"><div class="summary block-with-text">crond系统定时任务1、crond服务管理service crond restart （重新启动服务） 2、crontab定时任务设置1）基本语法crontab [选项]选项： -e： 编辑crontab定时任</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2019-06-04</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Linux/" class="post-category">Linux</a></span></div></div><div class="card-action article-tags"><a href="/tags/Linux/"><span class="chip bg-color">Linux</span></a> <a href="/tags/%E5%AE%9A%E6%97%B6%E8%84%9A%E6%9C%AC/"><span class="chip bg-color">定时脚本</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/2019/05/18/flink-lian-xi/"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="Flink练习"> <span class="card-title">Flink练习</span></div></a><div class="card-content article-content"><div class="summary block-with-text">一、Flink开发IDEA环境搭建与测试1、IDEA开发环境先虚拟机联网，然后执行yum -y install ncnc是用来打开端口的工具然后nc -l 9000 1.pom文件设置 &lt;properties&gt;</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2019-05-18</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">大数据</a></span></div></div><div class="card-action article-tags"><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"><span class="chip bg-color">大数据</span></a> <a href="/tags/Flink/"><span class="chip bg-color">Flink</span></a></div></div></div></div></article></div><script>$("#articleContent").on("copy",function(e){if(void 0!==window.getSelection){var n=window.getSelection();if(!((""+n).length<Number.parseInt("60"))){var t=document.getElementsByTagName("body")[0],o=document.createElement("div");o.style.position="absolute",o.style.left="-99999px",t.appendChild(o),o.appendChild(n.getRangeAt(0).cloneContents()),"PRE"===n.getRangeAt(0).commonAncestorContainer.nodeName&&(o.innerHTML="<pre>"+o.innerHTML+"</pre>");var i=document.location.href;o.innerHTML+='<br />来源: 谢舟的博客<br />文章作者: 谢舟<br />文章链接: <a href="'+i+'">'+i+"</a><br />本文章著作权归作者所有，任何形式的转载都请注明出处。",n.selectAllChildren(o),window.setTimeout(function(){t.removeChild(o)},200)}}})</script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeBlockFuction.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeLang.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeCopy.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeShrink.js"></script><style>code[class*=language-],pre[class*=language-]{white-space:pre!important}</style></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%A1%B9%E7%9B%AE/">
+                                    <span class="chip bg-color">大数据项目</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%94%B5%E4%BF%A1/">
+                                    <span class="chip bg-color">电信</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/06/04/xi-tong-ding-shi-ren-wu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="系统定时任务">
+                        
+                        <span class="card-title">系统定时任务</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            crond系统定时任务1、crond服务管理service crond restart             （重新启动服务）
+2、crontab定时任务设置1）基本语法crontab [选项]选项：  -e：  编辑crontab定时任
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-06-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AE%9A%E6%97%B6%E8%84%9A%E6%9C%AC/">
+                        <span class="chip bg-color">定时脚本</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/05/18/flink-lian-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="Flink练习">
+                        
+                        <span class="card-title">Flink练习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、Flink开发IDEA环境搭建与测试1、IDEA开发环境先虚拟机联网，然后执行yum -y install ncnc是用来打开端口的工具然后nc -l 9000  
+1.pom文件设置
+&lt;properties&gt;
+      
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/Flink/">
+                        <span class="chip bg-color">Flink</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 谢舟的博客<br />'
+            + '文章作者: 谢舟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
@@ -3162,4 +4407,181 @@ log4j.logger.org.apache.hadoop.metrics2.impl.MetricsSystemImpl=WARN</code></pre>
             fixPostCardWidth('artDetail', 'prenext-posts');
         });
         
-    });</script></main><footer class="page-footer bg-color"><div class="container row center-align" style="margin-bottom:0!important"><div class="col s12 m8 l8 copy-right">Copyright&nbsp;&copy; <span id="year">2019-2020</span> <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a><br>&nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">490.3k</span>&nbsp;字 <span id="busuanzi_container_site_pv">|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次</span> <span id="busuanzi_container_site_uv">|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br><span id="icp"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/icp.png" style="vertical-align:text-bottom"> <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a></span></div><div class="col s12 m4 l4 social-link social-statis"><a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/search.js"></script><script>$(function(){searchFunc("https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/masonry/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/scrollprogress/scrollProgress.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/matery.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id="></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?1fdd6e11866c1fe7b815d69a4a4206ea";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/clicklove.js" async></script><script async src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/instantpage/instantpage.js" type="module"></script></body></html>
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">490.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            
+			<br>
+            
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1fdd6e11866c1fe7b815d69a4a4206ea";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

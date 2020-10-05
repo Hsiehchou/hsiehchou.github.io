@@ -1,4 +1,227 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="第三章 Python编程进阶, 谢舟，博客，大数据，Java"><meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="baidu-site-verification" content="2VN5bX64Cz"><title>第三章 Python编程进阶 | 谢舟的博客</title><link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/favicon.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/awesome/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/animate/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/matery.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/my.css"><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/jquery/jquery.min.js"></script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml"><link rel="stylesheet" href="/css/prism-tomorrow.css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><div><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">谢舟的博客</span></div></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom:.6"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom:.6"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">谢舟的博客</div><div class="logo-desc">发布关于大数据,Java的一些信息和自己实践中的经验</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li></ul></div></div></nav></header><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/cryptojs/crypto-js.min.js"></script><script>(function() {
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python, 编程进阶">
+    <meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="baidu-site-verification" content="2VN5bX64Cz" />
+    <title>第三章 Python 编程进阶 | 谢舟的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+					<div>
+						
+						<img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+						
+						<span class="logo-span">谢舟的博客</span>
+					</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">谢舟的博客</div>
+        <div class="logo-desc">
+            
+            发布关于大数据,Java的一些信息和自己实践中的经验
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
         let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
@@ -6,33 +229,558 @@
                 location.href = '/';
             }
         }
-    })();</script><div class="bg-cover pd-header post-cover" style="background-image:url(https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/7.jpg)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">第三章 Python编程进阶</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{height:calc(100vh - 250px);overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px}#toc-content .is-active-link{color:#42b983}#toc-content .is-active-link::before{background-color:#42b983}#floating-toc-btn{position:fixed;right:15px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/Python/"><span class="chip bg-color">Python</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Python/" class="post-category">Python</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2020-06-02</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 8.7k</div><div class="info-break-policy"><i class="far fa-clock fa-fw"></i> 阅读时长:&nbsp;&nbsp; 36 分</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h2 id="第三章-Python-编程进阶"><a href="#第三章-Python-编程进阶" class="headerlink" title="第三章 Python 编程进阶"></a>第三章 Python 编程进阶</h2><h3 id="1、输入输出与文件操作"><a href="#1、输入输出与文件操作" class="headerlink" title="1、输入输出与文件操作"></a>1、输入输出与文件操作</h3><ol><li>输入输出<br>基本输入、输出</li><li>文件操作<br>文件编码、基本操作</li></ol><h4 id="1-1-输入"><a href="#1-1-输入" class="headerlink" title="1.1 输入"></a>1.1 输入</h4><ol><li>Python 提供了 input() 内置函数从标准输入读入一行文本。</li><li>input() 函数也可以接收一个 Python 表达式作为输入，并将运算结果返回。</li><li>input() 函数的返回值永远是字符串，当我们需要返回 int 型时需要使用int(input()) 。</li></ol><p><strong>注：</strong>eval() 函数用来执行一个字符串表达式，并返回表达式的值。</p><pre><code>str = input(&quot;请输入：&quot;)
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">第三章 Python 编程进阶</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-02
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    35 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="第三章-Python-编程进阶"><a href="#第三章-Python-编程进阶" class="headerlink" title="第三章 Python 编程进阶"></a><strong>第三章 Python 编程进阶</strong></h2><h3 id="1、输入输出与文件操作"><a href="#1、输入输出与文件操作" class="headerlink" title="1、输入输出与文件操作"></a><strong>1、输入输出与文件操作</strong></h3><ol>
+<li><strong>输入输出</strong></li>
+</ol>
+<p><strong>基本输入、输出</strong><br>2.  <strong>文件操作</strong><br><strong>文件编码、基本操作</strong></p>
+<h4 id="1-1-输入"><a href="#1-1-输入" class="headerlink" title="1.1 输入"></a><strong>1.1 输入</strong></h4><ol>
+<li><strong>Python 提供了 input() 内置函数从标准输入读入一行文本。</strong></li>
+<li><strong>input() 函数也可以接收一个 Python 表达式作为输入，并将运算结果返回。</strong></li>
+<li><strong>input() 函数的返回值永远是字符串，当我们需要返回 int 型时需要使用int(input()) 。</strong></li>
+</ol>
+<p><strong>eval() 函数用来执行一个字符串表达式，并返回表达式的值。</strong></p>
+<pre><code>str = input(&quot;请输入：&quot;)
 print(&quot;你输入的内容是：&quot;, str)
 sum = input(&quot;请输入算术表达式：&quot;)
 sum = eval(sum)
-print(sum)</code></pre><p><strong>结果：</strong><br>请输入：Python编程学习<br>你输入的内容是： Python编程学习<br>请输入算术表达式：2+5<br>7</p><h4 id="1-2-输出"><a href="#1-2-输出" class="headerlink" title="1.2 输出"></a>1.2 输出</h4><ol><li>用 print() 在括号中加上字符串，就可以向屏幕上输出指定的文字。比如：输出“hello world”，用代码实现如下：<br>print(“hello world”)</li><li>print() 函数也可以接受多个字符串，用逗号“,”隔开，就可以连成一串输出：<br>print(‘The quick brown fox’, ‘jumps over’, ‘the lazy dog!’)</li><li>print() 会依次打印每个字符串，遇到逗号”,”会输出一个空格，因此，输出的字符串是这样拼起来的：</li></ol><pre><code>print(&#39;The quick brown fox&#39;, &#39;jumps over&#39;, &#39;the lazy dog!&#39;)</code></pre><p><strong>结果：</strong><br>The quick brown fox jumps over the lazy dog!</p><ol start="4"><li><p>print()也可以打印整数，或者计算结果：<br>print(300) # 输出300<br>print(100+200) # 输出300</p></li><li><p>print()函数也可以接受多个字符串，用逗号“,”隔开，就可以连成一串输出：</p></li></ol><pre><code>print(&#39;100+200=&#39;, 100+200)</code></pre><p><strong>结果：</strong><br>100+200= 300</p><p><strong>注意：</strong>对于100 + 200，Python解释器自动计算出结果300，但是，’100 + 200 =’是字符串而非数学公式，Python把它视为字符串。</p><h4 id="1-3-格式化输出"><a href="#1-3-格式化输出" class="headerlink" title="1.3 格式化输出"></a>1.3 格式化输出</h4><h5 id="1-3-1-整数的输出"><a href="#1-3-1-整数的输出" class="headerlink" title="1.3.1  整数的输出"></a>1.3.1 整数的输出</h5><p>1）%o —- oct 八进制<br>2）%d —- dec 十进制<br>3）%x —- hex 十六进制</p><pre><code>print(&#39;%o&#39; % 20)
+print(sum)</code></pre><p><strong>请输入：Python编程学习</strong><br><strong>你输入的内容是： Python编程学习</strong><br><strong>请输入算术表达式：2+5</strong><br><strong>7</strong></p>
+<h4 id="1-2-输出"><a href="#1-2-输出" class="headerlink" title="1.2 输出"></a><strong>1.2 输出</strong></h4><ol>
+<li><strong>用 print() 在括号中加上字符串，就可以向屏幕上输出指定的文字。比如：输出“hello world”，用代码实现如下：</strong></li>
+</ol>
+<p><strong>print(“hello world”)</strong><br>2.  <strong>print() 函数也可以接受多个字符串，用逗号“,”隔开，就可以连成一串输出：</strong><br><strong>print(‘The quick brown fox’, ‘jumps over’, ‘the lazy dog!’)</strong><br>3.  <strong>print() 会依次打印每个字符串，遇到逗号”,”会输出一个空格，因此，输出的字符串是这样拼起来的：</strong></p>
+<pre><code>print(&#39;The quick brown fox&#39;, &#39;jumps over&#39;, &#39;the lazy dog!&#39;)</code></pre><p><strong>The quick brown fox jumps over the lazy dog!</strong></p>
+<ol start="4">
+<li><strong>print()也可以打印整数，或者计算结果：</strong></li>
+</ol>
+<p><strong>print(300)   # 输出300</strong><br><strong>print(100+200)  # 输出300</strong></p>
+<ol start="5">
+<li><strong>print()函数也可以接受多个字符串，用逗号“,”隔开，就可以连成一串输出：</strong></li>
+</ol>
+<pre><code>print(&#39;100+200=&#39;, 100+200)</code></pre><p><strong>100+200= 300</strong></p>
+<p><strong>对于100 + 200，Python解释器自动计算出结果300，但是，’100 + 200 =’是字符串而非数学公式，Python把它视为字符串。</strong></p>
+<h4 id="1-3-格式化输出"><a href="#1-3-格式化输出" class="headerlink" title="1.3 格式化输出"></a><strong>1.3 格式化输出</strong></h4><h5 id="1-3-1-整数的输出"><a href="#1-3-1-整数的输出" class="headerlink" title="1.3.1  整数的输出"></a><strong>1.3.1  整数的输出</strong></h5><p><strong>1）%o —- oct 八进制</strong><br><strong>2）%d —- dec 十进制</strong><br><strong>3）%x —- hex 十六进制</strong></p>
+<pre><code>print(&#39;%o&#39; % 20)
 print(&#39;%d&#39; % 20)
-print(&#39;%x&#39; % 20)</code></pre><p><strong>结果：</strong><br>24<br>20<br>14</p><h5 id="1-3-2-浮点数的输出"><a href="#1-3-2-浮点数的输出" class="headerlink" title="1.3.2  浮点数的输出"></a>1.3.2 浮点数的输出</h5><p>1）<strong>格式化输出</strong></p><pre><code>print(&#39;%f&#39; % 1.11)     # 默认保留6位小数
+print(&#39;%x&#39; % 20)</code></pre><p><strong>24</strong><br><strong>20</strong><br><strong>14</strong></p>
+<h5 id="1-3-2-浮点数的输出"><a href="#1-3-2-浮点数的输出" class="headerlink" title="1.3.2  浮点数的输出"></a><strong>1.3.2  浮点数的输出</strong></h5><p><strong>1）</strong></p>
+<pre><code>print(&#39;%f&#39; % 1.11)     # 默认保留6位小数
 print(&#39;%.1f&#39; % 1.11)   # 取1位小数
 print(&#39;%e&#39; % 1.11)     # 默认6位小数，用科学计数法
 print(&#39;%.3e&#39; % 1.11)   # 取3位小数，用科学计数法
 print(&#39;%g&#39; % 1111.1111)    # 默认6位有效数字
 print(&#39;%.7g&#39; % 1111.1111)  # 取7位有效数字
-print(&#39;%.2g&#39; % 1111.1111)  # 取2位有效数字，自动转换为科学计数法1.1e+03</code></pre><p><strong>结果：</strong><br>1.110000<br>1.1<br>1.110000e+00<br>1.110e+00<br>1111.11<br>1111.111<br>1.1e+03</p><p>2）<strong>内置 round() 函数</strong><br>round(number[, ndigits])<br><strong>参数：</strong><br><code>number</code> —- 这是一个数字表达式。<br><code>ndigits</code> —- 表示从小数点到最后四舍五入的位数。默认值为 0。<br><strong>返回值</strong>：该方法返回 x 的小数点舍入为 n 位数后的值。<br><br></p><ol><li>round()函数只有一个参数，不指定位数时，返回一个整数，而且是最靠近的整数，类似于四舍五入。</li><li>当指定取舍的小数点位数的时候，一般情况也是使用四舍五入的规则。</li><li>但是碰到.5的情况时，如果要取舍的位数前的小数是奇数，则直接舍弃，如果是偶数则向上取舍。</li></ol><pre><code>round(1.1125)         # 四舍五入，不指定位数，取整
+print(&#39;%.2g&#39; % 1111.1111)  # 取2位有效数字，自动转换为科学计数法1.1e+03</code></pre><p><strong>1.110000</strong><br><strong>1.1</strong><br><strong>1.110000e+00</strong><br><strong>1.110e+00</strong><br><strong>1111.11</strong><br><strong>1111.111</strong><br><strong>1.1e+03</strong></p>
+<p><strong>2）</strong><br><strong>round(number[, ndigits])</strong></p>
+<p><strong><code>number</code> —- 这是一个数字表达式。</strong><br><strong><code>ndigits</code> —- 表示从小数点到最后四舍五入的位数。默认值为 0。</strong><br><strong>：该方法返回 x 的小数点舍入为 n 位数后的值。</strong><br><strong><br></strong></p>
+<ol>
+<li><strong>round()函数只有一个参数，不指定位数时，返回一个整数，而且是最靠近的整数，类似于四舍五入。</strong></li>
+<li><strong>当指定取舍的小数点位数的时候，一般情况也是使用四舍五入的规则。</strong></li>
+<li><strong>但是碰到.5的情况时，如果要取舍的位数前的小数是奇数，则直接舍弃，如果是偶数则向上取舍。</strong></li>
+</ol>
+<pre><code>round(1.1125)         # 四舍五入，不指定位数，取整
 round(1.1135,3)     # 取3位小数，由于3为奇数，则向下“舍”
 round(1.1125,3)     # 取3位小数，由于2为偶数，则向上“入”
-round(2.675, 2)     # 取2们有效小数</code></pre><p><strong>结果：</strong><br>1<br>1.113<br>1.113<br>2.67</p><p><strong>注：</strong>round(2.675, 2) 的结果，结果应该是2.68的，但它偏偏是2.67，为什么？这跟浮点数的精度有关。在机器中浮点数不一定能精确表达，换算成一串1和 0 后可能是无限位数的，机器已经做出了截断处理。因此在机器中保存的2.675这个数字就比实际数字要小那么一点点。这一点点就导致了它离2.67要更近一点点，所以保留两位小数时就近似到了2.67。</p><h5 id="1-3-3-字符串输出"><a href="#1-3-3-字符串输出" class="headerlink" title="1.3.3 字符串输出"></a>1.3.3 字符串输出</h5><ol><li>%s</li><li>%10s —— 右对齐，占位符10位</li><li>%.2s —— 截取2位字符串</li></ol><pre><code>print(&#39;%s&#39; % &#39;hello world&#39;) # 字符串输出
+round(2.675, 2)     # 取2们有效小数</code></pre><p><strong>1</strong><br><strong>1.113</strong><br><strong>1.113</strong><br><strong>2.67</strong></p>
+<p><strong>round(2.675, 2) 的结果，结果应该是2.68的，但它偏偏是2.67，为什么？这跟浮点数的精度有关。在机器中浮点数不一定能精确表达，换算成一串1和 0 后可能是无限位数的，机器已经做出了截断处理。因此在机器中保存的2.675这个数字就比实际数字要小那么一点点。这一点点就导致了它离2.67要更近一点点，所以保留两位小数时就近似到了2.67。</strong></p>
+<h5 id="1-3-3-字符串输出"><a href="#1-3-3-字符串输出" class="headerlink" title="1.3.3 字符串输出"></a><strong>1.3.3 字符串输出</strong></h5><ol>
+<li><strong>%s</strong></li>
+<li><strong>%10s —— 右对齐，占位符10位</strong></li>
+<li><strong>%.2s —— 截取2位字符串</strong></li>
+</ol>
+<pre><code>print(&#39;%s&#39; % &#39;hello world&#39;) # 字符串输出
 print(&#39;%20s&#39; % &#39;hello world&#39;) # 右对齐，取20位，不够则补位
 print(&#39;%-20s&#39; % &#39;hello world&#39;) # 左对齐，取20位，不够则补位
 print(&#39;%.2s&#39; % &#39;hello world&#39;) # 取2位
 print(&#39;%10.2s&#39; % &#39;hello world&#39;) # 右对齐，取2位
-print(&#39;%-10.2s&#39; % &#39;hello world&#39;) # 左对齐，取2位</code></pre><p><strong>结果：</strong></p><pre><code>hello world
+print(&#39;%-10.2s&#39; % &#39;hello world&#39;) # 左对齐，取2位</code></pre><p><strong>结果：</strong></p>
+<pre><code>hello world
          hello world
 hello world         
 he
         he
-he       </code></pre><h3 id="2、文件"><a href="#2、文件" class="headerlink" title="2、文件"></a>2、文件</h3><h4 id="2-1-文件编码"><a href="#2-1-文件编码" class="headerlink" title="2.1 文件编码"></a>2.1 文件编码</h4><h5 id="2-1-1-ASCII-码"><a href="#2-1-1-ASCII-码" class="headerlink" title="2.1.1 ASCII 码"></a>2.1.1 ASCII 码</h5><ol><li>ASCII(American Standard Code for Information Interchange)，是一种<strong>单字节</strong>的编码。</li><li>ASCII 码使用指定的 7 位或 8 位二进制数组合来表示 128 或 256 种可能的字符。</li><li>英语中，用 128 个符号编码便可以表示全部，但是用来表示其他语言，128 个符号是不够。欧洲国家就决定，利用字节中闲置的最高位编入新的符号。欧洲国家编码体系，可以表示最多 256 个符号。</li><li>汉字多达 10 万左右，一个字节只能表示 256 种符号，就必须使用多个字节表达一个符号。比如，简体中文常见的编码方式是 GB2312，使用两个字节表示一个汉字。</li></ol><h5 id="2-1-2-Unicode"><a href="#2-1-2-Unicode" class="headerlink" title="2.1.2 Unicode"></a>2.1.2 Unicode</h5><ol><li>Unicode 码扩展自 ASCII 字元集</li><li>Unicode 是计算机科学领域里的一项业界标准，包括字符集、编码方案等。</li><li>Unicode 通常用<strong>两个字节</strong>表示一个字符，原有的英文编码从单字节变成双字节，只需要把高字节全部填为 0 就可以。</li><li>跨语言、跨平台进行文本转换和处理。</li><li>对每种语言中字符设定统一且唯一的二进制编码。</li><li>每个英文字母前都必然有二到三个字节是 0，这对于存储来说是极大的浪费。</li></ol><h5 id="2-1-3-UTF-8（8-bit-Unicode-Transformation-Format）"><a href="#2-1-3-UTF-8（8-bit-Unicode-Transformation-Format）" class="headerlink" title="2.1.3 UTF-8（8-bit Unicode Transformation Format）"></a>2.1.3 UTF-8（8-bit Unicode Transformation Format）</h5><ol><li>可变长度的Unicode的实现方式。</li><li>使用 1~4 个字节表示一个符号，根据不同的符号而变化字节长度。</li></ol><h4 id="2-2-文件类型"><a href="#2-2-文件类型" class="headerlink" title="2.2 文件类型"></a>2.2 文件类型</h4><h5 id="2-2-1-文本文件"><a href="#2-2-1-文本文件" class="headerlink" title="2.2.1 文本文件"></a>2.2.1 文本文件</h5><p>以 ASCII 码方式存储的文件</p><h5 id="2-2-2-二进制文件"><a href="#2-2-2-二进制文件" class="headerlink" title="2.2.2 二进制文件"></a>2.2.2 二进制文件</h5><p>直接由比特 0 和比特 1 组成，没有统一字符编码</p><h4 id="2-3-文件操作"><a href="#2-3-文件操作" class="headerlink" title="2.3 文件操作"></a>2.3 文件操作</h4><h5 id="2-3-1-打开文件"><a href="#2-3-1-打开文件" class="headerlink" title="2.3.1 打开文件"></a>2.3.1 打开文件</h5><p>建立磁盘上的文件与程序中的对象相关联</p><ol><li>Python 通过解释器内置的 open() 函数打开一个文件，并实现该文件与一个程序变量的关联，open() 函数格式如下：<pre><code>&lt;变量名&gt;=open(&lt;文件名&gt;,&lt;打开模式&gt;)</code></pre></li><li>open() 函数有两个参数：文件名和打开模式。</li><li>文件名可以是文件的实际名字，也可以是包含完整路径的名字。</li><li>文件打开模式：只读，写入，追加等。这个参数是非强制的，默认文件访问模式为只读 (r)。</li><li>open() 函数提供 7 种基本的打开模式</li></ol><table><thead><tr><th align="center">模式</th><th align="left">说明</th></tr></thead><tbody><tr><td align="center">r</td><td align="left">读模式（默认模式，可省略），如果文件不存在，抛出异常</td></tr><tr><td align="center">w</td><td align="left">写模式，如果文件已存在，先清空原有内容；如果文件不存在，创建新文件</td></tr><tr><td align="center">x</td><td align="left">写模式，创建新文件，如果文件已存在则抛出异常</td></tr><tr><td align="center">a</td><td align="left">追加模式，不覆盖文件中原有内容</td></tr><tr><td align="center">b</td><td align="left">二进制模式（可与 r、w、x 或 a 模式组合使用）</td></tr><tr><td align="center">t</td><td align="left">文本模式（默认模式，可省略）</td></tr><tr><td align="center">+</td><td align="left">读、写模式（可与其他模式组合使用）</td></tr></tbody></table><ol start="6"><li>读写模式</li></ol><table><thead><tr><th align="center">模式</th><th align="center">r</th><th align="center">r+</th><th align="center">w</th><th align="center">w+</th><th align="center">a</th><th align="center">a+</th></tr></thead><tbody><tr><td align="center">读</td><td align="center">+</td><td align="center">+</td><td align="center"></td><td align="center">+</td><td align="center"></td><td align="center">+</td></tr><tr><td align="center">写</td><td align="center"></td><td align="center">+</td><td align="center">+</td><td align="center">+</td><td align="center">+</td><td align="center">+</td></tr><tr><td align="center">创建</td><td align="center"></td><td align="center"></td><td align="center">+</td><td align="center">+</td><td align="center">+</td><td align="center">+</td></tr><tr><td align="center">覆盖</td><td align="center"></td><td align="center"></td><td align="center">+</td><td align="center">+</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">指针在开始</td><td align="center">+</td><td align="center">+</td><td align="center">+</td><td align="center">+</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">指针在结尾</td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center">+</td><td align="center">+</td></tr></tbody></table><h5 id="2-3-2-文件操作"><a href="#2-3-2-文件操作" class="headerlink" title="2.3.2 文件操作"></a>2.3.2 文件操作</h5><ol><li>读取</li></ol><p><strong>文件读取</strong><br>根据打开方式不同可以对文件进行相应的读写操作，Python提供4个常用的文件内容读取方法。</p><table><thead><tr><th align="left">方法</th><th align="left">含义</th></tr></thead><tbody><tr><td align="left"><code>&lt;file&gt;.readall()</code></td><td align="left">读入整个文件内容，返回一个字符串或字节流</td></tr><tr><td align="left"><code>&lt;file&gt;.read(size = -1)</code></td><td align="left">从文件中读入整个文件内容，如果给出参数，读入前size长度的字符串或字节流</td></tr><tr><td align="left"><code>&lt;file&gt;.readline(size = -1)</code></td><td align="left">从文件中读入一行内容，如果给出参数，读入前 size 长度的字符串或字节流</td></tr><tr><td align="left"><code>&lt;file&gt;.readlines(hint = -1)</code></td><td align="left">从文件中读入所有行，以每行为元素形成一个列表，如果给出参数，读入 hint 行</td></tr></tbody></table><ol start="2"><li>写入</li></ol><p><strong>文件写入</strong><br>Python 提供 3 个与文件内容写入有关的方法</p><table><thead><tr><th align="left">方法</th><th align="left">含义</th></tr></thead><tbody><tr><td align="left"><code>&lt;file&gt;. write(s)</code></td><td align="left">向文件写入一个字符串或字节流</td></tr><tr><td align="left"><code>&lt;file&gt;. writelines(lines)</code></td><td align="left">将一个元素为字符串的列表写入文件</td></tr><tr><td align="left"><code>&lt;file&gt;. seek(offset)</code></td><td align="left">0：文件开头；1：当前位置；2：文件结尾</td></tr></tbody></table><ol start="3"><li><p>定位</p></li><li><p>其他：追加、计算等</p></li><li><p>上下文管理语句with<br>在实际开发中，读写文件应优先考虑使用上下文管理语句with。关键字with可以自动管理资源，不论因为什么原因跳出with块，总能保证文件被正确关闭。除了用于文件操作，with关键字还可以用于数据库连接、网络连接或类似场合。用于文件内容读写时，with语句的语法形式如下：</p></li></ol><pre><code>with open(filename, mode, encoding) as fp:
-# 这里写通过文件对象 fp 读写文件内容的语句块</code></pre><ol start="6"><li>文件操作示例<br>编写程序将电话簿 teleAddressBook.txt 和电子邮件 emailAddressBook.txt 合并为一个完整的 addressBook.txt</li></ol><p><strong>teleAddressBook.txt</strong></p><table><thead><tr><th align="left">姓名</th><th align="left">电话号码</th></tr></thead><tbody><tr><td align="left">张伟</td><td align="left">1534098751</td></tr><tr><td align="left">王伟</td><td align="left">1520878752</td></tr><tr><td align="left">王芳</td><td align="left">1520658753</td></tr><tr><td align="left">李娜</td><td align="left">1523098754</td></tr><tr><td align="left">刘伟</td><td align="left">1596098755</td></tr></tbody></table><p><strong>emailAddressBook.txt</strong></p><table><thead><tr><th align="left">姓名</th><th align="left">邮箱</th></tr></thead><tbody><tr><td align="left">张伟</td><td align="left"><a href="mailto:1534098751@qq.com">1534098751@qq.com</a></td></tr><tr><td align="left">王伟</td><td align="left"><a href="mailto:1520878752@qq.com">1520878752@qq.com</a></td></tr><tr><td align="left">王芳</td><td align="left"><a href="mailto:1520658753@qq.com">1520658753@qq.com</a></td></tr><tr><td align="left">李伟</td><td align="left"><a href="mailto:1520098754@qq.com">1520098754@qq.com</a></td></tr></tbody></table><p><strong>addressBook.txt</strong></p><table><thead><tr><th align="left">姓名</th><th align="left">电话</th><th align="left">邮箱</th></tr></thead><tbody><tr><td align="left">张伟</td><td align="left">1534098751</td><td align="left"><a href="mailto:1534098751@qq.com">1534098751@qq.com</a></td></tr><tr><td align="left">王伟</td><td align="left">1520878752</td><td align="left"><a href="mailto:1520878752@qq.com">1520878752@qq.com</a></td></tr><tr><td align="left">王芳</td><td align="left">1520658753</td><td align="left"><a href="mailto:1520658753@qq.com">1520658753@qq.com</a></td></tr><tr><td align="left">李娜</td><td align="left">1523098754</td><td align="left"></td></tr><tr><td align="left">刘伟</td><td align="left">1596098755</td><td align="left"></td></tr><tr><td align="left">李伟</td><td align="left"></td><td align="left"><a href="mailto:1520098754@qq.com">1520098754@qq.com</a></td></tr></tbody></table><ol start="7"><li>文件操作示例代码</li></ol><pre><code>with open(&#39;teleAddressBook.txt&#39;, &#39;rt&#39;) as ftele1:
+he       </code></pre><h3 id="2、文件"><a href="#2、文件" class="headerlink" title="2、文件"></a><strong>2、文件</strong></h3><h4 id="2-1-文件编码"><a href="#2-1-文件编码" class="headerlink" title="2.1 文件编码"></a><strong>2.1 文件编码</strong></h4><h5 id="2-1-1-ASCII-码"><a href="#2-1-1-ASCII-码" class="headerlink" title="2.1.1 ASCII 码"></a><strong>2.1.1 ASCII 码</strong></h5><ol>
+<li><strong>ASCII(American Standard Code for Information Interchange)，是一种的编码。</strong></li>
+<li><strong>ASCII 码使用指定的 7 位或 8 位二进制数组合来表示 128 或 256 种可能的字符。</strong></li>
+<li><strong>英语中，用 128 个符号编码便可以表示全部，但是用来表示其他语言，128 个符号是不够。欧洲国家就决定，利用字节中闲置的最高位编入新的符号。欧洲国家编码体系，可以表示最多 256 个符号。</strong></li>
+<li><strong>汉字多达 10 万左右，一个字节只能表示 256 种符号，就必须使用多个字节表达一个符号。比如，简体中文常见的编码方式是 GB2312，使用两个字节表示一个汉字。</strong></li>
+</ol>
+<h5 id="2-1-2-Unicode"><a href="#2-1-2-Unicode" class="headerlink" title="2.1.2 Unicode"></a><strong>2.1.2 Unicode</strong></h5><ol>
+<li><strong>Unicode 码扩展自 ASCII 字元集</strong></li>
+<li><strong>Unicode 是计算机科学领域里的一项业界标准，包括字符集、编码方案等。</strong></li>
+<li><strong>Unicode 通常用表示一个字符，原有的英文编码从单字节变成双字节，只需要把高字节全部填为 0 就可以。</strong></li>
+<li><strong>跨语言、跨平台进行文本转换和处理。</strong></li>
+<li><strong>对每种语言中字符设定统一且唯一的二进制编码。</strong></li>
+<li><strong>每个英文字母前都必然有二到三个字节是 0，这对于存储来说是极大的浪费。</strong></li>
+</ol>
+<h5 id="2-1-3-UTF-8（8-bit-Unicode-Transformation-Format）"><a href="#2-1-3-UTF-8（8-bit-Unicode-Transformation-Format）" class="headerlink" title="2.1.3 UTF-8（8-bit Unicode Transformation Format）"></a><strong>2.1.3 UTF-8（8-bit Unicode Transformation Format）</strong></h5><ol>
+<li><strong>可变长度的Unicode的实现方式。</strong></li>
+<li><strong>使用 1~4 个字节表示一个符号，根据不同的符号而变化字节长度。</strong></li>
+</ol>
+<h4 id="2-2-文件类型"><a href="#2-2-文件类型" class="headerlink" title="2.2 文件类型"></a><strong>2.2 文件类型</strong></h4><h5 id="2-2-1-文本文件"><a href="#2-2-1-文本文件" class="headerlink" title="2.2.1 文本文件"></a><strong>2.2.1 文本文件</strong></h5><p><strong>以 ASCII 码方式存储的文件</strong></p>
+<h5 id="2-2-2-二进制文件"><a href="#2-2-2-二进制文件" class="headerlink" title="2.2.2 二进制文件"></a><strong>2.2.2 二进制文件</strong></h5><p><strong>直接由比特 0 和比特 1 组成，没有统一字符编码</strong></p>
+<h4 id="2-3-文件操作"><a href="#2-3-文件操作" class="headerlink" title="2.3 文件操作"></a><strong>2.3 文件操作</strong></h4><h5 id="2-3-1-打开文件"><a href="#2-3-1-打开文件" class="headerlink" title="2.3.1 打开文件"></a><strong>2.3.1 打开文件</strong></h5><p><strong>建立磁盘上的文件与程序中的对象相关联</strong></p>
+<ol>
+<li><strong>Python 通过解释器内置的 open() 函数打开一个文件，并实现该文件与一个程序变量的关联，open() 函数格式如下：</strong><pre><code>&lt;变量名&gt;=open(&lt;文件名&gt;,&lt;打开模式&gt;)</code></pre></li>
+<li><strong>open() 函数有两个参数：文件名和打开模式。</strong></li>
+<li><strong>文件名可以是文件的实际名字，也可以是包含完整路径的名字。</strong></li>
+<li><strong>文件打开模式：只读，写入，追加等。这个参数是非强制的，默认文件访问模式为只读 (r)。</strong></li>
+<li><strong>open() 函数提供 7 种基本的打开模式</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>模式</strong></th>
+<th align="left"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>r</strong></td>
+<td align="left"><strong>读模式（默认模式，可省略），如果文件不存在，抛出异常</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>w</strong></td>
+<td align="left"><strong>写模式，如果文件已存在，先清空原有内容；如果文件不存在，创建新文件</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>x</strong></td>
+<td align="left"><strong>写模式，创建新文件，如果文件已存在则抛出异常</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>a</strong></td>
+<td align="left"><strong>追加模式，不覆盖文件中原有内容</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>b</strong></td>
+<td align="left"><strong>二进制模式（可与 r、w、x 或 a 模式组合使用）</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>t</strong></td>
+<td align="left"><strong>文本模式（默认模式，可省略）</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>+</strong></td>
+<td align="left"><strong>读、写模式（可与其他模式组合使用）</strong></td>
+</tr>
+</tbody></table>
+<ol start="6">
+<li><strong>读写模式</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center"><strong>模式</strong></th>
+<th align="center"><strong>r</strong></th>
+<th align="center"><strong>r+</strong></th>
+<th align="center"><strong>w</strong></th>
+<th align="center"><strong>w+</strong></th>
+<th align="center"><strong>a</strong></th>
+<th align="center"><strong>a+</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>读</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"></td>
+<td align="center"><strong>+</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>写</strong></td>
+<td align="center"></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>创建</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>覆盖</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>指针在开始</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><strong>指针在结尾</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><strong>+</strong></td>
+<td align="center"><strong>+</strong></td>
+</tr>
+</tbody></table>
+<h5 id="2-3-2-文件操作"><a href="#2-3-2-文件操作" class="headerlink" title="2.3.2 文件操作"></a><strong>2.3.2 文件操作</strong></h5><ol>
+<li><strong>读取</strong></li>
+</ol>
+<p><strong>根据打开方式不同可以对文件进行相应的读写操作，Python提供4个常用的文件内容读取方法。</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>方法</strong></th>
+<th align="left"><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong><code>&lt;file&gt;.readall()</code></strong></td>
+<td align="left"><strong>读入整个文件内容，返回一个字符串或字节流</strong></td>
+</tr>
+<tr>
+<td align="left"><strong><code>&lt;file&gt;.read(size = -1)</code></strong></td>
+<td align="left"><strong>从文件中读入整个文件内容，如果给出参数，读入前size长度的字符串或字节流</strong></td>
+</tr>
+<tr>
+<td align="left"><strong><code>&lt;file&gt;.readline(size = -1)</code></strong></td>
+<td align="left"><strong>从文件中读入一行内容，如果给出参数，读入前  size 长度的字符串或字节流</strong></td>
+</tr>
+<tr>
+<td align="left"><strong><code>&lt;file&gt;.readlines(hint = -1)</code></strong></td>
+<td align="left"><strong>从文件中读入所有行，以每行为元素形成一个列表，如果给出参数，读入 hint 行</strong></td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><strong>写入</strong></li>
+</ol>
+<p><strong>Python 提供 3 个与文件内容写入有关的方法</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>方法</strong></th>
+<th align="left"><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong><code>&lt;file&gt;. write(s)</code></strong></td>
+<td align="left"><strong>向文件写入一个字符串或字节流</strong></td>
+</tr>
+<tr>
+<td align="left"><strong><code>&lt;file&gt;. writelines(lines)</code></strong></td>
+<td align="left"><strong>将一个元素为字符串的列表写入文件</strong></td>
+</tr>
+<tr>
+<td align="left"><strong><code>&lt;file&gt;. seek(offset)</code></strong></td>
+<td align="left"><strong>0：文件开头；1：当前位置；2：文件结尾</strong></td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li><p><strong>定位</strong></p>
+</li>
+<li><p><strong>其他：追加、计算等</strong></p>
+</li>
+<li><p><strong>上下文管理语句with</strong></p>
+</li>
+</ol>
+<p><strong>在实际开发中，读写文件应优先考虑使用上下文管理语句with。关键字with可以自动管理资源，不论因为什么原因跳出with块，总能保证文件被正确关闭。除了用于文件操作，with关键字还可以用于数据库连接、网络连接或类似场合。用于文件内容读写时，with语句的语法形式如下：</strong></p>
+<pre><code>with open(filename, mode, encoding) as fp:
+# 这里写通过文件对象 fp 读写文件内容的语句块</code></pre><ol start="6">
+<li><strong>文件操作示例</strong></li>
+</ol>
+<p><strong>编写程序将电话簿 teleAddressBook.txt 和电子邮件 emailAddressBook.txt 合并为一个完整的 addressBook.txt</strong></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>姓名</strong></th>
+<th align="left"><strong>电话号码</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>张伟</strong></td>
+<td align="left"><strong>1534098751</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>王伟</strong></td>
+<td align="left"><strong>1520878752</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>王芳</strong></td>
+<td align="left"><strong>1520658753</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>李娜</strong></td>
+<td align="left"><strong>1523098754</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>刘伟</strong></td>
+<td align="left"><strong>1596098755</strong></td>
+</tr>
+</tbody></table>
+<p><strong>emailAddressBook.txt</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>姓名</strong></th>
+<th align="left"><strong>邮箱</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>张伟</strong></td>
+<td align="left"><strong><a href="mailto:1534098751@qq.com">1534098751@qq.com</a></strong></td>
+</tr>
+<tr>
+<td align="left"><strong>王伟</strong></td>
+<td align="left"><strong><a href="mailto:1520878752@qq.com">1520878752@qq.com</a></strong></td>
+</tr>
+<tr>
+<td align="left"><strong>王芳</strong></td>
+<td align="left"><strong><a href="mailto:1520658753@qq.com">1520658753@qq.com</a></strong></td>
+</tr>
+<tr>
+<td align="left"><strong>李伟</strong></td>
+<td align="left"><strong><a href="mailto:1520098754@qq.com">1520098754@qq.com</a></strong></td>
+</tr>
+</tbody></table>
+<p><strong>addressBook.txt</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>姓名</strong></th>
+<th align="left"><strong>电话</strong></th>
+<th align="left"><strong>邮箱</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>张伟</strong></td>
+<td align="left"><strong>1534098751</strong></td>
+<td align="left"><strong><a href="mailto:1534098751@qq.com">1534098751@qq.com</a></strong></td>
+</tr>
+<tr>
+<td align="left"><strong>王伟</strong></td>
+<td align="left"><strong>1520878752</strong></td>
+<td align="left"><strong><a href="mailto:1520878752@qq.com">1520878752@qq.com</a></strong></td>
+</tr>
+<tr>
+<td align="left"><strong>王芳</strong></td>
+<td align="left"><strong>1520658753</strong></td>
+<td align="left"><strong><a href="mailto:1520658753@qq.com">1520658753@qq.com</a></strong></td>
+</tr>
+<tr>
+<td align="left"><strong>李娜</strong></td>
+<td align="left"><strong>1523098754</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>刘伟</strong></td>
+<td align="left"><strong>1596098755</strong></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>李伟</strong></td>
+<td align="left"></td>
+<td align="left"><strong><a href="mailto:1520098754@qq.com">1520098754@qq.com</a></strong></td>
+</tr>
+</tbody></table>
+<ol start="7">
+<li><strong>文件操作示例代码</strong></li>
+</ol>
+<pre><code>with open(&#39;teleAddressBook.txt&#39;, &#39;rt&#39;) as ftele1:
     with open(&#39;emailAddressBook.txt&#39;, &#39;rt&#39;) as ftele2:
         ftele1.readline() # 跳过第一行
         ftele2.readline()
@@ -85,22 +833,150 @@ he       </code></pre><h3 id="2、文件"><a href="#2、文件" class="headerlin
 ftele3.close()
 ftele1.close()
 ftele2.close()
-print(&#39;新的通讯录已合成&#39;)</code></pre><h5 id="2-3-3-关闭文件"><a href="#2-3-3-关闭文件" class="headerlink" title="2.3.3 关闭文件"></a>2.3.3 关闭文件</h5><ol><li>切断文件与程序的联系</li><li>写入磁盘，并释放文件缓冲区</li></ol><h3 id="3、Excel-文件操作实例"><a href="#3、Excel-文件操作实例" class="headerlink" title="3、Excel 文件操作实例"></a>3、Excel 文件操作实例</h3><h4 id="3-1-Excel文件格式说明"><a href="#3-1-Excel文件格式说明" class="headerlink" title="3.1 Excel文件格式说明"></a>3.1 Excel文件格式说明</h4><ol><li>一个 Excel 电子表格文档称为一个工作簿（workbook），一个工作簿保存在扩展名为 .xlsx 的文件中。</li><li>每个工作簿可以包含多个表（Sheet）。</li><li>用户当前查看的表（或关闭 Excel 前最后查看的表），称为活动表。</li><li>每个表都有一些列（地址是从 A 开始的字母）和一些行（地址是从1开始的数字）。</li><li>在特定行和列的方格称为单元格（cell）。</li><li>每个单元格都包含一个数字或文本值。</li></ol><h4 id="3-2-openpyxl-库"><a href="#3-2-openpyxl-库" class="headerlink" title="3.2 openpyxl 库"></a>3.2 openpyxl 库</h4><h5 id="3-2-1-openpyxl-库特点"><a href="#3-2-1-openpyxl-库特点" class="headerlink" title="3.2.1 openpyxl 库特点"></a>3.2.1 openpyxl 库特点</h5><ol><li>用于读取/写入 Excel 2010 xlsx/xlsm/xltx/xltm 文件的 Python 库。</li><li>使用 getter/setter 模式。你可以随时读取某个单元格的内容，并根据其内容进行相应的修改，openpyxl 会帮你记住每个单元格的状态。</li><li>虽然它支持修改已有文件，但由于其所支持的功能有限，读入文件时会忽略掉它所不支持的内容，再写入时，这些内容就丢失了。</li></ol><h5 id="3-2-2-openpyxl-库缺点"><a href="#3-2-2-openpyxl-库缺点" class="headerlink" title="3.2.2 openpyxl 库缺点"></a>3.2.2 openpyxl 库缺点</h5><ol><li>不支持 07 版本之前的 XLS 格式。</li><li>不支持 Excel 中的公式。</li></ol><h5 id="3-2-3-openpyxl-库常用操作"><a href="#3-2-3-openpyxl-库常用操作" class="headerlink" title="3.2.3 openpyxl 库常用操作"></a>3.2.3 openpyxl 库常用操作</h5><ol><li>安装 openpyxl 库</li></ol><p><strong>conda install openpyxl</strong></p><ol start="2"><li>导入 openpyxl 库</li></ol><p><strong>import openpyxl</strong></p><ol start="3"><li>用 openpyxl 库打开 Excel 文档</li></ol><p><strong>wb = openpyxl.load_workbook()</strong></p><ol start="4"><li>从工作簿中取得工作表</li></ol><p><strong>get_sheet_names()</strong></p><ol start="5"><li><p>从表中取得行和列<br>可以将 Worksheet 对象切片，取得 Excel 表格中一行、一列或一个矩形区域中的所有 Cell 对象，然后可以循环遍历这个切片中的所有单元格。</p></li><li><p>新建工作簿：新建工作簿不需要在系统中创建新文件，在内存中操作即可。</p></li></ol><pre><code>from openpyxl import Workbook
+print(&#39;新的通讯录已合成&#39;)</code></pre><h5 id="2-3-3-关闭文件"><a href="#2-3-3-关闭文件" class="headerlink" title="2.3.3 关闭文件"></a><strong>2.3.3 关闭文件</strong></h5><ol>
+<li><strong>切断文件与程序的联系</strong></li>
+<li><strong>写入磁盘，并释放文件缓冲区</strong></li>
+</ol>
+<h3 id="3、Excel-文件操作实例"><a href="#3、Excel-文件操作实例" class="headerlink" title="3、Excel 文件操作实例"></a><strong>3、Excel 文件操作实例</strong></h3><h4 id="3-1-Excel文件格式说明"><a href="#3-1-Excel文件格式说明" class="headerlink" title="3.1 Excel文件格式说明"></a><strong>3.1 Excel文件格式说明</strong></h4><ol>
+<li><strong>一个 Excel 电子表格文档称为一个工作簿（workbook），一个工作簿保存在扩展名为 .xlsx 的文件中。</strong></li>
+<li><strong>每个工作簿可以包含多个表（Sheet）。</strong></li>
+<li><strong>用户当前查看的表（或关闭 Excel 前最后查看的表），称为活动表。</strong></li>
+<li><strong>每个表都有一些列（地址是从 A 开始的字母）和一些行（地址是从1开始的数字）。</strong></li>
+<li><strong>在特定行和列的方格称为单元格（cell）。</strong></li>
+<li><strong>每个单元格都包含一个数字或文本值。</strong></li>
+</ol>
+<h4 id="3-2-openpyxl-库"><a href="#3-2-openpyxl-库" class="headerlink" title="3.2 openpyxl 库"></a><strong>3.2 openpyxl 库</strong></h4><h5 id="3-2-1-openpyxl-库特点"><a href="#3-2-1-openpyxl-库特点" class="headerlink" title="3.2.1 openpyxl 库特点"></a><strong>3.2.1 openpyxl 库特点</strong></h5><ol>
+<li><strong>用于读取/写入 Excel 2010 xlsx/xlsm/xltx/xltm 文件的 Python 库。</strong></li>
+<li><strong>使用 getter/setter 模式。你可以随时读取某个单元格的内容，并根据其内容进行相应的修改，openpyxl 会帮你记住每个单元格的状态。</strong></li>
+<li><strong>虽然它支持修改已有文件，但由于其所支持的功能有限，读入文件时会忽略掉它所不支持的内容，再写入时，这些内容就丢失了。</strong></li>
+</ol>
+<h5 id="3-2-2-openpyxl-库缺点"><a href="#3-2-2-openpyxl-库缺点" class="headerlink" title="3.2.2 openpyxl 库缺点"></a><strong>3.2.2 openpyxl 库缺点</strong></h5><ol>
+<li><strong>不支持 07 版本之前的 XLS 格式。</strong></li>
+<li><strong>不支持 Excel 中的公式。</strong></li>
+</ol>
+<h5 id="3-2-3-openpyxl-库常用操作"><a href="#3-2-3-openpyxl-库常用操作" class="headerlink" title="3.2.3 openpyxl 库常用操作"></a><strong>3.2.3 openpyxl 库常用操作</strong></h5><ol>
+<li><strong>安装 openpyxl 库</strong></li>
+</ol>
+<ol start="2">
+<li><strong>导入 openpyxl 库</strong></li>
+</ol>
+<ol start="3">
+<li><strong>用 openpyxl 库打开 Excel 文档</strong></li>
+</ol>
+<ol start="4">
+<li><strong>从工作簿中取得工作表</strong></li>
+</ol>
+<ol start="5">
+<li><strong>从表中取得行和列</strong></li>
+</ol>
+<p><strong>可以将 Worksheet 对象切片，取得 Excel 表格中一行、一列或一个矩形区域中的所有 Cell 对象，然后可以循环遍历这个切片中的所有单元格。</strong></p>
+<ol start="6">
+<li><strong>新建工作簿：新建工作簿不需要在系统中创建新文件，在内存中操作即可。</strong></li>
+</ol>
+<pre><code>from openpyxl import Workbook
 # 工作簿实例化
-wb = Workbook()</code></pre><ol start="7"><li>从工作簿激活工作表</li></ol><pre><code># 激活获取工作表，此方法调用 _active_sheet_index方法，默认索引为0，即第一个工作表
-ws = wb.active</code></pre><ol start="8"><li>也可用 create_sheet() 方法创建工作表。</li></ol><pre><code># 默认在最后添加工作表
+wb = Workbook()</code></pre><ol start="7">
+<li><strong>从工作簿激活工作表</strong></li>
+</ol>
+<pre><code># 激活获取工作表，此方法调用 _active_sheet_index方法，默认索引为0，即第一个工作表
+ws = wb.active</code></pre><ol start="8">
+<li><strong>也可用 create_sheet() 方法创建工作表。</strong> </li>
+</ol>
+<pre><code># 默认在最后添加工作表
 ws1 = wb.create_sheet()
 # 在指定位置添加工作表，位置0，即第一个
-ws2 = wb.create_sheet(0)</code></pre><ol start="9"><li>可以通过工作表名称获取工作表，以下两种方式效果相同。</li></ol><pre><code>ws3 = wb[&quot;New Title&quot;]
-ws4 = wb.get_sheet_by_name(&quot;New Title&quot;)</code></pre><ol start="10"><li>通过 get_sheet_names() 获取工作簿所有工作表的名称，返回值为 list 类型。</li></ol><pre><code>&gt;&gt;&gt; print(wb.get_sheet_names())
-[&#39;Sheet2&#39;, &#39;New Title&#39;, &#39;Sheet1&#39;]</code></pre><ol start="11"><li>获取单元格</li></ol><pre><code>c = ws[&#39;A4&#39;] # 利用坐标获取单元格，若单元格不存在，则被创建。
+ws2 = wb.create_sheet(0)</code></pre><ol start="9">
+<li><strong>可以通过工作表名称获取工作表，以下两种方式效果相同。</strong></li>
+</ol>
+<pre><code>ws3 = wb[&quot;New Title&quot;]
+ws4 = wb.get_sheet_by_name(&quot;New Title&quot;)</code></pre><ol start="10">
+<li><strong>通过 get_sheet_names() 获取工作簿所有工作表的名称，返回值为 list 类型。</strong></li>
+</ol>
+<pre><code>&gt;&gt;&gt; print(wb.get_sheet_names())
+[&#39;Sheet2&#39;, &#39;New Title&#39;, &#39;Sheet1&#39;]</code></pre><ol start="11">
+<li><strong>获取单元格</strong></li>
+</ol>
+<pre><code>c = ws[&#39;A4&#39;] # 利用坐标获取单元格，若单元格不存在，则被创建。
 ws[&#39;A4&#39;] = 4 # 对单元格的值直接赋值。
 
 # 也可通过以下两种方式获取单元格，效果相同。
 c = ws.cell(&#39;A4&#39;)
 # 指定行和列获取，从 1 开始，不从 0 开始。
-d = ws.cell(row = 4, column = 1)</code></pre><ol start="12"><li>利用切片方式获取指定区域的单元格</li></ol><pre><code>cell_range = ws[&#39;A1&#39;:&#39;C2&#39;]</code></pre><ol start="13"><li>获取单元格后，写数据</li></ol><pre><code>c = ws.cell(&#39;A4’)
-c.value = &#39;hello, world&#39;</code></pre><ol start="14"><li>对实例化的工作簿调用 openpyxl.workbook.Workbook.save() 进行保存</li></ol><pre><code>wb.save(&#39;sample.xlsx&#39;)</code></pre><h4 id="3-3-Excel-文件-人口普查数据-处理实例"><a href="#3-3-Excel-文件-人口普查数据-处理实例" class="headerlink" title="3.3 Excel 文件(人口普查数据)处理实例"></a>3.3 Excel 文件(人口普查数据)处理实例</h4><h5 id="3-3-1-问题描述"><a href="#3-3-1-问题描述" class="headerlink" title="3.3.1 问题描述"></a>3.3.1 问题描述</h5><p>处理2010年美国人口普查数据文件 censuspopdata.xlsx，Excle 文件中只有一张表，名为 ‘Population by Census Tract’。每一行都保存了一个普查区的数据。列分别是普查区的编号(A)，州的简称(B)，县的名称(C)，普查区的人口(D)。</p><h5 id="3-3-2-题目要求"><a href="#3-3-2-题目要求" class="headerlink" title="3.3.2 题目要求"></a>3.3.2 题目要求</h5><ol><li>编写程序，从人口普查 Excel 文件中读取数据，并计算出每个县的人口统计值。</li><li>题目要求以字典嵌套字典方式存储统计信息，最外层字典的键是州，州里的键是县，县里的键是 pop 和人口普查区数量。<br>dict = { ‘州’:{ ‘县1’: {‘pop’:9000, ‘人口普查区’：2}， }， }</li></ol><h5 id="3-3-3-求解步骤"><a href="#3-3-3-求解步骤" class="headerlink" title="3.3.3 求解步骤"></a>3.3.3 求解步骤</h5><ol><li>从 Excel 电子表格中读取数据。</li><li>计算每个县中普查区的数目。</li><li>计算每个县的总人口。</li><li>打印结果。</li></ol><h5 id="3-3-4-待处理-Excel-文件"><a href="#3-3-4-待处理-Excel-文件" class="headerlink" title="3.3.4  待处理 Excel 文件"></a>3.3.4 待处理 Excel 文件</h5><table><thead><tr><th align="center">普查区编号</th><th align="center">州(state)</th><th align="center">乡/县(country)</th><th align="center">POP2010</th></tr></thead><tbody><tr><td align="center">01001020100</td><td align="center">AL</td><td align="center">Autauge</td><td align="center">1912</td></tr><tr><td align="center">01001020200</td><td align="center">AL</td><td align="center">Autauge</td><td align="center">2170</td></tr><tr><td align="center">01001020300</td><td align="center">AL</td><td align="center">Autauge</td><td align="center">3373</td></tr><tr><td align="center">01001020400</td><td align="center">AL</td><td align="center">Autauge</td><td align="center">4386</td></tr><tr><td align="center">01001020500</td><td align="center">AL</td><td align="center">Autauge</td><td align="center">10766</td></tr><tr><td align="center">01001020600</td><td align="center">AL</td><td align="center">Autauge</td><td align="center">3668</td></tr><tr><td align="center">01001020700</td><td align="center">AL</td><td align="center">Autauge</td><td align="center">2891</td></tr></tbody></table><h5 id="3-3-5-实例代码"><a href="#3-3-5-实例代码" class="headerlink" title="3.3.5 实例代码"></a>3.3.5 实例代码</h5><pre><code>import openpyxl, pprint
+d = ws.cell(row = 4, column = 1)</code></pre><ol start="12">
+<li><strong>利用切片方式获取指定区域的单元格</strong></li>
+</ol>
+<pre><code>cell_range = ws[&#39;A1&#39;:&#39;C2&#39;]</code></pre><ol start="13">
+<li><strong>获取单元格后，写数据</strong></li>
+</ol>
+<pre><code>c = ws.cell(&#39;A4’)
+c.value = &#39;hello, world&#39;</code></pre><ol start="14">
+<li><strong>对实例化的工作簿调用 openpyxl.workbook.Workbook.save() 进行保存</strong></li>
+</ol>
+<pre><code>wb.save(&#39;sample.xlsx&#39;)</code></pre><h4 id="3-3-Excel-文件-人口普查数据-处理实例"><a href="#3-3-Excel-文件-人口普查数据-处理实例" class="headerlink" title="3.3 Excel 文件(人口普查数据)处理实例"></a><strong>3.3 Excel 文件(人口普查数据)处理实例</strong></h4><h5 id="3-3-1-问题描述"><a href="#3-3-1-问题描述" class="headerlink" title="3.3.1 问题描述"></a><strong>3.3.1 问题描述</strong></h5><p><strong>处理2010年美国人口普查数据文件 censuspopdata.xlsx，Excle 文件中只有一张表，名为 ‘Population by Census Tract’。每一行都保存了一个普查区的数据。列分别是普查区的编号(A)，州的简称(B)，县的名称(C)，普查区的人口(D)。</strong></p>
+<h5 id="3-3-2-题目要求"><a href="#3-3-2-题目要求" class="headerlink" title="3.3.2 题目要求"></a><strong>3.3.2 题目要求</strong></h5><ol>
+<li><strong>编写程序，从人口普查 Excel 文件中读取数据，并计算出每个县的人口统计值。</strong></li>
+<li><strong>题目要求以字典嵌套字典方式存储统计信息，最外层字典的键是州，州里的键是县，县里的键是 pop 和人口普查区数量。</strong></li>
+</ol>
+<p><strong>dict = { ‘州’:{ ‘县1’: {‘pop’:9000, ‘人口普查区’：2}， }， }</strong></p>
+<h5 id="3-3-3-求解步骤"><a href="#3-3-3-求解步骤" class="headerlink" title="3.3.3 求解步骤"></a><strong>3.3.3 求解步骤</strong></h5><ol>
+<li><strong>从 Excel 电子表格中读取数据。</strong></li>
+<li><strong>计算每个县中普查区的数目。</strong></li>
+<li><strong>计算每个县的总人口。</strong></li>
+<li><strong>打印结果。</strong></li>
+</ol>
+<h5 id="3-3-4-待处理-Excel-文件"><a href="#3-3-4-待处理-Excel-文件" class="headerlink" title="3.3.4  待处理 Excel 文件"></a><strong>3.3.4  待处理 Excel 文件</strong></h5><table>
+<thead>
+<tr>
+<th align="center"><strong>普查区编号</strong></th>
+<th align="center"><strong>州(state)</strong></th>
+<th align="center"><strong>乡/县(country)</strong></th>
+<th align="center"><strong>POP2010</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><strong>01001020100</strong></td>
+<td align="center"><strong>AL</strong></td>
+<td align="center"><strong>Autauge</strong></td>
+<td align="center"><strong>1912</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>01001020200</strong></td>
+<td align="center"><strong>AL</strong></td>
+<td align="center"><strong>Autauge</strong></td>
+<td align="center"><strong>2170</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>01001020300</strong></td>
+<td align="center"><strong>AL</strong></td>
+<td align="center"><strong>Autauge</strong></td>
+<td align="center"><strong>3373</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>01001020400</strong></td>
+<td align="center"><strong>AL</strong></td>
+<td align="center"><strong>Autauge</strong></td>
+<td align="center"><strong>4386</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>01001020500</strong></td>
+<td align="center"><strong>AL</strong></td>
+<td align="center"><strong>Autauge</strong></td>
+<td align="center"><strong>10766</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>01001020600</strong></td>
+<td align="center"><strong>AL</strong></td>
+<td align="center"><strong>Autauge</strong></td>
+<td align="center"><strong>3668</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>01001020700</strong></td>
+<td align="center"><strong>AL</strong></td>
+<td align="center"><strong>Autauge</strong></td>
+<td align="center"><strong>2891</strong></td>
+</tr>
+</tbody></table>
+<h5 id="3-3-5-实例代码"><a href="#3-3-5-实例代码" class="headerlink" title="3.3.5 实例代码"></a><strong>3.3.5 实例代码</strong></h5><pre><code>import openpyxl, pprint
 print(&#39;Opening workbook...&#39;)
 wb = openpyxl.load_workbook(&#39;censuspopdata.xlsx&#39;)
 sheet = wb.get_sheet_by_name(&#39;Population by Census Tract&#39;) # 获取人口统计Sheet工作表
@@ -123,7 +999,54 @@ resultFile = open(&#39;census2010.py&#39;, &#39;w&#39;)
 resultFile.write(&#39;allData = &#39; + pprint.pformat(countryData))
 # pprint 生成一个字符串，格式化好的、有效的python代码
 resultFile.close()
-print(&#39;Done.&#39;)</code></pre><p><strong>运行结果</strong></p><pre><code>allData = {&#39;AK&#39;:{&#39;Aleutians East&#39;:{&#39;pop&#39;: 3141, &#39;tracts&#39;: 1}, &#39;Aleutians West&#39;:{&#39;pop&#39;: 5561, &#39;tracts&#39;: 2}, &#39;Anchorage&#39;:{&#39;pop&#39;: 291826, &#39;tracts&#39;: 55},&#39;Bethel&#39;:{&#39;pop&#39;: 17013, &#39;tracts&#39;: 3},&#39;Bristol Bay&#39;:{&#39;pop&#39;: 997, &#39;tracts&#39;: 1},&#39;Denali&#39;:{&#39;pop&#39;: 1826, &#39;tracts&#39;: 1},&#39;Dillingham&#39;:{&#39;pop&#39;: 4847, &#39;tracts&#39;: 2},&#39;Fairbanks North Star&#39;:{&#39;pop&#39;: 97581, &#39;tracts&#39;: 19},&#39;Haines&#39;:{&#39;pop&#39;: 2508, &#39;tracts&#39;: 1},&#39;Hoonah-Angoon&#39;:{&#39;pop&#39;: 2150, &#39;tracts&#39;: 2},&#39;Juneau&#39;:{&#39;pop&#39;: 31275, &#39;tracts&#39;: 6},&#39;Kenai Peninsula&#39;:{&#39;pop&#39;: 55400, &#39;tracts&#39;: 13},&#39;Ketchikan Gateway&#39;:{&#39;pop&#39;: 13477, &#39;tracts&#39;: 4},&#39;Kodiak Island&#39;:{&#39;pop&#39;: 13592, &#39;tracts&#39;: 5},&#39;Lake and Peninsula&#39;:{&#39;pop&#39;: 1631, &#39;tracts&#39;: 1},&#39;Matanuska-Susitna&#39;:{&#39;pop&#39;: 88995, &#39;tracts&#39;: 24},&#39;Nome&#39;:{&#39;pop&#39;: 9492, &#39;tracts&#39;: 2},&#39;North Slope&#39;:{&#39;pop&#39;: 9430, &#39;tracts&#39;: 3},</code></pre><h3 id="4、自然语言处理实战"><a href="#4、自然语言处理实战" class="headerlink" title="4、自然语言处理实战"></a>4、自然语言处理实战</h3><h4 id="4-1-中文分词介绍"><a href="#4-1-中文分词介绍" class="headerlink" title="4.1 中文分词介绍"></a>4.1 中文分词介绍</h4><h5 id="4-1-1-中文分词特点"><a href="#4-1-1-中文分词特点" class="headerlink" title="4.1.1 中文分词特点"></a>4.1.1 中文分词特点</h5><ol><li>词是最小的能够独立活动的有意义的语言成分。</li><li>汉语是以字为单位，不像西方语言，词与词之间没有空格之类的标志指示词的边界。</li><li>分词问题为中文文本处理的基础性工作，分词的好坏对后续中文信息处理其关键作用。</li></ol><h5 id="4-1-2-中文分词难点"><a href="#4-1-2-中文分词难点" class="headerlink" title="4.1.2 中文分词难点"></a>4.1.2 中文分词难点</h5><ol><li><p>分词规范，词的定义还不明确 (《统计自然语言处理》宗成庆)</p></li><li><p>歧义切分问题，交集型切分问题，多义组合型切分歧义等<br>结婚的和尚未结婚的 =&gt;<br>结婚／的／和／尚未／结婚／的<br>结婚／的／和尚／未／结婚／的</p></li><li><p>未登录词问题有两种解释：<br>一是已有的词表中没有收录的词。<br>二是已有的训练语料中未曾出现过的词，一些网络新词，自造词一般都属于这些词。</p></li></ol><h5 id="4-1-3-中文分词方法"><a href="#4-1-3-中文分词方法" class="headerlink" title="4.1.3 中文分词方法"></a>4.1.3 中文分词方法</h5><ol><li>基于字典、词库匹配的分词方法(基于规则)<br>将待分的字符串与一个充分大的机器词典中的词条进行匹配。常用的有：正向最大匹配，逆向最大匹配，最少切分法。实际应用中，将机械分词作为初分手段，利用语言信息提高切分准确率。</li><li>基于词频度统计的分词方法（基于统计）<br>相邻的字同时出现的次数越多，越有可能构成一个词语，对语料中的字组频度进行统计，基于词的频度统计的分词方法是一种全切分方法。jieba是基于统计的分词方法。</li><li>基于知识理解的分词方法<br>该方法主要基于句法、语法分析，并结合语义分析，通过对上下文内容所提供信息的分析对词进行定界。由于汉语语言知识的笼统、复杂性，目前还处在试验阶段。</li></ol><h4 id="4-2-jieba-扩展库"><a href="#4-2-jieba-扩展库" class="headerlink" title="4.2 jieba 扩展库"></a>4.2 jieba 扩展库</h4><h5 id="4-2-1-jieba-是-Python-中一个重要的第三方中文分词函数库"><a href="#4-2-1-jieba-是-Python-中一个重要的第三方中文分词函数库" class="headerlink" title="4.2.1 jieba 是 Python 中一个重要的第三方中文分词函数库"></a>4.2.1 jieba 是 Python 中一个重要的第三方中文分词函数库</h5><ol><li>jieba分词，<strong>完全开源</strong>，有集成的python库，简单易用。</li><li>安装：<br>1）全自动安装： easy_install jieba 或者 pip install jieba / pip3 install jieba<br>2）半自动安装：先下载 <a href="https://pypi.python.org/pypi/jieba/" target="_blank" rel="noopener">https://pypi.python.org/pypi/jieba/</a> ，解压后运行 python setup.py install<br>3）手动安装：将 jieba 目录放置于当前目录或者 site-packages 目录<br>4）通过 import jieba 来引用</li></ol><h5 id="4-2-2-jieba-实现原理"><a href="#4-2-2-jieba-实现原理" class="headerlink" title="4.2.2 jieba 实现原理"></a>4.2.2 jieba 实现原理</h5><ol><li>基于前缀词典实现高效的词图扫描，生成句子中汉字所有可能成词情况所构成的有向无环图 (DAG)。<br>例如：句子“抗日战争”生成的 DAG 中{0:[0,1,3]} 这样一个简单的 DAG，就是表示 0 位置开始，在 0,1,3 位置都是词，就是说 0<del>0，0</del>1，0~3 即 “抗”，“抗日”，“抗日战争”这三个词在dict.txt中是词。</li><li>采用了动态规划查找最大概率路径，找出基于词频的最大切分组合。<br>根据动态规划查找最大概率路径的基本思路就是对句子从右往左反向计算最大概率，…依次类推， 最后得到最大概率路径，得到最大概率的切分组合。</li><li>对于未登录词，采用了基于汉字成词能力的隐马尔科夫模型（HMM）模型，使用了 Viterbi 算法（一种最优路径算法）。</li></ol><h5 id="4-2-3-jieba-是-Python-中一个重要的第三方中文分词函数库"><a href="#4-2-3-jieba-是-Python-中一个重要的第三方中文分词函数库" class="headerlink" title="4.2.3 jieba 是 Python 中一个重要的第三方中文分词函数库"></a>4.2.3 jieba 是 Python 中一个重要的第三方中文分词函数库</h5><ol><li>第三方库，需要安装</li></ol><p><strong>pip install jieba</strong><br>2. 安装成功提示<br>Successfully installed jieba-0.39<br>3. 也可离线下载安装<br>个人推荐离线安装，因为网速，anaconda安装容易失败，我试了很多次了。<br>下载地址：<a href="https://pypi.org/project/jieba/#files）" target="_blank" rel="noopener">https://pypi.org/project/jieba/#files）</a></p><h5 id="4-2-4-jieba-支持三种分词模式"><a href="#4-2-4-jieba-支持三种分词模式" class="headerlink" title="4.2.4 jieba 支持三种分词模式"></a>4.2.4 jieba 支持三种分词模式</h5><ol><li>精确模式：试图将句子最精确地切开，适合文本分析。</li><li>全模式：把句子中所有的可以成词的词语都扫描出来，速度非常快，但是不能解决歧义。</li><li>搜索引擎模式：在精确模式的基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。</li><li><strong>支持繁体分词</strong></li><li><strong>支持自定义词典</strong></li><li><strong>MIT 授权协议（开源软件授权协议）</strong></li></ol><h5 id="4-2-5-jieba-常用函数"><a href="#4-2-5-jieba-常用函数" class="headerlink" title="4.2.5 jieba 常用函数"></a>4.2.5 jieba 常用函数</h5><ol><li>jieba.cut ：<br>方法接受三个输入参数:<br>1）需要分词的字符串。<br>2）cut_all 参数用来控制是否采用全模式。<br>3）HMM 参数用来控制是否使用 HMM 模型。</li><li>jieba.cut_for_search ：<br>方法接受两个参数：<br>1）需要分词的字符串。<br>2）是否使用 HMM 模型。<br>该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细。</li><li>jieba.cut 以及 jieba.cut_for_search 返回的结构都是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)，或者<strong>用 jieba.lcut 以及 jieba.lcut_for_search 直接返回 list</strong></li></ol><h4 id="4-3-jieba-扩展库示例"><a href="#4-3-jieba-扩展库示例" class="headerlink" title="4.3 jieba 扩展库示例"></a>4.3 jieba 扩展库示例</h4><h5 id="4-3-1-jieba-三种分词模式的区别"><a href="#4-3-1-jieba-三种分词模式的区别" class="headerlink" title="4.3.1 jieba 三种分词模式的区别"></a>4.3.1 jieba 三种分词模式的区别</h5><pre><code>import jieba
+print(&#39;Done.&#39;)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>allData = {&#39;AK&#39;:{&#39;Aleutians East&#39;:{&#39;pop&#39;: 3141, &#39;tracts&#39;: 1}, &#39;Aleutians West&#39;:{&#39;pop&#39;: 5561, &#39;tracts&#39;: 2}, &#39;Anchorage&#39;:{&#39;pop&#39;: 291826, &#39;tracts&#39;: 55},&#39;Bethel&#39;:{&#39;pop&#39;: 17013, &#39;tracts&#39;: 3},&#39;Bristol Bay&#39;:{&#39;pop&#39;: 997, &#39;tracts&#39;: 1},&#39;Denali&#39;:{&#39;pop&#39;: 1826, &#39;tracts&#39;: 1},&#39;Dillingham&#39;:{&#39;pop&#39;: 4847, &#39;tracts&#39;: 2},&#39;Fairbanks North Star&#39;:{&#39;pop&#39;: 97581, &#39;tracts&#39;: 19},&#39;Haines&#39;:{&#39;pop&#39;: 2508, &#39;tracts&#39;: 1},&#39;Hoonah-Angoon&#39;:{&#39;pop&#39;: 2150, &#39;tracts&#39;: 2},&#39;Juneau&#39;:{&#39;pop&#39;: 31275, &#39;tracts&#39;: 6},&#39;Kenai Peninsula&#39;:{&#39;pop&#39;: 55400, &#39;tracts&#39;: 13},&#39;Ketchikan Gateway&#39;:{&#39;pop&#39;: 13477, &#39;tracts&#39;: 4},&#39;Kodiak Island&#39;:{&#39;pop&#39;: 13592, &#39;tracts&#39;: 5},&#39;Lake and Peninsula&#39;:{&#39;pop&#39;: 1631, &#39;tracts&#39;: 1},&#39;Matanuska-Susitna&#39;:{&#39;pop&#39;: 88995, &#39;tracts&#39;: 24},&#39;Nome&#39;:{&#39;pop&#39;: 9492, &#39;tracts&#39;: 2},&#39;North Slope&#39;:{&#39;pop&#39;: 9430, &#39;tracts&#39;: 3},</code></pre><h3 id="4、自然语言处理实战"><a href="#4、自然语言处理实战" class="headerlink" title="4、自然语言处理实战"></a><strong>4、自然语言处理实战</strong></h3><h4 id="4-1-中文分词介绍"><a href="#4-1-中文分词介绍" class="headerlink" title="4.1 中文分词介绍"></a><strong>4.1 中文分词介绍</strong></h4><h5 id="4-1-1-中文分词特点"><a href="#4-1-1-中文分词特点" class="headerlink" title="4.1.1 中文分词特点"></a><strong>4.1.1 中文分词特点</strong></h5><ol>
+<li><strong>词是最小的能够独立活动的有意义的语言成分。</strong></li>
+<li><strong>汉语是以字为单位，不像西方语言，词与词之间没有空格之类的标志指示词的边界。</strong></li>
+<li><strong>分词问题为中文文本处理的基础性工作，分词的好坏对后续中文信息处理其关键作用。</strong></li>
+</ol>
+<h5 id="4-1-2-中文分词难点"><a href="#4-1-2-中文分词难点" class="headerlink" title="4.1.2 中文分词难点"></a><strong>4.1.2 中文分词难点</strong></h5><ol>
+<li><strong>分词规范，词的定义还不明确 (《统计自然语言处理》宗成庆)</strong></li>
+<li><strong>歧义切分问题，交集型切分问题，多义组合型切分歧义等</strong></li>
+</ol>
+<p><strong>结婚的和尚未结婚的 =&gt;</strong><br><strong>结婚／的／和／尚未／结婚／的</strong><br><strong>结婚／的／和尚／未／结婚／的</strong></p>
+<ol start="3">
+<li><strong>未登录词问题有两种解释：</strong></li>
+</ol>
+<p><strong>一是已有的词表中没有收录的词。</strong><br><strong>二是已有的训练语料中未曾出现过的词，一些网络新词，自造词一般都属于这些词。</strong></p>
+<h5 id="4-1-3-中文分词方法"><a href="#4-1-3-中文分词方法" class="headerlink" title="4.1.3 中文分词方法"></a><strong>4.1.3 中文分词方法</strong></h5><ol>
+<li><strong>基于字典、词库匹配的分词方法(基于规则)</strong></li>
+</ol>
+<p><strong>将待分的字符串与一个充分大的机器词典中的词条进行匹配。常用的有：正向最大匹配，逆向最大匹配，最少切分法。实际应用中，将机械分词作为初分手段，利用语言信息提高切分准确率。</strong><br>2. <strong>基于词频度统计的分词方法（基于统计）</strong><br><strong>相邻的字同时出现的次数越多，越有可能构成一个词语，对语料中的字组频度进行统计，基于词的频度统计的分词方法是一种全切分方法。jieba是基于统计的分词方法。</strong><br>3. <strong>基于知识理解的分词方法</strong><br><strong>该方法主要基于句法、语法分析，并结合语义分析，通过对上下文内容所提供信息的分析对词进行定界。由于汉语语言知识的笼统、复杂性，目前还处在试验阶段。</strong></p>
+<h4 id="4-2-jieba-扩展库"><a href="#4-2-jieba-扩展库" class="headerlink" title="4.2 jieba 扩展库"></a><strong>4.2 jieba 扩展库</strong></h4><h5 id="4-2-1-jieba-是-Python-中一个重要的第三方中文分词函数库"><a href="#4-2-1-jieba-是-Python-中一个重要的第三方中文分词函数库" class="headerlink" title="4.2.1 jieba 是 Python 中一个重要的第三方中文分词函数库"></a><strong>4.2.1 jieba 是 Python 中一个重要的第三方中文分词函数库</strong></h5><ol>
+<li><strong>jieba分词，，有集成的python库，简单易用。</strong></li>
+<li><strong>安装：</strong></li>
+</ol>
+<p><strong>1）全自动安装： easy_install jieba 或者 pip install jieba / pip3 install jieba</strong><br><strong>2）半自动安装：先下载 <a href="https://pypi.python.org/pypi/jieba/" target="_blank" rel="noopener">https://pypi.python.org/pypi/jieba/</a> ，解压后运行 python setup.py install</strong><br><strong>3）手动安装：将 jieba 目录放置于当前目录或者 site-packages 目录</strong><br><strong>4）通过 import jieba 来引用</strong></p>
+<h5 id="4-2-2-jieba-实现原理"><a href="#4-2-2-jieba-实现原理" class="headerlink" title="4.2.2 jieba 实现原理"></a><strong>4.2.2 jieba 实现原理</strong></h5><ol>
+<li><strong>基于前缀词典实现高效的词图扫描，生成句子中汉字所有可能成词情况所构成的有向无环图 (DAG)。</strong></li>
+</ol>
+<p><strong>例如：句子“抗日战争”生成的 DAG 中{0:[0,1,3]} 这样一个简单的 DAG，就是表示 0 位置开始，在 0,1,3 位置都是词，就是说 0<del>0，0</del>1，0~3 即 “抗”，“抗日”，“抗日战争”这三个词在dict.txt中是词。</strong><br>2. <strong>采用了动态规划查找最大概率路径，找出基于词频的最大切分组合。</strong><br><strong>根据动态规划查找最大概率路径的基本思路就是对句子从右往左反向计算最大概率，…依次类推， 最后得到最大概率路径，得到最大概率的切分组合。</strong><br>3. <strong>对于未登录词，采用了基于汉字成词能力的隐马尔科夫模型（HMM）模型，使用了 Viterbi 算法（一种最优路径算法）。</strong></p>
+<h5 id="4-2-3-jieba-是-Python-中一个重要的第三方中文分词函数库"><a href="#4-2-3-jieba-是-Python-中一个重要的第三方中文分词函数库" class="headerlink" title="4.2.3 jieba 是 Python 中一个重要的第三方中文分词函数库"></a><strong>4.2.3 jieba 是 Python 中一个重要的第三方中文分词函数库</strong></h5><ol>
+<li><p><strong>第三方库，需要安装</strong></p>
+</li>
+<li><p><strong>安装成功提示</strong></p>
+</li>
+</ol>
+<p><strong>Successfully installed jieba-0.39</strong><br>3. <strong>也可离线下载安装</strong><br><strong>个人推荐离线安装，因为网速，anaconda安装容易失败，我试了很多次了。</strong><br><strong>下载地址：<a href="https://pypi.org/project/jieba/#files）" target="_blank" rel="noopener">https://pypi.org/project/jieba/#files）</a></strong></p>
+<h5 id="4-2-4-jieba-支持三种分词模式"><a href="#4-2-4-jieba-支持三种分词模式" class="headerlink" title="4.2.4 jieba 支持三种分词模式"></a><strong>4.2.4 jieba 支持三种分词模式</strong></h5><ol>
+<li><strong>精确模式：试图将句子最精确地切开，适合文本分析。</strong></li>
+<li><strong>全模式：把句子中所有的可以成词的词语都扫描出来，速度非常快，但是不能解决歧义。</strong></li>
+<li><strong>搜索引擎模式：在精确模式的基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。</strong></li>
+<li><strong>支持繁体分词</strong></li>
+<li><strong>支持自定义词典</strong></li>
+<li><strong>MIT 授权协议（开源软件授权协议）</strong></li>
+</ol>
+<h5 id="4-2-5-jieba-常用函数"><a href="#4-2-5-jieba-常用函数" class="headerlink" title="4.2.5 jieba 常用函数"></a><strong>4.2.5 jieba 常用函数</strong></h5><ol>
+<li><strong>jieba.cut ：</strong> </li>
+</ol>
+<p><strong>方法接受三个输入参数:</strong><br><strong>1）需要分词的字符串。</strong><br><strong>2）cut_all 参数用来控制是否采用全模式。</strong><br><strong>3）HMM 参数用来控制是否使用 HMM 模型。</strong><br>2. <strong>jieba.cut_for_search ：</strong><br><strong>方法接受两个参数：</strong><br><strong>1）需要分词的字符串。</strong><br><strong>2）是否使用 HMM 模型。</strong><br><strong>该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细。</strong><br>3. <strong>jieba.cut 以及 jieba.cut_for_search 返回的结构都是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)，或者</strong></p>
+<h4 id="4-3-jieba-扩展库示例"><a href="#4-3-jieba-扩展库示例" class="headerlink" title="4.3 jieba 扩展库示例"></a><strong>4.3 jieba 扩展库示例</strong></h4><h5 id="4-3-1-jieba-三种分词模式的区别"><a href="#4-3-1-jieba-三种分词模式的区别" class="headerlink" title="4.3.1 jieba 三种分词模式的区别"></a><strong>4.3.1 jieba 三种分词模式的区别</strong></h5><pre><code>import jieba
 
 &#39;&#39;&#39;
 cut 方法有两个参数
@@ -141,13 +1064,38 @@ print(&quot;精确模式：&quot;,&quot;|&quot;.join(word_list))
 
 # 搜索引擎模式
 word_list = jieba.cut_for_search(&quot;今天天气真好。亲爱的，我们去远足吧！&quot;)
-print(&quot;搜索引擎模式：&quot;,&quot;|&quot;.join(word_list))</code></pre><p><strong>结果：</strong><br>全模式： 今天|今天天气|天天|天气|真好|。|亲爱|的|，|我们|去|远足|吧|！<br>精确模式： 今天天气|真|好|。|亲爱|的|，|我们|去|远足|吧|！<br>搜索引擎模式： 今天|天天|天气|今天天气|真|好|。|亲爱|的|，|我们|去|远足|吧|！</p><h5 id="4-3-2-TF-IDF-释义"><a href="#4-3-2-TF-IDF-释义" class="headerlink" title="4.3.2 TF-IDF 释义"></a>4.3.2 TF-IDF 释义</h5><ol><li>TF-IDF（term frequency–inverse document frequency）是一种用于<strong>信息检索与数据挖掘</strong>的常用加权技术。</li><li>TF意思是词频，指关键词在文中出现的次数除以全文总字数。</li><li>IDF意思是逆文本频率指数，反映关键词的普遍程度——当一个词越普遍（即有大量文档包含这个词）时，其IDF值越低；反之，则IDF值越高。</li></ol><p>TF-IDF=TF×IDF<br>$词频(TF)=\frac{某个词在文章中的出现次数}{文章的总词数}\times逆文档频率(IDF)=log(\frac{语料库的文档数}{包含该词的文档数+1})$</p><h5 id="4-3-3-可以看出"><a href="#4-3-3-可以看出" class="headerlink" title="4.3.3 可以看出"></a>4.3.3 可以看出</h5><ol><li>当一个词在文档频率越高并且新鲜度高（即普遍度低），其TF-IDF值越高。</li><li>TF-IDF兼顾词频与新鲜度，过滤一些常见词，保留能提供更多信息的重要词。</li></ol><h5 id="4-3-4-基于TF-IDF算法的关键词抽取"><a href="#4-3-4-基于TF-IDF算法的关键词抽取" class="headerlink" title="4.3.4 基于TF-IDF算法的关键词抽取"></a>4.3.4 基于TF-IDF算法的关键词抽取</h5><pre><code>import jieba.analyse
-jieba.analyse.extract_tags(sentence, topK=20, withWeight=False, allowPOS=())</code></pre><ol><li>sentence：待提取的文本。</li><li>topK：返回几个 TF/IDF 权重最大的关键词，默认值为 20。</li><li>withWeight：是否一并返回关键词权重值，默认值为 False。</li><li>allowPOS：词性过滤，为空表示不过滤，若提供则仅返回符合词性要求的关键词。</li></ol><h5 id="4-3-5-基于TF-IDF算法的关键词抽取示例"><a href="#4-3-5-基于TF-IDF算法的关键词抽取示例" class="headerlink" title="4.3.5 基于TF-IDF算法的关键词抽取示例"></a>4.3.5 基于TF-IDF算法的关键词抽取示例</h5><pre><code>import jieba.analyse
+print(&quot;搜索引擎模式：&quot;,&quot;|&quot;.join(word_list))</code></pre><p><strong>全模式： 今天|今天天气|天天|天气|真好|。|亲爱|的|，|我们|去|远足|吧|！</strong><br><strong>精确模式： 今天天气|真|好|。|亲爱|的|，|我们|去|远足|吧|！</strong><br><strong>搜索引擎模式： 今天|天天|天气|今天天气|真|好|。|亲爱|的|，|我们|去|远足|吧|！</strong></p>
+<h5 id="4-3-2-TF-IDF-释义"><a href="#4-3-2-TF-IDF-释义" class="headerlink" title="4.3.2 TF-IDF 释义"></a><strong>4.3.2 TF-IDF 释义</strong></h5><ol>
+<li><strong>TF-IDF（term frequency–inverse document frequency）是一种用于的常用加权技术。</strong></li>
+<li><strong>TF意思是词频，指关键词在文中出现的次数除以全文总字数。</strong></li>
+<li><strong>IDF意思是逆文本频率指数，反映关键词的普遍程度——当一个词越普遍（即有大量文档包含这个词）时，其IDF值越低；反之，则IDF值越高。</strong></li>
+</ol>
+<p><strong>TF-IDF=TF×IDF</strong><br><strong>$词频(TF)=\frac{某个词在文章中的出现次数}{文章的总词数}\times逆文档频率(IDF)=log(\frac{语料库的文档数}{包含该词的文档数+1})$</strong></p>
+<h5 id="4-3-3-可以看出"><a href="#4-3-3-可以看出" class="headerlink" title="4.3.3 可以看出"></a><strong>4.3.3 可以看出</strong></h5><ol>
+<li><strong>当一个词在文档频率越高并且新鲜度高（即普遍度低），其TF-IDF值越高。</strong></li>
+<li><strong>TF-IDF兼顾词频与新鲜度，过滤一些常见词，保留能提供更多信息的重要词。</strong></li>
+</ol>
+<h5 id="4-3-4-基于TF-IDF算法的关键词抽取"><a href="#4-3-4-基于TF-IDF算法的关键词抽取" class="headerlink" title="4.3.4 基于TF-IDF算法的关键词抽取"></a><strong>4.3.4 基于TF-IDF算法的关键词抽取</strong></h5><pre><code>import jieba.analyse
+jieba.analyse.extract_tags(sentence, topK=20, withWeight=False, allowPOS=())</code></pre><ol>
+<li><strong>sentence：待提取的文本。</strong></li>
+<li><strong>topK：返回几个 TF/IDF 权重最大的关键词，默认值为 20。</strong></li>
+<li><strong>withWeight：是否一并返回关键词权重值，默认值为 False。</strong></li>
+<li><strong>allowPOS：词性过滤，为空表示不过滤，若提供则仅返回符合词性要求的关键词。</strong></li>
+</ol>
+<h5 id="4-3-5-基于TF-IDF算法的关键词抽取示例"><a href="#4-3-5-基于TF-IDF算法的关键词抽取示例" class="headerlink" title="4.3.5 基于TF-IDF算法的关键词抽取示例"></a><strong>4.3.5 基于TF-IDF算法的关键词抽取示例</strong></h5><pre><code>import jieba.analyse
 f = open(&quot;十九大报告节选.txt&quot;, &quot;rb&quot;)
 sentence = f.read()
 keywords = jieba.analyse.extract_tags(sentence, topK=15, withWeight=True, allowPOS=(&#39;n&#39;,&#39;nr&#39;,&#39;ns&#39;))
 for item in keywords:
-    print(item[0],item[1])</code></pre><p><strong>allowPOS词性过滤：n表示名词、nr表示人名、ns表示地名</strong></p><h5 id="4-3-6-基于TF-IDF算法的关键词抽取示例运行结果"><a href="#4-3-6-基于TF-IDF算法的关键词抽取示例运行结果" class="headerlink" title="4.3.6 基于TF-IDF算法的关键词抽取示例运行结果"></a>4.3.6 基于TF-IDF算法的关键词抽取示例运行结果</h5><p><strong>十九大报告节选.txt 在目录C:\Users\用户名.spyder-py3下</strong></p><p><strong>十九大报告节选.txt</strong>（原始文档）<br>中国共产党第十九次全国代表大会，是在全面建成小康社会决胜阶段、中国特色社会主义进入新时代的关键时期召开的一次十分重要的大会。</p><p>大会的主题是：不忘初心，牢记使命，高举中国特色社会主义伟大旗帜，决胜全面建成小康社会，夺取新时代中国特色社会主义伟大胜利，为实现中华民族伟大复兴的中国梦不懈奋斗。</p><p>不忘初心，方得始终。中国共产党人的初心和使命，就是为中国人民谋幸福，为中华民族谋复兴。这个初心和使命是激励中国共产党人不断前进的根本动力。全党同志一定要永远与人民同呼吸、共命运、心连心，永远把人民对美好生活的向往作为奋斗目标，以永不懈怠的精神状态和一往无前的奋斗姿态，继续朝着实现中华民族伟大复兴的宏伟目标奋勇前进。</p><p>当前，国内外形势正在发生深刻复杂变化，我国发展仍处于重要战略机遇期，前景十分光明，挑战也十分严峻。全党同志一定要登高望远、居安思危，勇于变革、勇于创新，永不僵化、永不停滞，团结带领全国各族人民决胜全面建成小康社会，奋力夺取新时代中国特色社会主义伟大胜利。</p><p><strong>运行结果</strong><br>初心 1.056602437712<br>小康社会 0.6097804820220001<br>特色 0.5239102226336<br>全党同志 0.512082614532<br>社会主义 0.50983069314<br>中国 0.3632784823992<br>全面 0.33744171159299996<br>时代 0.3303798174336<br>人民 0.3125617860198<br>大会 0.2465050141716<br>共命运 0.228315420044<br>机遇期 0.222561778594<br>伟大旗帜 0.214452476432<br>方得 0.1954708653386<br>牢记 0.18611115603679998</p><h4 id="4-4-统计《三国演义》小说词频前20的词语"><a href="#4-4-统计《三国演义》小说词频前20的词语" class="headerlink" title="4.4 统计《三国演义》小说词频前20的词语"></a>4.4 统计《三国演义》小说词频前20的词语</h4><p><strong>源代码</strong></p><pre><code>import jieba
+    print(item[0],item[1])</code></pre><p><strong>allowPOS词性过滤：n表示名词、nr表示人名、ns表示地名</strong></p>
+<h5 id="4-3-6-基于TF-IDF算法的关键词抽取示例运行结果"><a href="#4-3-6-基于TF-IDF算法的关键词抽取示例运行结果" class="headerlink" title="4.3.6 基于TF-IDF算法的关键词抽取示例运行结果"></a><strong>4.3.6 基于TF-IDF算法的关键词抽取示例运行结果</strong></h5><p><strong>十九大报告节选.txt 在目录C:\Users\用户名.spyder-py3下</strong></p>
+<p><strong>（原始文档）</strong><br><strong>中国共产党第十九次全国代表大会，是在全面建成小康社会决胜阶段、中国特色社会主义进入新时代的关键时期召开的一次十分重要的大会。</strong></p>
+<p><strong>大会的主题是：不忘初心，牢记使命，高举中国特色社会主义伟大旗帜，决胜全面建成小康社会，夺取新时代中国特色社会主义伟大胜利，为实现中华民族伟大复兴的中国梦不懈奋斗。</strong></p>
+<p><strong>不忘初心，方得始终。中国共产党人的初心和使命，就是为中国人民谋幸福，为中华民族谋复兴。这个初心和使命是激励中国共产党人不断前进的根本动力。全党同志一定要永远与人民同呼吸、共命运、心连心，永远把人民对美好生活的向往作为奋斗目标，以永不懈怠的精神状态和一往无前的奋斗姿态，继续朝着实现中华民族伟大复兴的宏伟目标奋勇前进。</strong></p>
+<p><strong>当前，国内外形势正在发生深刻复杂变化，我国发展仍处于重要战略机遇期，前景十分光明，挑战也十分严峻。全党同志一定要登高望远、居安思危，勇于变革、勇于创新，永不僵化、永不停滞，团结带领全国各族人民决胜全面建成小康社会，奋力夺取新时代中国特色社会主义伟大胜利。</strong></p>
+<p><strong>初心 1.056602437712</strong><br><strong>小康社会 0.6097804820220001</strong><br><strong>特色 0.5239102226336</strong><br><strong>全党同志 0.512082614532</strong><br><strong>社会主义 0.50983069314</strong><br><strong>中国 0.3632784823992</strong><br><strong>全面 0.33744171159299996</strong><br><strong>时代 0.3303798174336</strong><br><strong>人民 0.3125617860198</strong><br><strong>大会 0.2465050141716</strong><br><strong>共命运 0.228315420044</strong><br><strong>机遇期 0.222561778594</strong><br><strong>伟大旗帜 0.214452476432</strong><br><strong>方得 0.1954708653386</strong><br><strong>牢记 0.18611115603679998</strong></p>
+<h4 id="4-4-统计《三国演义》小说词频前20的词语"><a href="#4-4-统计《三国演义》小说词频前20的词语" class="headerlink" title="4.4 统计《三国演义》小说词频前20的词语"></a><strong>4.4 统计《三国演义》小说词频前20的词语</strong></h4><p><strong>源代码</strong></p>
+<pre><code>import jieba
 f = open(&quot;.\三国演义.txt&quot;, &quot;rb&quot;)
 txt = f.read()
 words = jieba.lcut(txt)
@@ -163,7 +1111,9 @@ items = list(counts.items())
 items.sort(key = lambda items: items[1], reverse = True)
 for i in range(20):
     word, count = items[i]
-    print(&quot;{0:&lt;10}{1:&gt;5}&quot;.format(word, count))</code></pre><p><strong>运行结果</strong><br>曹操 940<br>孔明 828<br>将军 762<br>却说 648<br>玄德 568<br>关公 508<br>丞相 489<br>二人 465<br>不可 436<br>荆州 420<br>玄德曰 385<br>孔明曰 385<br>不能 383<br>如此 376<br>张飞 350<br>商议 344<br>如何 337<br>主公 328<br>军士 311</p><h4 id="4-5-统计《三国演义》分词后，词频数前50中，三国人物出现次数"><a href="#4-5-统计《三国演义》分词后，词频数前50中，三国人物出现次数" class="headerlink" title="4.5 统计《三国演义》分词后，词频数前50中，三国人物出现次数"></a>4.5 统计《三国演义》分词后，词频数前50中，三国人物出现次数</h4><p><strong>源代码</strong></p><pre><code>import jieba
+    print(&quot;{0:&lt;10}{1:&gt;5}&quot;.format(word, count))</code></pre><p><strong>曹操          940</strong><br><strong>孔明          828</strong><br><strong>将军          762</strong><br><strong>却说          648</strong><br><strong>玄德          568</strong><br><strong>关公          508</strong><br><strong>丞相          489</strong><br><strong>二人          465</strong><br><strong>不可          436</strong><br><strong>荆州          420</strong><br><strong>玄德曰         385</strong><br><strong>孔明曰         385</strong><br><strong>不能          383</strong><br><strong>如此          376</strong><br><strong>张飞          350</strong><br><strong>商议          344</strong><br><strong>如何          337</strong><br><strong>主公          328</strong><br><strong>军士          311</strong></p>
+<h4 id="4-5-统计《三国演义》分词后，词频数前50中，三国人物出现次数"><a href="#4-5-统计《三国演义》分词后，词频数前50中，三国人物出现次数" class="headerlink" title="4.5 统计《三国演义》分词后，词频数前50中，三国人物出现次数"></a><strong>4.5 统计《三国演义》分词后，词频数前50中，三国人物出现次数</strong></h4><p><strong>源代码</strong></p>
+<pre><code>import jieba
 f = open(&quot;.\三国演义.txt&quot;, &quot;rb&quot;)
 txt = f.read()
 words = jieba.lcut(txt)
@@ -192,14 +1142,147 @@ items.sort(key = lambda items: items[1], reverse = True)
 for i in range(50):
     word, count = items[i]
     if personlist.count(word) &gt; 0:
-        print(&quot;{0:&lt;10}{1:&gt;5}&quot;.format(word, count))</code></pre><p><strong>运行结果</strong><br>曹操 940<br>孔明 828<br>张飞 350<br>吕布 302<br>刘备 278<br>孙权 266<br>赵云 257<br>司马懿 222<br>周瑜 218<br>袁绍 191<br>马超 185<br>魏延 177</p><h3 id="5、图像处理实战"><a href="#5、图像处理实战" class="headerlink" title="5、图像处理实战"></a>5、图像处理实战</h3><h4 id="5-1-Pillow-扩展库"><a href="#5-1-Pillow-扩展库" class="headerlink" title="5.1 Pillow 扩展库"></a>5.1 Pillow 扩展库</h4><h5 id="5-1-1-Pillow扩展库概述"><a href="#5-1-1-Pillow扩展库概述" class="headerlink" title="5.1.1 Pillow扩展库概述"></a>5.1.1 Pillow扩展库概述</h5><ol><li>PIL（Python Imaging Library）是Python常用的图像处理库，功能非常强大，API 简单易用。</li><li>但 PIL 仅支持到 Python 2.7，加上年久失修。</li><li>一群志愿者在 PIL 的基础上创建了PIL的兼容版本，名字叫 Pillow，支持最新 Python 3.x，并加入许多新特性。</li><li>Pillow 提供了广泛的文件格式支持，强大的图像处理能力，主要包括图像储存、图像显示、格式转换以及基本的图像处理操作等。</li></ol><h5 id="5-1-2-Pillow-扩展库主要功能"><a href="#5-1-2-Pillow-扩展库主要功能" class="headerlink" title="5.1.2 Pillow 扩展库主要功能"></a>5.1.2 Pillow 扩展库主要功能</h5><ol><li><p>图像归档<br>对图像进行批处理、生成图像预览、图像格式转换等。</p></li><li><p>图像处理<br>图像基本处理、像素处理、颜色处理。</p></li></ol><h5 id="5-1-3-Pillow-扩展库主要操作"><a href="#5-1-3-Pillow-扩展库主要操作" class="headerlink" title="5.1.3 Pillow 扩展库主要操作"></a>5.1.3 Pillow 扩展库主要操作</h5><ol><li><p>在 PIL 中，任何一个图像文件都可以用 Image 对象表示。</p></li><li><p><strong>Image 类的图像读取和创建方法</strong></p></li></ol><table><thead><tr><th align="left">方法</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">Image.open(filename)</td><td align="left">根据参数加载图像文件</td></tr><tr><td align="left">Image.new(mode, size, color)</td><td align="left">根据给定参数创建一个新的图像</td></tr><tr><td align="left">Image.open(StringIO.StringIO(buffer)</td><td align="left">从字符串中获取图像</td></tr><tr><td align="left">Image.frombytes(mode, size, data)</td><td align="left">根据像素点data创建图像</td></tr><tr><td align="left">Image.verify()</td><td align="left">对图像文件完整性进行检查，返回异常</td></tr></tbody></table><ol start="3"><li><strong>Image 类有 4 个处理图片的常用属性</strong></li></ol><table><thead><tr><th align="left">属性</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">Image.format</td><td align="left">标识图像格式或来源，如果图像不是从文件读取，值是None</td></tr><tr><td align="left">Image.mode</td><td align="left">图像的色彩模式，“L”灰度图像、“RGB”真彩色图像、“CMYK”出版图像</td></tr><tr><td align="left">Image.size</td><td align="left">图像宽度和高度，单位是像素(px)，返回值是二元元组(tuple)</td></tr><tr><td align="left">Image.palette</td><td align="left">调色板属性，返回一个ImagePalette类型</td></tr></tbody></table><ol start="4"><li><strong>Image 类的图像转换和保存方法</strong></li></ol><table><thead><tr><th align="left">方法</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">Image.save(filename,format)</td><td align="left">将图像保存为filename文件名，format是图片格式</td></tr><tr><td align="left">Image.convert(mode)</td><td align="left">使用不同的参数，转换图像为新的模式</td></tr><tr><td align="left">Image.thumbnail(size)</td><td align="left">创建图像的缩略图，size是缩略图尺寸的二元元组</td></tr></tbody></table><p><strong>Pillow 扩展库缩略图示例</strong><br>生成图像的缩略图，其中（128，128）是缩略图的尺寸</p><pre><code>from PIL import Image
+        print(&quot;{0:&lt;10}{1:&gt;5}&quot;.format(word, count))</code></pre><p><strong>曹操          940</strong><br><strong>孔明          828</strong><br><strong>张飞          350</strong><br><strong>吕布          302</strong><br><strong>刘备          278</strong><br><strong>孙权          266</strong><br><strong>赵云          257</strong><br><strong>司马懿         222</strong><br><strong>周瑜          218</strong><br><strong>袁绍          191</strong><br><strong>马超          185</strong><br><strong>魏延          177</strong></p>
+<h3 id="5、图像处理实战"><a href="#5、图像处理实战" class="headerlink" title="5、图像处理实战"></a><strong>5、图像处理实战</strong></h3><h4 id="5-1-Pillow-扩展库"><a href="#5-1-Pillow-扩展库" class="headerlink" title="5.1 Pillow 扩展库"></a><strong>5.1 Pillow 扩展库</strong></h4><h5 id="5-1-1-Pillow扩展库概述"><a href="#5-1-1-Pillow扩展库概述" class="headerlink" title="5.1.1 Pillow扩展库概述"></a><strong>5.1.1 Pillow扩展库概述</strong></h5><ol>
+<li><strong>PIL（Python Imaging Library）是Python常用的图像处理库，功能非常强大，API 简单易用。</strong></li>
+<li><strong>但 PIL 仅支持到 Python 2.7，加上年久失修。</strong></li>
+<li><strong>一群志愿者在 PIL 的基础上创建了PIL的兼容版本，名字叫 Pillow，支持最新 Python 3.x，并加入许多新特性。</strong></li>
+<li><strong>Pillow 提供了广泛的文件格式支持，强大的图像处理能力，主要包括图像储存、图像显示、格式转换以及基本的图像处理操作等。</strong></li>
+</ol>
+<h5 id="5-1-2-Pillow-扩展库主要功能"><a href="#5-1-2-Pillow-扩展库主要功能" class="headerlink" title="5.1.2 Pillow 扩展库主要功能"></a><strong>5.1.2 Pillow 扩展库主要功能</strong></h5><ol>
+<li><strong>图像归档</strong></li>
+</ol>
+<p><strong>对图像进行批处理、生成图像预览、图像格式转换等。</strong></p>
+<ol start="2">
+<li><strong>图像处理</strong></li>
+</ol>
+<p><strong>图像基本处理、像素处理、颜色处理。</strong></p>
+<h5 id="5-1-3-Pillow-扩展库主要操作"><a href="#5-1-3-Pillow-扩展库主要操作" class="headerlink" title="5.1.3 Pillow 扩展库主要操作"></a><strong>5.1.3 Pillow 扩展库主要操作</strong></h5><ol>
+<li><p><strong>在 PIL 中，任何一个图像文件都可以用 Image 对象表示。</strong></p>
+</li>
+<li><p><strong>Image 类的图像读取和创建方法</strong></p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>方法</strong></th>
+<th align="left"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Image.open(filename)</strong></td>
+<td align="left"><strong>根据参数加载图像文件</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.new(mode, size, color)</strong></td>
+<td align="left"><strong>根据给定参数创建一个新的图像</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.open(StringIO.StringIO(buffer)</strong></td>
+<td align="left"><strong>从字符串中获取图像</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.frombytes(mode, size, data)</strong></td>
+<td align="left"><strong>根据像素点data创建图像</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.verify()</strong></td>
+<td align="left"><strong>对图像文件完整性进行检查，返回异常</strong></td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li><strong>Image 类有 4 个处理图片的常用属性</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>属性</strong></th>
+<th align="left"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Image.format</strong></td>
+<td align="left"><strong>标识图像格式或来源，如果图像不是从文件读取，值是None</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.mode</strong></td>
+<td align="left"><strong>图像的色彩模式，“L”灰度图像、“RGB”真彩色图像、“CMYK”出版图像</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.size</strong></td>
+<td align="left"><strong>图像宽度和高度，单位是像素(px)，返回值是二元元组(tuple)</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.palette</strong></td>
+<td align="left"><strong>调色板属性，返回一个ImagePalette类型</strong></td>
+</tr>
+</tbody></table>
+<ol start="4">
+<li><strong>Image 类的图像转换和保存方法</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>方法</strong></th>
+<th align="left"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Image.save(filename,format)</strong></td>
+<td align="left"><strong>将图像保存为filename文件名，format是图片格式</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.convert(mode)</strong></td>
+<td align="left"><strong>使用不同的参数，转换图像为新的模式</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.thumbnail(size)</strong></td>
+<td align="left"><strong>创建图像的缩略图，size是缩略图尺寸的二元元组</strong></td>
+</tr>
+</tbody></table>
+<p><strong>生成图像的缩略图，其中（128，128）是缩略图的尺寸</strong></p>
+<pre><code>from PIL import Image
 im = Image.open(&quot;\img0.jpg&quot;) 
 im.thumbnail((128, 128)) 
-im.save(&quot;img0TN&quot;, &quot;JPEG&quot;)</code></pre><ol start="5"><li>Image 类能够对每个像素点或者一幅 RGB 图像的每个通道单独进行操作，split() 方法能够将 RGB 图像各颜色通道提取出来，merge() 方法能够将各独立通道再合成一幅新的图像。</li></ol><table><thead><tr><th align="left">方法</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">Image.point(func)</td><td align="left">根据函数 func 功能对每个元素进行运算，返回图像副本</td></tr><tr><td align="left">Image.split()</td><td align="left">提取 RGB 图像的每个颜色通道，返回图像副本</td></tr><tr><td align="left">Image.merge(mode,bands)</td><td align="left">合并通道，采用 mode 色彩，bands 是新色的色彩通道</td></tr><tr><td align="left">Image.blend(img1, img2, alpha)</td><td align="left">将两幅图片 img1 和 img2 按照如下公式插值后生成新的图像： img1 * (1.0 - alpha) + img2* alpha</td></tr></tbody></table><ol start="6"><li><strong>颜色变换</strong></li></ol><pre><code>from PIL import Image
+im.save(&quot;img0TN&quot;, &quot;JPEG&quot;)</code></pre><ol start="5">
+<li><strong>Image 类能够对每个像素点或者一幅 RGB 图像的每个通道单独进行操作，split() 方法能够将 RGB 图像各颜色通道提取出来，merge() 方法能够将各独立通道再合成一幅新的图像。</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>方法</strong></th>
+<th align="left"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>Image.point(func)</strong></td>
+<td align="left"><strong>根据函数 func 功能对每个元素进行运算，返回图像副本</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.split()</strong></td>
+<td align="left"><strong>提取 RGB 图像的每个颜色通道，返回图像副本</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.merge(mode,bands)</strong></td>
+<td align="left"><strong>合并通道，采用 mode 色彩，bands 是新色的色彩通道</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>Image.blend(img1, img2, alpha)</strong></td>
+<td align="left"><strong>将两幅图片 img1 和 img2 按照如下公式插值后生成新的图像： img1 * (1.0 - alpha) + img2* alpha</strong></td>
+</tr>
+</tbody></table>
+<ol start="6">
+<li><strong>颜色变换</strong></li>
+</ol>
+<pre><code>from PIL import Image
 
 im = Image.open(&#39;img1.jpg&#39;)
 r,g,b = im.split()
-om = Image.merge(&quot;RGB&quot;, (b, g, r)) om.save(&#39;img1BGR.jpg&#39;)</code></pre><ol start="7"><li><strong>通道颜色变换</strong></li></ol><pre><code>from PIL import Image
+om = Image.merge(&quot;RGB&quot;, (b, g, r)) om.save(&#39;img1BGR.jpg&#39;)</code></pre><ol start="7">
+<li><strong>通道颜色变换</strong></li>
+</ol>
+<pre><code>from PIL import Image
 
 im = Image.open(&#39;img1.jpg&#39;)
 r,g,b = im.split() # 获得RGB通道数据
@@ -207,12 +1290,101 @@ newr = g.point(lambda i: i*0.9)
 newg = g.point(lambda i: i&lt;200) # 选择g通道值低于200的像素点
 newb = b.point(lambda i: i)
 om = Image.merge(im.mode, (newr, newg, b)) # 将3个通道合成新图像
-om.save(&#39;img1Merge.jpg&#39;)</code></pre><ol start="8"><li><strong>PIL 库的 ImageFilter 提供的过滤图像方法</strong></li></ol><table><thead><tr><th align="left">方法</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">ImageFilter.BLUR</td><td align="left">图像的模糊效果</td></tr><tr><td align="left">ImageFilter.CONTOUR</td><td align="left">图像的轮廓效果</td></tr><tr><td align="left">ImageFilter.DETAIL</td><td align="left">图像的细节效果</td></tr><tr><td align="left">ImageFilter.EDGE_ENHANCE</td><td align="left">图像的边界加强效果</td></tr><tr><td align="left">ImageFilter.EDGE_ENHANCE_MORE</td><td align="left">图像的阈值边界加强效果</td></tr><tr><td align="left">ImageFilter.EMBOSS</td><td align="left">图像的浮雕效果</td></tr><tr><td align="left">ImageFilter.FIND_EDGES</td><td align="left">图像的边界效果</td></tr><tr><td align="left">ImageFilter.SMOOTH</td><td align="left">图像的平滑效果</td></tr><tr><td align="left">ImageFilter.SMOOTH_MORE</td><td align="left">图像的阈值平滑效果</td></tr><tr><td align="left">ImageFilter.SHARPEN</td><td align="left">图像的锐化效果</td></tr></tbody></table><ol start="9"><li><strong>Pillow 扩展库生成模糊图片</strong><br>生成图像模糊效果：套用滤镜</li></ol><pre><code>from PIL import Image
+om.save(&#39;img1Merge.jpg&#39;)</code></pre><ol start="8">
+<li><strong>PIL 库的 ImageFilter 提供的过滤图像方法</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>方法</strong></th>
+<th align="left"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>ImageFilter.BLUR</strong></td>
+<td align="left"><strong>图像的模糊效果</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageFilter.CONTOUR</strong></td>
+<td align="left"><strong>图像的轮廓效果</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageFilter.DETAIL</strong></td>
+<td align="left"><strong>图像的细节效果</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageFilter.EDGE_ENHANCE</strong></td>
+<td align="left"><strong>图像的边界加强效果</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageFilter.EDGE_ENHANCE_MORE</strong></td>
+<td align="left"><strong>图像的阈值边界加强效果</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageFilter.EMBOSS</strong></td>
+<td align="left"><strong>图像的浮雕效果</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageFilter.FIND_EDGES</strong></td>
+<td align="left"><strong>图像的边界效果</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageFilter.SMOOTH</strong></td>
+<td align="left"><strong>图像的平滑效果</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageFilter.SMOOTH_MORE</strong></td>
+<td align="left"><strong>图像的阈值平滑效果</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageFilter.SHARPEN</strong></td>
+<td align="left"><strong>图像的锐化效果</strong></td>
+</tr>
+</tbody></table>
+<ol start="9">
+<li></li>
+</ol>
+<p><strong>生成图像模糊效果：套用滤镜</strong></p>
+<pre><code>from PIL import Image
 from PIL import ImageFilter
 
 im = Image.open(&quot;img1.jpg&quot;)
 om = im.filter(ImageFilter.BLUR) # 为图片使用模糊滤镜
-om.save(&#39;img1_blur.jpg&#39;)</code></pre><ol start="10"><li>PIL 库的 ImageEnhance 类提供了更高级的图像增强需求，提供调整色彩度、亮度、对比度、锐化等功能。</li></ol><table><thead><tr><th align="left">方法</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">ImageEnhance.enhance(factor)</td><td align="left">对选择属性的数值增强factor倍</td></tr><tr><td align="left">ImageEnhance.Color(im)</td><td align="left">调整图像的颜色平衡</td></tr><tr><td align="left">ImageEnhance.Contrast(im)</td><td align="left">调整图像的对比度</td></tr><tr><td align="left">ImageEnhance.Brightness(im)</td><td align="left">调整图像的亮度</td></tr><tr><td align="left">ImageEnhance.Sharpness(im)</td><td align="left">调整图像的锐度</td></tr></tbody></table><ol start="11"><li><strong>高级图像增强示例</strong></li></ol><pre><code>from PIL import Image
+om.save(&#39;img1_blur.jpg&#39;)</code></pre><ol start="10">
+<li><strong>PIL 库的 ImageEnhance 类提供了更高级的图像增强需求，提供调整色彩度、亮度、对比度、锐化等功能。</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>方法</strong></th>
+<th align="left"><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>ImageEnhance.enhance(factor)</strong></td>
+<td align="left"><strong>对选择属性的数值增强factor倍</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageEnhance.Color(im)</strong></td>
+<td align="left"><strong>调整图像的颜色平衡</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageEnhance.Contrast(im)</strong></td>
+<td align="left"><strong>调整图像的对比度</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageEnhance.Brightness(im)</strong></td>
+<td align="left"><strong>调整图像的亮度</strong></td>
+</tr>
+<tr>
+<td align="left"><strong>ImageEnhance.Sharpness(im)</strong></td>
+<td align="left"><strong>调整图像的锐度</strong></td>
+</tr>
+</tbody></table>
+<ol start="11">
+<li><strong>高级图像增强示例</strong></li>
+</ol>
+<pre><code>from PIL import Image
 from PIL import ImageEnhance
 
 im = Image.open(&quot;img1.jpg&quot;)
@@ -221,7 +1393,13 @@ im = Image.open(&quot;img1.jpg&quot;)
 om = ImageEnhance.Contrast(im) 
 
 # 图像对比度增强3倍
-om.enhance(3).save(&#39;img1_EnContras t.jpg’)</code></pre><h4 id="5-2-验证码生成实战"><a href="#5-2-验证码生成实战" class="headerlink" title="5.2 验证码生成实战"></a>5.2 验证码生成实战</h4><h5 id="5-2-1-题目要求"><a href="#5-2-1-题目要求" class="headerlink" title="5.2.1 题目要求"></a>5.2.1 题目要求</h5><p>利用 PIL 的 ImageDraw 提供的绘图方法生成如下图的验证码，要求字母随机、填充颜色随机。</p><h5 id="5-2-2-思路"><a href="#5-2-2-思路" class="headerlink" title="5.2.2 思路"></a>5.2.2 思路</h5><ol><li>使用库 PIL、random</li><li>画布：随机填充色</li><li>字母：指定字体（注意路径）、模糊滤镜 BLUR</li></ol><h5 id="5-2-3-验证码生成实战代码"><a href="#5-2-3-验证码生成实战代码" class="headerlink" title="5.2.3 验证码生成实战代码"></a>5.2.3 验证码生成实战代码</h5><pre><code>from PIL import Image, ImageDraw, ImageFont, ImageFilter
+om.enhance(3).save(&#39;img1_EnContras t.jpg’)</code></pre><h4 id="5-2-验证码生成实战"><a href="#5-2-验证码生成实战" class="headerlink" title="5.2 验证码生成实战"></a><strong>5.2 验证码生成实战</strong></h4><h5 id="5-2-1-题目要求"><a href="#5-2-1-题目要求" class="headerlink" title="5.2.1 题目要求"></a><strong>5.2.1 题目要求</strong></h5><p><strong>利用 PIL 的 ImageDraw 提供的绘图方法生成如下图的验证码，要求字母随机、填充颜色随机。</strong></p>
+<h5 id="5-2-2-思路"><a href="#5-2-2-思路" class="headerlink" title="5.2.2 思路"></a><strong>5.2.2 思路</strong></h5><ol>
+<li><strong>使用库 PIL、random</strong></li>
+<li><strong>画布：随机填充色</strong></li>
+<li><strong>字母：指定字体（注意路径）、模糊滤镜 BLUR</strong></li>
+</ol>
+<h5 id="5-2-3-验证码生成实战代码"><a href="#5-2-3-验证码生成实战代码" class="headerlink" title="5.2.3 验证码生成实战代码"></a><strong>5.2.3 验证码生成实战代码</strong></h5><pre><code>from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 import random
 
@@ -259,14 +1437,426 @@ for t in range(4):
 
 # 模糊
 image = image.filter(ImageFilter.BLUR)
-image.save(&#39;code.jpg&#39;, &#39;jpeg&#39;)</code></pre><p><strong>运行结果</strong><br><img src="/medias/1591338787052.png" alt="验证码生成"></p></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://blog.hsiehchou.com/2020/06/02/di-san-zhang-python-bian-cheng-jin-jie/">https://blog.hsiehchou.com/2020/06/02/di-san-zhang-python-bian-cheng-jin-jie/</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a> !</span></div></div><script async defer>document.addEventListener("copy", function (e) {
+image.save(&#39;code.jpg&#39;, &#39;jpeg&#39;)</code></pre><p><strong><img src="/medias/1591338787052.png" alt="验证码生成"></strong></p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com/2020/06/02/di-san-zhang-python-bian-cheng-jin-jie/">https://blog.hsiehchou.com/2020/06/02/di-san-zhang-python-bian-cheng-jin-jie/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
       function navToReprintStatement() {
         $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/Python/"><span class="chip bg-color">Python</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/js/social-share.min.js"></script></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/2020/06/04/di-si-zhang-python-shu-ju-chu-li/"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="第四章 Python数据处理"> <span class="card-title">第四章 Python数据处理</span></div></a><div class="card-content article-content"><div class="summary block-with-text">第四章 Python 数据处理1、numpy 数组操作1.1 numpy 库概述1.1.1 引言 Python 中用列表(list)保存一组值，可用来当作数组使用，由于列表的元素可以是任何对象，因此列表中所保存的是对象的指针。为保存一个简单</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2020-06-04</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/Python/" class="post-category">Python</a></span></div></div><div class="card-action article-tags"><a href="/tags/Python/"><span class="chip bg-color">Python</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/2020/05/12/ru-he-yue-du-yi-ben-shu-du-shu/"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="如何阅读一本书"> <span class="card-title">如何阅读一本书</span></div></a><div class="card-content article-content"><div class="summary block-with-text">第一篇 阅读的层次第一章 阅读的活力与艺术1.1 主动的阅读阅读可以是一件多少主动的事。 阅读越主动，效果越好。 1.2 阅读的目标：为获得资讯而读，以及为求得理解而读1.3 阅读就是学习：指导型的学习，以及自我发现型的学习之间的差异只</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2020-05-12</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E8%AF%BB%E4%B9%A6/" class="post-category">读书</a></span></div></div><div class="card-action article-tags"><a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"><span class="chip bg-color">读书笔记</span></a></div></div></div></div></article></div><script>$("#articleContent").on("copy",function(e){if(void 0!==window.getSelection){var n=window.getSelection();if(!((""+n).length<Number.parseInt("60"))){var t=document.getElementsByTagName("body")[0],o=document.createElement("div");o.style.position="absolute",o.style.left="-99999px",t.appendChild(o),o.appendChild(n.getRangeAt(0).cloneContents()),"PRE"===n.getRangeAt(0).commonAncestorContainer.nodeName&&(o.innerHTML="<pre>"+o.innerHTML+"</pre>");var i=document.location.href;o.innerHTML+='<br />来源: 谢舟的博客<br />文章作者: 谢舟<br />文章链接: <a href="'+i+'">'+i+"</a><br />本文章著作权归作者所有，任何形式的转载都请注明出处。",n.selectAllChildren(o),window.setTimeout(function(){t.removeChild(o)},200)}}})</script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeBlockFuction.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeLang.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeCopy.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeShrink.js"></script><style>code[class*=language-],pre[class*=language-]{white-space:pre!important}</style></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/06/04/di-si-zhang-python-shu-ju-chu-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="第四章 Python 数据处理">
+                        
+                        <span class="card-title">第四章 Python 数据处理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第四章 Python 数据处理1、numpy 数组操作1.1 numpy 库概述1.1.1 引言
+Python 中用列表(list)保存一组值，可用来当作数组使用，由于列表的元素可以是任何对象，因此列表中所保存的是对象的指针。为保存一个简单
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/12/ru-he-yue-du-yi-ben-shu-du-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="如何阅读一本书">
+                        
+                        <span class="card-title">如何阅读一本书</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第一篇 阅读的层次第一章  阅读的活力与艺术1.1 主动的阅读阅读可以是一件多少主动的事。
+阅读越主动，效果越好。
+1.2  阅读的目标：为获得资讯而读，以及为求得理解而读1.3 阅读就是学习：指导型的学习，以及自我发现型的学习之间的差异只
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6/" class="post-category">
+                                    读书
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">读书笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 谢舟的博客<br />'
+            + '文章作者: 谢舟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
@@ -337,4 +1927,188 @@ image.save(&#39;code.jpg&#39;, &#39;jpeg&#39;)</code></pre><p><strong>运行结�
             fixPostCardWidth('artDetail', 'prenext-posts');
         });
         
-    });</script></main><footer class="page-footer bg-color"><div class="container row center-align" style="margin-bottom:0!important"><div class="col s12 m8 l8 copy-right">Copyright&nbsp;&copy; <span id="year">2019-2020</span> <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a><br>&nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">490.3k</span>&nbsp;字 <span id="busuanzi_container_site_pv">|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次</span> <span id="busuanzi_container_site_uv">|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br><span id="icp"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/icp.png" style="vertical-align:text-bottom"> <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a></span></div><div class="col s12 m4 l4 social-link social-statis"><a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/search.js"></script><script>$(function(){searchFunc("https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/masonry/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/scrollprogress/scrollProgress.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/matery.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id="></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?1fdd6e11866c1fe7b815d69a4a4206ea";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/clicklove.js" async></script><script async src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/instantpage/instantpage.js" type="module"></script></body></html>
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">490.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            
+			<br>
+            
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1fdd6e11866c1fe7b815d69a4a4206ea";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

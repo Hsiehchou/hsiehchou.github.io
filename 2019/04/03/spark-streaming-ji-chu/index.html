@@ -1,4 +1,227 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="Spark Streaming, 谢舟，博客，大数据，Java"><meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="baidu-site-verification" content="2VN5bX64Cz"><title>Spark Streaming | 谢舟的博客</title><link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/favicon.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/awesome/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/animate/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/matery.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/my.css"><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/jquery/jquery.min.js"></script><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml"><link rel="stylesheet" href="/css/prism-tomorrow.css"></head><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><div><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">谢舟的博客</span></div></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom:.6"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom:.6"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友情链接</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">谢舟的博客</div><div class="logo-desc">发布关于大数据,Java的一些信息和自己实践中的经验</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友情链接</a></li></ul></div></div></nav></header><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/cryptojs/crypto-js.min.js"></script><script>(function() {
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Spark Streaming, 谢舟，博客，大数据，Java">
+    <meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="baidu-site-verification" content="2VN5bX64Cz" />
+    <title>Spark Streaming | 谢舟的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+					<div>
+						
+						<img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+						
+						<span class="logo-span">谢舟的博客</span>
+					</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">谢舟的博客</div>
+        <div class="logo-desc">
+            
+            发布关于大数据,Java的一些信息和自己实践中的经验
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
         let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
@@ -6,7 +229,211 @@
                 location.href = '/';
             }
         }
-    })();</script><div class="bg-cover pd-header post-cover" style="background-image:url(https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/17.jpg)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">Spark Streaming</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px}.toc-widget .toc-title{margin:35px 0 15px 0;padding-left:17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{height:calc(100vh - 250px);overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px}#toc-content .is-active-link{color:#42b983}#toc-content .is-active-link::before{background-color:#42b983}#floating-toc-btn{position:fixed;right:15px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"><span class="chip bg-color">大数据</span></a> <a href="/tags/Spark/"><span class="chip bg-color">Spark</span></a></div></div><div class="col s5 right-align"><div class="post-cate"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">大数据</a></div></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i> 发布日期:&nbsp;&nbsp; 2019-04-03</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i> 文章字数:&nbsp;&nbsp; 6.5k</div><div class="info-break-policy"><i class="far fa-clock fa-fw"></i> 阅读时长:&nbsp;&nbsp; 27 分</div><div id="busuanzi_container_page_pv" class="info-break-policy"><i class="far fa-eye fa-fw"></i> 阅读次数:&nbsp;&nbsp;<span id="busuanzi_value_page_pv"></span></div></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><p><strong>Spark Streaming</strong><br>流式计算框架，类似于Storm</p><p>常用的实时计算引擎（流式计算）<br>1、Apache Storm：真正的流式计算</p><p>2、Spark Streaming ：严格上来说，不是真正的流式计算（实时计算）<br>把连续的流式数据，当成不连续的RDD<br>本质：是一个离散计算（不连续）</p><p>3、Apache Flink：真正的流式计算。与Spark Streaming相反<br>把离散的数据，当成流式数据来处理</p><p>4、JStorm</p><h3 id="一、Spark-Streaming基础"><a href="#一、Spark-Streaming基础" class="headerlink" title="一、Spark Streaming基础"></a>一、Spark Streaming基础</h3><h4 id="1、什么是-Spark-Streaming"><a href="#1、什么是-Spark-Streaming" class="headerlink" title="1、什么是 Spark Streaming"></a>1、什么是 Spark Streaming</h4><p>Spark Streaming makes it easy to build scalable fault-tolerant streaming applications.<br>易于构建灵活的、高容错的流式系统</p><p>Spark Streaming是核心Spark API的扩展，可实现可扩展、高吞吐量、可容错的实时数据流处理。数据可以从诸如Kafka，Flume，Kinesis或TCP套接字等众多来源获取，并且可以使用由高级函数（如map，reduce，join和window）开发的复杂算法进行流数据处理。最后，处理后的数据可以被推送到文件系统，数据库和实时仪表板。而且，您还可以在数据流上应用Spark提供的机器学习和图处理算法</p><p>特点：<br>1、易用，已经集成到Spark中<br>2、容错性：底层RDD，RDD本身具有容错机制<br>3、支持多种语言：Java Scala Python</p><p>Spark Streaming将连续的数据流抽象为discretizedstream或DStream。在内部，DStream 由一个RDD序列表示</p><h4 id="2、演示官方的Demo"><a href="#2、演示官方的Demo" class="headerlink" title="2、演示官方的Demo"></a>2、演示官方的Demo</h4><p>往Spark Streaming中发送字符串，Spark 接收到以后，进行计数<br>使用消息服务器 netcat Linux自带<br>yum install nc.x86_64</p><p>nc -l 1234</p><p>注意：总核心数 大于等于2。一个核心用于接收数据，另一个用于处理数据</p><p>在netcat中写入数据 Spark Streaming可以取到</p><pre><code>[root@hsiehchou121 spark-2.1.0-bin-hadoop2.7]# ./bin/run-example streaming.NetworkWordCount localhost 1234</code></pre><h4 id="3、开发自己的NetWorkWordCount程序"><a href="#3、开发自己的NetWorkWordCount程序" class="headerlink" title="3、开发自己的NetWorkWordCount程序"></a>3、开发自己的NetWorkWordCount程序</h4><p>和Spark Core类似</p><p><strong>代码</strong></p><pre><code>package day5
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Spark Streaming</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">大数据</span>
+                            </a>
+                        
+                            <a href="/tags/Spark/">
+                                <span class="chip bg-color">Spark</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                大数据
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-04-03
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    6.5k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    27 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><strong>Spark Streaming</strong><br>流式计算框架，类似于Storm</p>
+<p>常用的实时计算引擎（流式计算）<br>1、Apache Storm：真正的流式计算</p>
+<p>2、Spark Streaming ：严格上来说，不是真正的流式计算（实时计算）<br>把连续的流式数据，当成不连续的RDD<br>本质：是一个离散计算（不连续）</p>
+<p>3、Apache Flink：真正的流式计算。与Spark Streaming相反<br>把离散的数据，当成流式数据来处理</p>
+<p>4、JStorm</p>
+<h3 id="一、Spark-Streaming基础"><a href="#一、Spark-Streaming基础" class="headerlink" title="一、Spark Streaming基础"></a>一、Spark Streaming基础</h3><h4 id="1、什么是-Spark-Streaming"><a href="#1、什么是-Spark-Streaming" class="headerlink" title="1、什么是 Spark Streaming"></a>1、什么是 Spark Streaming</h4><p>Spark Streaming makes it easy to build scalable fault-tolerant streaming applications.<br>易于构建灵活的、高容错的流式系统</p>
+<p>Spark Streaming是核心Spark API的扩展，可实现可扩展、高吞吐量、可容错的实时数据流处理。数据可以从诸如Kafka，Flume，Kinesis或TCP套接字等众多来源获取，并且可以使用由高级函数（如map，reduce，join和window）开发的复杂算法进行流数据处理。最后，处理后的数据可以被推送到文件系统，数据库和实时仪表板。而且，您还可以在数据流上应用Spark提供的机器学习和图处理算法</p>
+<p>特点：<br>1、易用，已经集成到Spark中<br>2、容错性：底层RDD，RDD本身具有容错机制<br>3、支持多种语言：Java Scala Python</p>
+<p>Spark Streaming将连续的数据流抽象为discretizedstream或DStream。在内部，DStream 由一个RDD序列表示</p>
+<h4 id="2、演示官方的Demo"><a href="#2、演示官方的Demo" class="headerlink" title="2、演示官方的Demo"></a>2、演示官方的Demo</h4><p>往Spark Streaming中发送字符串，Spark 接收到以后，进行计数<br>使用消息服务器 netcat Linux自带<br>yum install nc.x86_64</p>
+<p>nc -l 1234</p>
+<p>注意：总核心数 大于等于2。一个核心用于接收数据，另一个用于处理数据</p>
+<p>在netcat中写入数据 Spark Streaming可以取到</p>
+<pre><code>[root@hsiehchou121 spark-2.1.0-bin-hadoop2.7]# ./bin/run-example streaming.NetworkWordCount localhost 1234</code></pre><h4 id="3、开发自己的NetWorkWordCount程序"><a href="#3、开发自己的NetWorkWordCount程序" class="headerlink" title="3、开发自己的NetWorkWordCount程序"></a>3、开发自己的NetWorkWordCount程序</h4><p>和Spark Core类似</p>
+<p><strong>代码</strong></p>
+<pre><code>package day5
 
 import org.apache.spark.streaming.StreamingContext
 import org.apache.spark.SparkConf
@@ -60,7 +487,89 @@ object MyNetworkWordCount {
     //等待任务结束
     ssc.awaitTermination()
   }
-}</code></pre><p><strong>程序中的几点说明</strong></p><p>appName参数是应用程序在集群UI上显示的名称</p><p>master是Spark，Mesos或YARN集群的URL，或者一个特殊的“local [*]”字符串来让程序以本地模式运行</p><p>当在集群上运行程序时，不需要在程序中硬编码master参数，而是使用spark-submit提交应用程序并将master的URL以脚本参数的形式传入。但是，对于本地测试和单元测试，您可以通过“local[*]”来运行Spark Streaming程序（请确保本地系统中的cpu核心数够用）</p><p>StreamingContext会内在的创建一个SparkContext的实例（所有Spark功能的起始点），你可以通过ssc.sparkContext访问到这个实例</p><p>批处理的时间窗口长度必须根据应用程序的延迟要求和可用的集群资源进行设置</p><p><strong>请务必记住以下几点</strong></p><p>一旦一个StreamingContext开始运作，就不能设置或添加新的流计算</p><p>一旦一个上下文被停止，它将无法重新启动</p><p>同一时刻，一个JVM中只能有一个StreamingContext处于活动状态</p><p>StreamingContext上的stop()方法也会停止SparkContext。 要仅停止StreamingContext（保持SparkContext活跃），请将stop() 方法的可选参数stopSparkContext设置为false</p><p>只要前一个StreamingContext在下一个StreamingContext被创建之前停止（不停止SparkContext），SparkContext就可以被重用来创建多个StreamingContext</p><p>问题：Hello Hello<br>Hello World</p><p>现在现象：（Hello,2）<br>(Hello , 1) (World , 1)</p><p>能不能累加起来？保存记录下以前的状态？<br>能，能<br>通过Spark Streaming提供的算子来实现</p><h3 id="二、高级特性"><a href="#二、高级特性" class="headerlink" title="二、高级特性"></a>二、高级特性</h3><h4 id="1、什么是DStream？离散流"><a href="#1、什么是DStream？离散流" class="headerlink" title="1、什么是DStream？离散流"></a>1、什么是DStream？离散流</h4><p>把连续的数据变成不连续的RDD<br>因为DStream的特性，导致Spark Streaming不是真正的流式计算</p><p><strong>离散流</strong>（DStreams）：Discretized Streams<br>DiscretizedStream或DStream 是Spark Streaming对流式数据的基本抽象。它表示连续的数据流，这些连续的数据流可以是从数据源接收的输入数据流，也可以是通过对输入数据流执行转换操作而生成的经处理的数据流。在内部，DStream由一系列连续的RDD表示</p><p>举例分析：<br>在之前的MyNetworkWordCount 的例子中，我们将一行行文本组成的流转换为单词流，具体做法为：将flatMap操作应用于名为lines的 DStream中的每个RDD上，以生成words DStream的RDD</p><p><strong>DStream中的转换操作（transformation）</strong></p><table><thead><tr><th align="center">Transformation</th><th align="center">Meaning</th></tr></thead><tbody><tr><td align="center">map(func)</td><td align="center">利用函数func处理DStreamd的每个元素，返回一个新的DStream</td></tr><tr><td align="center">flatMap(func)</td><td align="center">于map相似，但是每个输入项可被映射为0个或者多个输出项</td></tr><tr><td align="center">filter(func)</td><td align="center">返回一个新的DStream，它仅仅包含源DStream中满足函数func的项</td></tr><tr><td align="center">repartition(numPartitions)</td><td align="center">通过创建更多或者更少的partition改变这个DStream的并行级别（level of parallelism）</td></tr><tr><td align="center">union(otherStream)</td><td align="center">返回一个新的DStream，它包含源DStream和otherStream的联合元素</td></tr><tr><td align="center">count()</td><td align="center">通过计算源DStream中每个RDD的元素数量，返回一个包含单元素（single-element）RDDs的新DStream</td></tr><tr><td align="center">reduce(func)</td><td align="center">利用函数func聚焦源DStream中每个RDD的元素，返回一个包含单元素（single-element）RDDs的新DStream，函数应该是相关联的，以使计算可以并行化</td></tr><tr><td align="center">countByValue()</td><td align="center">这个算子应用于元素类型为K的DStream上，返回一个（K,long）对的新DStream，每个键的值实在原DStream的每个RDD中的频率</td></tr><tr><td align="center">reduceByKey(func,[numTasks])</td><td align="center">当在一个由（K,V）对组成的DStream上调用这个算子，返回一个新的由（K,V）对组成的DStream，每一个key的值均由给定的reduce函数聚集起来。注意：在默认情况下，这个算子利用了Spark默认的并发任务数去分组，你可以用numTasks参数设置不同的任务数</td></tr><tr><td align="center">join(otherStream,[numTasks])</td><td align="center">当应用于两个DStream（一个包含（K,V）对，一个包含（K,W）对），返回一个包含（K,（V,W））对的新DStream</td></tr><tr><td align="center">cogroup(otherStream,[numTasks])</td><td align="center">当应用于两个DStream（一个包含(K,V)对，一个包含（K,W）对），返回一个包含（K,Seq[v],Seq[W]）的元组</td></tr><tr><td align="center">transform(func)</td><td align="center">通过对源DStream的每个RDD应用RDD-to-RDD函数，创建一个新的DStream，这个可以在DStream中的任何RDD操作中使用</td></tr><tr><td align="center">updateStateByKey(func)</td><td align="center">利用给定的函数更新DStream的状态，返回一个新”state”的DStream</td></tr></tbody></table><h4 id="2、重点算子讲解"><a href="#2、重点算子讲解" class="headerlink" title="2、重点算子讲解"></a>2、重点算子讲解</h4><p>（1）updateStateByKey(func)<br>默认情况下，Spark Streaming不记录之前的状态，每次发数据，都会从0开始<br>现在使用本算子，实现累加操作</p><p>操作允许不断用新信息更新它的同时保持任意状态<br>定义状态-状态可以是任何的数据类型<br>定义状态更新函数-怎样利用更新前的状态和从输入流里面获取的新值更新状态</p><p>重写MyNetworkWordCount程序，累计每个单词出现的频率（注意：累计）</p><pre><code>package day5
+}</code></pre><p><strong>程序中的几点说明</strong></p>
+<p>appName参数是应用程序在集群UI上显示的名称</p>
+<p>master是Spark，Mesos或YARN集群的URL，或者一个特殊的“local [*]”字符串来让程序以本地模式运行</p>
+<p>当在集群上运行程序时，不需要在程序中硬编码master参数，而是使用spark-submit提交应用程序并将master的URL以脚本参数的形式传入。但是，对于本地测试和单元测试，您可以通过“local[*]”来运行Spark Streaming程序（请确保本地系统中的cpu核心数够用）</p>
+<p>StreamingContext会内在的创建一个SparkContext的实例（所有Spark功能的起始点），你可以通过ssc.sparkContext访问到这个实例</p>
+<p>批处理的时间窗口长度必须根据应用程序的延迟要求和可用的集群资源进行设置</p>
+<p><strong>请务必记住以下几点</strong></p>
+<p>一旦一个StreamingContext开始运作，就不能设置或添加新的流计算</p>
+<p>一旦一个上下文被停止，它将无法重新启动</p>
+<p>同一时刻，一个JVM中只能有一个StreamingContext处于活动状态</p>
+<p>StreamingContext上的stop()方法也会停止SparkContext。 要仅停止StreamingContext（保持SparkContext活跃），请将stop() 方法的可选参数stopSparkContext设置为false</p>
+<p>只要前一个StreamingContext在下一个StreamingContext被创建之前停止（不停止SparkContext），SparkContext就可以被重用来创建多个StreamingContext</p>
+<p>问题：Hello Hello<br>Hello World</p>
+<p>现在现象：（Hello,2）<br>    (Hello , 1) (World , 1)</p>
+<p>能不能累加起来？保存记录下以前的状态？<br>能，能<br>通过Spark Streaming提供的算子来实现</p>
+<h3 id="二、高级特性"><a href="#二、高级特性" class="headerlink" title="二、高级特性"></a>二、高级特性</h3><h4 id="1、什么是DStream？离散流"><a href="#1、什么是DStream？离散流" class="headerlink" title="1、什么是DStream？离散流"></a>1、什么是DStream？离散流</h4><p>把连续的数据变成不连续的RDD<br>因为DStream的特性，导致Spark Streaming不是真正的流式计算</p>
+<p><strong>离散流</strong>（DStreams）：Discretized Streams<br>DiscretizedStream或DStream 是Spark Streaming对流式数据的基本抽象。它表示连续的数据流，这些连续的数据流可以是从数据源接收的输入数据流，也可以是通过对输入数据流执行转换操作而生成的经处理的数据流。在内部，DStream由一系列连续的RDD表示</p>
+<p>举例分析：<br>在之前的MyNetworkWordCount 的例子中，我们将一行行文本组成的流转换为单词流，具体做法为：将flatMap操作应用于名为lines的 DStream中的每个RDD上，以生成words DStream的RDD</p>
+<p><strong>DStream中的转换操作（transformation）</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">Transformation</th>
+<th align="center">Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">map(func)</td>
+<td align="center">利用函数func处理DStreamd的每个元素，返回一个新的DStream</td>
+</tr>
+<tr>
+<td align="center">flatMap(func)</td>
+<td align="center">于map相似，但是每个输入项可被映射为0个或者多个输出项</td>
+</tr>
+<tr>
+<td align="center">filter(func)</td>
+<td align="center">返回一个新的DStream，它仅仅包含源DStream中满足函数func的项</td>
+</tr>
+<tr>
+<td align="center">repartition(numPartitions)</td>
+<td align="center">通过创建更多或者更少的partition改变这个DStream的并行级别（level of parallelism）</td>
+</tr>
+<tr>
+<td align="center">union(otherStream)</td>
+<td align="center">返回一个新的DStream，它包含源DStream和otherStream的联合元素</td>
+</tr>
+<tr>
+<td align="center">count()</td>
+<td align="center">通过计算源DStream中每个RDD的元素数量，返回一个包含单元素（single-element）RDDs的新DStream</td>
+</tr>
+<tr>
+<td align="center">reduce(func)</td>
+<td align="center">利用函数func聚焦源DStream中每个RDD的元素，返回一个包含单元素（single-element）RDDs的新DStream，函数应该是相关联的，以使计算可以并行化</td>
+</tr>
+<tr>
+<td align="center">countByValue()</td>
+<td align="center">这个算子应用于元素类型为K的DStream上，返回一个（K,long）对的新DStream，每个键的值实在原DStream的每个RDD中的频率</td>
+</tr>
+<tr>
+<td align="center">reduceByKey(func,[numTasks])</td>
+<td align="center">当在一个由（K,V）对组成的DStream上调用这个算子，返回一个新的由（K,V）对组成的DStream，每一个key的值均由给定的reduce函数聚集起来。注意：在默认情况下，这个算子利用了Spark默认的并发任务数去分组，你可以用numTasks参数设置不同的任务数</td>
+</tr>
+<tr>
+<td align="center">join(otherStream,[numTasks])</td>
+<td align="center">当应用于两个DStream（一个包含（K,V）对，一个包含（K,W）对），返回一个包含（K,（V,W））对的新DStream</td>
+</tr>
+<tr>
+<td align="center">cogroup(otherStream,[numTasks])</td>
+<td align="center">当应用于两个DStream（一个包含(K,V)对，一个包含（K,W）对），返回一个包含（K,Seq[v],Seq[W]）的元组</td>
+</tr>
+<tr>
+<td align="center">transform(func)</td>
+<td align="center">通过对源DStream的每个RDD应用RDD-to-RDD函数，创建一个新的DStream，这个可以在DStream中的任何RDD操作中使用</td>
+</tr>
+<tr>
+<td align="center">updateStateByKey(func)</td>
+<td align="center">利用给定的函数更新DStream的状态，返回一个新”state”的DStream</td>
+</tr>
+</tbody></table>
+<h4 id="2、重点算子讲解"><a href="#2、重点算子讲解" class="headerlink" title="2、重点算子讲解"></a>2、重点算子讲解</h4><p>（1）updateStateByKey(func)<br>默认情况下，Spark Streaming不记录之前的状态，每次发数据，都会从0开始<br>现在使用本算子，实现累加操作</p>
+<p>操作允许不断用新信息更新它的同时保持任意状态<br>定义状态-状态可以是任何的数据类型<br>定义状态更新函数-怎样利用更新前的状态和从输入流里面获取的新值更新状态</p>
+<p>重写MyNetworkWordCount程序，累计每个单词出现的频率（注意：累计）</p>
+<pre><code>package day5
 
 import org.apache.spark.streaming.StreamingContext
 import org.apache.spark.SparkConf
@@ -121,14 +630,16 @@ object MyTotalNetworkWordCount {
 
     ssc.awaitTermination()
   }
-}</code></pre><p>我在执行过程中遇到访问权限问题<br>解决如下：<br>在hadoop的etc/hadoop/下的hdfs-site.xml中增加如下内容即可</p><pre><code>    &lt;property&gt;
+}</code></pre><p>我在执行过程中遇到访问权限问题<br>解决如下：<br>在hadoop的etc/hadoop/下的hdfs-site.xml中增加如下内容即可</p>
+<pre><code>    &lt;property&gt;
          &lt;name&gt;dfs.permissions&lt;/name&gt;
          &lt;value&gt;false&lt;/value&gt;
     &lt;/property&gt;
      &lt;property&gt;
         &lt;name&gt;dfs.safemode.threshold.pct&lt;/name&gt;
         &lt;value&gt;0f&lt;/value&gt;
-    &lt;/property&gt;  </code></pre><p>（2）transform(func)<br>通过RDD-to-RDD函数作用于源DStream中的各个RDD，可以是任意的RDD操作，从而返回一个新的RDD</p><pre><code>package day5
+    &lt;/property&gt;  </code></pre><p>（2）transform(func)<br>通过RDD-to-RDD函数作用于源DStream中的各个RDD，可以是任意的RDD操作，从而返回一个新的RDD</p>
+<pre><code>package day5
 
 import org.apache.spark.streaming.StreamingContext
 import org.apache.spark.SparkConf
@@ -182,7 +693,8 @@ object MyNetworkWordCount {
     //等待任务结束
     ssc.awaitTermination()
   }
-}</code></pre><h4 id="3、窗口操作"><a href="#3、窗口操作" class="headerlink" title="3、窗口操作"></a>3、窗口操作</h4><p>窗口：对落在窗口内的数据进行处理，也是一个DStream，RDD</p><pre><code>package day5
+}</code></pre><h4 id="3、窗口操作"><a href="#3、窗口操作" class="headerlink" title="3、窗口操作"></a>3、窗口操作</h4><p>窗口：对落在窗口内的数据进行处理，也是一个DStream，RDD</p>
+<pre><code>package day5
 
 import org.apache.spark.streaming.StreamingContext
 import org.apache.spark.SparkConf
@@ -237,7 +749,8 @@ object MyNetworkWordCountByWindow {
      * 注意：窗口滑动距离必须是采样时间的整数倍
      */
   }
-}</code></pre><p>举例：每10秒钟把过去30秒的数据采集过来<br>注意：先启动nc 再启动程序 local[2]</p><h4 id="4、集成Spark-SQL-使用SQL语句来处理流式数据"><a href="#4、集成Spark-SQL-使用SQL语句来处理流式数据" class="headerlink" title="4、集成Spark SQL: 使用SQL语句来处理流式数据"></a>4、集成Spark SQL: 使用SQL语句来处理流式数据</h4><pre><code>package day5
+}</code></pre><p>举例：每10秒钟把过去30秒的数据采集过来<br>注意：先启动nc  再启动程序 local[2]</p>
+<h4 id="4、集成Spark-SQL-使用SQL语句来处理流式数据"><a href="#4、集成Spark-SQL-使用SQL语句来处理流式数据" class="headerlink" title="4、集成Spark SQL: 使用SQL语句来处理流式数据"></a>4、集成Spark SQL: 使用SQL语句来处理流式数据</h4><pre><code>package day5
 
 import org.apache.spark.streaming.StreamingContext
 import org.apache.spark.SparkConf
@@ -292,7 +805,23 @@ object MyNetworkWordCountWithSQL {
     ssc.start()
     ssc.awaitTermination()
    }
-}</code></pre><h4 id="5、缓存和持久化：和RDD一样"><a href="#5、缓存和持久化：和RDD一样" class="headerlink" title="5、缓存和持久化：和RDD一样"></a>5、缓存和持久化：和RDD一样</h4><p>与RDD类似，DStreams还允许开发人员将流数据保留在内存中。也就是说，在DStream上调用persist() 方法会自动将该DStream的每个RDD保留在内存中。如果DStream中的数据将被多次计算（例如，相同数据上执行多个操作），这个操作就会很有用。对于基于窗口的操作，如reduceByWindow和reduceByKeyAndWindow以及基于状态的操作，如updateStateByKey，数据会默认进行持久化。 因此，基于窗口的操作生成的DStream会自动保存在内存中，而不需要开发人员调用persist()</p><p>对于通过网络接收数据（例如Kafka，Flume，sockets等）的输入流，默认持久化级别被设置为将数据复制到两个节点进行容错</p><p>注意，与RDD不同，DStreams的默认持久化级别将数据序列化保存在内存中</p><h4 id="6、支持检查点：和RDD一样"><a href="#6、支持检查点：和RDD一样" class="headerlink" title="6、支持检查点：和RDD一样"></a>6、支持检查点：和RDD一样</h4><p>流数据处理程序通常都是全天候运行，因此必须对应用中逻辑无关的故障（例如，系统故障，JVM崩溃等）具有弹性。为了实现这一特性，Spark Streaming需要checkpoint足够的信息到容错存储系统，以便可以从故障中恢复</p><p>①　一般会对两种类型的数据使用检查点：<br>1）元数据检查点（Metadatacheckpointing） - 将定义流计算的信息保存到容错存储中（如HDFS）。这用于从运行streaming程序的driver程序的节点的故障中恢复。元数据包括以下几种：<br> 配置（Configuration） - 用于创建streaming应用程序的配置信息</p><p> DStream操作（DStream operations） - 定义streaming应用程序的DStream操作集合</p><p> 不完整的batch（Incomplete batches） - jobs还在队列中但尚未完成的batch</p><p>2）数据检查点（Datacheckpointing） - 将生成的RDD保存到可靠的存储层。对于一些需要将多个批次之间的数据进行组合的stateful变换操作，设置数据检查点是必需的。在这些转换操作中，当前生成的RDD依赖于先前批次的RDD，这导致依赖链的长度随时间而不断增加，由此也会导致基于血统机制的恢复时间无限增加。为了避免这种情况，stateful转换的中间RDD将定期设置检查点并保存到到可靠的存储层（例如HDFS）以切断依赖关系链</p><p>总而言之，元数据检查点主要用于从driver程序故障中恢复，而数据或RDD检查点在任何使用stateful转换时是必须要有的</p><p>②　何时启用检查点：<br>对于具有以下任一要求的应用程序，必须启用检查点：<br>1）使用状态转：如果在应用程序中使用updateStateByKey或reduceByKeyAndWindow（具有逆函数），则必须提供检查点目录以允许定期保存RDD检查点<br>2）从运行应用程序的driver程序的故障中恢复：元数据检查点用于使用进度信息进行恢复</p><p>③　如何配置检查点：<br>可以通过在一些可容错、高可靠的文件系统（例如，HDFS，S3等）中设置保存检查点信息的目录来启用检查点。这是通过使用streamingContext.checkpoint(checkpointDirectory)完成的。设置检查点后，您就可以使用上述的有状态转换操作。此外，如果要使应用程序从驱动程序故障中恢复，您应该重写streaming应用程序以使程序具有以下行为：<br>1）当程序第一次启动时，它将创建一个新的StreamingContext，设置好所有流数据源，然后调用start()方法。<br>2）当程序在失败后重新启动时，它将从checkpoint目录中的检查点数据重新创建一个StreamingContext。<br>使用StreamingContext.getOrCreate可以简化此行为</p><p>④　改写之前的WordCount程序，使得每次计算的结果和状态都保存到检查点目录下<br>hdfs dfs -ls /spark_checkpoint</p><h3 id="三、数据源"><a href="#三、数据源" class="headerlink" title="三、数据源"></a>三、数据源</h3><p>Spark Streaming是一个流式计算引擎，就需要从外部数据源来接收数据</p><h4 id="1、基本的数据源"><a href="#1、基本的数据源" class="headerlink" title="1、基本的数据源"></a>1、基本的数据源</h4><p>文件流：监控文件系统的变化，如果文件有增加，读取文件中的内容</p><p>希望Spark Streaming监控一个文件夹，如果有变化，则把变化采集过来</p><p><strong>此功能为</strong>修改文件里面的内容，并修改文件名，才能检测到，单修改一个是不起作用的</p><pre><code>package day5
+}</code></pre><h4 id="5、缓存和持久化：和RDD一样"><a href="#5、缓存和持久化：和RDD一样" class="headerlink" title="5、缓存和持久化：和RDD一样"></a>5、缓存和持久化：和RDD一样</h4><p>与RDD类似，DStreams还允许开发人员将流数据保留在内存中。也就是说，在DStream上调用persist() 方法会自动将该DStream的每个RDD保留在内存中。如果DStream中的数据将被多次计算（例如，相同数据上执行多个操作），这个操作就会很有用。对于基于窗口的操作，如reduceByWindow和reduceByKeyAndWindow以及基于状态的操作，如updateStateByKey，数据会默认进行持久化。 因此，基于窗口的操作生成的DStream会自动保存在内存中，而不需要开发人员调用persist()</p>
+<p>对于通过网络接收数据（例如Kafka，Flume，sockets等）的输入流，默认持久化级别被设置为将数据复制到两个节点进行容错</p>
+<p>注意，与RDD不同，DStreams的默认持久化级别将数据序列化保存在内存中</p>
+<h4 id="6、支持检查点：和RDD一样"><a href="#6、支持检查点：和RDD一样" class="headerlink" title="6、支持检查点：和RDD一样"></a>6、支持检查点：和RDD一样</h4><p>流数据处理程序通常都是全天候运行，因此必须对应用中逻辑无关的故障（例如，系统故障，JVM崩溃等）具有弹性。为了实现这一特性，Spark Streaming需要checkpoint足够的信息到容错存储系统，以便可以从故障中恢复</p>
+<p>①　一般会对两种类型的数据使用检查点：<br>1）元数据检查点（Metadatacheckpointing） - 将定义流计算的信息保存到容错存储中（如HDFS）。这用于从运行streaming程序的driver程序的节点的故障中恢复。元数据包括以下几种：<br>    配置（Configuration） - 用于创建streaming应用程序的配置信息</p>
+<p>    DStream操作（DStream operations） - 定义streaming应用程序的DStream操作集合</p>
+<p>    不完整的batch（Incomplete batches） - jobs还在队列中但尚未完成的batch</p>
+<p>2）数据检查点（Datacheckpointing） - 将生成的RDD保存到可靠的存储层。对于一些需要将多个批次之间的数据进行组合的stateful变换操作，设置数据检查点是必需的。在这些转换操作中，当前生成的RDD依赖于先前批次的RDD，这导致依赖链的长度随时间而不断增加，由此也会导致基于血统机制的恢复时间无限增加。为了避免这种情况，stateful转换的中间RDD将定期设置检查点并保存到到可靠的存储层（例如HDFS）以切断依赖关系链</p>
+<p>总而言之，元数据检查点主要用于从driver程序故障中恢复，而数据或RDD检查点在任何使用stateful转换时是必须要有的</p>
+<p>②　何时启用检查点：<br>对于具有以下任一要求的应用程序，必须启用检查点：<br>1）使用状态转：如果在应用程序中使用updateStateByKey或reduceByKeyAndWindow（具有逆函数），则必须提供检查点目录以允许定期保存RDD检查点<br>2）从运行应用程序的driver程序的故障中恢复：元数据检查点用于使用进度信息进行恢复</p>
+<p>③　如何配置检查点：<br>可以通过在一些可容错、高可靠的文件系统（例如，HDFS，S3等）中设置保存检查点信息的目录来启用检查点。这是通过使用streamingContext.checkpoint(checkpointDirectory)完成的。设置检查点后，您就可以使用上述的有状态转换操作。此外，如果要使应用程序从驱动程序故障中恢复，您应该重写streaming应用程序以使程序具有以下行为：<br>1）当程序第一次启动时，它将创建一个新的StreamingContext，设置好所有流数据源，然后调用start()方法。<br>2）当程序在失败后重新启动时，它将从checkpoint目录中的检查点数据重新创建一个StreamingContext。<br>使用StreamingContext.getOrCreate可以简化此行为</p>
+<p>④　改写之前的WordCount程序，使得每次计算的结果和状态都保存到检查点目录下<br>hdfs dfs -ls /spark_checkpoint</p>
+<h3 id="三、数据源"><a href="#三、数据源" class="headerlink" title="三、数据源"></a>三、数据源</h3><p>Spark Streaming是一个流式计算引擎，就需要从外部数据源来接收数据</p>
+<h4 id="1、基本的数据源"><a href="#1、基本的数据源" class="headerlink" title="1、基本的数据源"></a>1、基本的数据源</h4><p>文件流：监控文件系统的变化，如果文件有增加，读取文件中的内容</p>
+<p>希望Spark Streaming监控一个文件夹，如果有变化，则把变化采集过来</p>
+<p><strong>此功能为</strong>修改文件里面的内容，并修改文件名，才能检测到，单修改一个是不起作用的</p>
+<pre><code>package day5
 
 import org.apache.spark.streaming.StreamingContext
 import org.apache.spark.SparkConf
@@ -328,7 +857,8 @@ object FileStreaming {
 
     ssc.awaitTermination()
   }
-}</code></pre><p>RDD队列流：可以从队列中获取数据（不常用）</p><pre><code>package day5
+}</code></pre><p>RDD队列流：可以从队列中获取数据（不常用）</p>
+<pre><code>package day5
 
 import org.apache.spark.streaming.StreamingContext
 import org.apache.spark.SparkConf
@@ -379,7 +909,9 @@ object RDDQueueStream {
     ssc.start()
     ssc.awaitTermination()
    }
-}</code></pre><p>套接字流：socketTextStream</p><h4 id="2、高级数据源"><a href="#2、高级数据源" class="headerlink" title="2、高级数据源"></a>2、高级数据源</h4><p>（1）Flume<br>Spark SQL 对接flume有多种方式：<br>push方式：flume将数据推送给Spark Streaming<br>flume/myagent/a4.conf</p><pre><code># bin/flume-ng agent -n a4 -f myagent/a4.conf -c conf -Dflume.root.logger=INFO.console
+}</code></pre><p>套接字流：socketTextStream</p>
+<h4 id="2、高级数据源"><a href="#2、高级数据源" class="headerlink" title="2、高级数据源"></a>2、高级数据源</h4><p>（1）Flume<br>Spark SQL 对接flume有多种方式：<br>push方式：flume将数据推送给Spark Streaming<br>flume/myagent/a4.conf</p>
+<pre><code># bin/flume-ng agent -n a4 -f myagent/a4.conf -c conf -Dflume.root.logger=INFO.console
 # 定义agent名，source、channel、sink的名称
 a4.sources = r1
 a4.channels = c1
@@ -442,7 +974,8 @@ object MyFlumeStream {
     ssc.start()
     ssc.awaitTermination()
   }
-}</code></pre><p>custom sink 模式：比第一种有更好的健壮性和容错性。使用这种方式，flume配置一个sink<br>a1.conf</p><pre><code>#bin/flume-ng agent -n a1 -f myagent/a1.conf -c conf -Dflume.root.logger=INFO,console
+}</code></pre><p>custom sink 模式：比第一种有更好的健壮性和容错性。使用这种方式，flume配置一个sink<br>a1.conf</p>
+<pre><code>#bin/flume-ng agent -n a1 -f myagent/a1.conf -c conf -Dflume.root.logger=INFO,console
 a1.channels = c1
 a1.sinks = k1
 a1.sources = r1
@@ -461,14 +994,452 @@ a1.sinks.k1.port = 1234
 
 #组装source、channel、sink
 a1.sources.r1.channels = c1
-a1.sinks.k1.channel = c1</code></pre><p>使用官方提供的spark sink组件</p><p>需要把 spark-streaming-flume-sink_2.10-2.1.0.jar 拷贝到flume lib下<br>需要把 spark-streaming-flume-sink_2.10-2.1.0.jar 拷贝到IDE的lib下添加到build path中</p><p>（2）Kafka<br>在讲Kafka时，举例</p><h3 id="四、性能优化的参数"><a href="#四、性能优化的参数" class="headerlink" title="四、性能优化的参数"></a>四、性能优化的参数</h3><p>性能优化：<br>spark submit的时候，程序报OOM错误<br>程序跑的很慢</p><h4 id="1、减少批数据的执行时间"><a href="#1、减少批数据的执行时间" class="headerlink" title="1、减少批数据的执行时间"></a>1、减少批数据的执行时间</h4><p>在Spark中有几个优化可以减少批处理的时间：<br>①　数据接收的并行水平<br>通过网络(如kafka，flume，socket等)接收数据需要这些数据反序列化并被保存到Spark中。如果数据接收成为系统的瓶颈，就要考虑并行地接收数据。注意，每个输入DStream创建一个receiver（运行在worker机器上）接收单个数据流。创建多个输入DStream并配置它们可以从源中接收不同分区的数据流，从而实现多数据流接收。例如，接收两个topic数据的单个输入DStream可以被切分为两个kafka输入流，每个接收一个topic。这将在两个worker上运行两个receiver，因此允许数据并行接收，提高整体的吞吐量。多个DStream可以被合并生成单个DStream，这样运用在单个输入DStream的transformation操作可以运用在合并的DStream上</p><p>②　数据处理的并行水平<br>如果运行在计算stage上的并发任务数不足够大，就不会充分利用集群的资源。默认的并发任务数通过配置属性来确定spark.default.parallelism</p><p>③　数据序列化<br>可以通过改变序列化格式来减少数据序列化的开销。在流式传输的情况下，有两种类型的数据会被序列化：<br>1）输入数据<br>2）由流操作生成的持久RDD<br>在上述两种情况下，使用Kryo序列化格式可以减少CPU和内存开销</p><h4 id="2、设置正确的批容量"><a href="#2、设置正确的批容量" class="headerlink" title="2、设置正确的批容量"></a>2、设置正确的批容量</h4><p>为了Spark Streaming应用程序能够在集群中稳定运行，系统应该能够以足够的速度处理接收的数据（即处理速度应该大于或等于接收数据的速度）。这可以通过流的网络UI观察得到。批处理时间应该小于批间隔时间</p><p>根据流计算的性质，批间隔时间可能显著的影响数据处理速率，这个速率可以通过应用程序维持。可以考虑WordCountNetwork这个例子，对于一个特定的数据处理速率，系统可能可以每2秒打印一次单词计数（批间隔时间为2秒），但无法每500毫秒打印一次单词计数。所以，为了在生产环境中维持期望的数据处理速率，就应该设置合适的批间隔时间(即批数据的容量)</p><p>找出正确的批容量的一个好的办法是用一个保守的批间隔时间（5-10,秒）和低数据速率来测试你的应用程序</p><h4 id="3、内存调优"><a href="#3、内存调优" class="headerlink" title="3、内存调优"></a>3、内存调优</h4><p>在这一节，我们重点介绍几个强烈推荐的自定义选项，它们可以减少Spark Streaming应用程序垃圾回收的相关暂停，获得更稳定的批处理时间</p><p>1）Default persistence level of DStreams：和RDDs不同的是，默认的持久化级别是序列化数据到内存中（DStream是StorageLevel.MEMORY_ONLY_SER，RDD是StorageLevel.MEMORY_ONLY）。即使保存数据为序列化形态会增加序列化/反序列化的开销，但是可以明显的减少垃圾回收的暂停</p><p>2）Clearing persistent RDDs：默认情况下，通过Spark内置策略（LUR），Spark Streaming生成的持久化RDD将会从内存中清理掉。如果spark.cleaner.ttl已经设置了，比这个时间存在更老的持久化RDD将会被定时的清理掉。正如前面提到的那样，这个值需要根据Spark Streaming应用程序的操作小心设置。然而，可以设置配置选项spark.streaming.unpersist为true来更智能的去持久化（unpersist）RDD。这个配置使系统找出那些不需要经常保有的RDD，然后去持久化它们。这可以减少Spark RDD的内存使用，也可能改善垃圾回收的行为</p><p>3）Concurrent garbage collector：使用并发的标记-清除垃圾回收可以进一步减少垃圾回收的暂停时间。尽管并发的垃圾回收会减少系统的整体吞吐量，但是仍然推荐使用它以获得更稳定的批处理时间</p><p>方法：调整spark参数<br>conf.set…</p></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者:</i></span> <span class="reprint-info"><a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接:</i></span> <span class="reprint-info"><a href="https://blog.hsiehchou.com/2019/04/03/spark-streaming-ji-chu/">https://blog.hsiehchou.com/2019/04/03/spark-streaming-ji-chu/</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明:</i></span> <span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a> !</span></div></div><script async defer>document.addEventListener("copy", function (e) {
+a1.sinks.k1.channel = c1</code></pre><p>使用官方提供的spark sink组件</p>
+<p>需要把 spark-streaming-flume-sink_2.10-2.1.0.jar 拷贝到flume lib下<br>需要把 spark-streaming-flume-sink_2.10-2.1.0.jar 拷贝到IDE的lib下添加到build path中</p>
+<p>（2）Kafka<br>在讲Kafka时，举例</p>
+<h3 id="四、性能优化的参数"><a href="#四、性能优化的参数" class="headerlink" title="四、性能优化的参数"></a>四、性能优化的参数</h3><p>性能优化：<br>    spark submit的时候，程序报OOM错误<br>    程序跑的很慢</p>
+<h4 id="1、减少批数据的执行时间"><a href="#1、减少批数据的执行时间" class="headerlink" title="1、减少批数据的执行时间"></a>1、减少批数据的执行时间</h4><p>在Spark中有几个优化可以减少批处理的时间：<br>①　数据接收的并行水平<br>通过网络(如kafka，flume，socket等)接收数据需要这些数据反序列化并被保存到Spark中。如果数据接收成为系统的瓶颈，就要考虑并行地接收数据。注意，每个输入DStream创建一个receiver（运行在worker机器上）接收单个数据流。创建多个输入DStream并配置它们可以从源中接收不同分区的数据流，从而实现多数据流接收。例如，接收两个topic数据的单个输入DStream可以被切分为两个kafka输入流，每个接收一个topic。这将在两个worker上运行两个receiver，因此允许数据并行接收，提高整体的吞吐量。多个DStream可以被合并生成单个DStream，这样运用在单个输入DStream的transformation操作可以运用在合并的DStream上</p>
+<p>②　数据处理的并行水平<br>如果运行在计算stage上的并发任务数不足够大，就不会充分利用集群的资源。默认的并发任务数通过配置属性来确定spark.default.parallelism</p>
+<p>③　数据序列化<br>可以通过改变序列化格式来减少数据序列化的开销。在流式传输的情况下，有两种类型的数据会被序列化：<br>1）输入数据<br>2）由流操作生成的持久RDD<br>在上述两种情况下，使用Kryo序列化格式可以减少CPU和内存开销</p>
+<h4 id="2、设置正确的批容量"><a href="#2、设置正确的批容量" class="headerlink" title="2、设置正确的批容量"></a>2、设置正确的批容量</h4><p>为了Spark Streaming应用程序能够在集群中稳定运行，系统应该能够以足够的速度处理接收的数据（即处理速度应该大于或等于接收数据的速度）。这可以通过流的网络UI观察得到。批处理时间应该小于批间隔时间</p>
+<p>根据流计算的性质，批间隔时间可能显著的影响数据处理速率，这个速率可以通过应用程序维持。可以考虑WordCountNetwork这个例子，对于一个特定的数据处理速率，系统可能可以每2秒打印一次单词计数（批间隔时间为2秒），但无法每500毫秒打印一次单词计数。所以，为了在生产环境中维持期望的数据处理速率，就应该设置合适的批间隔时间(即批数据的容量)</p>
+<p>找出正确的批容量的一个好的办法是用一个保守的批间隔时间（5-10,秒）和低数据速率来测试你的应用程序</p>
+<h4 id="3、内存调优"><a href="#3、内存调优" class="headerlink" title="3、内存调优"></a>3、内存调优</h4><p>在这一节，我们重点介绍几个强烈推荐的自定义选项，它们可以减少Spark Streaming应用程序垃圾回收的相关暂停，获得更稳定的批处理时间</p>
+<p>1）Default persistence level of DStreams：和RDDs不同的是，默认的持久化级别是序列化数据到内存中（DStream是StorageLevel.MEMORY_ONLY_SER，RDD是StorageLevel.MEMORY_ONLY）。即使保存数据为序列化形态会增加序列化/反序列化的开销，但是可以明显的减少垃圾回收的暂停</p>
+<p>2）Clearing persistent RDDs：默认情况下，通过Spark内置策略（LUR），Spark Streaming生成的持久化RDD将会从内存中清理掉。如果spark.cleaner.ttl已经设置了，比这个时间存在更老的持久化RDD将会被定时的清理掉。正如前面提到的那样，这个值需要根据Spark Streaming应用程序的操作小心设置。然而，可以设置配置选项spark.streaming.unpersist为true来更智能的去持久化（unpersist）RDD。这个配置使系统找出那些不需要经常保有的RDD，然后去持久化它们。这可以减少Spark RDD的内存使用，也可能改善垃圾回收的行为</p>
+<p>3）Concurrent garbage collector：使用并发的标记-清除垃圾回收可以进一步减少垃圾回收的暂停时间。尽管并发的垃圾回收会减少系统的整体吞吐量，但是仍然推荐使用它以获得更稳定的批处理时间</p>
+<p>方法：调整spark参数<br>    conf.set…</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com/2019/04/03/spark-streaming-ji-chu/">https://blog.hsiehchou.com/2019/04/03/spark-streaming-ji-chu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
         let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
         M.toast({html: toastHTML})
       });
 
       function navToReprintStatement() {
         $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"><span class="chip bg-color">大数据</span></a> <a href="/tags/Spark/"><span class="chip bg-color">Spark</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/js/social-share.min.js"></script></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">你的赏识是我前进的动力</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="fas fa-chevron-left"></i> &nbsp;上一篇</div><div class="card"><a href="/2019/04/07/spark-diao-you/"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="Spark 调优"> <span class="card-title">Spark 调优</span></div></a><div class="card-content article-content"><div class="summary block-with-text">Spark 调优 问题：只要会用就可以，为什么还要精通内核源码与调优？Spark 性能优化概览：Spark的计算本质是，分布式计算所以，Spark程序的性能可能因为集群中的任何因素出现瓶颈：CPU、网络带宽、或者内存 CPU、网络带</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2019-04-07</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">大数据</a></span></div></div><div class="card-action article-tags"><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"><span class="chip bg-color">大数据</span></a> <a href="/tags/Spark/"><span class="chip bg-color">Spark</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/2019/03/31/spark-sql/"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="Spark SQL"> <span class="card-title">Spark SQL</span></div></a><div class="card-content article-content"><div class="summary block-with-text">Spark SQL 类似于Hive 一、Spark SQL 基础1、什么是Spark SQLSpark SQL is Apache Spark’s module for working with structured data.Spark</div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i> 2019-03-31</span><span class="publish-author"><i class="fas fa-bookmark fa-fw icon-category"></i> <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">大数据</a></span></div></div><div class="card-action article-tags"><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"><span class="chip bg-color">大数据</span></a> <a href="/tags/Spark/"><span class="chip bg-color">Spark</span></a></div></div></div></div></article></div><script>$("#articleContent").on("copy",function(e){if(void 0!==window.getSelection){var n=window.getSelection();if(!((""+n).length<Number.parseInt("60"))){var t=document.getElementsByTagName("body")[0],o=document.createElement("div");o.style.position="absolute",o.style.left="-99999px",t.appendChild(o),o.appendChild(n.getRangeAt(0).cloneContents()),"PRE"===n.getRangeAt(0).commonAncestorContainer.nodeName&&(o.innerHTML="<pre>"+o.innerHTML+"</pre>");var i=document.location.href;o.innerHTML+='<br />来源: 谢舟的博客<br />文章作者: 谢舟<br />文章链接: <a href="'+i+'">'+i+"</a><br />本文章著作权归作者所有，任何形式的转载都请注明出处。",n.selectAllChildren(o),window.setTimeout(function(){t.removeChild(o)},200)}}})</script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeBlockFuction.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeLang.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeCopy.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeShrink.js"></script><style>code[class*=language-],pre[class*=language-]{white-space:pre!important}</style></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">大数据</span>
+                                </a>
+                            
+                                <a href="/tags/Spark/">
+                                    <span class="chip bg-color">Spark</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/04/07/spark-diao-you/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="Spark 调优">
+                        
+                        <span class="card-title">Spark 调优</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Spark 调优    
+问题：只要会用就可以，为什么还要精通内核源码与调优？Spark 性能优化概览：Spark的计算本质是，分布式计算所以，Spark程序的性能可能因为集群中的任何因素出现瓶颈：CPU、网络带宽、或者内存
+CPU、网络带
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-04-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/Spark/">
+                        <span class="chip bg-color">Spark</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/31/spark-sql/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="Spark SQL">
+                        
+                        <span class="card-title">Spark SQL</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Spark SQL 类似于Hive
+一、Spark SQL 基础1、什么是Spark SQLSpark SQL is Apache Spark’s module for working with structured data.Spark 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/Spark/">
+                        <span class="chip bg-color">Spark</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 谢舟的博客<br />'
+            + '文章作者: 谢舟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
         tocbot.init({
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
@@ -539,4 +1510,181 @@ a1.sinks.k1.channel = c1</code></pre><p>使用官方提供的spark sink组件</p
             fixPostCardWidth('artDetail', 'prenext-posts');
         });
         
-    });</script></main><footer class="page-footer bg-color"><div class="container row center-align" style="margin-bottom:0!important"><div class="col s12 m8 l8 copy-right">Copyright&nbsp;&copy; <span id="year">2019-2020</span> <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a><br>&nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span class="white-color">490.3k</span>&nbsp;字 <span id="busuanzi_container_site_pv">|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv" class="white-color"></span>&nbsp;次</span> <span id="busuanzi_container_site_uv">|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv" class="white-color"></span>&nbsp;人</span><br><span id="icp"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/icp.png" style="vertical-align:text-bottom"> <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a></span></div><div class="col s12 m4 l4 social-link social-statis"><a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i></a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50"><i class="fab fa-qq"></i></a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i> &nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/search.js"></script><script>$(function(){searchFunc("https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/masonry/masonry.pkgd.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/scrollprogress/scrollProgress.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/matery.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id="></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","")</script><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?1fdd6e11866c1fe7b815d69a4a4206ea";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/clicklove.js" async></script><script async src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/instantpage/instantpage.js" type="module"></script></body></html>
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">490.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            
+			<br>
+            
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1fdd6e11866c1fe7b815d69a4a4206ea";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

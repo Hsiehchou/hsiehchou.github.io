@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.hsiehchou.com/"/>
-  <updated>2020-10-03T07:02:29.013Z</updated>
+  <updated>2020-10-05T07:17:26.835Z</updated>
   <id>https://blog.hsiehchou.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.hsiehchou.com/2020/08/12/di-qi-zhang-ji-qi-xue-xi-ru-men/"/>
     <id>https://blog.hsiehchou.com/2020/08/12/di-qi-zhang-ji-qi-xue-xi-ru-men/</id>
     <published>2020-08-12T15:14:44.000Z</published>
-    <updated>2020-10-03T07:02:29.013Z</updated>
+    <updated>2020-10-05T07:17:26.835Z</updated>
     
     <summary type="html">
     
@@ -46,11 +46,11 @@
   </entry>
   
   <entry>
-    <title>MATLAB学习</title>
+    <title>MATLAB 学习</title>
     <link href="https://blog.hsiehchou.com/2020/06/19/matlab-xue-xi/"/>
     <id>https://blog.hsiehchou.com/2020/06/19/matlab-xue-xi/</id>
     <published>2020-06-19T12:12:35.000Z</published>
-    <updated>2020-10-03T07:01:52.839Z</updated>
+    <updated>2020-10-05T07:28:11.400Z</updated>
     
     <summary type="html">
     
@@ -77,7 +77,7 @@
     <link href="https://blog.hsiehchou.com/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/"/>
     <id>https://blog.hsiehchou.com/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/</id>
     <published>2020-06-07T01:15:03.000Z</published>
-    <updated>2020-10-03T07:02:17.397Z</updated>
+    <updated>2020-10-05T07:29:07.988Z</updated>
     
     <summary type="html">
     
@@ -102,11 +102,11 @@
   </entry>
   
   <entry>
-    <title>第五章 Python数据可视化</title>
+    <title>第五章 Python 数据可视化</title>
     <link href="https://blog.hsiehchou.com/2020/06/06/di-wu-zhang-python-shu-ju-ke-shi-hua/"/>
     <id>https://blog.hsiehchou.com/2020/06/06/di-wu-zhang-python-shu-ju-ke-shi-hua/</id>
     <published>2020-06-06T11:35:32.000Z</published>
-    <updated>2020-10-03T07:02:03.295Z</updated>
+    <updated>2020-10-05T07:28:56.478Z</updated>
     
     <summary type="html">
     
@@ -129,11 +129,11 @@
   </entry>
   
   <entry>
-    <title>第四章 Python数据处理</title>
+    <title>第四章 Python 数据处理</title>
     <link href="https://blog.hsiehchou.com/2020/06/04/di-si-zhang-python-shu-ju-chu-li/"/>
     <id>https://blog.hsiehchou.com/2020/06/04/di-si-zhang-python-shu-ju-chu-li/</id>
     <published>2020-06-04T02:12:35.000Z</published>
-    <updated>2020-10-03T07:02:52.167Z</updated>
+    <updated>2020-10-05T07:29:30.702Z</updated>
     
     <summary type="html">
     
@@ -156,11 +156,11 @@
   </entry>
   
   <entry>
-    <title>第三章 Python编程进阶</title>
+    <title>第三章 Python 编程进阶</title>
     <link href="https://blog.hsiehchou.com/2020/06/02/di-san-zhang-python-bian-cheng-jin-jie/"/>
     <id>https://blog.hsiehchou.com/2020/06/02/di-san-zhang-python-bian-cheng-jin-jie/</id>
     <published>2020-06-02T04:12:35.000Z</published>
-    <updated>2020-06-07T05:00:28.836Z</updated>
+    <updated>2020-10-05T07:29:40.547Z</updated>
     
     <summary type="html">
     
@@ -168,7 +168,7 @@
       
         
         
-          &lt;h2 id=&quot;第三章-Python-编程进阶&quot;&gt;&lt;a href=&quot;#第三章-Python-编程进阶&quot; class=&quot;headerlink&quot; title=&quot;第三章 Python 编程进阶&quot;&gt;&lt;/a&gt;第三章 Python 编程进阶&lt;/h2&gt;&lt;h3
+          &lt;h2 id=&quot;第三章-Python-编程进阶&quot;&gt;&lt;a href=&quot;#第三章-Python-编程进阶&quot; class=&quot;headerlink&quot; title=&quot;第三章 Python 编程进阶&quot;&gt;&lt;/a&gt;&lt;strong&gt;第三章 Python 编程进阶&lt;/strong&gt;&lt;/h2&gt;&lt;h3
         
       
     
@@ -187,7 +187,7 @@
     <link href="https://blog.hsiehchou.com/2020/05/12/ru-he-yue-du-yi-ben-shu-du-shu/"/>
     <id>https://blog.hsiehchou.com/2020/05/12/ru-he-yue-du-yi-ben-shu-du-shu/</id>
     <published>2020-05-12T14:19:35.000Z</published>
-    <updated>2020-10-03T07:01:46.613Z</updated>
+    <updated>2020-10-05T07:28:36.618Z</updated>
     
     <summary type="html">
     
@@ -214,7 +214,7 @@
     <link href="https://blog.hsiehchou.com/2020/05/02/di-er-zhang-python-ji-chu-yu-fa/"/>
     <id>https://blog.hsiehchou.com/2020/05/02/di-er-zhang-python-ji-chu-yu-fa/</id>
     <published>2020-05-02T14:12:35.000Z</published>
-    <updated>2020-05-02T12:07:01.587Z</updated>
+    <updated>2020-10-05T07:29:59.553Z</updated>
     
     <summary type="html">
     
@@ -222,7 +222,7 @@
       
         
         
-          &lt;h2 id=&quot;第二章-Python基础语法&quot;&gt;&lt;a href=&quot;#第二章-Python基础语法&quot; class=&quot;headerlink&quot; title=&quot;第二章 Python基础语法&quot;&gt;&lt;/a&gt;第二章 Python基础语法&lt;/h2&gt;&lt;h3
+          &lt;h2 id=&quot;第二章-Python-基础语法&quot;&gt;&lt;a href=&quot;#第二章-Python-基础语法&quot; class=&quot;headerlink&quot; title=&quot;第二章 Python 基础语法&quot;&gt;&lt;/a&gt;第二章 Python 基础语法&lt;/h2&gt;&lt;h3
         
       
     
@@ -237,11 +237,11 @@
   </entry>
   
   <entry>
-    <title>第一章 Python概述与开发环境安装</title>
+    <title>第一章 Python 概述与开发环境安装</title>
     <link href="https://blog.hsiehchou.com/2020/04/30/di-yi-zhang-python-gai-shu-yu-kai-fa-huan-jing-an-zhuang/"/>
     <id>https://blog.hsiehchou.com/2020/04/30/di-yi-zhang-python-gai-shu-yu-kai-fa-huan-jing-an-zhuang/</id>
     <published>2020-04-30T08:39:35.000Z</published>
-    <updated>2020-04-30T09:06:01.751Z</updated>
+    <updated>2020-10-05T07:29:50.211Z</updated>
     
     <summary type="html">
     
@@ -249,7 +249,7 @@
       
         
         
-          &lt;h2 id=&quot;第一章-Python概述与开发环境安装&quot;&gt;&lt;a href=&quot;#第一章-Python概述与开发环境安装&quot; class=&quot;headerlink&quot; title=&quot;第一章 Python概述与开发环境安装&quot;&gt;&lt;/a&gt;第一章 Python概述与开发环境安装&lt;/h2&gt;&lt;h3
+          &lt;h2 id=&quot;第一章-Python-概述与开发环境安装&quot;&gt;&lt;a href=&quot;#第一章-Python-概述与开发环境安装&quot; class=&quot;headerlink&quot; title=&quot;第一章 Python 概述与开发环境安装&quot;&gt;&lt;/a&gt;第一章 Python
         
       
     
