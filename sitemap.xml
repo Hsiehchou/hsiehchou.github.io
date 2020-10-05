@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.hsiehchou.com/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/</loc>
+    
+    <lastmod>2020-10-05T07:38:04.678Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.hsiehchou.com/2020/05/02/di-er-zhang-python-ji-chu-yu-fa/</loc>
     
     <lastmod>2020-10-05T07:29:59.553Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://blog.hsiehchou.com/2020/06/04/di-si-zhang-python-shu-ju-chu-li/</loc>
     
     <lastmod>2020-10-05T07:29:30.702Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/</loc>
-    
-    <lastmod>2020-10-05T07:29:07.988Z</lastmod>
     
   </url>
   
@@ -642,6 +642,34 @@
     <loc>https://blog.hsiehchou.com/2019/04/26/kafka/</loc>
     
     <lastmod>2019-04-26T09:31:00.829Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hsiehchou.com/mi/index.html</loc>
+    
+    <lastmod>2019-04-26T07:12:46.410Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hsiehchou.com/mi/register.html</loc>
+    
+    <lastmod>2019-04-25T14:51:17.620Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hsiehchou.com/mi/login-manager.html</loc>
+    
+    <lastmod>2019-04-25T14:51:06.302Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hsiehchou.com/mi/login.html</loc>
+    
+    <lastmod>2019-04-25T14:50:59.056Z</lastmod>
     
   </url>
   
