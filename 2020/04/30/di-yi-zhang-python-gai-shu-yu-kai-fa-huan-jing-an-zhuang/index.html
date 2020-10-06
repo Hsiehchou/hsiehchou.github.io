@@ -1,0 +1,1207 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python, 概述与开发环境安装">
+    <meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="baidu-site-verification" content="2VN5bX64Cz" />
+    <title>第一章 Python 概述与开发环境安装 | 谢舟的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+					<div>
+						
+						<img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+						
+						<span class="logo-span">谢舟的博客</span>
+					</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">谢舟的博客</div>
+        <div class="logo-desc">
+            
+            发布关于大数据,Java的一些信息和自己实践中的经验
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">第一章 Python 概述与开发环境安装</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-04-30
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="第一章-Python-概述与开发环境安装"><a href="#第一章-Python-概述与开发环境安装" class="headerlink" title="第一章 Python 概述与开发环境安装"></a>第一章 Python 概述与开发环境安装</h2><h3 id="1、Python-开发环境安装"><a href="#1、Python-开发环境安装" class="headerlink" title="1、Python 开发环境安装"></a>1、Python 开发环境安装</h3><h3 id="2、Anaconda-安装"><a href="#2、Anaconda-安装" class="headerlink" title="2、Anaconda 安装"></a>2、Anaconda 安装</h3><p>选择 just me<br>不用勾选添加本地环境变量</p>
+<ol>
+<li>查看 Anaconda 环境是否安装成功（查看 Anaconda 版本号）：conda –version</li>
+<li>查看目前安装了哪些环境变量：conda info –envs</li>
+<li>查看 Anaconda 当前版本以及安装了哪些包：conda list</li>
+</ol>
+<h3 id="3、Spyder"><a href="#3、Spyder" class="headerlink" title="3、Spyder"></a>3、Spyder</h3><h4 id="3-1-读取文件里面的行数"><a href="#3-1-读取文件里面的行数" class="headerlink" title="3.1 读取文件里面的行数"></a>3.1 读取文件里面的行数</h4><pre><code>import sys 
+import os.path
+
+# 文件目录
+dir = os.path.dirname(sys.executable)
+# 打开文件进行操作
+with open(dir+&#39;\\num.txt&#39;, encoding = &#39;utf-8&#39;) as fp:
+    content = fp.readlines()
+
+# 打印文件内容的类型
+print(type(content))
+# 打印文件内容
+print(content)
+# 打印文件所在的目录
+print(dir)
+# 打印文件里面内容的行数
+print(len(content))</code></pre><p><strong>结果：</strong><br>&lt;class ‘list’&gt;<br>[‘12\n’, ‘6\n’, ‘2\n’, ‘35\n’, ‘11\n’, ‘22\n’, ‘23\n’, ‘11\n’, ‘254\n’, ‘12’]<br>F:\Anaconda<br>10</p>
+<h3 id="4、Jupyter-Notebook"><a href="#4、Jupyter-Notebook" class="headerlink" title="4、Jupyter Notebook"></a>4、Jupyter Notebook</h3><p>默认地址：<a href="http://localhost:8888" target="_blank" rel="noopener">http://localhost:8888</a></p>
+<pre><code># 使用递归
+def fib(n):
+    if n==1 or n==2:
+        return 1
+    elif n==0:
+        return 0
+    return fib(n-1)+fib(n-2)
+
+# 输出第10个斐波那契数列
+print(fib(10))
+print(fib(0))</code></pre><p><strong>结果：</strong><br>55<br>0</p>
+<h3 id="5、Python-环境管理"><a href="#5、Python-环境管理" class="headerlink" title="5、Python 环境管理"></a>5、Python 环境管理</h3><h4 id="5-1-打开管理终端"><a href="#5-1-打开管理终端" class="headerlink" title="5.1 打开管理终端"></a>5.1 打开管理终端</h4><p>Windows用户打开“Anaconda Prompt”</p>
+<p>macOS和Linux用户打开”Terminal”（终端）</p>
+<h4 id="5-2-创建新环境"><a href="#5-2-创建新环境" class="headerlink" title="5.2 创建新环境"></a>5.2 创建新环境</h4><pre><code>conda create --name &lt;env_name&gt; &lt;package_name&gt;</code></pre><p><strong>注：</strong></p>
+<ol>
+<li><code>env_name</code>–创建的环境名，建议英文命名，且不加空格，名称两边不加尖括号”&lt;&gt;”</li>
+<li><code>package_name</code>–安装环境中的包名，名称两边不加尖括号”&lt;&gt;”</li>
+<li>如果要安装指定的版本号， 则只需要在包名后面以=和版本号的形式执行。如：<code>conda create name python2  python=2.7</code>，即创建一个名为“python2”的环境，环境中安装版本为2.7的 python。</li>
+<li>如果要在新创建的环境中创建多个包，则直接在<code>&lt;package_names&gt;</code>后以空格隔开，添加多个即可。如：<code>conda create -n python3 python=3.7 numpy pandas</code>，即创建一个名为“python”的环境，环境中安装版本为 3.7 的 python，同时也安装了<code>numpy</code>和<code>pandas</code>。</li>
+<li>默认情况下，新创建的环境会被保存在<code>/User/&lt;username&gt;/anaconda3/env</code>目录下，其中<code>&lt;user_name&gt;</code>为系统当前用户的用户名。</li>
+</ol>
+<h4 id="5-3-激活-退出环境"><a href="#5-3-激活-退出环境" class="headerlink" title="5.3 激活/退出环境"></a>5.3 激活/退出环境</h4><p>激活：<code>conda activate python3</code></p>
+<p>退出：<code>conda deactivate</code></p>
+<h4 id="5-4-删除环境"><a href="#5-4-删除环境" class="headerlink" title="5.4 删除环境"></a>5.4 删除环境</h4><p> <code>conda  remove --name python3 --all</code></p>
+<h3 id="6、Python-扩展库安装"><a href="#6、Python-扩展库安装" class="headerlink" title="6、Python 扩展库安装"></a>6、Python 扩展库安装</h3><h4 id="6-1-添加清华大学的-Anaconda-镜像"><a href="#6-1-添加清华大学的-Anaconda-镜像" class="headerlink" title="6.1 添加清华大学的 Anaconda 镜像"></a>6.1 添加清华大学的 Anaconda 镜像</h4><pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+
+# 设置搜索时显示通道地址
+conda config --set show_channel_urls yes</code></pre><p><code>conda install numpy</code> 测试</p>
+<p><strong>查询可供安装的扩展库版本</strong><br><code>conda search --full-name pandas</code></p>
+<p><strong>获取当前环境中已安装的扩展库信息</strong><br><code>conda list</code></p>
+<h4 id="6-2-在指定环境中安装包"><a href="#6-2-在指定环境中安装包" class="headerlink" title="6.2 在指定环境中安装包"></a>6.2 在指定环境中安装包</h4><pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+
+conda config --set show_channel_urls yes
+
+conda activate python3
+
+conda install numpy</code></pre><h4 id="6-3-在当前环境中卸载包"><a href="#6-3-在当前环境中卸载包" class="headerlink" title="6.3 在当前环境中卸载包"></a>6.3 在当前环境中卸载包</h4><p><code>conda remove &lt;package_name&gt;</code></p>
+<h4 id="6-4-在指定环境中卸载包"><a href="#6-4-在指定环境中卸载包" class="headerlink" title="6.4 在指定环境中卸载包"></a>6.4 在指定环境中卸载包</h4><p><code>conda remove --name &lt;env_name&gt; &lt;package_name&gt;</code></p>
+<h3 id="7、-Python-扩展库导入"><a href="#7、-Python-扩展库导入" class="headerlink" title="7、 Python 扩展库导入"></a>7、 Python 扩展库导入</h3><p><strong>建议先导入标准库再导入扩展库对象，只导入确实需要使用的标准库和扩展库对象，提高加载速度，减少打包体积</strong></p>
+<h4 id="7-1-import-模块名-as-别名"><a href="#7-1-import-模块名-as-别名" class="headerlink" title="7.1 import 模块名[as 别名]"></a>7.1 import 模块名[as 别名]</h4><p><strong>使用时需要在对象之前加上模块名作为前缀，即“模块名.对象名”</strong></p>
+<pre><code>import math 
+import random
+import posixpath as path
+
+print(math.sqrt(16))                # 计算并输出16的平方根
+print(math.cos(math.pi/4))            # 计算余弦值
+print(random.choices(&#39;abcd&#39;, k=8))    # 从字符串&#39;abcd&#39;随机选择8个字符
+                                    # 允许重复
+print(path.isfile(r&#39;C:Windows\notepad.exe&#39;))    #测试指定路径是否为文件</code></pre><p><strong>结果：</strong><br>4.0<br>0.7071067811865476<br>[‘b’, ‘b’, ‘d’, ‘b’, ‘a’, ‘d’, ‘a’, ‘c’]<br>False</p>
+<h4 id="7-2-from-模块名-import-对象名-as-别名"><a href="#7-2-from-模块名-import-对象名-as-别名" class="headerlink" title="7.2 from  模块名  import  对象名 [as 别名]"></a>7.2 from  模块名  import  对象名 [as 别名]</h4><p>不需要模块名作为前缀，导入方式可以减少查询次数，提高访问速度</p>
+<pre><code>from math import pi as PI
+from os.path import getsize
+from random import choice
+
+r = 3
+print(round(PI*r*r, 2))                     # 计算半径为3的圆面积
+print(getsize(r&#39;C:Windows\notepad.exe&#39;))    # 计算文件大小，单位为字节
+print(choice(&#39;Python&#39;))                        # 从字符串中随机选择一个字符</code></pre><p><strong>结果：</strong><br>28.27<br>254464<br>o</p>
+<h4 id="7-3-from-模块名-import"><a href="#7-3-from-模块名-import" class="headerlink" title="7.3 from  模块名  import  *"></a>7.3 from  模块名  import  *</h4><p><strong>不推荐使用</strong></p>
+<pre><code>from itertools import *
+
+characters = &#39;1234&#39;
+for item in combinations(characters, 3):    # 从4个字符中任选3个组合
+    print(item, end=&#39; &#39;)                    # end=&#39; &#39; 表示输出后不换行
+print(&#39;\n&#39;+&#39;=&#39;*20)                          # 行号后输出20个等于号
+for item in permutations(characters, 3):    # 从4个字符中任选3个的排列
+    print(item, end=&#39; &#39;)                    </code></pre><h3 id="8、Python-常用标准库"><a href="#8、Python-常用标准库" class="headerlink" title="8、Python 常用标准库"></a>8、Python 常用标准库</h3><h4 id="8-1-字符串"><a href="#8-1-字符串" class="headerlink" title="8.1 字符串"></a>8.1 字符串</h4><p><code>re</code>：正则表达式。用来判断是否是你指定的特定字符串。<br><code>StringIO</code>：提供以文件形式来读写字符串。<br><code>struct</code>：以二进制字节序列来解释字符串。可以通过格式化参数，指定类型、长度、字节序（大小端）、内存对齐等。</p>
+<pre><code>import re 
+print(re.findall(r&#39;f[a-z]*&#39;,  &#39;which foot or hand fell fastest&#39;))</code></pre><p><strong>结果：</strong><br>[‘foot’, ‘fell’, ‘fastest’]</p>
+<p>如果只需要简单的功能，应该首先考虑字符串，因为简单，易于阅读和调试，如：</p>
+<pre><code>print(&#39;tea for too&#39;.replace(&#39;&#39;too,&#39;&#39;two&#39;))</code></pre><p>结果：<br>‘tea for two’</p>
+<h4 id="8-2-数据类型"><a href="#8-2-数据类型" class="headerlink" title="8.2  数据类型"></a>8.2  数据类型</h4><p><code>datetime</code>：提供操作日期和时间的类。<br><code>collections</code>：高性能容器数据类型。实现了Python的通用内置容器、字典、列表、集合，和元组专门的数据类型。<br><code>pprint</code>：提供“整洁打印”功能，具有打印任意Python数据结构的能力。</p>
+<h4 id="8-3-数学运算"><a href="#8-3-数学运算" class="headerlink" title="8.3 数学运算"></a>8.3 数学运算</h4><p><code>random</code>：各种分布的伪随机数的生成器。<br><code>math</code>：数学函数。提供了由C标准的数学函数访问。该库函数不适用于复数。<br><code>cmath</code>：为复数提供的数学函数。<br><code>operator</code>： 重载运算符。</p>
+<p><strong>math 模块为浮点运算提供了对底层C函数库的访问</strong></p>
+<pre><code>import math 
+print(math.cos(math.pi/4))
+print(math.log(1024, 2))</code></pre><p><strong>结果：</strong><br>0.7071067811865476<br>10.0</p>
+<p><strong>random 提供了生成随机数的工具</strong></p>
+<pre><code>import random
+fruits = random.choice([&#39;apple&#39;, &#39;pear&#39;, &#39;banana&#39;])
+x = random.sample(range(100), 10)     # 0-100选择不能重复的10个数
+y = random.random()                    # 随机浮点数
+z = random.randrange(6)                # 从范围0-6中选择随机整数
+print(fruits)
+print(x)
+print(y)
+print(z)</code></pre><p><strong>结果：</strong><br>apple<br>[64, 97, 91, 21, 40, 55, 63, 79, 77, 1]<br>0.8885638928051524<br>0</p>
+<h4 id="8-4-文件和目录"><a href="#8-4-文件和目录" class="headerlink" title="8.4 文件和目录"></a>8.4 文件和目录</h4><p><code>os.path</code>：常用路径名操作。<br><code>filecmp</code>：文件和目录的比较。<br><code>shutil</code>：高级的文件操作：支持文件复制和删除。</p>
+<h4 id="8-5-操作系统"><a href="#8-5-操作系统" class="headerlink" title="8.5 操作系统"></a>8.5 操作系统</h4><p><code>time</code>：时间获取和转换，各种与时间相关的函数。<br><code>argparse</code>：命令行选项、参数和子命令的解析器。<br><code>io</code>：提供接口处理的IO流。<br><code>logging</code>： Python的日志工具，提供日志记录的API。<br><code>logging.config</code>：Python日志配置，用于配置日志模块的API。<br><code>os</code>：提供丰富的与MAC，NT，Posix等操作系统进行交互的能力。<br><code>sys</code>：提供访问和维护python解释器的能力。这包括了提示信息，版本，整数的最大值，可用模块，路径钩子，标准错误，标准输入输出的定位和解释器调用的命令参数。</p>
+<p><strong>os 模块提供了不少与操作系统相关联的函数</strong></p>
+<pre><code>import os 
+print(os.getcwd())            # 返回当前的工作目录
+os.chdir(r&#39;C:Users\winner\Python3Learn\Lesson1Code&#39;) # 修改当前的工作目录
+os.system(&#39;mkdir today&#39;)     # 执行系统命令 mkdir
+print(os.getcwd())            # 返回当前的工作目录</code></pre><p>建议使用 <code>import os</code> 风格而非<code>from os import *</code>，这样可以保证随操作系统不同而有所变化的 os.open() 不会覆盖内置函数 open()。</p>
+<p>在使用 os 这样的大型模块时，内置的 dir() 和 help() 函数非常有用。</p>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com/2020/04/30/di-yi-zhang-python-gai-shu-yu-kai-fa-huan-jing-an-zhuang/">https://blog.hsiehchou.com/2020/04/30/di-yi-zhang-python-gai-shu-yu-kai-fa-huan-jing-an-zhuang/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/05/02/di-er-zhang-python-ji-chu-yu-fa/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="第二章 Python基础语法">
+                        
+                        <span class="card-title">第二章 Python基础语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第二章 Python 基础语法1、Python 常用数据类型
+在 Python 中变量不直接存储值，而是存储值的内存地址或者引用。
+在 Python 中，不需要事先声明变量名及其类型，使用赋值语句可以直接创建任意类型的变量，变量的类型取决于
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/04/04/dui-kang-ji-xin-guan-fei-yan-yi-qing-dou-zheng-xi-sheng-lie-shi-he-shi-shi-tong-bao-de-shen-qie-ai-dao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼">
+                        
+                        <span class="card-title">对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            对抗击新冠肺炎疫情斗争牺牲烈士和逝世同胞的深切哀悼牺牲的烈士们，逝世同胞们，一路走好，愿你们天堂安息！！！致敬英雄，缅怀逝者！！！
+
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%85%A8%E5%9B%BD%E6%80%A7%E5%93%80%E6%82%BC%E6%B4%BB%E5%8A%A8/" class="post-category">
+                                    全国性哀悼活动
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%93%80%E6%82%BC/">
+                        <span class="chip bg-color">哀悼</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 谢舟的博客<br />'
+            + '文章作者: 谢舟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">490.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            
+			<br>
+            
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1fdd6e11866c1fe7b815d69a4a4206ea";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

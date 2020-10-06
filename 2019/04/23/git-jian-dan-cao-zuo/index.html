@@ -1,0 +1,1172 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="git简单操作, 谢舟，博客，大数据，Java">
+    <meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="baidu-site-verification" content="2VN5bX64Cz" />
+    <title>git简单操作 | 谢舟的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+					<div>
+						
+						<img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+						
+						<span class="logo-span">谢舟的博客</span>
+					</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">谢舟的博客</div>
+        <div class="logo-desc">
+            
+            发布关于大数据,Java的一些信息和自己实践中的经验
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = 'fe154608ff5f3a34f6191987f32d750cb7ea2c0960b93c66def4d51b996ed3e7';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">git简单操作</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Git/">
+                                <span class="chip bg-color">Git</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Git/" class="post-category">
+                                Git
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-04-23
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><strong>git 版本控制系统</strong><br>git是一个版本控制系统</p>
+<h3 id="一、什么是版本控制系统"><a href="#一、什么是版本控制系统" class="headerlink" title="一、什么是版本控制系统"></a>一、什么是版本控制系统</h3><h4 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h4><p>版本控制是一种 记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统</p>
+<p>（<em>）记录文件的所有历史变化<br>（</em>）随时可恢复到任何一个历史状态<br>（<em>）多人协作开发或修改<br>（</em>）错误恢复<br>（*）多功能并行开发</p>
+<p>产品–&gt; 新加功能A —&gt; 单独拉一个新分支 –&gt; 开发完成后合并到master或者丢弃</p>
+<h4 id="2、分类"><a href="#2、分类" class="headerlink" title="2、分类"></a>2、分类</h4><p>本地版本控制系统<br>集中化版本控制系统        SVN<br>分布式版本控制系统        Git</p>
+<h4 id="3、基本概念"><a href="#3、基本概念" class="headerlink" title="3、基本概念"></a>3、基本概念</h4><p>repository ：存放所有文件及其历史信息<br>checkout    ：取出或切换到执行版本的文件<br>version    ：表示一个版本<br>tag    ：记录标识一个主要版本。2.0 3.0。用来标识一个特定的version</p>
+<h4 id="4、不同版本控制系统优缺点"><a href="#4、不同版本控制系统优缺点" class="headerlink" title="4、不同版本控制系统优缺点"></a>4、不同版本控制系统优缺点</h4><p><strong>本地</strong><br>优点：<br>简单，很多系统中内置。适合保存文本文件（配置文件、文章、信件）</p>
+<p>缺点：<br>    只支持管理少量的文件，不支持基于项目的管理<br>    支持的文件类型单一<br>    不支持网络，无法实现多人协作</p>
+<p><strong>集中式版本控制系统</strong><br>优点：<br>    适合多人团队协作开发<br>    代码集中化管理</p>
+<p>缺点：<br>    单点故障<br>    必须联网工作，无法单机工作</p>
+<p>解决：<br><strong>分布式版本控制系统</strong><br>集合集中式版本控制系统优点<br>支持离线工作，先提交到本地仓库，再在某个时间上传到远程仓库<br>每个计算机都是一个完整仓库：强备份</p>
+<h3 id="二、git分布式版本管理系统"><a href="#二、git分布式版本管理系统" class="headerlink" title="二、git分布式版本管理系统"></a>二、git分布式版本管理系统</h3><p>由Linux创始人开发，作为Linux内核代码管理系统使用</p>
+<p>Git在设计时考虑了很多方面设计目标</p>
+<p>特点：<br>速度<br>简单的设计<br>对非线性开发模式的强力支持（允许上千个并行开发的分支）<br>完全分布式<br>有能力管理超大规模项目（挑战：速度和数据量）</p>
+<p>Git原理：保存快照而非保存区别<br>Git保存时，相当于保存了当下所有文件的一个整体快照<br>所以，每个版本都是独立的。随时想取某一个版本，可以很快取出来</p>
+<h3 id="三、安装git"><a href="#三、安装git" class="headerlink" title="三、安装git"></a>三、安装git</h3><p>Git 的工作区域：</p>
+<p>Git repository：：    最终确定的文件保存到仓库，作为一个新的版本<br>staging area：            暂存已经修改的文件<br>woking directory：    工作目录</p>
+<p>安装git<br>从 <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a> 下载windows版本git<br>全使用默认值，一直下一步</p>
+<h3 id="四、创建仓库和基本操作"><a href="#四、创建仓库和基本操作" class="headerlink" title="四、创建仓库和基本操作"></a>四、创建仓库和基本操作</h3><p>git安装好后，需要一些基本设置<br>设置用户名：git config –global user.name “hsiehchou”<br>设置邮箱：git config –global user.email  “<a href="mailto:417952939@qq.com">417952939@qq.com</a>“</p>
+<p>查看所有设置：git config –list</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git init</strong><br>Reinitialized existing Git repository in C:/Users/hsiehchou/Desktop/git demo/.git/</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ ll -a</strong><br>total 52<br>drwxr-xr-x 1 hsiehchou 197121 0 4月  24 12:45 ./<br>drwxr-xr-x 1 hsiehchou 197121 0 4月  24 10:44 ../<br>drwxr-xr-x 1 hsiehchou 197121 0 4月  24 12:46 .git/</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git status</strong><br>On branch master</p>
+<p>No commits yet</p>
+<p>nothing to commit (create/copy files and use “git add” to track)<br>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ touch README</strong></p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ vi README</strong></p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git status</strong><br>On branch master</p>
+<p>No commits yet</p>
+<p><strong>未追踪的文件</strong><br><strong>Untracked files</strong>:<br>  (use “git add <code>&lt;file&gt;</code>…” to include in what will be committed)<br> README</p>
+<p>nothing added to commit but untracked files present (use “git add” to track)</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>新建文件，默认是未追踪的文件<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git add README</strong><br>warning: LF will be replaced by CRLF in README.<br>The file will have its original line endings in your working directory.</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git status</strong><br>On branch master</p>
+<p>No commits yet</p>
+<p>Changes to be committed:<br>  (use “git rm –cached <code>&lt;file&gt;</code>…” to unstage)<br> new file:   README</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>git add 提交到了暂存区域<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git commit -m “add README”</strong><br>[master (root-commit) f50e736] add README<br> 1 file changed, 1 insertion(+)<br> create mode 100644 README</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br><strong>查看历史</strong><br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git log</strong><br>commit f50e7362b5573e9b9862f7fb65a9e3f6fa98913a (HEAD -&gt; master)<br>Author: hsiehchou <a href="mailto:&#52;&#49;&#x37;&#57;&#x35;&#x32;&#x39;&#51;&#57;&#x40;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;">&#52;&#49;&#x37;&#57;&#x35;&#x32;&#x39;&#51;&#57;&#x40;&#x71;&#x71;&#46;&#x63;&#x6f;&#x6d;</a><br>Date:   Wed Apr 24 12:52:51 2019 +0800<br>add README</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br><strong>修改文件</strong><br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ vim README</strong></p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br><strong>检测到被修改了</strong><br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git status</strong><br>On branch master<br>Changes not staged for commit:<br>  (use “git add <code>&lt;file&gt;</code>…” to update what will be committed)<br>  (use “git checkout – <code>&lt;file&gt;</code>…” to discard changes in working directory)</p>
+<p> modified:   README</p>
+<p>no changes added to commit (use “git add” and/or “git commit -a”)</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br><strong>提交到仓库</strong><br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git commit -a -m “modify README”</strong><br>warning: LF will be replaced by CRLF in README.<br>The file will have its original line endings in your working directory<br>[master 278ec6a] modify README<br> 1 file changed, 1 insertion(+)</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br><strong>删除文件</strong><br>rm README<br>git rm README<br>git commit -m “delete README”</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ rm README</strong></p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git rm README</strong><br>rm ‘README’</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git commit -m “delete README”</strong><br>[master b82ec4f] delete README<br> 1 file changed, 2 deletions(-)<br> delete mode 100644 README</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br><strong>checkout 某个版本</strong><br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git log</strong><br>commit b82ec4f7ccf718abac6dc630b7049618d179418f (HEAD -&gt; master)<br>Author: hsiehchou <a href="mailto:&#x34;&#49;&#x37;&#57;&#x35;&#x32;&#x39;&#51;&#x39;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#x34;&#49;&#x37;&#57;&#x35;&#x32;&#x39;&#51;&#x39;&#64;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a><br>Date:   Wed Apr 24 12:56:45 2019 +0800</p>
+<p> delete README</p>
+<p>commit 278ec6a869f73af71539785f6893259726f9902e<br>Author: hsiehchou <a href="mailto:&#x34;&#x31;&#x37;&#x39;&#53;&#x32;&#57;&#x33;&#57;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#109;">&#x34;&#x31;&#x37;&#x39;&#53;&#x32;&#57;&#x33;&#57;&#x40;&#113;&#113;&#x2e;&#99;&#111;&#109;</a><br>Date:   Wed Apr 24 12:56:00 2019 +0800</p>
+<p>modify README</p>
+<p>commit f50e7362b5573e9b9862f7fb65a9e3f6fa98913a<br>Author: hsiehchou <a href="mailto:&#52;&#49;&#55;&#x39;&#x35;&#50;&#57;&#x33;&#x39;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;">&#52;&#49;&#55;&#x39;&#x35;&#50;&#57;&#x33;&#x39;&#x40;&#113;&#x71;&#x2e;&#x63;&#x6f;&#109;</a><br>Date:   Wed Apr 24 12:52:51 2019 +0800</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo ((b82ec4f…))<br><strong>$ git checkout 278ec6a869f73af71539785f6893259726f9902e</strong><br>Previous HEAD position was b82ec4f delete README<br>HEAD is now at 278ec6a modify README</p>
+<p>You are in ‘detached HEAD’ state. You can look around, make experimental<br>changes and commit them, and you can discard any commits you make in this<br>state without impacting any branches by performing another checkout.</p>
+<p>If you want to create a new branch to retain commits you create, you may<br>do so (now or later) by using -b with the checkout command again. Example:</p>
+<p>  git checkout -b <code>&lt;new-branch-name&gt;</code></p>
+<p>HEAD is now at 278ec6a modify README</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo ((278ec6a…))<br><strong>$ ll</strong><br>total 1<br>-rw-r–r– 1 hsiehchou 197121 22 4月  24 12:58 README</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo ((278ec6a…))<br><strong>$ cat README</strong><br>Hello World!<br>fsdggd</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo ((278ec6a…))<br><strong>$ git checkout master</strong><br>Previous HEAD position was 278ec6a modify README<br>Switched to branch ‘master’</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ ll</strong><br>total 0</p>
+<h3 id="五、git远程仓库"><a href="#五、git远程仓库" class="headerlink" title="五、git远程仓库"></a>五、git远程仓库</h3><p>实现代码共享<br>远程仓库实际保存了本地.git文件夹下的东西，内容几乎一样<br>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ touch README2</strong></p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ vim README2</strong></p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git add README2</strong><br>warning: LF will be replaced by CRLF in README2.<br>The file will have its original line endings in your working directory</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git commit -a -m “README2”</strong><br>[master 0c4f333] README2<br> 1 file changed, 1 insertion(+)<br> create mode 100644 README2</p>
+<p><strong>git 远程仓库访问协议</strong>：<br>ssh协议<br>git协议<br>http https协议：一般用于开源项目</p>
+<p>常用远程仓库实现：<br>1、github<br>2、自己搭建git仓库服务器 gitlab、码云</p>
+<p>举例：在自己的github中，关联本地仓库<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ cd ~/.ssh</strong><br>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/.ssh<br><strong>$ ll</strong><br>total 9<br>-rw-r–r– 1 hsiehchou 197121 1823 4月  15 23:35 id_rsa<br>-rw-r–r– 1 hsiehchou 197121  398 4月  15 23:35 id_rsa.pub<br>-rw-r–r– 1 hsiehchou 197121 1197 4月  16 14:09 known_hosts</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/.ssh<br><strong>$ cat id_rsa.pub</strong></p>
+<p> <strong>创建公钥</strong><br>ssh-keygen -t rsa -C “<a href="mailto:417952939@qq.com">417952939@qq.com</a>“命令</p>
+<p>测试是否能够正常连接github<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ ssh -T <a href="mailto:git@github.com">git@github.com</a></strong><br>Hi hsiehchou! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git remote add origin <a href="mailto:git@github.com">git@github.com</a>:hsiehchou/git-test.git</strong></p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ ll</strong><br>total 1<br>-rw-r–r– 1 root 197121 15 4月  21 22:13 README2</p>
+<p>+++++++++++++++++++++++++++++++++++++++++++++++++++++<br>hsiehchou@DESKTOP-KJDN870 MINGW64 ~/Desktop/git demo (master)<br><strong>$ git push -u origin master</strong><br>Enumerating objects: 11, done.<br>Counting objects: 100% (11/11), done.<br>Delta compression using up to 4 threads<br>Compressing objects: 100% (4/4), done.<br>Writing objects: 100% (11/11), 826 bytes | 103.00 KiB/s, done.<br>Total 11 (delta 0), reused 0 (delta 0)<br>To github.com:hsiehchou/git-test.git</p>
+<ul>
+<li>[new branch]      master -&gt; master<br>Branch ‘master’ set up to track remote branch ‘master’ from ‘origin’.</li>
+</ul>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com/2019/04/23/git-jian-dan-cao-zuo/">https://blog.hsiehchou.com/2019/04/23/git-jian-dan-cao-zuo/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Git/">
+                                    <span class="chip bg-color">Git</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/04/24/docker-ru-men-cao-zuo/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="Docker入门操作">
+                        
+                        <span class="card-title">Docker入门操作</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            docker2013年发布
+一、环境配置难题开发环境运行没有问题，生产不能用，因为生产缺乏某些组件
+换一台机器，需要重新配置一遍
+能不能从根本上解决问题：安装的时候，把原始环境，一模一样地安装一遍
+二、虚拟机带环境安装的一种解决方案
+缺点：
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-04-24
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Docker/" class="post-category">
+                                    Docker
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Docker%E5%85%A5%E9%97%A8/">
+                        <span class="chip bg-color">Docker入门</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/04/22/hadoop-ha-he-hbase-ha/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="Hadoop HA和HBase HA">
+                        
+                        <span class="card-title">Hadoop HA和HBase HA</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Hadoop  HBase HA
+保证所有的服务器时间都相同
+一、Hadoop HAHDFS HA
+/root/hd/hadoop-2.8.4/etc/hadoop 下是所有hadoop配置文件
+1、core-site.xml&lt;con
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/Hadoop-HA/">
+                        <span class="chip bg-color">Hadoop HA</span>
+                    </a>
+                    
+                    <a href="/tags/HBase-HA/">
+                        <span class="chip bg-color">HBase HA</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 谢舟的博客<br />'
+            + '文章作者: 谢舟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">490.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            
+			<br>
+            
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1fdd6e11866c1fe7b815d69a4a4206ea";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

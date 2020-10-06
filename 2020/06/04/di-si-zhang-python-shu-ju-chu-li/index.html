@@ -1,0 +1,2585 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Python, 数据处理">
+    <meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="baidu-site-verification" content="2VN5bX64Cz" />
+    <title>第四章 Python 数据处理 | 谢舟的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+					<div>
+						
+						<img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+						
+						<span class="logo-span">谢舟的博客</span>
+					</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">谢舟的博客</div>
+        <div class="logo-desc">
+            
+            发布关于大数据,Java的一些信息和自己实践中的经验
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">第四章 Python 数据处理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Python/" class="post-category">
+                                Python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-04
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    11.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    54 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="第四章-Python-数据处理"><a href="#第四章-Python-数据处理" class="headerlink" title="第四章 Python 数据处理"></a>第四章 Python 数据处理</h2><h3 id="1、numpy-数组操作"><a href="#1、numpy-数组操作" class="headerlink" title="1、numpy 数组操作"></a>1、numpy 数组操作</h3><h4 id="1-1-numpy-库概述"><a href="#1-1-numpy-库概述" class="headerlink" title="1.1 numpy 库概述"></a>1.1 numpy 库概述</h4><h5 id="1-1-1-引言"><a href="#1-1-1-引言" class="headerlink" title="1.1.1 引言"></a>1.1.1 引言</h5><ol>
+<li>Python 中用列表(list)保存一组值，可用来当作数组使用，由于列表的元素可以是任何对象，因此列表中所保存的是对象的指针。为保存一个简单的[1,2,3]，需要有 3 个指针和三个整数对象。对于数值运算来说这种结构显然<strong>比较浪费内存和CPU计算时间</strong>。</li>
+<li>此外 Python 还提供了一个 array 模块，array 对象和列表不同，它直接保存数值，和 C 语言的一维数组比较类似。但是由于它<strong>不支持多维</strong>，也没有各种运算函数，因此也不适合做数值运算。</li>
+<li>numpy 的诞生弥补了这些不足，numpy 提供 <strong>ndarray（N-dimensional array object</strong>）对象：ndarray 是存储单一数据类型的多维数组。</li>
+</ol>
+<h5 id="1-1-2-numpy（Numerical-Python的简称）"><a href="#1-1-2-numpy（Numerical-Python的简称）" class="headerlink" title="1.1.2 numpy（Numerical Python的简称）"></a>1.1.2 numpy（Numerical Python的简称）</h5><p>是高性能科学计算和数据分析的基础包，支持维度数组与矩阵运算。包括：</p>
+<ol>
+<li>一个强大的 N 维数组对象 ndarray，具有矢量算术运算和复杂广播能力的快速且节省空间的多维数组。</li>
+<li>用于对整组数据进行快速运算的标准数学函数（无需编写循环）。</li>
+<li>用于读写磁盘数据的工具以及用于操作内存映射文件的工具。</li>
+<li>线性代数、随机数生成以及傅里叶变换等功能。</li>
+<li>用于集成由 C、C++、Fortran 等语言编写的代码的工具。</li>
+</ol>
+<h5 id="1-1-3-numpy-库提供了大量的库函数和操作"><a href="#1-1-3-numpy-库提供了大量的库函数和操作" class="headerlink" title="1.1.3 numpy 库提供了大量的库函数和操作"></a>1.1.3 numpy 库提供了大量的库函数和操作</h5><p>可以帮助程序员轻松地进行数值计算。这类数值计算广泛用于以下任务：</p>
+<ol>
+<li>机器学习模型：在编写机器学习算法时，需要对矩阵进行各种数值计算。例如矩阵乘法、加法等。使用 numpy 库可进行<strong>简单</strong>(在编写代码方面)和<strong>快速</strong>(在速度方面)计算。numpy 数组用于存储训练数据和机器学习模型的参数。</li>
+<li>图像处理和计算机图形学：计算机中的图像表示为多维数字数组，numpy 提供了一些优秀的库函数来快速处理图像。例如，镜像图像、按特定角度旋转图像等。</li>
+<li>数学任务：numpy 可进行数值积分、微分、内插、外推等操作。numpy 库形成了一种基于 Python 的 MATLAB 的快速替代。</li>
+</ol>
+<h4 id="1-2-numpy-库安装"><a href="#1-2-numpy-库安装" class="headerlink" title="1.2 numpy 库安装"></a>1.2 numpy 库安装</h4><h5 id="1-2-1-使用已有的发行版本"><a href="#1-2-1-使用已有的发行版本" class="headerlink" title="1.2.1 使用已有的发行版本"></a>1.2.1 使用已有的发行版本</h5><ol>
+<li>对于许多用户，尤其是 Windows 用户，最简单的方法是下载Python  发行版，包含所有的关键包（包括 numpy，SciPy，matplotlib 以及 Python 核心自带的其它包）：</li>
+<li><strong>Anaconda</strong>: 免费 Python 发行版，用于进行大规模数据处理、预测分析，和科学计算，致力于简化包的管理和部署。支持 Linux, Windows 和 Mac 系统。（推荐）</li>
+<li>Enthought Canopy: 提供了免费和商业发行版。持 Linux, Windows 和 Mac 系统。</li>
+<li>WinPython: 免费的 Python 发行版，包含科学计算包与 Spyder IDE。支持 Windows。</li>
+<li>Pyzo: 基于 Anaconda 的免费发行版本及 IEP 的交互开发环境，超轻量级。 支持Linux, Windows 和 Mac 系统。</li>
+</ol>
+<h5 id="1-2-2-使用-pip-安装"><a href="#1-2-2-使用-pip-安装" class="headerlink" title="1.2.2 使用 pip 安装"></a>1.2.2 使用 pip 安装</h5><ol>
+<li>安装 numpy 最简单的方法就是使用 pip 工具：<pre><code>python -m pip install --user numpy  </code></pre></li>
+<li><code>--user</code> 选项可以设置只安装在当前的用户下，而不是写入到系统目录。</li>
+</ol>
+<h4 id="1-3-ndarray-概述"><a href="#1-3-ndarray-概述" class="headerlink" title="1.3 ndarray 概述"></a>1.3 ndarray 概述</h4><ol>
+<li>N 维数组对象 ndarray 是用于存放<strong>同类型元素</strong>的多维数组。</li>
+<li>ndarray 中的每个元素在内存中都有<strong>相同存储大小</strong>的区域。</li>
+<li>ndarray 中的每个元素是数据类型对象的对象 （ 称为 dtype）。</li>
+<li>与 Python 中的其他容器对象一样，可以通过对数组进行索引或切片。</li>
+<li>可通过 ndarray 的方法和属性来访问和修改 ndarray 的内容 。</li>
+</ol>
+<h4 id="1-4-ndarray-之创建数组"><a href="#1-4-ndarray-之创建数组" class="headerlink" title="1.4 ndarray 之创建数组"></a>1.4 ndarray 之创建数组</h4><h5 id="1-4-1-创建-ndarray：创建数组最简单的办法就是使用-array-函数。"><a href="#1-4-1-创建-ndarray：创建数组最简单的办法就是使用-array-函数。" class="headerlink" title="1.4.1 创建 ndarray：创建数组最简单的办法就是使用 array 函数。"></a>1.4.1 创建 ndarray：创建数组最简单的办法就是使用 array 函数。</h5><p>它接受一切序列型的对象，然后产生一个含有传入数据的 numpy 数组。其中，嵌套序列（比如由一组等长列表组成的列表）将会被转换为一个多维数组。</p>
+<pre><code>numpy.array(object, dtype = None, copy = True, order = None, subok = False, ndmin = 0)</code></pre><table>
+<thead>
+<tr>
+<th align="left">名称</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">object</td>
+<td align="left">数组或嵌套的数列</td>
+</tr>
+<tr>
+<td align="left">dtype</td>
+<td align="left">数组元素的数据类型，可选</td>
+</tr>
+<tr>
+<td align="left">copy</td>
+<td align="left">对象是否需要复制，可选</td>
+</tr>
+<tr>
+<td align="left">order</td>
+<td align="left">创建数组的样式，C 为行方向，F 为列方向，A 为任意方向（默认）</td>
+</tr>
+<tr>
+<td align="left">subok</td>
+<td align="left">默认返回一个与基类类型一致的数组</td>
+</tr>
+<tr>
+<td align="left">ndmin</td>
+<td align="left">指定生成数组的最小维度</td>
+</tr>
+</tbody></table>
+<pre><code>&gt;&gt;&gt; import numpy as np
+&gt;&gt;&gt; a = [1, 2, 3, 4]   # 创建简单的列表
+&gt;&gt;&gt; b = np.array(a)    # 将列表转换为数组
+&gt;&gt;&gt; b
+array([1, 2, 3, 4])
+&gt;&gt;&gt; c = np.array([[1,  2],  [3,  4]]) 
+&gt;&gt;&gt;c
+[[1, 2] 
+[3, 4]] </code></pre><h5 id="1-4-2-除了np-array之外，还有一些函数也可以新建数组："><a href="#1-4-2-除了np-array之外，还有一些函数也可以新建数组：" class="headerlink" title="1.4.2 除了np.array之外，还有一些函数也可以新建数组："></a>1.4.2 除了np.array之外，还有一些函数也可以新建数组：</h5><ol>
+<li>zeros 和 ones 分别可以创建指定长度或者形状的全 0 或全 1 数组</li>
+<li>empty 可以创建一个没有任何具体值的数组</li>
+</ol>
+<pre><code>&gt;&gt;&gt; np.zeros(3)  # 全 0 一维数组
+array([ 0.,  0.,  0.])
+&gt;&gt;&gt; np.ones(3)   # 全 1 一维数组
+array([ 1.,  1.,  1.])
+&gt;&gt;&gt; np.zeros((3,3))   # 全 0 二维数组，3 行 3 列
+array([[ 0.,  0.,  0.],
+    [ 0.,  0.,  0.],
+    [ 0.,  0.,  0.]])
+&gt;&gt;&gt; np.zeros((3,1))   # 全 0 二维数组，3 行 1 列
+array([[ 0.],
+    [ 0.],
+    [ 0.]])
+&gt;&gt;&gt; np.zeros((1,3))  # 全 0 二维数组，1 行 3 列
+array([[ 0.,  0.,  0.]]) 
+&gt;&gt;&gt; np.ones((3,3))   # 全 1 二维数组，3 行 3 列
+array([[ 1.,  1.,  1.],
+    [ 1.,  1.,  1.],
+    [ 1.,  1.,  1.]])
+&gt;&gt;&gt; np.ones((1,3))     # 全 1 二维数组，1 行 3 列
+array([[ 1.,  1.,  1.]]) 
+&gt;&gt;&gt; np.identity(3)     # 单位矩阵，3 行 3 列
+array([[ 1.,  0.,  0.],
+    [ 0.,  1.,  0.],
+    [ 0.,  0.,  1.]])</code></pre><h5 id="1-4-3-创建随机数组"><a href="#1-4-3-创建随机数组" class="headerlink" title="1.4.3 创建随机数组"></a>1.4.3 创建随机数组</h5><ol>
+<li><p><strong>均匀分布</strong><br>1) np.random.rand(10, 10) 创建指定形状(示例为10行10列)的数组(范围在0至1之间)<br>2) np.random.uniform(0, 100)  创建指定范围内的一个数<br>3) np.random.randint(0, 100)  创建指定范围内的一个整数</p>
+</li>
+<li><p><strong>正态分布</strong><br>1) np.random.normal(1.75, 0.1, (2, 3))     给定均值/标准差/维度的正态分布</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; np.random.randint(0, 50, 5) # 随机数组，5个0到50之间的数字
+array([13, 47, 31, 26,  9])
+&gt;&gt;&gt; np.random.randint(0, 50, (3,5)) # 3行5列，共15个随机整数，都介于[0,50]
+array([[44, 34, 35, 28, 18],
+    [24, 24, 26,  4, 21],
+    [30, 40,  1, 24, 17]])
+&gt;&gt;&gt; np.random.rand(10)  # 10个介于[0,1)的随机数
+array([ 0.58193552,  0.11106142,  0.13848858,  0.61148304,  0.72031503,0.12807841,  0.49999167,  0.24124012,  0.15236595,  0.54568207])
+&gt;&gt;&gt; np.random.standard_normal(5) # 从标准正态分布中随机采样5个数字
+array([2.82669067, 0.9773194, -0.72595951, -0.11343254, 0.74813065])</code></pre><h5 id="1-4-4-查看数组属性的用法"><a href="#1-4-4-查看数组属性的用法" class="headerlink" title="1.4.4 查看数组属性的用法"></a>1.4.4 查看数组属性的用法</h5><table>
+<thead>
+<tr>
+<th align="left">用法</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">b.size</td>
+<td align="left">数组元素个数</td>
+</tr>
+<tr>
+<td align="left">b.shape</td>
+<td align="left">数组形状</td>
+</tr>
+<tr>
+<td align="left">b.ndim</td>
+<td align="left">数组维度</td>
+</tr>
+<tr>
+<td align="left">b.dtype</td>
+<td align="left">数组元素类型</td>
+</tr>
+<tr>
+<td align="left">b.Itemsize</td>
+<td align="left">数组元素字节大小</td>
+</tr>
+</tbody></table>
+<h5 id="1-4-5-查看数组属性的用法"><a href="#1-4-5-查看数组属性的用法" class="headerlink" title="1.4.5 查看数组属性的用法"></a>1.4.5 查看数组属性的用法</h5><pre><code>import numpy as np
+
+x = np.array([(1,2,3),(4,5,6)]) 
+print(x)
+print(x.size)
+print(x.ndim)
+print(x.shape)
+print(x.itemsize)
+print(x.dtype,&#39;\n&#39;)
+
+y = x.reshape(3,2)
+print(y,&#39;\n&#39;)
+print(y.shape)</code></pre><h4 id="1-5-数组和标量之间的运算"><a href="#1-5-数组和标量之间的运算" class="headerlink" title="1.5 数组和标量之间的运算"></a>1.5 数组和标量之间的运算</h4><p>数组很重要，因为它可以使我们不用编写循环即可对数据执行批量运算。这通常叫做<strong>矢量化</strong>（vectorization）。大小相等的数组之间的任何算术运算都会将运算应用到元素级。同样，数组与标量的算术运算也会将那个标量值传播到各个元素。</p>
+<pre><code>&gt;&gt;&gt; arr = np.array([[1., 2., 3.], [4., 5., 6.]]) &gt;&gt;&gt; arr
+array([[1., 2., 3.],
+&gt;&gt;&gt; 1 / arr 
+array([[1., 0.5, 0.33333333],   
+    [0.25, 0.2, 0.16666667]])
+&gt;&gt;&gt; arr - arr 
+array([[0., 0., 0.],
+    [0., 0., 0.]])
+&gt;&gt;&gt; arr * arr 
+array([[ 1.,  4.,  9.],    
+    [16., 25., 36.]])
+&gt;&gt;&gt; arr ** 0.5
+array([[1., 1.41421356, 1.73205081],    
+    [2., 2.23606798, 2.44948974]])</code></pre><h4 id="1-6-基本的索引和切片"><a href="#1-6-基本的索引和切片" class="headerlink" title="1.6 基本的索引和切片"></a>1.6 基本的索引和切片</h4><ol>
+<li>选取数据子集或的单个元素的方式有很多。</li>
+<li>一维数组很简单，从表面上看，它们跟 Python 列表的功能差不多。</li>
+<li>一维数组跟列表最重要的区别在于，数组切片是原始数组的视图。这意味着数据不会被复制，数组视图上的任何修改都会直接反映到原始数组上。</li>
+<li>将一个标量值赋值给一个切片时，该值会自动传播到整个选区。</li>
+</ol>
+<pre><code>&gt;&gt;&gt; arr = np.arange(10)
+&gt;&gt;&gt; arr
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]) 
+&gt;&gt;&gt; arr[5]
+5
+&gt;&gt;&gt; arr[5:8]
+array([5, 6, 7])
+&gt;&gt;&gt; arr[5:8] = 12
+&gt;&gt;&gt; arr
+array([ 0,  1,  2,  3,  4, 12, 12, 12,  8,  9]) 
+&gt;&gt;&gt; arr_slice = arr[5:8]
+&gt;&gt;&gt; arr_slice[1] = 12345
+&gt;&gt;&gt; arr
+array([ 0, 1,  2,  3,  4, 12, 12345, 12,  8,  9]) 
+&gt;&gt;&gt; arr_slice[:] = 64
+&gt;&gt;&gt; arr
+array([ 0,  1,  2,  3,  4, 64, 64, 64,  8,  9])</code></pre><ol start="5">
+<li>在二维数组中，各索引位置上的元素不再是标量而是一维数组。</li>
+<li>可以对各个元素进行递归访问，但是这样有点麻烦。</li>
+<li>还有一种方式是传入一个以逗号隔开的索引列表来选取单个元素。</li>
+<li>在多维数组中，如果省略了后面的索引，则返回对象会是一个维度低一点的 ndarray。</li>
+</ol>
+<pre><code>&gt;&gt;&gt; arr3d = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+&gt;&gt;&gt; arr3d
+array([[[ 1,  2,  3],
+    [ 4,  5,  6]],
+    [[ 7,  8,  9],
+    [10, 11, 12]]])
+&gt;&gt;&gt; arr3d[0] 
+array([[1, 2, 3],
+    [4, 5, 6]])
+&gt;&gt;&gt; arr3d[0][1] 
+    array([4, 5, 6])</code></pre><h4 id="1-7-数学和统计方法"><a href="#1-7-数学和统计方法" class="headerlink" title="1.7 数学和统计方法"></a>1.7 数学和统计方法</h4><ol>
+<li><strong>基本数组统计方法</strong><br>可以通过数组上的一组数学函数对整个数组或某个轴向的数据进行统计计算。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">方法</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">sum</td>
+<td align="left">对数组中全部或某轴向的元素求和。零长度的数组的sum 为 0</td>
+</tr>
+<tr>
+<td align="left">mean</td>
+<td align="left">算术平均数。零长度的数组的 mean 为 NaN。</td>
+</tr>
+<tr>
+<td align="left">std, var</td>
+<td align="left">分别为标准差和方差，自由度可调（默认为n）</td>
+</tr>
+<tr>
+<td align="left">min, max</td>
+<td align="left">最大值和最小值</td>
+</tr>
+<tr>
+<td align="left">argmin, argmax</td>
+<td align="left">分别为最大和最小元素的索引</td>
+</tr>
+<tr>
+<td align="left">cumsum</td>
+<td align="left">所有元素的累加</td>
+</tr>
+<tr>
+<td align="left">cumprod</td>
+<td align="left">所有元素的累积</td>
+</tr>
+</tbody></table>
+<ol start="2">
+<li><strong>sum、mean 以及标准差 std</strong> 等聚合计算既可以当做数组的实例方法调用，也可以当做顶级 numpy 函数使用。</li>
+</ol>
+<pre><code>&gt;&gt;&gt; arr = np.random.randn(5, 4) # 5行4列正态分布的数据
+&gt;&gt;&gt; arr.mean()
+-0.022341797127577216 
+&gt;&gt;&gt; np.mean(arr)
+-0.022341797127577216 
+&gt;&gt;&gt; arr.sum()
+-0.44683594255154435</code></pre><ol start="3">
+<li><strong>mean 和 sum</strong> 这类的函数可以接受一个 axis 参数（用于计算该轴向上的统计值）。</li>
+</ol>
+<pre><code>&gt;&gt;&gt; arr.mean(axis=1)
+array([-0.11320162, -0.032351  , -0.24522299,  0.13275031,  0.14631631]) 
+&gt;&gt;&gt; arr.sum(0)
+array([-1.71093252,  3.4431099 , -1.78081725, -0.39819607])</code></pre><pre><code># 数学和统计方法
+import numpy as np
+
+arr = np.random.randn(5, 4) # 正态分布的数据
+print(arr, &#39;\n&#39;)
+print(arr.mean(), &#39;\n&#39;)
+print(np.mean(arr), &#39;\n&#39;)
+print(arr.sum(), &#39;\n&#39;)
+print(arr.mean(axis = 0), &#39;\n&#39;) # 按列
+print(arr.mean(axis = 1), &#39;\n&#39;) # 按行
+print(arr.sum(0), &#39;\n&#39;)
+print(arr.sum(1), &#39;\n&#39;)
+
+b = np.array(arr[0])
+print(arr[0])
+print(b.mean())</code></pre><p><strong>运行结果</strong></p>
+<pre><code>[[-0.80010107  1.07708638 -1.35612627 -0.0968496 ]
+ [ 1.19282733 -0.76803973  0.96541953 -0.92755397]
+ [ 0.1632381   0.20535389 -0.40766701 -1.59165831]
+ [ 0.82877811  2.36588387  1.93749325 -0.59130029]
+ [ 2.00014605 -2.02632033  0.98467712 -0.12523931]] 
+
+0.15150238691579443 
+
+0.15150238691579443 
+
+3.0300477383158886 
+
+[ 0.6769777   0.17079282  0.42475933 -0.6665203 ] 
+
+[-0.29399764  0.11566329 -0.40768333  1.13521373  0.20831588] 
+
+[ 3.38488852  0.85396408  2.12379663 -3.33260149] 
+
+[-1.17599056  0.46265316 -1.63073333  4.54085494  0.83326354] 
+
+[-0.80010107  1.07708638 -1.35612627 -0.0968496 ]
+-0.29399764052791716</code></pre><ol start="4">
+<li><p><strong>cumsum</strong><br>按照所给定的轴参数返回元素的梯形累计和，axis=0，按照行累加。axis=1，按照列累加。</p>
+</li>
+<li><p><strong>cumprod</strong><br>按照所给定的轴参数返回元素的梯形累计乘积，axis=0，按照行累积。 axis=1，按照列累积。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; arr = np.array([[0, 1 ,2], [3, 4, 5], [6, 7, 8]]) 
+&gt;&gt;&gt; arr.cumsum(0)
+array([[ 0,  1,  2],
+[ 3,  5,  7],
+[ 9, 12, 15]], dtype=int32)
+&gt;&gt;&gt; arr.cumprod(1)
+array([[  0,   0,   0],
+    [  3,  12,  60],
+    [  6,  42, 336]], dtype=int32)</code></pre><h3 id="2、numpy-矩阵操作"><a href="#2、numpy-矩阵操作" class="headerlink" title="2、numpy 矩阵操作"></a>2、numpy 矩阵操作</h3><h4 id="2-1-numpy-矩阵库-Matrix"><a href="#2-1-numpy-矩阵库-Matrix" class="headerlink" title="2.1 numpy 矩阵库(Matrix)"></a>2.1 numpy 矩阵库(Matrix)</h4><ol>
+<li><p>NumPy 中包含了一个矩阵库 numpy.matlib，该模块中的函数返回的是一个矩阵，而不是 ndarray 对象。</p>
+</li>
+<li><p>一个𝑚x𝑛的矩阵是一个由 𝑚行（row）𝑛 列（column）元素排列成的矩形阵列。</p>
+</li>
+<li><p>矩阵里的元素可以是数字、符号或数学式。以下是一个由6个数字元素构成的2行3列的矩阵：$\begin{bmatrix}1 &amp; 9 &amp; -13\20 &amp; 5 &amp; -6 \end{bmatrix} $</p>
+</li>
+<li><p>NumPy 和 Matlab 不一样 ， 对于多维数组的运算 ， 缺省情况下并不使用矩阵运算 ，如果你希望对数组进行矩阵运算的话 ， 可以调用ndarry对象相应的函数</p>
+</li>
+</ol>
+<h4 id="2-2-numpy矩阵生成"><a href="#2-2-numpy矩阵生成" class="headerlink" title="2.2 numpy矩阵生成"></a>2.2 numpy矩阵生成</h4><ol>
+<li><strong>常规方式生成</strong></li>
+</ol>
+<pre><code>import numpy as np
+
+x = np.matrix([[1,2,3], [4,5,6]])
+y = np.matrix([1,2,3,4,5,6])
+# x[0,0]返回行下标和列下标都为0的元素
+# 注意，对于矩阵x来说，x[0,0]和x[0][0]的含义不一样
+print(x, y, x[0,0],x[0][0],sep=&#39;\n\n&#39;)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>[[1 2 3]
+ [4 5 6]]
+
+[[1 2 3 4 5 6]]
+
+1
+
+[[1 2 3]]</code></pre><ol start="2">
+<li><strong>matlib.empty()</strong></li>
+</ol>
+<p><strong>numpy.matlib.empty(shape, dtype, order)</strong></p>
+<p>➢    <strong>shape</strong>: 定义新矩阵形状的整数或整数元组<br>➢    <strong>Dtype</strong>: 可选，数据类型<br>➢    <strong>order</strong>: C（行序优先） 或者 F（列序优先）</p>
+<pre><code>import numpy.matlib 
+import numpy as np
+
+print (np.matlib.empty((1,2))) # 填充为随机数据</code></pre><p><strong>运行结果</strong><br>[[-6.04134793e-125  1.10846539e-274]]</p>
+<ol start="3">
+<li><p><strong>numpy.matlib.zeros()</strong></p>
+</li>
+<li><p><strong>numpy.matlib.ones()</strong><br>➢    numpy.matlib.zeros() 函数创建一个以 0 填充的矩阵。<br>➢    numpy.matlib.ones() 函数创建一个以 1 填充的矩阵。</p>
+</li>
+</ol>
+<pre><code>import numpy.matlib 
+import numpy as np 
+print (np.matlib.zeros((2,2))) 
+print (np.matlib.ones((2,2)))</code></pre><p><strong>运行结果</strong><br>[[0. 0.]<br> [0. 0.]]<br>[[1. 1.]<br> [1. 1.]]</p>
+<ol start="5">
+<li><strong>numpy.matlib.eye()</strong><br>numpy.matlib.eye() 函数返回一个矩阵，对角线元素为 1，其他位置为零。</li>
+</ol>
+<p><strong>numpy.matlib.eye(n, M, k, dtype)</strong><br>➢    <strong>n</strong>: 返回矩阵的行数<br>➢    <strong>M</strong>: 返回矩阵的列数，默认为 n<br>➢    <strong>k</strong>: 对角线的索引<br>➢    <strong>dtype</strong>: 数据类型</p>
+<pre><code>import numpy.matlib 
+import numpy as np 
+
+print (np.matlib.eye(n =  3, M =  4, k =  0, dtype =  int))</code></pre><p><strong>运行结果</strong><br>[[1 0 0 0]<br> [0 1 0 0]<br> [0 0 1 0]]</p>
+<ol start="6">
+<li><strong>numpy.matlib.identity():返回给定大小的单位矩阵</strong><br>单位矩阵是个方阵，从左上角到右下角的对角线（称为主对角线）上的元素均为 1，除此以外全都为 0。</li>
+</ol>
+<p>$$I_1=[1]，I_2=\begin{bmatrix}1 &amp; 0\0 &amp;1\end{bmatrix}，I_3=\begin{bmatrix}1 &amp; 0 &amp; 0\0 &amp; 1 &amp; 0\0 &amp; 0 &amp; 1\end{bmatrix}，…，$$</p>
+<p>$$I_n=\begin{bmatrix}1 &amp; 0 &amp; … &amp; 0\ 0 &amp; 1 &amp; … &amp; 0\. &amp; . &amp; . &amp; .\. &amp; . &amp; . &amp; .\ . &amp; . &amp; . &amp; . \0 &amp; 0 &amp; … &amp; 1  \end{bmatrix}$$</p>
+<pre><code>import numpy.matlib 
+import numpy as np 
+
+# 大小为4，类型为整型
+print (np.matlib.identity(4, dtype = int))</code></pre><p><strong>运行结果</strong><br>[[1 0 0 0]<br> [0 1 0 0]<br> [0 0 1 0]<br> [0 0 0 1]]</p>
+<ol start="7">
+<li><strong>numpy.matlib.rand()</strong><br>numpy.matlib.rand()   函数创建一个给定大小的矩阵，数据是随机填充的。</li>
+</ol>
+<pre><code>import numpy.matlib 
+import numpy as np 
+
+print (np.matlib.rand(4,4))</code></pre><p><strong>运行结果</strong><br>[[0.32525881 0.19282243 0.63614484 0.19132335]<br> [0.89759542 0.2546368  0.129491   0.87191412]<br> [0.71666597 0.48077184 0.80972151 0.30165613]<br> [0.34678005 0.39324507 0.8171954  0.53549778]]</p>
+<h4 id="2-3-numpy矩阵常用操作"><a href="#2-3-numpy矩阵常用操作" class="headerlink" title="2.3 numpy矩阵常用操作"></a>2.3 numpy矩阵常用操作</h4><h5 id="2-3-1-矩阵与二维数组相互转换"><a href="#2-3-1-矩阵与二维数组相互转换" class="headerlink" title="2.3.1 矩阵与二维数组相互转换"></a>2.3.1 <strong>矩阵与二维数组相互转换</strong></h5><p>矩阵总是二维的，而 ndarray 是一个 n 维数组。 两个对象都是可互换的。</p>
+<pre><code>import numpy.matlib 
+import numpy as np  
+
+i = np.matrix(&#39;1,2;3,4&#39;) 
+print(i)
+j = np.asarray(i) 
+print(j)
+k = np.asmatrix (j)  
+print (k)</code></pre><p><strong>运行结果</strong><br>[[1 2]<br> [3 4]]<br>[[1 2]<br> [3 4]]<br>[[1 2]<br> [3 4]]</p>
+<h5 id="2-3-2-矩阵转置"><a href="#2-3-2-矩阵转置" class="headerlink" title="2.3.2 矩阵转置"></a>2.3.2 矩阵转置</h5><pre><code>import numpy as np
+
+x = np.matrix([[1,2,3], [4,5,6]]) 
+y = np.matrix([1,2,3,4,5,6]) 
+print(x.T, y.T, sep=&#39;\n\n&#39;)</code></pre><p><strong>运行结果</strong><br>[[1 4]<br> [2 5]<br> [3 6]]</p>
+<p>[[1]<br> [2]<br> [3]<br> [4]<br> [5]<br> [6]]</p>
+<h5 id="2-3-3-查看矩阵特征"><a href="#2-3-3-查看矩阵特征" class="headerlink" title="2.3.3 查看矩阵特征"></a>2.3.3 查看矩阵特征</h5><pre><code>import numpy as np
+
+x = np.matrix([[1,2,3], [4,5,6]]) 
+
+print(x.mean(), end=&#39;\n====\n&#39;) # 所有元素平均值
+
+print(x.mean(axis=0), end=&#39;\n====\n&#39;)   # 纵向平均值
+
+print(x.mean(axis=0).shape, end=&#39;\n====\n&#39;)
+
+print(x.mean(axis=1), end=&#39;\n====\n&#39;)  # 横向平均值
+
+print(x.sum(), end=&#39;\n====\n&#39;)  # 所有元素之和   
+
+print(x.max(axis=1), end=&#39;\n====\n&#39;)  # 横向最大值
+
+print(x.argmax(axis=1), end=&#39;\n====\n&#39;) # 横向最大值的下标
+
+print(x.diagonal(), end=&#39;\n====\n&#39;)  # 对角线元素</code></pre><p><strong>运行结果</strong></p>
+<pre><code>3.5
+====
+[[2.5 3.5 4.5]]
+====
+(1, 3)
+====
+[[2.]
+ [5.]]
+====
+21
+====
+[[3]
+ [6]]
+====
+[[2]
+ [2]]
+====
+[[1 5]]
+====</code></pre><h5 id="2-3-4-矩阵乘法"><a href="#2-3-4-矩阵乘法" class="headerlink" title="2.3.4 矩阵乘法"></a>2.3.4 矩阵乘法</h5><p>$A=\left(a_{ij}\right)^{m,p}<em>{i,j=1}，B=\left(b</em>{ij}\right)^{p,n}<em>{i,j=1}，C=\left(c</em>{ij}\right)^{m,n}<em>{i,j=1}，c</em>{ij}=\sum\limits_{k=1}^p{a_{ik}b_{kj}}$</p>
+<pre><code>import numpy as np
+
+x = np.matrix([[1,2,3], [4,5,6]]) 
+y = np.matrix([[1,2], [3,4], [5,6]]) 
+print(x*y)</code></pre><p><strong>运行结果</strong><br>[[22 28]<br> [49 64]]</p>
+<h4 id="2-4-矩阵运算"><a href="#2-4-矩阵运算" class="headerlink" title="2.4 矩阵运算"></a>2.4 矩阵运算</h4><ol>
+<li><p>numpy.linalg 中有一组标准的矩阵分解运算以及诸如求逆和行列式之类的东西</p>
+</li>
+<li><p>它们跟 MATLAB 和 R 等语言所使用的是相同的行业标准级Fortran库</p>
+</li>
+<li><p>常用的 numpy.linalg 函数：</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">diag</td>
+<td align="left">以一维数组的形式返回方阵的对角线（或非对角线）元素，或将一维数组转换为方阵（非对角线元素为0）</td>
+</tr>
+<tr>
+<td align="left">dot</td>
+<td align="left">矩阵乘法</td>
+</tr>
+<tr>
+<td align="left">trace</td>
+<td align="left">计算对角线元素的和</td>
+</tr>
+<tr>
+<td align="left">det</td>
+<td align="left">计算矩阵行列式</td>
+</tr>
+<tr>
+<td align="left">eig</td>
+<td align="left">计算方阵的特征值和特征向量</td>
+</tr>
+<tr>
+<td align="left">inv</td>
+<td align="left">计算方阵的逆</td>
+</tr>
+<tr>
+<td align="left">svd</td>
+<td align="left">计算奇异值分解（SVD）</td>
+</tr>
+<tr>
+<td align="left">solve</td>
+<td align="left">解线性方程组Ax=b，其中A为一个方阵</td>
+</tr>
+<tr>
+<td align="left">lstsq</td>
+<td align="left">计算Ax=b的最小二乘解</td>
+</tr>
+</tbody></table>
+<h5 id="2-4-1-numpy-dot-——两个数组的点积，即元素对应相乘"><a href="#2-4-1-numpy-dot-——两个数组的点积，即元素对应相乘" class="headerlink" title="2.4.1 numpy.dot()——两个数组的点积，即元素对应相乘"></a>2.4.1 numpy.dot()——两个数组的点积，即元素对应相乘</h5><ol>
+<li><p>对于两个一维的数组，计算的是这两个数组对应下标元素的乘积和(数学上称之为内积)。</p>
+</li>
+<li><p>对于二维数组，计算的是两个数组的矩阵乘积。</p>
+</li>
+<li><p>对于多维数组，它的通用计算公式如下，即结果数组中的每个元素都是：数组 a 的最后一维上的所有元素与数组 b 的倒数第二位上的所有元素的乘积和：</p>
+</li>
+</ol>
+<p><strong>dot(a, b)[i,j,k,m] = sum(a[i,j,:] * b[k,:,m])</strong></p>
+<p><strong>numpy.dot(a, b, out=None)</strong><br>➢    <strong>a</strong> : ndarray 数组<br>➢    <strong>b</strong> : ndarray 数组<br>➢    <strong>out</strong> : ndarray, 可选，用来保存 dot() 的计算结果</p>
+<h5 id="2-4-2-numpy-dot-示例"><a href="#2-4-2-numpy-dot-示例" class="headerlink" title="2.4.2 numpy.dot()示例"></a>2.4.2 numpy.dot()示例</h5><p><strong>计算式为：[[1<em>11+2</em>13, 1<em>12+2</em>14],[3<em>11+4</em>13, 3<em>12+4</em>14]]</strong></p>
+<pre><code>import numpy.matlib 
+import numpy as np
+
+a = np.array([[1,2],[3,4]])
+b = np.array([[11,12],[13,14]]) 
+print(np.dot(a,b))</code></pre><p><strong>运行结果</strong><br>[[37 40]<br> [85 92]]</p>
+<h5 id="2-4-3-numpy-vdot-——返回两个向量的点积"><a href="#2-4-3-numpy-vdot-——返回两个向量的点积" class="headerlink" title="2.4.3 numpy.vdot()——返回两个向量的点积"></a>2.4.3 numpy.vdot()——返回两个向量的点积</h5><p>如果第一个参数是复数，那么它的共轭复数会用于计算。如果参数是多维数组，它会被展开。</p>
+<p><strong>计算式为：1<em>11 + 2</em>12 + 3<em>13 + 4</em>14 = 130</strong> </p>
+<pre><code>import numpy as np 
+
+a = np.array([[1,2],[3,4]]) 
+b = np.array([[11,12],[13,14]]) 
+
+# vdot 将数组展开计算内积
+print (np.vdot(a,b))</code></pre><p><strong>运行结果</strong><br>130</p>
+<h5 id="2-4-4-numpy-linalg-inv-——计算逆矩阵"><a href="#2-4-4-numpy-linalg-inv-——计算逆矩阵" class="headerlink" title="2.4.4 numpy.linalg.inv()——计算逆矩阵"></a>2.4.4 numpy.linalg.inv()——计算逆矩阵</h5><p>逆矩阵（inverse matrix）：设 A 是数域上的一个 n 阶矩阵，若在相同数域上存在另一个 n 阶矩阵 B，使得： AB=BA=E ，则我们称 B 是 A 的逆矩阵，而 A 则被称为可逆矩阵。注：E 为单位矩阵。</p>
+<pre><code>import numpy as np 
+
+x = np.array([[1,2],[3,4]]) 
+y = np.linalg.inv(x) 
+print (x)
+print (y)
+print (np.dot(x,y))</code></pre><p><strong>运行结果</strong><br>[[1 2]<br> [3 4]]<br>[[-2.   1. ]<br> [ 1.5 -0.5]]<br>[[1.00000000e+00 1.11022302e-16]<br> [0.00000000e+00 1.00000000e+00]]</p>
+<h5 id="2-4-5-numpy-linalg-solve-——求矩阵形式的线性方程的解"><a href="#2-4-5-numpy-linalg-solve-——求矩阵形式的线性方程的解" class="headerlink" title="2.4.5 numpy.linalg.solve()——求矩阵形式的线性方程的解"></a>2.4.5 numpy.linalg.solve()——求矩阵形式的线性方程的解</h5><p>线性方程组<br>$$\begin{cases}<br>        a_{11}x_1&amp;+&amp;a_{12}x_2&amp;+&amp;\cdots&amp;+a_{1n}x_n&amp;=&amp;b_1\<br>        a_{21}x_1&amp;+&amp;a_{22}x_2&amp;+&amp;\cdots&amp;+a_{2n}x_n&amp;=&amp;b_2&amp;\<br>        &amp;&amp;&amp;&amp;\vdots\<br>        a_{n1}x_1&amp;+&amp;a_{n2}x_2&amp;+&amp;\cdots&amp;+a_{nn}x_n&amp;=&amp;b_n&amp;<br>    \end{cases}$$</p>
+<p>可以写作矩阵相乘的形式 ax=b。<br>其中，a 为 n×n 的矩阵，x 和 b 为 m×1 的矩阵。</p>
+<h5 id="2-4-6-numpy-linalg-solve-示例"><a href="#2-4-6-numpy-linalg-solve-示例" class="headerlink" title="2.4.6 numpy.linalg.solve()示例"></a>2.4.6 numpy.linalg.solve()示例</h5><p>$$\begin{cases}<br>        x+y+z=6\<br>        2y+5z=-4\<br>        2x+5y-z=27<br>    \end{cases} $$ </p>
+<p>转换成 $\begin{bmatrix}1 &amp; 1 &amp; 1\0 &amp; 2 &amp; 5\2 &amp; 5 &amp; -1\end{bmatrix}\begin{bmatrix}x\y\z \end{bmatrix}=\begin{bmatrix}6\-4\27 \end{bmatrix}$</p>
+<pre><code>import numpy as np
+
+a = np.array([[1,1,1], [0,2,5],[2,5,-1]])   # 系数矩阵
+b = np.array([6,-4,27])  # 系数矩阵
+x = np.linalg.solve(a, b)  # 求解
+print(x)
+print(np.dot(a, x))    # 验证</code></pre><p><strong>运行结果</strong><br>[ 5.  3. -2.]<br>[ 6. -4. 27.]</p>
+<h3 id="3、pandas-数据结构"><a href="#3、pandas-数据结构" class="headerlink" title="3、pandas 数据结构"></a>3、pandas 数据结构</h3><h4 id="3-1-引言"><a href="#3-1-引言" class="headerlink" title="3.1 引言"></a>3.1 引言</h4><ol>
+<li><p>Pandas 是<strong>基于 NumPy</strong> 的一种工具 ， 该工具是为了<strong>解决数据分析任务</strong>而创建的。</p>
+</li>
+<li><p>Pandas 纳入了大量库和一些<strong>标准的数据模型</strong> ，提供了高效地操作大型数据集所需的工具。</p>
+</li>
+<li><p>Pandas 提供了大量能使我们<strong>快速便捷地处理数据的函数和方法</strong>。</p>
+</li>
+<li><p>Pandas 是 Python 的一个数据分析包 ，最初于 2008 年 4 月开发 ，2009 年底开源 ，目前由 PyData 开发团队继续开发和维护。</p>
+</li>
+</ol>
+<p>5.Pandas 最初被作为金融数据分析工具而开发出来，也为时间序列分析提供了很好的支持。</p>
+<h4 id="3-2-pandas库介绍"><a href="#3-2-pandas库介绍" class="headerlink" title="3.2 pandas库介绍"></a>3.2 pandas库介绍</h4><ol>
+<li><p><strong>pandas</strong> 是 python 第三方库，提供高性能易用数据类型和分析工具。</p>
+</li>
+<li><p><strong>pandas</strong> 基于 numpy 实现，常与 numpy 和 matplotlib 一同使用。</p>
+</li>
+<li><p><strong>pandas</strong> 中有两大核心数据结构：<strong>Series</strong> （一维数据） 和 <strong>DataFrame</strong>（多特征数据，既有行索引，又有列索引）。</p>
+</li>
+</ol>
+<p><img src="/medias/1591420106630.png" alt="Series"></p>
+<p><img src="/medias/1591420115214.png" alt="DataFrame"></p>
+<ol start="4">
+<li><p><strong>Series</strong><br>1）一维数组，与 Numpy 中的一维 array 类似 。<br>2）Series、numpy 中的一维 array 与 Python 基本的数据结构 List 也很相近， 其区别是： List 中的元素可以是不同的数据类型，而 array 和 Series 中则只允许存储相同的数据类型。<br>3）Series可以更有效的使用内存 ， 提高运算效率。</p>
+</li>
+<li><p><strong>Time-Series</strong>：以时间为索引的Series。</p>
+</li>
+<li><p><strong>DataFrame</strong>：带标签且大小可变的二维表格型数据结构，可以将 DataFrame 理解为 Series 的容器。</p>
+</li>
+<li><p><strong>Panel</strong>：三维的数组，可以理解为DataFrame的容器。</p>
+</li>
+</ol>
+<h4 id="3-3-Series"><a href="#3-3-Series" class="headerlink" title="3.3 Series"></a>3.3 Series</h4><ol>
+<li><p>Series 是一种类似于一维数组的对象，它由一维数组（各种 numpy 数据类型）以及一组与之相关的数据标签（即索引）组成。</p>
+</li>
+<li><p>Series 创建函数：</p>
+</li>
+</ol>
+<p><strong>pandas.Series( data, index, dtype, copy)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>data</code></td>
+<td align="left">数据采取各种形式，如：<code>adarray</code>，<code>list</code>，<code>constants</code></td>
+</tr>
+<tr>
+<td align="left"><code>index</code></td>
+<td align="left">索引值必须是唯一的和散列的，与数据的长度相同。默认 <code>np.arange(n)</code> 如果没有索引被传递。</td>
+</tr>
+<tr>
+<td align="left"><code>dtype</code></td>
+<td align="left"><code>dtype</code> 用于数据类型，如果没有，将推断数据类型</td>
+</tr>
+<tr>
+<td align="left"><code>copy</code></td>
+<td align="left">复制数据，默认为 <code>false</code></td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li>Series 的创建：<br>1）使用 Python 数组创建<br>2）使用 numpy 数组创建<br>3）使用 python 字典创建</li>
+</ol>
+<p><strong>注意</strong><br>与字典不同的是：<strong>Series允许索引重复</strong></p>
+<pre><code>import pandas as pd
+import numpy as np
+
+pd.Series([11, 12], index=[&quot;北京&quot;, &quot;上海&quot;])</code></pre><p><strong>运行结果</strong><br>北京    11<br>上海    12<br>dtype: int64</p>
+<pre><code>pd.Series(np.arange(3,6))</code></pre><p><strong>运行结果</strong><br>0    3<br>1    4<br>2    5<br>dtype: int32</p>
+<pre><code>pd.Series({&quot;北京&quot;: 11, &quot;上海&quot;: 12, &quot;深圳&quot;: 14})</code></pre><p><strong>运行结果</strong><br>北京    11<br>上海    12<br>深圳    14<br>dtype: int64</p>
+<ol start="4">
+<li><p>Series 的字符串表现形式为：<strong>索引在左边，值在右边</strong>。</p>
+</li>
+<li><p>如果没有为数据指定索引，则自动创建一个 0 到 N-1（N 为数据的长度）的整数型索引。</p>
+</li>
+<li><p>可以通过 Series 的 values 和 index 属性获取其数组表示形式和索引对象。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; obj = pd.Series([4, 7, -5, 3]) 
+&gt;&gt;&gt; obj.values
+array([ 4,  7, -5,  3], dtype=int64) 
+&gt;&gt;&gt; obj.index
+RangeIndex(start=0, stop=4, step=1)
+
+
+&gt;&gt;&gt; obj[2]
+-5
+&gt;&gt;&gt; obj[1] = 8 
+&gt;&gt;&gt; obj[[0, 1, 3]]
+0    4
+1    8
+3    3
+dtype: int64</code></pre><ol start="7">
+<li><p>通常希望所创建的 Series 带有一个可以对各个数据点进行标记的索引。</p>
+</li>
+<li><p>与普通 NumPy 数组相比，可以通过索引的方式选取 Series 中的单个或一组值。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; obj2=pd.Series([4,2,-5,3],index=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;])
+&gt;&gt;&gt; obj2
+a    4
+b    2
+c   -5
+d    3
+dtype: int64
+&gt;&gt;&gt; obj2[&#39;a&#39;]
+4
+&gt;&gt;&gt; obj2[&#39;d&#39;] = 6 
+&gt;&gt;&gt; obj2
+a    4
+b    2
+c   -5
+d    6
+dtype: int64
+&gt;&gt;&gt; obj2[[&#39;a&#39;,&#39;b&#39;,&#39;d&#39;]]
+a    4
+b    2
+d    6
+dtype: int64</code></pre><ol start="9">
+<li>Series 中很重要的一个功能是：它会在算术运算中自动对齐不同索引的数据。</li>
+</ol>
+<pre><code>&gt;&gt;&gt; obj2 = pd.Series({&quot;Ohio&quot;: 35000, &quot;Oregon&quot;: 16000, &quot;Texas&quot;: 71000, &quot;Utah&quot;: 5000})
+&gt;&gt;&gt; obj3 = pd.Series({&quot;California&quot;: np.nan, &quot;Ohio&quot;: 35000, &quot;Oregon&quot;: 16000, &quot;Texas&quot;: 71000})
+&gt;&gt;&gt; obj2 + obj3
+California         NaN
+Ohio           70000.0
+Oregon         32000.0
+Texas         142000.0
+Utah               NaN
+dtype: float64</code></pre><ol start="10">
+<li><p>Series 对象本身及其索引都有一个 name 属性</p>
+</li>
+<li><p>Series 的索引可以通过赋值的方式就地修改</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; obj3.name= &#39;population&#39; 
+&gt;&gt;&gt; obj3.index.name = &#39;state&#39; 
+&gt;&gt;&gt; obj3
+state
+California        NaN
+Ohio          35000.0
+Oregon        16000.0
+Texas         71000.0
+Name: population, dtype: float64
+&gt;&gt;&gt; obj = pd.Series([4, 7, -5, 3])
+&gt;&gt;&gt; obj.index = [&#39;Bob&#39;, &#39;Steve&#39;, &#39;Jeff&#39;, &#39;Ryan&#39;] 
+&gt;&gt;&gt; obj
+Bob      4
+Steve    7
+Jeff    -5
+Ryan     3
+dtype: int64</code></pre><h4 id="3-4-DataFrame"><a href="#3-4-DataFrame" class="headerlink" title="3.4 DataFrame"></a>3.4 DataFrame</h4><h5 id="3-4-1-DataFrame介绍"><a href="#3-4-1-DataFrame介绍" class="headerlink" title="3.4.1 DataFrame介绍"></a>3.4.1 DataFrame介绍</h5><ol>
+<li>DataFrame 是一个表格型的数据结构，它含有一组有序的列，每列可以是不同的值类型（数值、字符串、布尔值等）。</li>
+<li>DataFrame 既有行索引也有列索引，它可以被看做由 Series 组成的字典（共用同一个索引）。</li>
+<li>跟其他类似的数据结构相比（如 R 语言的 data.frame），DataFrame 中面向行和面向列的操作基本上是平衡的。</li>
+<li>DataFrame 中的数据是以一个或多个二维块存放的（而不是列表、字典或别的一维数据结构）。</li>
+</ol>
+<h5 id="3-4-2-DataFrame特点"><a href="#3-4-2-DataFrame特点" class="headerlink" title="3.4.2 DataFrame特点"></a>3.4.2 DataFrame特点</h5><ol>
+<li>潜在的列是不同的类型</li>
+<li>大小可变</li>
+<li>标记轴( ( 行和列) )</li>
+<li>可以对行和列执行算术运算</li>
+</ol>
+<h5 id="3-4-3-DataFrame示例"><a href="#3-4-3-DataFrame示例" class="headerlink" title="3.4.3 DataFrame示例"></a>3.4.3 DataFrame示例</h5><p>学生数据<br><img src="/medias/1591421808705.png" alt="学生数据"></p>
+<h5 id="3-4-4-DataFrame构造函数"><a href="#3-4-4-DataFrame构造函数" class="headerlink" title="3.4.4 DataFrame构造函数"></a>3.4.4 DataFrame构造函数</h5><p><strong>pandas.DataFrame( data, index, columns, dtype, copy)</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>data</code></td>
+<td align="left">数据采取各种形式，如：<code>ndarray</code>, <code>series</code>, <code>map</code>, <code>lists</code>, <code>dict</code>, <code>constant</code> 和另一个 <code>DataFrame</code></td>
+</tr>
+<tr>
+<td align="left"><code>index</code></td>
+<td align="left">对于行标签，要用于结果帧的索引是可选缺省值 <code>np.arrange(n)</code>，如果没有传递索引值</td>
+</tr>
+<tr>
+<td align="left"><code>columns</code></td>
+<td align="left">对于列标签，可选的默认语法是—— <code>np.arange(n)</code>。这只有在没有索引传递的情况下才是这样</td>
+</tr>
+<tr>
+<td align="left"><code>dtype</code></td>
+<td align="left">每列的数据类型</td>
+</tr>
+<tr>
+<td align="left"><code>copy</code></td>
+<td align="left">如果默认值为 <code>False</code>，则此命令（或任何它）用于复制数据</td>
+</tr>
+</tbody></table>
+<h5 id="3-4-5-DataFrame"><a href="#3-4-5-DataFrame" class="headerlink" title="3.4.5 DataFrame"></a>3.4.5 DataFrame</h5><ol>
+<li>创建一个空的 DataFrame：函数不指定参数返回空 DataFrame</li>
+</ol>
+<pre><code># 创建一个空的DataFrame 
+import pandas as pd
+
+df = pd.DataFrame() 
+print(df)</code></pre><p><strong>运行结果</strong><br>Empty DataFrame<br>Columns: []<br>Index: []</p>
+<ol start="2">
+<li>从列表创建 DataFrame</li>
+</ol>
+<pre><code># 从单个列表创建DataFrame
+data = [1,2,3,4]
+df = pd.DataFrame(data) 
+print(df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>   0
+0  1
+1  2
+2  3
+3  4</code></pre><pre><code># 从嵌套列表创建DataFrame、并指定数据类型
+data = [[&#39;Alex&#39;,10],[&#39;Bob&#39;,12],[&#39;Clarke&#39;,13]]
+df = pd.DataFrame(data,columns=[&#39;Name&#39;,&#39;Age&#39;],dtype=float) 
+print(df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>     Name   Age
+0    Alex  10.0
+1     Bob  12.0
+2  Clarke  13.0</code></pre><ol start="3">
+<li><p>由等长列表或 numpy 数组组成的字典创建 DataFrame。</p>
+</li>
+<li><p>DataFrame 结果会自动加上索引（跟 Series 一样），且全部会被有序排列。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; data = {&#39;state&#39;: [&#39;Ohio&#39;, &#39;Ohio&#39;, &#39;Ohio&#39;, &#39;Nevada&#39;, &#39;Nevada&#39;], &#39;year&#39;: [2000 , 2001, 2002, 2001, 2002], &#39;pop&#39;: [1.5, 1.7, 3.6, 2.4, 2.9]}
+&gt;&gt;&gt; frame = pd.DataFrame(data)
+&gt;&gt;&gt; frame</code></pre><p><strong>运行结果</strong></p>
+<pre><code>state    year    pop
+0    Ohio    2000    1.5
+1    Ohio    2001    1.7
+2    Ohio    2002    3.6
+3    Nevada    2001    2.4
+4    Nevada    2002    2.9</code></pre><ol start="5">
+<li><p>如果指定了列顺序，则 DataFrame 的列就会按照指定顺序进行排列。</p>
+</li>
+<li><p>跟原 Series 一样，如果传入的列在数据中找不到，就会产生 NAN 值。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; pd.DataFrame(data, columns=[&#39;year&#39;, &#39;state&#39;, &#39;pop&#39;])</code></pre><p><strong>运行结果</strong></p>
+<pre><code>    year    state    pop
+0    2000    Ohio    1.5
+1    2001    Ohio    1.7
+2    2002    Ohio    3.6
+3    2001    Nevada    2.4
+4    2002    Nevada    2.9</code></pre><pre><code>&gt;&gt;&gt; frame2 = pd.DataFrame(data, columns=[&#39;year&#39;, &#39;state&#39;, &#39;pop&#39;, &#39;debt&#39;], index=[&#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;, &#39;five&#39;])
+&gt;&gt;&gt; frame2</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        year    state    pop      debt
+one        2000    Ohio    1.5      NaN
+two        2001    Ohio    1.7      NaN
+three    2002    Ohio    3.6      NaN
+four    2001    Nevada    2.4      NaN
+five    2002    Nevada    2.9      NaN</code></pre><pre><code>&gt;&gt;&gt; frame2.columns</code></pre><p><strong>运行结果</strong><br>Index([‘year’, ‘state’, ‘pop’, ‘debt’], dtype=’object’)</p>
+<ol start="7">
+<li><p>通过类似字典标记的方式或属性的方式，可以将 DataFrame 的列获取为一个 Series。</p>
+</li>
+<li><p>返回的 Series 拥有原 DataFrame 相同的索引，且其 name 属性也已经被相应地设置好了。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; frame2[&#39;state&#39;]</code></pre><p><strong>运行结果</strong></p>
+<pre><code>one        Ohio
+two        Ohio
+three      Ohio
+four     Nevada
+five     Nevada
+Name: state, dtype: object</code></pre><pre><code>&gt;&gt;&gt; frame2[&#39;year&#39;]</code></pre><p><strong>运行结果</strong></p>
+<pre><code>one      2000
+two      2001
+three    2002
+four     2001
+five     2002
+Name: year, dtype: int64</code></pre><ol start="9">
+<li><p>列可以通过赋值的方式进行修改。</p>
+</li>
+<li><p>例如，给那个空的“delt”列赋上一个标量值或一组值。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; frame2[&#39;debt&#39;] = 16.5 
+&gt;&gt;&gt; frame2</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        year    state    pop     debt
+one        2000    Ohio    1.5     16.5
+two        2001    Ohio    1.7     16.5
+three    2002    Ohio    3.6  16.5
+four    2001    Nevada    2.4  16.5
+five    2002    Nevada    2.9  16.5</code></pre><pre><code>&gt;&gt;&gt; frame2[&#39;debt&#39;] = np.arange(5.) 
+&gt;&gt;&gt; frame2</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        year    state    pop  debt
+one        2000    Ohio    1.5  0.0
+two        2001    Ohio    1.7  1.0
+three    2002    Ohio    3.6  2.0
+four    2001    Nevada    2.4  3.0
+five    2002    Nevada    2.9     4.0</code></pre><ol start="11">
+<li><p>将列表或数组赋值给某个列时，其长度必须跟DataFrame的长度相匹配。</p>
+</li>
+<li><p>如果赋值的是一个 Series，就会精确匹配 DataFrame 的索引，所有空位都将被填上缺失值。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; val = pd.Series([-1.2, -1.5, -1.7], index=[&#39;two&#39;, &#39;four&#39;, &#39;five&#39;]) 
+&gt;&gt;&gt; frame2[&#39;debt&#39;] = val
+&gt;&gt;&gt; frame2</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        year    state    pop     debt
+one        2000    Ohio    1.5     NaN
+two        2001    Ohio    1.7     -1.2
+three    2002    Ohio    3.6     NaN
+four    2001    Nevada    2.4     -1.5
+five    2002    Nevada    2.9     -1.7</code></pre><ol start="13">
+<li><p>为不存在的列赋值会创建出一个新列</p>
+</li>
+<li><p>关键字 del 用于删除列</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; frame2[&#39;eastern&#39;] = frame2.state == &#39;Ohio&#39; 
+&gt;&gt;&gt; frame2</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        year    state    pop      debt    eastern
+one     2000    Ohio    1.5      NaN    True
+two        2001    Ohio    1.7     -1.2     True
+three    2002    Ohio    3.6      NaN    True
+four    2001    Nevada    2.4     -1.5     False
+five    2002    Nevada    2.9     -1.7     False</code></pre><pre><code>&gt;&gt;&gt; del frame2[&#39;eastern&#39;]
+&gt;&gt;&gt; frame2.columns</code></pre><p><strong>运行结果</strong><br>Index([‘year’, ‘state’, ‘pop’, ‘debt’], dtype=’object’)</p>
+<ol start="15">
+<li><p>将嵌套字典（也就是字典的字典）传给 DataFrame，它就会被解释为：外层字典的键作为列，内层键则作为行索引。</p>
+</li>
+<li><p>也可以对上述结果进行转置。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; pop = {&#39;Nevada&#39;: {2001: 2.4, 2002: 2.9}, &#39;Ohio&#39;: {2000: 1.5, 2001: 1.7, 2002: 3.6}}
+&gt;&gt;&gt; frame3 = pd.DataFrame(pop)
+&gt;&gt;&gt; frame3</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        Nevada    Ohio
+2001     2.4    1.7
+2002     2.9    3.6
+2000     NaN    1.5</code></pre><pre><code>&gt;&gt;&gt; frame3.T</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        2001    2002    2000
+Nevada    2.4        2.9        NaN
+Ohio    1.7        3.6        1.5</code></pre><ol start="17">
+<li>如果设置了 DataFrame 的 index 和 columns 的 name 属性，则这些信息也会被显示出来。</li>
+</ol>
+<pre><code>&gt;&gt;&gt; frame3.index.name = &#39;year&#39; 
+&gt;&gt;&gt; frame3.columns.name = &#39;state&#39; 
+&gt;&gt;&gt; frame3</code></pre><p><strong>运行结果</strong></p>
+<pre><code>state    Nevada    Ohio
+year        
+2001    2.4        1.7
+2002    2.9        3.6
+2000    NaN        1.5</code></pre><ol start="18">
+<li><p>跟 Series 一样，values 属性也会以二维 ndarray 的形式返回 DataFrame 中的数据。</p>
+</li>
+<li><p>如果 DataFrame 各列的数据类型不同，则数组的数据类型就会选用能兼容所有列的数据类型。</p>
+</li>
+</ol>
+<pre><code>&gt;&gt;&gt; frame3.values</code></pre><p><strong>运行结果</strong></p>
+<pre><code>array([[2.4, 1.7],
+       [2.9, 3.6],
+       [nan, 1.5]])</code></pre><pre><code>&gt;&gt;&gt; frame2.values</code></pre><p><strong>运行结果</strong></p>
+<pre><code>array([[2000, &#39;Ohio&#39;, 1.5, nan],
+       [2001, &#39;Ohio&#39;, 1.7, -1.2],
+       [2002, &#39;Ohio&#39;, 3.6, nan],
+       [2001, &#39;Nevada&#39;, 2.4, -1.5],
+       [2002, &#39;Nevada&#39;, 2.9, -1.7]], dtype=object)</code></pre><h3 id="4、pandas-常用方法"><a href="#4、pandas-常用方法" class="headerlink" title="4、pandas 常用方法"></a>4、pandas 常用方法</h3><h4 id="4-1-数据读取与写入"><a href="#4-1-数据读取与写入" class="headerlink" title="4.1 数据读取与写入"></a>4.1 数据读取与写入</h4><ol>
+<li><p>Pandas 支持常用的文本格式数据(csv、json、html、剪贴板)、二进制数据(excel、hdf5 格式、Feather 格式、Parquet 格式、Msgpack、 Stata、SAS、pkl)、SQL 数据(SQL、谷歌 BigQuery 云数据)等。</p>
+</li>
+<li><p>一般情况下 ， 读取文件的方法以 pd.read_ 开头， 而写入文件的方法以 pd.to_ 开头。</p>
+</li>
+<li><p>示例1</p>
+</li>
+</ol>
+<pre><code># 示例1，读入剪贴板数据，写入csv，转换为json、html、excel等格式
+import pandas as pd
+import numpy as np
+from pandas import Series, DataFrame
+
+# 粘贴板内容
+#    A    B    C
+# x    1    4    p
+# y    2    5    q
+# z    3    6    r
+
+# 从粘贴板读取数据
+df1 = pd.read_clipboard()
+
+# 把数据放入到粘贴板中，数据可以直接粘贴到 excel 文件中
+df1.to_clipboard()
+
+# 读写 csv 文件，可以取消 index
+df1.to_csv(&#39;df1.csv&#39;)
+df1.to_csv(&#39;df1_noIndex.csv&#39;, index = False)
+
+# 转化为 json 格式
+df1.to_json(&#39;df1.json&#39;)
+
+# 转化为 html 格式
+df1.to_html(&#39;df1.html&#39;)
+
+# 转换为 excel 格式
+df1.to_excel(&#39;df1.xlsx&#39;)</code></pre><table>
+<thead>
+<tr>
+<th align="left">数据类型</th>
+<th align="left">描述符</th>
+<th align="left">读方法</th>
+<th align="left">写方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">text</td>
+<td align="left">CSV</td>
+<td align="left"><code>read_csv</code></td>
+<td align="left"><code>to_csv</code></td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">JSON</td>
+<td align="left"><code>read_json</code></td>
+<td align="left"><code>to_json</code></td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">HTML</td>
+<td align="left"><code>read_csv</code></td>
+<td align="left"><code>to_csv</code></td>
+</tr>
+<tr>
+<td align="left">text</td>
+<td align="left">剪切板</td>
+<td align="left"><code>read_clipboard</code></td>
+<td align="left"><code>to_clipboard</code></td>
+</tr>
+<tr>
+<td align="left">二进制</td>
+<td align="left">Excel</td>
+<td align="left"><code>read_excel</code></td>
+<td align="left"><code>to_excel</code></td>
+</tr>
+<tr>
+<td align="left">二进制</td>
+<td align="left">HDF5</td>
+<td align="left"><code>read_hdf</code></td>
+<td align="left"><code>to_hdf</code></td>
+</tr>
+<tr>
+<td align="left">二进制</td>
+<td align="left">PKL</td>
+<td align="left"><code>read_pickle</code></td>
+<td align="left"><code>to_pickle</code></td>
+</tr>
+<tr>
+<td align="left">SQL</td>
+<td align="left">SQL</td>
+<td align="left"><code>read_sql</code></td>
+<td align="left"><code>to_sql</code></td>
+</tr>
+</tbody></table>
+<p><strong>数据读取函数read_csv示例</strong></p>
+<ol>
+<li><p>read_csv（）</p>
+</li>
+<li><p>自定义索引：可以指定 csv 文件中的一列来使用 index_col 定制索引</p>
+</li>
+<li><p>dtype：数据类型转换</p>
+</li>
+<li><p>skiprows：跳过指定的行数</p>
+</li>
+<li><p>示例2</p>
+</li>
+</ol>
+<pre><code># 示例 2-1 read_csv
+df=pd.read_csv(&#39;temp.csv&#39;) 
+print(df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>   S.No    Name  Agw       City  Salary
+0     1     Tom   28    Toronto   20000
+1     2     Lee   32   HongKong    3000
+2     3  Steven   43   Bay Area    8300
+3     4     Ram   38  Hyderabad    3900</code></pre><pre><code># 示例 2-2  自定义索引：可以指定 csv 文件中的一列来使用 index_col 指定索引
+df = pd.read_csv(&quot;temp.csv&quot;, index_col=[&#39;S.No&#39;]) 
+print(df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        Name  Agw       City  Salary
+S.No                                
+1        Tom   28    Toronto   20000
+2        Lee   32   HongKong    3000
+3     Steven   43   Bay Area    8300
+4        Ram   38  Hyderabad    3900</code></pre><pre><code># 示例 2-3 转换器 dtype
+df = pd.read_csv(&quot;temp.csv&quot;, dtype={&#39;Salary&#39;: np.float64}) 
+print(df) 
+print(df.dtypes)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>   S.No    Name  Agw       City   Salary
+0     1     Tom   28    Toronto  20000.0
+1     2     Lee   32   HongKong   3000.0
+2     3  Steven   43   Bay Area   8300.0
+3     4     Ram   38  Hyderabad   3900.0
+S.No        int64
+Name       object
+Agw         int64
+City       object
+Salary    float64
+dtype: object</code></pre><pre><code># 示例 2-4  使用 names参数指定标题名称
+df=pd.read_csv(&quot;temp.csv&quot;, names=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;,&#39;d&#39;,&#39;e&#39;]) 
+print(df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>      a       b    c          d       e
+0  S.No    Name  Agw       City  Salary
+1     1     Tom   28    Toronto   20000
+2     2     Lee   32   HongKong    3000
+3     3  Steven   43   Bay Area    8300
+4     4     Ram   38  Hyderabad    3900</code></pre><p>观察可以看到，标题名称附加了自定义名称，但文件中的标题还没有被消除。现在使用header参数来删除它。如果标题不是第一行，则将行号传递给标题，这将跳过前面的行。</p>
+<pre><code># 示例 2-5消除文件中的标题
+df=pd.read_csv(&quot;temp.csv&quot;, names=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;,&#39;d&#39;,&#39;e&#39;], header=0) 
+print(df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>   a       b   c          d      e
+0  1     Tom  28    Toronto  20000
+1  2     Lee  32   HongKong   3000
+2  3  Steven  43   Bay Area   8300
+3  4     Ram  38  Hyderabad   3900</code></pre><pre><code># 示例 2-6 skiprows跳过指定的行数
+df=pd.read_csv(&quot;temp.csv&quot;, skiprows=2) 
+print (df)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>   2     Lee  32   HongKong  3000
+0  3  Steven  43   Bay Area  8300
+1  4     Ram  38  Hyderabad  3900</code></pre><h4 id="4-2-描述性统计方法"><a href="#4-2-描述性统计方法" class="headerlink" title="4.2 描述性统计方法"></a>4.2 描述性统计方法</h4><ol>
+<li><p>Pandas 提供了几个统计和描述性方法，方便你从宏观的角度去了解数据集，例如count() 用于统计非空数据的数量。</p>
+</li>
+<li><p>除了统计类的方法，Pandas 还 提供了很多计算类的方法，比如 sum() 用于计算数值数据的总和；mean() 用 于 计 算 数 值 数 据 的 平 均 值 ；median() 用于计算数值数据的算术中值。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">count()</td>
+<td align="left">非空观测数量</td>
+</tr>
+<tr>
+<td align="left">sum()</td>
+<td align="left">所有值之和</td>
+</tr>
+<tr>
+<td align="left">mean()</td>
+<td align="left">所有值的平均值</td>
+</tr>
+<tr>
+<td align="left">median()</td>
+<td align="left">所有值的中位数</td>
+</tr>
+<tr>
+<td align="left">mode()</td>
+<td align="left">值的模值</td>
+</tr>
+<tr>
+<td align="left">std()</td>
+<td align="left">值的标准偏差</td>
+</tr>
+<tr>
+<td align="left">min()</td>
+<td align="left">所有值中的最小值</td>
+</tr>
+<tr>
+<td align="left">max()</td>
+<td align="left">所有值中的最大值</td>
+</tr>
+<tr>
+<td align="left">abs()</td>
+<td align="left">绝对值</td>
+</tr>
+<tr>
+<td align="left">prod()</td>
+<td align="left">数组元素的乘积</td>
+</tr>
+<tr>
+<td align="left">cumsum()</td>
+<td align="left">累计总和</td>
+</tr>
+<tr>
+<td align="left">cumprod()</td>
+<td align="left">累计乘积</td>
+</tr>
+</tbody></table>
+<p><strong>描述性统计方法示例</strong><br><strong>sum()</strong>：求和；<br><strong>mean()</strong> ：求中值；<br><strong>std()</strong>：求标准差；<br><strong>describe()</strong>：描述性统计信息摘要。 </p>
+<pre><code># 示例3 描述统计方法
+import pandas as pd
+import numpy as np
+
+# Create a Dictionary of series
+d = {&#39;Name&#39;:pd.Series([&#39;Tom&#39;,&#39;James&#39;,&#39;Ricky&#39;,&#39;Vin&#39;,&#39;Steve&#39;,&#39;Minsu&#39;,&#39;Jack&#39;,&#39;Lee&#39;,&#39;David&#39;,&#39;Gasper&#39;,&#39;Betina&#39;,&#39;Andres&#39;]),&#39;Age&#39;:pd.Series([25,26,25,23,30,29,23,34,40,30,51,46]),&#39;Rating&#39;:pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8,3.78,2.98,4.80,4.10,3.65])}
+
+#Create a DataFrame
+df = pd.DataFrame(d)
+print(df, &#39;\n&#39;)
+print(&quot;\n列求和&quot;)
+print(df.sum(), &#39;\n&#39;)  # 列求和， 默认axis=0.
+
+print(&quot;\n行求和&quot;)
+print(df.sum(1), &#39;\n&#39;)   # 行求和，axis=1
+
+print(&quot;\n求均值&quot;)
+print(df.mean(), &#39;\n&#39;)   # 求均值
+
+print(&quot;\n标准差&quot;)
+print(df.std(), &#39;\n&#39;)    # 标准差
+
+# include参数是用于传递关于什么列需要考虑用于总结的必要信息的参数，获取值列表，默认情况下是“数字值”。
+# object - 汇总字符串列；
+# number - 汇总数字列；
+# all - 将所有列汇总在一起（不应将其作为列表值传递）。
+
+print(&quot;\n统计信息摘要&quot;)
+print(df.describe(include=[&#39;number&#39;]))    # 统计信息摘要</code></pre><p><strong>运行结果</strong></p>
+<pre><code>      Name   Age  Rating
+0      Tom   25    4.23
+1    James   26    3.24
+2    Ricky   25    3.98
+3      Vin   23    2.56
+4    Steve   30    3.20
+5    Minsu   29    4.60
+6     Jack   23    3.80
+7      Lee   34    3.78
+8    David   40    2.98
+9   Gasper   30    4.80
+10  Betina   51    4.10
+11  Andres   46    3.65 
+
+
+列求和
+Name      TomJamesRickyVinSteveMinsuJackLeeDavidGasperBe...
+Age                                                     382
+Rating                                                44.92
+dtype: object 
+
+
+行求和
+0     29.23
+1     29.24
+2     28.98
+3     25.56
+4     33.20
+5     33.60
+6     26.80
+7     37.78
+8     42.98
+9     34.80
+10    55.10
+11    49.65
+dtype: float64 
+
+
+求均值
+Age       31.833333
+Rating     3.743333
+dtype: float64 
+
+
+标准差
+Age       9.232682
+Rating    0.661628
+dtype: float64 
+
+
+统计信息摘要
+             Age     Rating
+count  12.000000  12.000000
+mean   31.833333   3.743333
+std     9.232682   0.661628
+min    23.000000   2.560000
+25%    25.000000   3.230000
+50%    29.500000   3.790000
+75%    35.500000   4.132500
+max    51.000000   4.800000</code></pre><h4 id="4-3-迭代与遍历"><a href="#4-3-迭代与遍历" class="headerlink" title="4.3 迭代与遍历"></a>4.3 迭代与遍历</h4><ol>
+<li><p>pandas 对象之间的基本迭代的行为取决于类型。当迭代一个系列时，它被视为数组式，基本迭代产生这些值。其他数据结构，如：DataFrame，遵循类似惯例迭代对象的键。</p>
+</li>
+<li><p>简而言之，基本迭代(对于 i 在对象中)产生：<br>➢    Series - 值<br>➢    DataFrame - 列标签</p>
+</li>
+<li><p>要遍历数据帧(DataFrame)中的行，可以使用以下函数：<br>➢    iteritems() - 迭代(key，value)对<br>➢    iterrows() - 将行迭代为(索引，系列)对<br>➢    itertuples() - 以 namedtuples 的形式迭代行</p>
+</li>
+</ol>
+<h5 id="4-3-1-迭代-DataFrame"><a href="#4-3-1-迭代-DataFrame" class="headerlink" title="4.3.1 迭代 DataFrame"></a>4.3.1 迭代 DataFrame</h5><pre><code># 迭代 DataFrame
+import pandas as pd
+import numpy as np
+
+N=5
+df = pd.DataFrame({
+    &#39;D&#39;: pd.date_range(start=&#39;2019-01-01&#39;,periods=N,freq=&#39;M&#39;), 
+    &#39;x&#39;: np.linspace(0,stop=N-1,num=N),
+    &#39;y&#39;: np.random.rand(N),
+    &#39;z&#39;: np.random.choice([&#39;Low&#39;,&#39;Medium&#39;,&#39;High&#39;],N).tolist(),
+})
+
+print(df,&#39;\n&#39;)
+
+for col in df:
+    print(col)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>           D    x         y       z
+0 2019-01-31  0.0  0.088484    High
+1 2019-02-28  1.0  0.763299    High
+2 2019-03-31  2.0  0.918397    High
+3 2019-04-30  3.0  0.785687  Medium
+4 2019-05-31  4.0  0.821885     Low 
+
+D
+x
+y
+z</code></pre><h5 id="4-3-2-遍历Dataframe-示例"><a href="#4-3-2-遍历Dataframe-示例" class="headerlink" title="4.3.2 遍历Dataframe 示例"></a>4.3.2 遍历Dataframe 示例</h5><ol>
+<li>iteritems()：将索引和值作为键和列值迭代为 Series 对象。</li>
+<li>iterrows()：返回迭代器，产生每个索引值以及包含每行数据的序列。</li>
+<li>itertuples()：方法将为 DataFrame 中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值。</li>
+</ol>
+<pre><code># 遍历 iteritems()将每个列作为名称，将索引和值作为键和列值迭代为Series对象
+df = pd.DataFrame(np.random.randn(4,3), columns=[&#39;col1&#39;,&#39;col2&#39;,&#39;col3&#39;])
+
+print(df, &#39;\n&#39;)
+
+print(&quot;\niteritems---------&quot;)
+for key,value in df.iteritems():  
+    print (key,value)
+
+# iterrows()返回迭代数器，产生每个索引值以及包含每行数据的序列
+print(&quot;\niterrows---------&quot;)
+for row_index,row in df.iterrows():    
+    print (row_index,row)
+
+# itertuples()方法将为 DataFrame 中的每一行返回一个产生一个命名元组的迭代器。元组的第一个元素将是行的相应索引值，而剩余的值是行值
+print(&quot;\nitertuples---------&quot;)
+for row in df.itertuples():    
+    print (row)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>       col1      col2      col3
+0  0.769239 -0.321667  0.229970
+1 -0.414440 -0.686365 -1.804574
+2 -0.625321 -0.410545 -0.266878
+3  0.942061 -0.429502 -0.191403 
+
+
+iteritems---------
+col1 0    0.769239
+1   -0.414440
+2   -0.625321
+3    0.942061
+Name: col1, dtype: float64
+col2 0   -0.321667
+1   -0.686365
+2   -0.410545
+3   -0.429502
+Name: col2, dtype: float64
+col3 0    0.229970
+1   -1.804574
+2   -0.266878
+3   -0.191403
+Name: col3, dtype: float64
+
+iterrows---------
+0 col1    0.769239
+col2   -0.321667
+col3    0.229970
+Name: 0, dtype: float64
+1 col1   -0.414440
+col2   -0.686365
+col3   -1.804574
+Name: 1, dtype: float64
+2 col1   -0.625321
+col2   -0.410545
+col3   -0.266878
+Name: 2, dtype: float64
+3 col1    0.942061
+col2   -0.429502
+col3   -0.191403
+Name: 3, dtype: float64
+
+itertuples---------
+Pandas(Index=0, col1=0.7692393725888382, col2=-0.3216667049027107, col3=0.22996991034224118)
+Pandas(Index=1, col1=-0.41444004324475786, col2=-0.6863646340873751, col3=-1.8045739966582113)
+Pandas(Index=2, col1=-0.625321480205094, col2=-0.4105445003436983, col3=-0.2668784127256191)
+Pandas(Index=3, col1=0.9420608482646933, col2=-0.4295015650195585, col3=-0.191402644416027)
+​</code></pre><h4 id="4-4-排序"><a href="#4-4-排序" class="headerlink" title="4.4 排序"></a>4.4 排序</h4><ol>
+<li><p>按索引排序：使用 sort_index() 方法，通过传递 axis 参数和排序顺序，可以对 DataFrame 进行排序。 默认情况下，按照升序对行标签进行排序。</p>
+</li>
+<li><p>按数值排序：sort_values() 是按值排序的方法。它接受一个 by 参数，它将使用要与其排序值的 DataFrame 的列名称。</p>
+</li>
+<li><p>排序顺序：通过将布尔值传递给升序参数 ascending，可以控制排序顺序。</p>
+</li>
+<li><p>按行或列排序：通过设置 axis 参数为 0 或 1 ，为 0 时逐行排序，为 1 时逐列排序，默认为 0。</p>
+</li>
+</ol>
+<p><strong>排序示例</strong></p>
+<pre><code>print(&quot;\n待排序------&quot;)
+unsorted_df = pd.DataFrame(np.random.rand(10,2),index=[1,4,6,2,3,5,9,8,0,7],columns = [&#39;A&#39;,&#39;B&#39;])
+print(unsorted_df,&#39;\n&#39;)
+
+print(&quot;\n按索引排序------&quot;)
+sorted_df=unsorted_df.sort_index(ascending = True)  #按索引排序
+print (sorted_df,&#39;\n&#39;)
+
+print(&quot;\n按&#39;B&#39;列的值进行排序------&quot;)
+sorted_df = unsorted_df.sort_values(by=&#39;B&#39;) # 按&#39;B&#39;列的值进行排序
+print (sorted_df,&#39;\n&#39;)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>待排序------
+          A         B
+1  0.301330  0.303682
+4  0.955318  0.035809
+6  0.254245  0.798225
+2  0.408592  0.470527
+3  0.885707  0.131258
+5  0.135931  0.859795
+9  0.934681  0.218391
+8  0.992487  0.416087
+0  0.221823  0.468366
+7  0.414039  0.531079 
+
+
+按索引排序------
+          A         B
+0  0.221823  0.468366
+1  0.301330  0.303682
+2  0.408592  0.470527
+3  0.885707  0.131258
+4  0.955318  0.035809
+5  0.135931  0.859795
+6  0.254245  0.798225
+7  0.414039  0.531079
+8  0.992487  0.416087
+9  0.934681  0.218391 
+
+
+按&#39;B&#39;列的值进行排序------
+          A         B
+4  0.955318  0.035809
+3  0.885707  0.131258
+9  0.934681  0.218391
+1  0.301330  0.303682
+8  0.992487  0.416087
+0  0.221823  0.468366
+2  0.408592  0.470527
+7  0.414039  0.531079
+6  0.254245  0.798225
+5  0.135931  0.859795 </code></pre><h4 id="4-5-缺失值处理"><a href="#4-5-缺失值处理" class="headerlink" title="4.5 缺失值处理"></a>4.5 缺失值处理</h4><ol>
+<li><p>缺失值主要是指数据丢失的现象，也就是数据集中的某一块数据不存在。</p>
+</li>
+<li><p>除了原始数据集就已经存在缺失值以外，当我们用到索引对齐（reindex()，选择等）方法时，也容易人为导致缺失值的产生。</p>
+</li>
+<li><p><strong>缺失值处理</strong>包括：<br>➢ 缺失值标记<br>➢ 缺失值填充<br>➢ 缺失值插值</p>
+</li>
+<li><p>Pandas 为了更方便地<strong>检测缺失值</strong>，将不同类型数据的缺失均采用 NaN 标记。这里的 NaN 代表 Not a Number ，它仅仅是作为一个标记。</p>
+</li>
+<li><p>Pandas 中用于<strong>标记缺失值主要用到两个方法</strong>，分别是：isnull () 和 notnull ()，顾名思义就是「是缺失值」和「不是缺失值」。默认会返回布尔值用于判断。</p>
+</li>
+</ol>
+<pre><code># 使用reindex()人为生成缺失值
+df = pd.DataFrame(np.random.rand(4, 3), index=[&#39;a&#39;, &#39;c&#39;, &#39;e&#39;, &#39;f&#39;],columns=[&#39;one&#39;, &#39;two&#39;, &#39;three&#39;])
+print(&#39;原始：\n&#39;, df,&#39;\n&#39;)
+df = df.reindex([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;])
+print(&#39;reindex后：\n&#39;, df,&#39;\n&#39;)
+
+print(df[&#39;one&#39;].isnull(),&#39;\n&#39;)  # 缺失值标记
+print (df[&#39;one&#39;].notnull(),&#39;\n&#39;)</code></pre><p><strong>运行结果</strong></p>
+<pre><code>原始：
+         one       two     three
+a  0.051237  0.164315  0.632927
+c  0.459356  0.435970  0.615046
+e  0.420776  0.668942  0.680803
+f  0.086104  0.409684  0.162472 
+
+reindex后：
+         one       two     three
+a  0.051237  0.164315  0.632927
+b       NaN       NaN       NaN
+c  0.459356  0.435970  0.615046
+d       NaN       NaN       NaN
+e  0.420776  0.668942  0.680803
+f  0.086104  0.409684  0.162472
+g       NaN       NaN       NaN 
+
+a    False
+b     True
+c    False
+d     True
+e    False
+f    False
+g     True
+Name: one, dtype: bool 
+
+a     True
+b    False
+c     True
+d    False
+e     True
+f     True
+g    False
+Name: one, dtype: bool </code></pre><ol start="6">
+<li>Pandas 提供了各种方法来<strong>清除缺失的值</strong>。fillna() 函数可以通过几种方法用非空数据“填充” NaN 值。<br>1）用标量值替换 NaN</li>
+</ol>
+<p><strong>print (df.fillna(0))</strong></p>
+<pre><code># 用标量填充
+print(&quot;NaN replaced with &#39;0&#39;：&quot;)
+print(df.fillna(0))</code></pre><p><strong>运行结果</strong></p>
+<pre><code>NaN replaced with &#39;0&#39;：
+        one       two     three
+a  0.051237  0.164315  0.632927
+b  0.000000  0.000000  0.000000
+c  0.459356  0.435970  0.615046
+d  0.000000  0.000000  0.000000
+e  0.420776  0.668942  0.680803
+f  0.086104  0.409684  0.162472
+g  0.000000  0.000000  0.000000</code></pre><p>2）向前填充：pad/fill<br><strong>print(df.fillna(method=’pad’))</strong></p>
+<pre><code># 向前填充
+print(df.fillna(method=&#39;pad&#39;))</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        one       two     three
+a  0.051237  0.164315  0.632927
+b  0.051237  0.164315  0.632927
+c  0.459356  0.435970  0.615046
+d  0.459356  0.435970  0.615046
+e  0.420776  0.668942  0.680803
+f  0.086104  0.409684  0.162472
+g  0.086104  0.409684  0.162472</code></pre><p>3）向后填充：bfill/backfill<br><strong>print(df.fillna(method=’backfill’))</strong></p>
+<pre><code># 向后填充
+print (df.fillna(method=&#39;backfill&#39;))</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        one       two     three
+a  0.051237  0.164315  0.632927
+b  0.459356  0.435970  0.615046
+c  0.459356  0.435970  0.615046
+d  0.420776  0.668942  0.680803
+e  0.420776  0.668942  0.680803
+f  0.086104  0.409684  0.162472
+g       NaN       NaN       NaN</code></pre><ol start="7">
+<li><strong>丢弃缺少的值</strong>：如果只想排除缺少的值，则使用 dropna 函数和 axis 参数。默认情况下，axis=0，如果行内的任何值是 NaN，那么整个行被删除。<br>1）丢弃含 NaN 值的行</li>
+</ol>
+<p><strong>print(df.dropna())</strong><br>2）丢弃含 NaN 值的列<br><strong>print (df.dropna(axis=1))</strong></p>
+<pre><code>df = pd.DataFrame(np.random.rand(4, 3), index=[&#39;a&#39;, &#39;c&#39;, &#39;e&#39;, &#39;f&#39;], columns=[&#39;one&#39;, &#39;two&#39;, &#39;three&#39;])
+df = df.reindex([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;])
+
+print(df,&#39;\n&#39;)
+print(df.dropna()) # 丢弃含 NaN 值的行
+print (df.dropna(axis=1)) # 丢弃含 NaN 值的列</code></pre><p><strong>运行结果</strong></p>
+<pre><code>        one       two     three
+a  0.430961  0.718700  0.023831
+b       NaN       NaN       NaN
+c  0.560938  0.816387  0.409205
+d       NaN       NaN       NaN
+e  0.945503  0.838175  0.707113
+f  0.987987  0.275285  0.532072
+g       NaN       NaN       NaN 
+
+        one       two     three
+a  0.430961  0.718700  0.023831
+c  0.560938  0.816387  0.409205
+e  0.945503  0.838175  0.707113
+f  0.987987  0.275285  0.532072
+Empty DataFrame
+Columns: []
+Index: [a, b, c, d, e, f, g]</code></pre><ol start="8">
+<li><strong>替换缺失（或通用）值</strong>：用一些具体的值取代一个通用的值或缺失值。用标量替换 NaN 和使用 fillna() 函数等效。</li>
+</ol>
+<pre><code># 替换通用数据或者缺失值
+df = pd.DataFrame({&#39;one&#39;:[10,20,30,40,50,2000],&#39;two&#39;:[1000,0,30,40,50,60]}) 
+print(df,&#39;\n&#39;)
+print(df.replace({1000:10,2000:60}))</code></pre>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com/2020/06/04/di-si-zhang-python-shu-ju-chu-li/">https://blog.hsiehchou.com/2020/06/04/di-si-zhang-python-shu-ju-chu-li/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/06/06/di-wu-zhang-python-shu-ju-ke-shi-hua/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="第五章 Python 数据可视化">
+                        
+                        <span class="card-title">第五章 Python 数据可视化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第五章 Python 数据可视化1、Matplotlib 基础1.1 Matplotlib 库介绍
+Matplotlib 是 Python 最著名的绘图库，它提供了一整套和 Matlab 相似的命令 API，十分适合交互式地进行制图。而且也
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/02/di-san-zhang-python-bian-cheng-jin-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="第三章 Python 编程进阶">
+                        
+                        <span class="card-title">第三章 Python 编程进阶</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第三章 Python 编程进阶1、输入输出与文件操作
+输入输出
+
+基本输入、输出2.  文件操作文件编码、基本操作
+1.1 输入
+Python 提供了 input() 内置函数从标准输入读入一行文本。
+input() 函数也可以接收一个 P
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 谢舟的博客<br />'
+            + '文章作者: 谢舟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">490.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            
+			<br>
+            
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1fdd6e11866c1fe7b815d69a4a4206ea";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

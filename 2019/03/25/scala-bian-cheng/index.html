@@ -1,0 +1,1762 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Scala编程, 谢舟，博客，大数据，Java">
+    <meta name="description" content="发布关于大数据,Java的一些信息和自己实践中的经验">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="baidu-site-verification" content="2VN5bX64Cz" />
+    <title>Scala编程 | 谢舟的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="谢舟的博客" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+					<div>
+						
+						<img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+						
+						<span class="logo-span">谢舟的博客</span>
+					</div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">谢舟的博客</div>
+        <div class="logo-desc">
+            
+            发布关于大数据,Java的一些信息和自己实践中的经验
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/5.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Scala编程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">大数据</span>
+                            </a>
+                        
+                            <a href="/tags/Scala/">
+                                <span class="chip bg-color">Scala</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                大数据
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-03-25
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    26 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="一、Scala函数式编程"><a href="#一、Scala函数式编程" class="headerlink" title="一、Scala函数式编程"></a>一、Scala函数式编程</h3><p>多范式：面向对象，函数式编程（程序实现起来简单）</p>
+<p>举例：WordCount<br>sc 是 SparkContext , 非常重要</p>
+<p>一行：</p>
+<pre><code>var result = sc.textFile(&quot;hdfs://xxxx/xxx/data.txt&quot;)
+.flatMap(_.split(&quot; &quot;)).map((_,1)).reduceByKey(_+_).collect</code></pre><h4 id="1、复习函数"><a href="#1、复习函数" class="headerlink" title="1、复习函数"></a>1、复习函数</h4><p>关键字 def</p>
+<h4 id="2、匿名函数"><a href="#2、匿名函数" class="headerlink" title="2、匿名函数"></a>2、匿名函数</h4><p>没有名字的函数 </p>
+<p><strong>举例</strong></p>
+<pre><code>scala&gt; var myarray = Array(1,2,3)
+myarray: Array[Int] = Array(1, 2, 3)
+
+scala&gt; def fun1(x:Int):Int = x*3
+fun1: (x: Int)Int
+
+scala&gt; (x:Int) =&gt; x*3
+res0: Int =&gt; Int = &lt;function1&gt;</code></pre><p>问题：怎么去调用？高阶函数</p>
+<pre><code>scala&gt; fun1(3)
+res1: Int = 9
+
+scala&gt; myarray.foreach(println)
+1
+2
+3
+
+//调用匿名函数
+scala&gt; myarray.map((x:Int) =&gt; x*3)
+res3: Array[Int] = Array(3, 6, 9)</code></pre><p><code>(_,1)  (_+_)</code> 都是匿名函数</p>
+<h4 id="3、高阶函数（带有函数参数的函数）"><a href="#3、高阶函数（带有函数参数的函数）" class="headerlink" title="3、高阶函数（带有函数参数的函数）"></a>3、高阶函数（带有函数参数的函数）</h4><p>把一个函数作为另外一个函数的参数值</p>
+<p>定义一个高阶函数：<br>对10做某种运算</p>
+<pre><code>scala&gt; def someAction(f:(Double)=&gt;(Double)) = f(10)
+someAction: (f: Double =&gt; Double)Double</code></pre><p><strong>解释</strong></p>
+<p>(Double)=&gt;(Double) 代表了f 的类型：入参是double，返回值也是double的函数</p>
+<pre><code>import scala.math._
+
+scala&gt; someAction(sqrt)
+res5: Double = 3.1622776601683795
+
+scala&gt; someAction(sin)
+res6: Double = -0.5440211108893698
+
+scala&gt; someAction(cos)
+res7: Double = -0.8390715290764524
+
+scala&gt; someAction(println)
+&lt;console&gt;:16: error: type mismatch;
+found   : () =&gt; Unit
+required: Double =&gt; Double
+   someAction(println)
+                ^
+def someAction(f:(Double)=&gt;(Double)) = f(10)
+
+someAction(sqrt) = sqrt(10)</code></pre><h4 id="4、高阶函数的实例"><a href="#4、高阶函数的实例" class="headerlink" title="4、高阶函数的实例"></a>4、高阶函数的实例</h4><p>scala中提供了常用的高阶函数</p>
+<p>（1）map : 相当于一个循环，对某个集合中的每个元素都进行操作（接收一个函数），返回一个新的集合</p>
+<p>scala&gt; var numbers = List(1,2,3,4,5,6,7,8,9,10)<br>numbers: List[Int] = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)</p>
+<p>scala&gt; numbers.map((i:Int)=&gt;i*2)<br>res2: List[Int] = List(2, 4, 6, 8, 10, 12, 14, 16, 18, 20)</p>
+<p>scala&gt; numers.map(_*2)<br>res3: List[Int] = List(2, 4, 6, 8, 10, 12, 14, 16, 18, 20)</p>
+<p>说明：<br>(i:Int)=&gt;i<em>2 与 _</em>2 等价的</p>
+<p>(i:Int,j:Int)=&gt;i+j   <code>_+_</code><br>scala&gt; numbers<br>res4: List[Int] = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)<br>不改变numbers本身的值</p>
+<p>（2）foreach：相当于一个循环，对某个集合中的每个元素都进行操作（接收一个函数），不返回结果<br>scala&gt; numbers.foreach(println)<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10</p>
+<p>numbers.foreach(_*2)<br>没有返回值</p>
+<p>（3） filter ：过滤，选择满足的数据<br>举例：查询能被2整除的数字</p>
+<p>scala&gt; numbers.filter((i:Int)=&gt;i%2==0)<br>res5: List[Int] = List(2, 4, 6, 8, 10)</p>
+<p>filter函数，参数要求：要求一个返回 bool 值的函数，筛选出所有为true的数据</p>
+<p>（4）zip操作：合并两个集合<br>scala&gt; List(1,2,3).zip(List(4,5,6))<br>res6: List[(Int, Int)] = List((1,4), (2,5), (3,6))</p>
+<p>//少的话匹配不上就不合并<br>scala&gt; List(1,2,3).zip(List(4,5))<br>res7: List[(Int, Int)] = List((1,4), (2,5))</p>
+<p>scala&gt; List(1).zip(List(4,5))<br>res8: List[(Int, Int)] = List((1,4))</p>
+<p>（5）partition ： 根据断言（就是某个条件，匿名函数）的结果，来进行分区<br>举例：<br>能被2整除的分成一个区，不能被2整除的分成另外一个区<br>scala&gt; numbers.partition((i:Int)=&gt;i%2==0)<br>res9: (List[Int], List[Int]) = (List(2, 4, 6, 8, 10),List(1, 3, 5, 7, 9))</p>
+<p>（6）find ： 查找第一个满足条件的元素<br>scala&gt; numbers.find(_%3==0)<br>res10: Option[Int] = Some(3)</p>
+<p>_%3==0 (i:Int)=&gt;i%3==0 一样</p>
+<p>（7）flatten：把嵌套的结果展开<br>scala&gt; List(List(2,4,6,8,10),List(1,3,5,7,9)).flatten<br>res11: List[Int] = List(2, 4, 6, 8, 10, 1, 3, 5, 7, 9)</p>
+<p>（8）flatmap : 相当于一个 map + flatten<br>scala&gt; var myList = List(List(2,4,6,8,10),List(1,3,5,7,9))<br>myList: List[List[Int]] = List(List(2, 4, 6, 8, 10), List(1, 3, 5, 7, 9))</p>
+<p>scala&gt; myList.flatMap(x=&gt;x.map(_*2))<br>res22: List[Int] = List(4, 8, 12, 16, 20, 2, 6, 10, 14, 18)</p>
+<p>myList.flatMap(x=&gt;x.map(_*2))</p>
+<p>执行过程：<br>1、将 List(2, 4, 6, 8, 10), List(1, 3, 5, 7, 9) 调用 map(_*2) 方法。x 代表一个List<br>2、flatten</p>
+<pre><code>package day4
+
+/**
+  * 对比flatmap与map
+  */
+object Demo2 {
+
+  /**
+    * flatmap执行分析
+    * 1 List(1*2)   List(2)
+    * 2 List(2*2)   List(4)
+    * 3 List(&#39;a&#39;,&#39;b&#39;)
+    *
+    * List(List(2),List(4),List(&#39;a&#39;,&#39;b&#39;)).flatten
+    * List(2,4,&#39;a&#39;,&#39;b&#39;)
+    */
+  def flatMap(){
+    val li = List(1,2,3)
+    val res = li.flatMap(x=&gt;
+      x match{
+      case 3=&gt;List(&#39;a&#39;,&#39;b&#39;)
+      case _=&gt;List(x*2)
+    })
+    println(res)
+  }
+
+  /**
+    * map过程解析
+    * 
+    * 1 2  ----&gt;List(2,2,3)
+    * 2 4  ----&gt;List(2,4,5)
+    * 3 List(&#39;a&#39;,&#39;b&#39;)----&gt;List(2,4,List(&#39;a&#39;,&#39;b&#39;))
+    */
+  def map(){
+    val li = List(1,2,3)
+    val res = li.map(x=&gt;
+      x match{
+      case 3=&gt;List(&#39;a&#39;,&#39;b&#39;)
+      case _=&gt;x*2
+    })
+    println(res)
+  }
+
+  def main(args: Array[String]): Unit = {
+    flatMap()
+    map()
+  }
+}</code></pre><h4 id="5、概念：闭包、柯里化"><a href="#5、概念：闭包、柯里化" class="headerlink" title="5、概念：闭包、柯里化"></a>5、概念：闭包、柯里化</h4><p>（1）闭包：就是函数的嵌套<br>在一个函数的里面，包含了另一个函数的定义<br>可以在内函数中访问外函数的变量</p>
+<p>举例：</p>
+<pre><code>def mulBy(factor:Double) = (x:Double)=&gt;x*factor
+        外                           内</code></pre><p>乘以三：</p>
+<pre><code>scala&gt; def mulBy(factor:Double) = (x:Double)=&gt;x*factor
+mulBy: (factor: Double)Double =&gt; Double
+
+scala&gt; var triple = mulBy(3)
+triple: Double =&gt; Double = &lt;function1&gt;
+
+相当于 triple(x:Double) = x*3
+
+scala&gt; triple(10)
+res1: Double = 30.0
+
+scala&gt; triple(20)
+res2: Double = 60.0
+
+scala&gt; var half = mulBy(0.5)
+half: Double =&gt; Double = &lt;function1&gt;
+
+scala&gt; half(10)
+res3: Double = 5.0</code></pre><p>引入柯里化：<br>scala&gt; mulBy(3)(10)<br>res4: Double = 30.0</p>
+<p>（2）柯里化<br>概念：柯里化函数：是把具有多个参数的函数，转化为一个函数链，每个节点上都是单一函数</p>
+<p>def add(x:Int,y:Int) = x+y</p>
+<p>def add(x:Int)(y:Int) = x+y</p>
+<p>转化步骤：</p>
+<p>原始：def add(x:Int,y:Int) = x+y</p>
+<p>闭包：def add(x:Int) = (y:Int) =&gt; x+y</p>
+<p>简写：def add(x:Int)(y:Int) = x+y</p>
+<p>scala&gt; def add(x:Int)(y:Int) = x+y<br>add: (x: Int)(y: Int)Int</p>
+<p>scala&gt; add(1)(2)<br>res5: Int = 3</p>
+<h3 id="二、Scala集合"><a href="#二、Scala集合" class="headerlink" title="二、Scala集合"></a>二、Scala集合</h3><h4 id="1、可变集合和不可变集合（Map）"><a href="#1、可变集合和不可变集合（Map）" class="headerlink" title="1、可变集合和不可变集合（Map）"></a>1、可变集合和不可变集合（Map）</h4><p>immutable mutable<br>举例：<br>scala&gt; def math = scala.collection.immutable.Map(“Tom”-&gt;80,”Lily”-&gt;20)<br>math: scala.collection.immutable.Map[String,Int]</p>
+<p>scala&gt; def math = scala.collection.mutable.Map(“Tom”-&gt;80,”Lily”-&gt;20,”Mike”-&gt;95)<br>math: scala.collection.mutable.Map[String,Int]</p>
+<p>集合的操作：<br>获取集合中的值<br>scala&gt; math.get(“Tom”)<br>res1: Option[Int] = Some(80)</p>
+<p>scala&gt; math(“Tom”)<br>res2: Int = 80</p>
+<p>scala&gt; math(“Tom123”)<br>java.util.NoSuchElementException: key not found: Tom123<br>at scala.collection.MapLike$class.default(MapLike.scala:228)<br>at scala.collection.AbstractMap.default(Map.scala:59)<br>at scala.collection.mutable.HashMap.apply(HashMap.scala:65)<br>… 32 elided</p>
+<p>scala&gt; math.get(“Tom123”)<br>res3: Option[Int] = None</p>
+<p>scala&gt; math.contains(“Tom123”)<br>res4: Boolean = false</p>
+<p>scala&gt; math.getOrElse(“Tom123”,-1)<br>res5: Int = -1</p>
+<p>更新集合中的值：注意：必须是可变集合<br>scala&gt; math<br>res6: scala.collection.mutable.Map[String,Int] = Map(Mike -&gt; 95, Tom -&gt; 80, Lily -&gt; 20)</p>
+<p>scala&gt; math(“Tom”)=0<br>scala&gt; math<br>res7: scala.collection.mutable.Map[String,Int] = Map(Mike -&gt; 95, Tom -&gt; 80, Lily -&gt; 20)</p>
+<p>造成上述现象的原因，没有import包，如果import以后，问题解决：<br>scala&gt; import scala.collection.mutable._<br>import scala.collection.mutable._</p>
+<p>scala&gt; var math = Map(“Tom”-&gt;80,”Lily”-&gt;20,”Mike”-&gt;95)<br>math: scala.collection.mutable.Map[String,Int] = Map(Mike -&gt; 95, Tom -&gt; 80, Lily -&gt; 20)</p>
+<p>scala&gt; math(“Tom”)=0<br>scala&gt; math<br>res8: scala.collection.mutable.Map[String,Int] = Map(Mike -&gt; 95, Tom -&gt; 0, Lily -&gt; 20)</p>
+<p>添加新的元素<br>scala&gt; math(“Tom”)=80<br>scala&gt; math += “Bob”-&gt;85<br>res9: scala.collection.mutable.Map[String,Int] = Map(Bob -&gt; 85, Mike -&gt; 95, Tom -&gt; 80, Lily -&gt; 20)</p>
+<p>移出一个元素<br>scala&gt; math -= “Bob”<br>res10: scala.collection.mutable.Map[String,Int] = Map(Mike -&gt; 95, Tom -&gt; 80, Lily -&gt; 20)</p>
+<h4 id="2、列表：可变列表，不可变列表"><a href="#2、列表：可变列表，不可变列表" class="headerlink" title="2、列表：可变列表，不可变列表"></a>2、列表：可变列表，不可变列表</h4><p>不可变列表 List<br>scala&gt; var myList=List(1,2,3)<br>myList: List[Int] = List(1, 2, 3)</p>
+<p>scala&gt; val nullList:List[Nothing] = List()<br>nullList: List[Nothing] = List()</p>
+<p>//二维列表<br>scala&gt; val dim : List[List[Int]] = List(List(1,2,3),List(4,5,6))<br>dim: List[List[Int]] = List(List(1, 2, 3), List(4, 5, 6))</p>
+<p>scala&gt; myList.head<br>res11: Int = 1</p>
+<p>scala&gt; myList.tail<br>res12: List[Int] = List(2, 3)</p>
+<p>注意：tail 是除了第一个元素外，其他的元素</p>
+<p>可变列表：LinedList 在 scala.collection.mutable 包中</p>
+<p>scala&gt; var myList = scala.collection.mutable.LinkedList(1,2,3,4)<br>warning: there was one deprecation warning; re-run with -deprecation for details<br>myList: scala.collection.mutable.LinkedList[Int] = LinkedList(1, 2, 3, 4)</p>
+<p>需求：把上面列表中，每一个元素都乘以2</p>
+<p>游标，指向列表的开始</p>
+<pre><code>var cur = myList
+//Nil意思为空
+while(cur != Nil ){
+
+    //把当前元素乘以2
+    cur.elem = cur.elem*2
+
+    //移动指针到下一个元素
+    cur = cur.next
+}</code></pre><p>scala&gt; var cur = myList<br>cur: scala.collection.mutable.LinkedList[Int] = LinkedList(1, 2, 3, 4)</p>
+<p>scala&gt; while(cur != Nil ){<br>| cur.elem = cur.elem*2<br>| cur = cur.next<br>| }</p>
+<p>scala&gt; myList<br>res13: scala.collection.mutable.LinkedList[Int] = LinkedList(2, 4, 6, 8)</p>
+<p>scala&gt; myList.map(_*2)<br>warning: there was one deprecation warning; re-run with -deprecation for details<br>res14: scala.collection.mutable.LinkedList[Int] = LinkedList(4, 8, 12, 16)</p>
+<h4 id="3、序列"><a href="#3、序列" class="headerlink" title="3、序列"></a>3、序列</h4><p>（*）数据库中也有序列：sequence 、 auto increment<br>（1）作为主键，实现自动增长<br>（2）提高性能，序列在Oracle是在内存中的</p>
+<p>（*）Vector Range<br>举例：<br>Vector 是一个带下标的序列，我们可以通过下标来访问Vector中的元素<br>scala&gt; var v = Vector(1,2,3,4,5,6)<br>v: scala.collection.immutable.Vector[Int] = Vector(1, 2, 3, 4, 5, 6)</p>
+<p>Range ： 是一个整数的序列<br>scala&gt; Range(0,5)<br>res15: scala.collection.immutable.Range = Range(0, 1, 2, 3, 4)</p>
+<p>从0开始，到5 ，但不包括5</p>
+<p>scala&gt; println(0 until 5)<br>Range(0, 1, 2, 3, 4)</p>
+<p>scala&gt; println(0 to 5)<br>Range(0, 1, 2, 3, 4, 5)</p>
+<p>Range可以相加<br>scala&gt; (‘0’ to ‘9’) ++ (‘A’ to ‘Z’)<br>res16: scala.collection.immutable.IndexedSeq[Char] = Vector(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z)</p>
+<p>把Range转换成list<br>scala&gt; 1 to 5 toList<br>warning: there was one feature warning; re-run with -feature for details<br>res17: List[Int] = List(1, 2, 3, 4, 5)</p>
+<h4 id="4、集（Set）"><a href="#4、集（Set）" class="headerlink" title="4、集（Set）"></a>4、集（Set）</h4><p>不重复元素的集合，默认是HashSet，与java类似<br>scala&gt; var s1 = Set(1,2,10,8)<br>s1: scala.collection.immutable.Set[Int] = Set(1, 2, 10, 8)</p>
+<p>scala&gt; s1 + 10<br>res18: scala.collection.immutable.Set[Int] = Set(1, 2, 10, 8)</p>
+<p>scala&gt; s1 + 7<br>res19: scala.collection.immutable.Set[Int] = Set(10, 1, 2, 7, 8)</p>
+<p>scala&gt; s1<br>res20: scala.collection.immutable.Set[Int] = Set(1, 2, 10, 8)</p>
+<p>创建一个可排序的Set SortedSet<br>scala&gt; var s2 = scala.collection.mutable.SortedSet(1,2,3,10,8)<br>s2: scala.collection.mutable.SortedSet[Int] = TreeSet(1, 2, 3, 8, 10)</p>
+<p>判断元素是否存在<br>scala&gt; s2.contains(1)<br>res21: Boolean = true</p>
+<p>scala&gt; s2.contains(1231231)<br>res22: Boolean = false</p>
+<p>集的运算：union并集 intersect 交集 diff 差集<br>scala&gt; var s1 = Set(1,2,3,4,5,6)<br>s1: scala.collection.immutable.Set[Int] = Set(5, 1, 6, 2, 3, 4)</p>
+<p>scala&gt; var s2 = Set(5,6,7,8,9,10)<br>s2: scala.collection.immutable.Set[Int] = Set(5, 10, 6, 9, 7, 8)</p>
+<p>scala&gt; s1 union s2<br>res23: scala.collection.immutable.Set[Int] = Set(5, 10, 1, 6, 9, 2, 7, 3, 8, 4)</p>
+<p>scala&gt; s1 intersect s2<br>res24: scala.collection.immutable.Set[Int] = Set(5, 6)</p>
+<p>scala&gt; s1 diff s2<br>res25: scala.collection.immutable.Set[Int] = Set(1, 2, 3, 4)</p>
+<p>数据库里面的union操作，要求：<br>列数一样<br>列的类型一样</p>
+<pre><code>select A,B from ****
+union 
+select C,D from *****</code></pre><p>函数的定义+返回值<br>def sum():Int =</p>
+<p>python数据分析<br>pyspark</p>
+<h4 id="5、模式匹配"><a href="#5、模式匹配" class="headerlink" title="5、模式匹配"></a>5、模式匹配</h4><p>相当于java中的switch case语句 但是 功能更强大</p>
+<pre><code>package day5
+
+/**
+  * 模式匹配
+  */
+object Demo1 {
+  def main(args: Array[String]): Unit = {
+    //1、相当于java switch case
+    var chi = &#39;-&#39;
+    var sign = 0
+
+    chi match {
+      case &#39;+&#39; =&gt; sign = 1
+      case &#39;-&#39; =&gt; sign = -1
+      case _ =&gt; sign = 0
+    }
+    println(sign)
+
+    /**
+      * 2、scala中的守卫，case _ if 匹配某种类型的所有值
+      * 需求：匹配所有的数字
+      */
+    var ch2 = &#39;5&#39;
+    var result : Int = -1
+    ch2 match {
+      case &#39;+&#39; =&gt; println(&quot;这是一个加号&quot;)
+      case &#39;-&#39; =&gt; println(&quot;这是一个减号&quot;)
+      //这里的10表示转换成1十进制
+      case _ if Character.isDigit(ch2) =&gt; result=Character.digit(ch2,10)
+      case _ =&gt; println(&quot;其他&quot;)
+    }
+    println(result)
+
+    /**
+      * 3、在模式匹配中使用变量
+      * 如果改成var mystr = &quot;Hello W+rld&quot;
+      * 打印：加号
+      *
+      * 匹配中，则相当于break
+      */
+    var mystr = &quot;Hello World&quot;
+    //取出某个字符，赋给模式匹配的变量
+
+    mystr(7) match {
+      case &#39;+&#39; =&gt; println(&quot;加号&quot;)
+      case &#39;-&#39; =&gt; println(&quot;减号&quot;)
+      //case 语句中使用变量 ch代表传递进来的字符
+      case ch =&gt; println(ch)
+    }
+
+    /**
+      * 4、匹配类型 instance of
+      * 用法：case x : Int =&gt;
+      *
+      * Any : 表示任何类型，相当于java中的Object
+      * Unit : 表示没有值， void
+      * Nothing : 表示在函数抛出异常时，返回值就是Nothing
+      *           是scala类层级中的最低端，是任何其他类型的子类型
+      * Null : 表示引用类型的子类，值：null
+      *
+      * 特殊类型
+      * Option : 表示一个值是可选的（有值或者无值）
+      * Some : 如果值存在，Option[T] 就是一个Some[T]
+      * None : 如果值不存在，Option[T] 就是一个None
+      *
+      * scala&gt; var myMap = Map(&quot;Time&quot;-&gt;96)
+      * myMap: scala.collection.immutable.Map[String,Int] = Map(Time -&gt; 96)
+      *
+      * scala&gt; myMap.get(&quot;Time&quot;)
+      * res0: Option[Int] = Some(96)
+      *
+      * scala&gt; myMap.get(&quot;Time12342&quot;)
+      * res1: Option[Int] = None
+      *
+      * Nil : 空的List
+      *
+      * 四个N总结：None Nothing Null Nil
+      * None : 如果值不存在，Option[T] 就是一个None
+      * Nothing : 如果方法抛出异常时，则异常的返回值类型就是Nothing
+      * Null : 可以赋值给所以的引用类型，但是不能赋值给值类型
+      *       class Student
+      *       var s1 = new Student
+      *       s1 = null
+      * Nil : 空的List
+      */
+    var v4 : Any = 100
+    v4 match {
+      case x : Int =&gt; println(&quot;这是一个整数&quot;)
+      case s : String =&gt; println(&quot;这是一个字符串&quot;)
+      case _ =&gt; println(&quot;这是其他类型&quot;)
+    }
+
+    //5、匹配数组和列表
+    var myArray = Array(1,2,3)
+    myArray match {
+      case Array(0) =&gt; println(&quot;数组中只有一个0&quot;)
+      case Array(x,y) =&gt; println(&quot;数组中包含两个元素&quot;)
+      case Array(x,y,z) =&gt; println(&quot;数组中包含三个元素&quot;)
+      case Array(x,_*) =&gt; println(&quot;这是一个数组，包含多个元素&quot;)
+    }
+
+    var myList = List(1,2,3)
+    myList match {
+      case List(0) =&gt; println(&quot;列表中只有一个0&quot;)
+      case List(x,y) =&gt; println(&quot;列表中包含两个元素，和是&quot; + (x+y))
+      case List(x,y,z) =&gt; println(&quot;列表中包含三个元素，和是&quot; + (x+y+z))
+      case List(x,_*) =&gt; println(&quot;列表中包含多个元素，和是&quot; + myList.sum)
+    }
+  }
+}</code></pre><h4 id="6、样本类"><a href="#6、样本类" class="headerlink" title="6、样本类"></a>6、样本类</h4><p>定义： case class</p>
+<pre><code>package day5
+/**
+  * 使用case class 来实现模式匹配
+  */
+class Vehicle
+
+case class Car(name:String) extends  Vehicle
+
+case class Bike(name:String) extends  Vehicle
+
+object Demo2 {
+  def main(args: Array[String]): Unit = {
+    var aCar : Vehicle = new Car(&quot;Car&quot;)
+
+    aCar match {
+      case Car(name) =&gt; println(&quot;汽车 &quot; + name)
+      case Bike(name) =&gt; println(&quot;自行车 &quot; + name)
+      case _ =&gt; println(&quot;其他&quot;)
+    }
+  }
+}</code></pre><p>作用：<br>（1）支持模式匹配，instanceof<br>（2）定一个 Spark SQL 中的 schema ： 表结构</p>
+<pre><code>scala&gt; class Fruit
+defined class Fruit
+
+scala&gt; class Banana(name:String) extends Fruit
+defined class Banana
+
+scala&gt; class Apple(name:String) extends Fruit
+defined class Apple
+
+scala&gt; var a = new Apple(&quot;Apple&quot;)
+a: Apple = Apple@572e6fd9
+
+scala&gt; println(a.isInstanceOf[Fruit])
+true
+
+scala&gt; println(a.isInstanceOf[Banana])
+&lt;console&gt;:16: warning: fruitless type test: a value of type Apple cannot also be a Banana
+       println(a.isInstanceOf[Banana])
+                             ^
+false</code></pre><h3 id="三、Scala高级特性"><a href="#三、Scala高级特性" class="headerlink" title="三、Scala高级特性"></a>三、Scala高级特性</h3><h4 id="1、泛型"><a href="#1、泛型" class="headerlink" title="1、泛型"></a>1、泛型</h4><p>和java类似 T</p>
+<p><strong>1）泛型类</strong><br>定义类的时候，可以带有一个泛型的参数<br>例子：</p>
+<pre><code>package day5
+
+/**
+  * 泛型类
+  */
+
+//需求：操作一个整数
+class GenericClassInt{
+  //定义一个整数的变量
+  private var content : Int = 10
+
+  //定义set get
+  def set(value : Int) = content = value
+  def get() : Int = content
+}
+
+//需求：操作一个字符串
+class GenericClassString{
+  //定义一个空字符串
+  private var content : String = &quot;&quot;
+
+  //定义set get
+  def set(value : String) = content = value
+  def get() : String = content
+}
+
+class GenericClass[T]{
+  //定义变量
+  //注意：初始值用_来表示
+  private var content : T = _
+
+  //定义set get
+  def set(value : T) = content = value
+  def get() : T = content
+}
+
+object Demo3{
+  def main(args: Array[String]): Unit = {
+    //定义一个Int 类型
+    var v1 = new GenericClass[Int]
+    v1.set(1000)
+    println(v1.get())
+
+    //定义一个String 类型
+    var v2 = new GenericClass[String]
+    v2.set(&quot;Ni&quot;)
+    println(v2.get())
+  }
+}</code></pre><p><strong>2）泛型函数</strong></p>
+<p>定义一个函数，可以带有一个泛型的参数</p>
+<p>scala&gt; def mkIntArray(elem:Int<em>)=`Array[Int](elem:_</em>)`<br>mkIntArray: (elem: Int*)Array[Int]</p>
+<p>scala&gt; mkIntArray(1,2,3)<br>res5: Array[Int] = Array(1, 2, 3)</p>
+<p>scala&gt; mkIntArray(1,2,3,4,5)<br>res6: Array[Int] = Array(1, 2, 3, 4, 5)</p>
+<p>scala&gt; def mkStringArray(elem:String<em>)=`Array[String](elem:_</em>)`<br>mkStringArray: (elem: String*)Array[String]</p>
+<p>scala&gt; mkStringArray(“a”,”b”)<br>res7: Array[String] = Array(a, b)</p>
+<p>scala&gt; def mkArray[T:ClassTag]</p>
+<p>ClassTag ： 表示scala在运行时候的状态信息，这里表示调用时候数据类型</p>
+<p>scala&gt; import scala.reflect.ClassTag<br>import scala.reflect.ClassTag</p>
+<pre><code>scala&gt; def mkArray[T:ClassTag](elem:T*)= Array[T](elem:_*)
+mkArray: [T](elem: T*)(implicit evidence$1: scala.reflect.ClassTag[T])Array[T]</code></pre><p>scala&gt; mkArray(1,2)<br>res8: Array[Int] = Array(1, 2)</p>
+<p>scala&gt; mkArray(“Hello”,”aaa”)<br>res9: Array[String] = Array(Hello, aaa)</p>
+<p>scala&gt; mkArray(“Hello”,1)<br>res10: Array[Any] = Array(Hello, 1)<br>泛型：但凡有重复的时候，考虑使用泛型</p>
+<p><strong>3）上界和下界</strong></p>
+<p>Int x<br>规定x的取值范围 100 &lt;= x &lt;=1000</p>
+<p>泛型的取值范围：<br>T</p>
+<p>类的继承关系 A —&gt; B —&gt; C —&gt; D 箭头指向子类</p>
+<p>定义T的取值范围 D &lt;: T &lt;: B</p>
+<p>T 的 取值范围 就是 B C D</p>
+<p>&lt;: 就是上下界的表示方法</p>
+<p>概念<br>上界 S &lt;： T 规定了 S的类型必须是 T的子类或本身<br>下界 U &gt;： T 规定了 U的类型必须是 T的父类或本身</p>
+<p>例子：</p>
+<pre><code>package day5
+/**
+  * 主界
+  */
+//定义父类
+class Vehicle{
+  //函数：驾驶
+  def drive() = println(&quot;Driving&quot;)
+}
+
+//定义两个子类
+class Car extends Vehicle{
+  override def drive() : Unit = println(&quot;Car Driving&quot;)
+}
+
+//class Bike extends Vehicle{
+//  override def drive(): Unit = println(&quot;Bike Driving&quot;)
+//}
+
+class Bike{
+  def drive(): Unit = println(&quot;Bike Driving&quot;)
+}
+
+object ScalaUpperBoud {
+  //定义驾驶交通工具的函数
+  def takeVehicle[T &lt;: Vehicle](v:T) = v.drive()
+
+  def main(args: Array[String]): Unit = {
+    //定义交通工具
+    var v : Vehicle = new Vehicle
+    takeVehicle(v)
+
+    var c : Car = new Car
+    takeVehicle(c)
+
+    //因为没有继承Vehicle，所以运行报错
+    var b : Bike = new Bike
+    takeVehicle(b)
+  }
+}</code></pre><pre><code>scala&gt; def addTwoString[T &lt;: String](x:T,y:T) = x +&quot; ********* &quot; + y
+addTwoString: [T &lt;: String](x: T, y: T)String
+
+scala&gt; addTwoString(&quot;Hello&quot;,&quot;World&quot;)
+res11: String = Hello ********* World
+
+scala&gt; addTwoString(1,2)
+&lt;console&gt;:14: error: inferred type arguments [Int] do not conform to method addTwoString&#39;s type parameter bounds [T &lt;: String]
+       addTwoString(1,2)
+       ^
+&lt;console&gt;:14: error: type mismatch;
+ found   : Int(1)
+ required: T
+       addTwoString(1,2)
+                    ^
+&lt;console&gt;:14: error: type mismatch;
+ found   : Int(2)
+ required: T
+       addTwoString(1,2)
+                      ^
+
+scala&gt; addTwoString(1.toString,2.toString)
+res13: String = 1 ********* 2</code></pre><p><strong>4）视图界定 View bounds</strong></p>
+<p>就是上界和下界的扩展</p>
+<p>除了可以接收上界和下界规定的类型以外，还可以接收能够通过隐式转换过去的类型</p>
+<p>用 % 来表示</p>
+<pre><code>scala&gt;  def addTwoString[T &lt;% String](x:T,y:T) = x +&quot; ********* &quot; + y
+addTwoString: [T](x: T, y: T)(implicit evidence$1: T =&gt; String)String
+
+scala&gt; addTwoString(1,2)
+&lt;console&gt;:14: error: No implicit view available from Int =&gt; String.
+       addTwoString(1,2)
+                   ^
+//定义隐式转换函数
+scala&gt; implicit def int2String(n:Int):String = n.toString
+warning: there was one feature warning; re-run with -feature for details
+int2String: (n: Int)String
+
+scala&gt; addTwoString(1,2)
+res14: String = 1 ********* 2</code></pre><p><strong>执行过程</strong> </p>
+<p>1、调用了 int2String Int =&gt; String<br>2、addTwoString(“1”,”2”)</p>
+<p><strong>5）协变和逆变（概念）</strong></p>
+<p>协变：表示在类型参数前面加上 + 。泛型变量的值，可以是本身类型或者其子类类型<br>例子：</p>
+<pre><code>package day5
+
+/**
+  * 协变：表示在类型参数前面加上 + 。泛型变量的值，可以是本身类型或者其子类类型
+  */
+
+class Animal
+
+class Bird extends Animal
+
+class Sparrow extends Bird
+
+//定义第四个类，吃东西的类，协变，有继承关系了
+class EatSomething[+T](t:T)
+
+object Demo4 {
+  def main(args: Array[String]): Unit = {
+    //定义一个鸟吃东西的对象
+    var c1 : EatSomething[Bird] =new EatSomething[Bird](new Bird)
+
+    //定义一个动物吃东西的对象
+    var c2 : EatSomething[Animal] = c1
+
+    /**
+      * 问题：能否把c1 赋给c2
+      * c1 c2都是EatSomething
+      * c1 c2 没有继承关系
+      *
+      * class EatSomething[T](t:T)
+      * var c2 : EatSomething[Animal] = c1  报错
+      * 原因 ： EatSomething[Bird] 并没有继承EatSomething[Animal]
+      *
+      * class EatSomething[+T](t:T)
+      * 报错消失
+      *
+      * 协变
+      */
+
+    var c3 : EatSomething[Sparrow] = new EatSomething[Sparrow](new Sparrow)
+    var c4 : EatSomething[Animal] = c3
+  }
+}</code></pre><p>逆变：表示在类型参数前面加上 - 。泛型变量的值，可以是本身类型或者其父类类型<br>例子：</p>
+<pre><code>package day5
+
+/**
+  * 逆变：表示在类型参数前面加上 - 。泛型变量的值，可以是本身类型或者其父类类型
+  */
+
+class Animal
+
+class Bird extends Animal
+
+class Sparrow extends Bird
+
+//定义第四个类，吃东西的类，逆变
+class EatSomething[-T](t:T)
+
+object Demo5 {
+  def main(args: Array[String]): Unit = {
+    //定义一个鸟吃东西的对象
+    var c1 : EatSomething[Bird] =new EatSomething[Bird](new Bird)
+
+    //定义一个动物吃东西的对象
+    var c2 : EatSomething[Sparrow] = c1
+  }
+}</code></pre><h4 id="2、隐式转换"><a href="#2、隐式转换" class="headerlink" title="2、隐式转换"></a>2、隐式转换</h4><p><strong>1）隐式转换函数： implicit</strong></p>
+<pre><code>package day5
+
+/**
+  * 隐式转换
+  *
+  * 定义一个隐式转换函数
+  */
+class Fruit(name:String){
+  def getFruitName() : String = name
+}
+
+class Monkey(f:Fruit){
+  def say()  = println(&quot;Monkey like &quot; + f.getFruitName())
+}
+
+object ImplicitDemo {
+
+  def main(args: Array[String]): Unit = {
+    //定义一个水果对象
+    var f : Fruit = new Fruit(&quot;Banana&quot;)
+    f.say()
+  }
+
+  implicit def fruit2Monkey(f:Fruit) : Monkey = {
+    new Monkey(f)
+  }
+}</code></pre><p><strong>2）隐式参数：使用implicit 修饰的函数参数</strong></p>
+<p>定义一个带有隐式参数的函数：</p>
+<pre><code>scala&gt; def testPara(implicit name:String) = println(&quot;The value is &quot; + name)
+testPara: (implicit name: String)Unit
+
+scala&gt; testPara(&quot;AAAA&quot;)
+The value is AAAA
+
+scala&gt; implicit val name : String = &quot;*****&quot;
+name: String = *****
+
+scala&gt; testPara
+The value is *****</code></pre><p>定义一个隐式参数，找到两个值中比较小的那个值<br>100 23 –&gt;23<br>“Hello” “ABC” –&gt; ABC</p>
+<pre><code>scala&gt; def smaller[T](a:T,b:T)(implicit order : T =&gt; Ordered[T]) = if(a&lt;b) a else b
+smaller: [T](a: T, b: T)(implicit order: T =&gt; Ordered[T])T
+
+scala&gt; smaller(1,2)
+res18: Int = 1
+
+scala&gt; smaller(&quot;Hello&quot;,&quot;ABC&quot;)
+res19: String = ABC</code></pre><p>解释：<br>order 就是一个隐式参数，我们使用Scala中的 Ordered 类，表示该值可以被排序，也就是可以被比较</p>
+<p>作用：扩充了属性的功能</p>
+<p><strong>3）隐式类 在类名前 加 implicit 关键字</strong> </p>
+<p>作用：扩充类的功能</p>
+<pre><code>package day5
+
+/**
+  * 隐式类
+  */
+object Demo6 {
+  def main(args: Array[String]): Unit = {
+    //执行两个数字的求和
+    println(&quot;两个数字的和是： &quot;+1.add(2))
+
+    /**
+      * 定义一个隐式类，类增强1的功能
+      *
+      * Calc(x:Int)
+      * 1是Int类型，所以就会传递进来
+      *
+      * 执行过程：
+      * 1---&gt;Calc类
+      * var a = new Calc(1)
+      * 在调用Calc add方法
+      * a.add(2)
+      *
+      */
+    implicit class Calc(x:Int){
+      def add(y: Int) : Int = x + y
+    }
+  }
+}</code></pre>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com" rel="external nofollow noreferrer">谢舟</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://blog.hsiehchou.com/2019/03/25/scala-bian-cheng/">https://blog.hsiehchou.com/2019/03/25/scala-bian-cheng/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">大数据</span>
+                                </a>
+                            
+                                <a href="/tags/Scala/">
+                                    <span class="chip bg-color">Scala</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/03/27/akka-lian-xi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="Akka练习">
+                        
+                        <span class="card-title">Akka练习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Actor并发模型Java中的并发开发Java的并发编程是基于 共享数据 和 加锁 的一种机制。锁的是共享数据synchronized
+Scala中的并发开发不共享数据。依赖于 消息传递 的一种并发编程模式
+如果 Actor A 和 Act
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-03-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/Akka/">
+                        <span class="chip bg-color">Akka</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/23/scala-ji-chu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="Scala基础">
+                        
+                        <span class="card-title">Scala基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1、Scala编程语言2、Spark Core ： Spark内核 ，最重要的一个部分3、Spark SQL : 类似于 Hive 和Pig。数据分析引擎。sql语句提交到Spark集群中运行4、Spark Streaming ：类似于 S
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/Scala/">
+                        <span class="chip bg-color">Scala</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 谢舟的博客<br />'
+            + '文章作者: 谢舟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019-2020</span>
+            <a href="https://blog.hsiehchou.com" target="_blank">谢舟</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">490.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            
+			<br>
+            
+            <span id="icp"><img src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://beian.miit.gov.cn/" target="_blank">苏ICP备17042062号 苏公网安备 32062102000231号</a>
+            </span>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:babbyxie@foxmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=417952939" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 417952939" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '');
+</script>
+
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?1fdd6e11866c1fe7b815d69a4a4206ea";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/hsiehchou/hsiehchou.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
