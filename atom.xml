@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.hsiehchou.com/"/>
-  <updated>2020-10-05T07:17:26.835Z</updated>
+  <updated>2021-01-21T07:36:22.907Z</updated>
   <id>https://blog.hsiehchou.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习推荐两本书</title>
+    <link href="https://blog.hsiehchou.com/2021/01/21/ji-qi-xue-xi-tui-jian-liang-ben-shu/"/>
+    <id>https://blog.hsiehchou.com/2021/01/21/ji-qi-xue-xi-tui-jian-liang-ben-shu/</id>
+    <published>2021-01-21T05:15:03.000Z</published>
+    <updated>2021-01-21T07:36:22.907Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h4 id=&quot;1、周志华教授的《机器学习》&quot;&gt;&lt;a href=&quot;#1、周志华教授的《机器学习》&quot; class=&quot;headerlink&quot; title=&quot;1、周志华教授的《机器学习》&quot;&gt;&lt;/a&gt;1、周志华教授的《机器学习》&lt;/h4&gt;&lt;h4
+        
+      
+    
+    </summary>
+    
+    
+      <category term="机器学习" scheme="https://blog.hsiehchou.com/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="机器学习" scheme="https://blog.hsiehchou.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="统计学习方法" scheme="https://blog.hsiehchou.com/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>第七章 机器学习入门</title>
@@ -522,33 +551,6 @@
         
         
           &lt;h3 id=&quot;Django阿里云部署详解之服务器安装虚拟环境、Python&quot;&gt;&lt;a href=&quot;#Django阿里云部署详解之服务器安装虚拟环境、Python&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Django" scheme="https://blog.hsiehchou.com/categories/Django/"/>
-    
-    
-      <category term="Django" scheme="https://blog.hsiehchou.com/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django开启虚拟环境（Windows中）</title>
-    <link href="https://blog.hsiehchou.com/2020/01/10/django-kai-qi-xu-ni-huan-jing-windows-zhong/"/>
-    <id>https://blog.hsiehchou.com/2020/01/10/django-kai-qi-xu-ni-huan-jing-windows-zhong/</id>
-    <published>2020-01-10T14:55:35.000Z</published>
-    <updated>2020-04-30T08:53:15.085Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;Django开启虚拟环境（Windows中）&quot;&gt;&lt;a href=&quot;#Django开启虚拟环境（Windows中）&quot; class=&quot;headerlink&quot;
         
       
     
