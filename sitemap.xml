@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.hsiehchou.com/2021/08/16/r-yu-yan-shi-zhan-di-2-ban-di-yi-bu-fen-ru-men/</loc>
+    
+    <lastmod>2021-08-15T15:35:42.863Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.hsiehchou.com/2020/08/12/di-qi-zhang-ji-qi-xue-xi-ru-men/</loc>
     
     <lastmod>2021-08-15T15:25:40.506Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://blog.hsiehchou.com/2020/06/19/matlab-xue-xi/</loc>
     
     <lastmod>2021-08-15T15:25:23.642Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/2021/08/16/r-yu-yan-shi-zhan-di-2-ban-di-yi-bu-fen-ru-men/</loc>
-    
-    <lastmod>2021-08-15T15:25:11.372Z</lastmod>
     
   </url>
   
@@ -656,34 +656,6 @@
     <loc>https://blog.hsiehchou.com/2019/04/26/kafka/</loc>
     
     <lastmod>2019-04-26T09:31:00.829Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/mi/index.html</loc>
-    
-    <lastmod>2019-04-26T07:12:46.410Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/mi/register.html</loc>
-    
-    <lastmod>2019-04-25T14:51:17.620Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/mi/login-manager.html</loc>
-    
-    <lastmod>2019-04-25T14:51:06.302Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/mi/login.html</loc>
-    
-    <lastmod>2019-04-25T14:50:59.056Z</lastmod>
     
   </url>
   
