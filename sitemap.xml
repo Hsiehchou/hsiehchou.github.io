@@ -2,9 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.hsiehchou.com/2020/08/12/di-qi-zhang-ji-qi-xue-xi-ru-men/</loc>
+    
+    <lastmod>2021-08-15T15:25:40.506Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hsiehchou.com/2020/06/19/matlab-xue-xi/</loc>
+    
+    <lastmod>2021-08-15T15:25:23.642Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.hsiehchou.com/2021/08/16/r-yu-yan-shi-zhan-di-2-ban-di-yi-bu-fen-ru-men/</loc>
     
-    <lastmod>2021-08-15T14:40:37.179Z</lastmod>
+    <lastmod>2021-08-15T15:25:11.372Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hsiehchou.com/2020/05/12/ru-he-yue-du-yi-ben-shu-du-shu/</loc>
+    
+    <lastmod>2021-08-15T15:22:23.938Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hsiehchou.com/2020/06/06/di-wu-zhang-python-shu-ju-ke-shi-hua/</loc>
+    
+    <lastmod>2021-08-15T15:11:53.222Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hsiehchou.com/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/</loc>
+    
+    <lastmod>2021-08-15T15:02:38.787Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.hsiehchou.com/2020/06/04/di-si-zhang-python-shu-ju-chu-li/</loc>
+    
+    <lastmod>2021-08-15T15:01:59.905Z</lastmod>
     
   </url>
   
@@ -12,13 +54,6 @@
     <loc>https://blog.hsiehchou.com/2021/01/21/ji-qi-xue-xi-tui-jian-liang-ben-shu/</loc>
     
     <lastmod>2021-01-21T07:36:22.907Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/</loc>
-    
-    <lastmod>2020-10-05T07:38:04.678Z</lastmod>
     
   </url>
   
@@ -40,41 +75,6 @@
     <loc>https://blog.hsiehchou.com/2020/06/02/di-san-zhang-python-bian-cheng-jin-jie/</loc>
     
     <lastmod>2020-10-05T07:29:40.547Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/2020/06/04/di-si-zhang-python-shu-ju-chu-li/</loc>
-    
-    <lastmod>2020-10-05T07:29:30.702Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/2020/06/06/di-wu-zhang-python-shu-ju-ke-shi-hua/</loc>
-    
-    <lastmod>2020-10-05T07:28:56.478Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/2020/05/12/ru-he-yue-du-yi-ben-shu-du-shu/</loc>
-    
-    <lastmod>2020-10-05T07:28:36.618Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/2020/06/19/matlab-xue-xi/</loc>
-    
-    <lastmod>2020-10-05T07:28:11.400Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.hsiehchou.com/2020/08/12/di-qi-zhang-ji-qi-xue-xi-ru-men/</loc>
-    
-    <lastmod>2020-10-05T07:17:26.835Z</lastmod>
     
   </url>
   

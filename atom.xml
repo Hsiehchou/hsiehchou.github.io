@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>谢舟的博客</title>
   
-  <subtitle>学习教程、操作经验</subtitle>
+  <subtitle>学习经验</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.hsiehchou.com/"/>
-  <updated>2021-08-15T14:40:37.179Z</updated>
+  <updated>2021-08-15T15:25:11.372Z</updated>
   <id>https://blog.hsiehchou.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.hsiehchou.com/2021/08/16/r-yu-yan-shi-zhan-di-2-ban-di-yi-bu-fen-ru-men/"/>
     <id>https://blog.hsiehchou.com/2021/08/16/r-yu-yan-shi-zhan-di-2-ban-di-yi-bu-fen-ru-men/</id>
     <published>2021-08-16T11:11:20.000Z</published>
-    <updated>2021-08-15T14:40:37.179Z</updated>
+    <updated>2021-08-15T15:25:11.372Z</updated>
     
     <summary type="html">
     
@@ -77,7 +77,7 @@
     <link href="https://blog.hsiehchou.com/2020/08/12/di-qi-zhang-ji-qi-xue-xi-ru-men/"/>
     <id>https://blog.hsiehchou.com/2020/08/12/di-qi-zhang-ji-qi-xue-xi-ru-men/</id>
     <published>2020-08-12T15:14:44.000Z</published>
-    <updated>2020-10-05T07:17:26.835Z</updated>
+    <updated>2021-08-15T15:25:40.506Z</updated>
     
     <summary type="html">
     
@@ -106,7 +106,7 @@
     <link href="https://blog.hsiehchou.com/2020/06/19/matlab-xue-xi/"/>
     <id>https://blog.hsiehchou.com/2020/06/19/matlab-xue-xi/</id>
     <published>2020-06-19T12:12:35.000Z</published>
-    <updated>2020-10-05T07:28:11.400Z</updated>
+    <updated>2021-08-15T15:25:23.642Z</updated>
     
     <summary type="html">
     
@@ -133,7 +133,7 @@
     <link href="https://blog.hsiehchou.com/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/"/>
     <id>https://blog.hsiehchou.com/2020/06/07/di-liu-zhang-python-ji-qi-xue-xi/</id>
     <published>2020-06-07T01:15:03.000Z</published>
-    <updated>2020-10-05T07:38:04.678Z</updated>
+    <updated>2021-08-15T15:02:38.787Z</updated>
     
     <summary type="html">
     
@@ -162,7 +162,7 @@
     <link href="https://blog.hsiehchou.com/2020/06/06/di-wu-zhang-python-shu-ju-ke-shi-hua/"/>
     <id>https://blog.hsiehchou.com/2020/06/06/di-wu-zhang-python-shu-ju-ke-shi-hua/</id>
     <published>2020-06-06T11:35:32.000Z</published>
-    <updated>2020-10-05T07:28:56.478Z</updated>
+    <updated>2021-08-15T15:11:53.222Z</updated>
     
     <summary type="html">
     
@@ -189,7 +189,7 @@
     <link href="https://blog.hsiehchou.com/2020/06/04/di-si-zhang-python-shu-ju-chu-li/"/>
     <id>https://blog.hsiehchou.com/2020/06/04/di-si-zhang-python-shu-ju-chu-li/</id>
     <published>2020-06-04T02:12:35.000Z</published>
-    <updated>2020-10-05T07:29:30.702Z</updated>
+    <updated>2021-08-15T15:01:59.905Z</updated>
     
     <summary type="html">
     
@@ -243,7 +243,7 @@
     <link href="https://blog.hsiehchou.com/2020/05/12/ru-he-yue-du-yi-ben-shu-du-shu/"/>
     <id>https://blog.hsiehchou.com/2020/05/12/ru-he-yue-du-yi-ben-shu-du-shu/</id>
     <published>2020-05-12T14:19:35.000Z</published>
-    <updated>2020-10-05T07:28:36.618Z</updated>
+    <updated>2021-08-15T15:22:23.938Z</updated>
     
     <summary type="html">
     
